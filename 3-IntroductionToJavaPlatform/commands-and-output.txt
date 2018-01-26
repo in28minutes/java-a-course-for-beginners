@@ -1,0 +1,127 @@
+jshell> System.out.println("I love JShell");
+I love JShell
+
+jshell> class Country {
+   ...> }
+|  created class Country
+
+jshell> Country india = new Country()
+india ==> Country@6e06451e
+
+jshell> Country usa = new Country()
+usa ==> Country@6e1567f1
+
+jshell> class Planet {
+   ...> }
+|  created class Planet
+
+jshell> Planet planet = new Planet()
+planet ==> Planet@56ef9176
+
+jshell> Planet earth = new Planet()
+earth ==> Planet@1ed4004b
+
+jshell> Planet venus = new Planet()
+venus ==> Planet@25bbe1b6
+
+jshell> void printMultiplicationTable() {
+   ...>     for(int i=1;i<=10;i++) {
+   ...>         System.out.printf("%d * %d = %d", 5, i, 5 * i).println();
+   ...>     }
+   ...> }
+|  created method printMultiplicationTable()
+
+jshell> void printMultiplicationTable(int table) {
+   ...>     for(int i=1;i<=10;i++) {
+   ...>         System.out.printf("%d * %d = %d", table, i, table * i).println();
+   ...>     }
+   ...> }
+|  created method printMultiplicationTable(int)
+
+jshell> clear()
+
+ 
+jshell> /methods
+|    void clear()
+|    void printMultiplicationTable()
+|    void printMultiplicationTable(int)
+
+jshell> clear()
+ 
+jshell> class Planet {
+   ...> }
+|  modified class Planet
+
+jshell> Planet earth = new Planet()
+earth ==> Planet@73846619
+
+jshell> Planet venus = new Planet()
+venus ==> Planet@4bec1f0c
+
+jshell> class Planet {
+   ...>      void revolve() {
+   ...>           System.out.println("Revolve");
+   ...>      }
+   ...> }
+|  replaced class Planet
+|    update replaced variable planet, reset to null
+|    update replaced variable earth, reset to null
+|    update replaced variable venus, reset to null
+
+jshell> Planet earth = new Planet()
+earth ==> Planet@192b07fd
+
+jshell> Planet venus = new Planet()
+venus ==> Planet@64bfbc86
+
+jshell> Planet.revolve()
+|  Error:
+|  non-static method revolve() cannot be referenced from a static context
+|  Planet.revolve()
+|  ^------------^
+
+jshell> earth.revolve()
+Revolve
+
+jshell> venus.revolve()
+Revolve
+
+jshell> class Country {
+   ...>    void comingSoon() {
+   ...>       System.out.println("Coming Soon");
+   ...>    }
+   ...> }
+|  replaced class Country
+|    update replaced variable country, reset to null
+|    update replaced variable india, reset to null
+|    update replaced variable usa, reset to null
+
+jshell> Country india = new Country()
+india ==> Country@60c6f5b
+
+jshell> Country netherlands = new Country()
+netherlands ==> Country@3c0f93f1
+
+jshell> india.comingSoon()
+Coming Soon
+
+jshell> netherlands.comingSoon()
+Coming Soon
+
+jshell> /list Country
+
+  27 : class Country {
+          void comingSoon() {
+             System.out.println("Coming Soon");
+          }
+       }
+
+jshell> /list Planet
+
+  22 : class Planet {
+            void revolve() {
+                 System.out.println("Revolve");
+            }
+       }
+
+jshell> 

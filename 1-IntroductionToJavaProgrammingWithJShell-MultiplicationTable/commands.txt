@@ -1,0 +1,358 @@
+3*4
+System.out.println(3*4)
+System.out.println(3*4)
+System.out.println("5 * 2 = 10")
+3.0/2
+System.out.println("5 * 2")
+System.out.println(5 * 2)
+System.out.println("Hello World")
+System.out.println(5*3)
+System.out.println("5 * 3")
+System.out.println(5*3)
+System.out.println("5 * 1 = 5")
+System.out.println("5 * 2 = 5")
+System.out.println("5 * 3 = 5")
+System.out.println("24 * 60 * 60")
+System.out.println(24 * 60 * 60)
+System.out.println("Hello World")
+System.out.println("Hello     World")
+System.out.println(24   *    60    *    60)
+System.out.println("Hello World")
+System.out.println("HelloWorld")
+System.out.println("hello world")
+System.out.println("hello \"world")
+System.out.println("hello \"world")
+System.out.println("hello n world")
+System.out.println("hello \n world")
+System.out.println("hello \nworld")
+System.out.println("hello\nworld")
+System.out.println("hello\tworld")
+System.out.println("hello \\ world")
+System.out.println("hello \\\\ world")
+Math.random()
+Math.random()
+Math.random()
+Math.random()
+Math.random()
+System.out.println("hello \n world")
+Math.min(23,45)
+Math.min(23,4)
+Math.max(23,4)
+System.out.print("\033[H\033[2J ");
+System.out.println("5 * 2 = 5")
+System.out.println("5 * 2 = 10")
+5*2
+System.out.printf("5 * 2 = 10")
+System.out.printf("5 * 2 = 10").println()
+System.out.printf("5 * 2 = 10 %d", 5*2).println()
+System.out.printf("5 * 2 = %d", 5*2).println()
+System.out.printf("%d %d %d", 5, 7, 5 * 7).println()
+System.out.printf("%d * %d = %d", 5, 7, 5 * 7).println()
+System.out.printf("%d + %d + %d = %d", 5, 6, 7, 5 + 6 + 7).println()
+System.out.printf("%d + %d + %d = %d", 5, 6, 7).println()
+System.out.printf("%d + %d + %d", 5, 6, 7).println()
+System.out.printf("%d + %d + %d", 5, 6).println()
+System.out.printf("%d + %d + %d", 5, 6, 7, 8).println()
+System.out.printf("Print %s", "Testing").println()
+System.out.printf("%d + %d + %d", 5.5, 6.5, 7.5).println()
+System.out.printf("%f + %f + %f", 5.5, 6.5, 7.5).println()
+System.out.printf("5 * 2 = 10")
+System.out.printf("%d * %d = %d", 5, 2, 5 * 2).println()
+System.out.print("\033[H\033[2J ");
+System.out.println("5 * 2 = 10")
+System.out.printf("%d * %d = %d", 5, 2, 5 * 2).println()
+System.out.printf("%d * %d = %d", 5, 1, 5 * 1).println()
+System.out.printf("%d * %d = %d", 5, 2, 5 * 2).println()
+System.out.printf("%d * %d = %d", 5, 3, 5 * 3).println()
+System.out.printf("%d * %d = %d", 5, 4, 5 * 4).println()
+number = 11
+number
+number = 12
+number
+number2 = 100
+System.out.printf("%d * %d = %d", 5, 4, 5 * 4).println()
+System.out.printf("%d * %d = %d", 5, i, 5 * i).println()
+i
+5 * i
+i = 2
+System.out.printf("%d * %d = %d", 5, i, 5 * i).println()
+i = 3
+System.out.printf("%d * %d = %d", 5, i, 5 * i).println()
+i = 10
+System.out.printf("%d * %d = %d", 5, i, 5 * i).println()
+System.out.print("\033[H\033[2J ");
+System.out.printf("a + b + c = a+b+c").println()
+System.out.printf("%d + %d + %d = %d", a, b, c ,a+b+c).println()
+a = 50
+System.out.printf("%d + %d + %d = %d", a, b, c ,a+b+c).println()
+b = 60
+System.out.printf("%d + %d + %d = %d", a, b, c ,a+b+c).println()
+int newVariable;
+newVariable
+int undeclaredVariable;
+undeclaredVariable
+5 * undeclaredVariable
+a = 100
+a = c
+System.out.print("\033[H\033[2J ");
+int noOfGoals;
+int NoOfGoals;
+int score;
+System.out.print("\033[H\033[2J ");
+System.out.print("\033[H\033[2J ");
+short s;
+float f = 4.0f;
+float f2 = 4.5f;
+double dbl = 4.5;
+System.out.print("\033[H\033[2J ");
+i = j
+i
+j
+i = j
+i = j * 2
+i = i * 2
+i = i + i
+i = i - i
+i = i + 1
+i = i + 1
+i = i + 1
+i = i + 1
+i = i + 1
+i = i + 1
+i = i - 1
+i = i - 1
+i = i - 1
+i = i - 1
+i = i - 1
+i++
+i
+i++
+i
+i--
+i
+i--
+i
+System.out.print("\033[H\033[2J ");
+number = number + 1
+number++
+number
+number++
+number
+number--
+number
+++number
+number
+System.out.print("\033[H\033[2J ");
+number++
+++number
+number
+--number
+number--
+number
+System.out.print("\033[H\033[2J ");
+i = i + 2
+i += 2
+i -= 1
+i *= 5
+i
+i /= 4
+i %= 2
+void clear() { System.out.print("\033[H\033[2J ");
+}
+;
+clear()
+long l = 6_000_000_000l;
+clear()
+short numberOfGoals;
+numberOfGoals++
+numberOfGoals
+numberOfGoals++
+numberOfGoals
+long populationOfTheWorld;
+double average;
+char ch = 'A';
+ch = 'B'
+char grade = 'C';
+grade = 'A'
+grade
+clear()
+boolean isEven;
+isEven = true
+boolean isPrime;
+boolean isItRainingToday;
+boolean areYouEnjoyingTheCourse;
+areYouEnjoyingTheCourse = true
+System.out.printf("%d * %d = %d", 5, i, 5*i);
+clear()
+System.out.printf("%d * %d = %d", 5, i, 5*i).println()
+clear()
+System.out.printf("%d * %d = %d", 5, i, 5*i).println()
+System.out.printf("%d * %d = %d", 5, i, 5*i).println()
+i = 7
+System.out.printf("%d * %d = %d", 5, i, 5*i).println()
+i = 10
+i < 5
+i > 5
+i <= 5
+i <= 10
+i >= 10
+System.out.println("i is less than 5");
+i
+clear()
+if (i<5)
+   System.out.println("i is less than 5");
+i
+i = 4
+if (i<5)
+   System.out.println("i is less than 5");
+int number1 = 5;
+int number2 = 7;
+if (number2>number1)
+System.out.println("number2 is greater than number1");
+number2 = 3
+if (number2>number1)
+System.out.println("number2 is greater than number1");
+clear()
+int a = 1;
+int b = 2;
+int c = 3;
+int d = 1;
+if(a+b > c +d)
+System.out.println("a+b is greater than c+d");
+a = 6
+if(a+b > c +d)
+System.out.println("a+b is greater than c+d");
+if ( a + b > c + d )
+    System.out.println("a+b is greater than c+d");
+int angle1 = 20;
+int angle2 = 60;
+int angle3 = 50;
+if(angle1 + angle2 + angle3 == 180)
+    System.out.println("Valid Triangle");
+angle3 += 50
+angle3
+angle1
+angle2
+if(angle1 + angle2 + angle3 == 180)
+    System.out.println("Valid Triangle");
+int number = 10;
+number % 2
+9 % 2
+8 % 2
+if (number % 2 == 0)
+System.out.println("number is even");
+if (number % 2 == 0)
+System.out.println("number is even");
+number = 9
+if (number % 2 == 0)
+System.out.println("number is even");
+clear()
+i > 5
+i = 5
+i == 5
+i == 6
+if(i==5)
+System.out.println("i is odd");
+if(i==5)
+System.out.println("i is odd");
+ System.out.println("i is prime");
+i == 6
+i = 6
+if(i==5)
+System.out.println("i is odd");
+ System.out.println("i is prime");
+if(i==5) {
+System.out.println("i is odd");
+System.out.println("i is prime");
+}
+if(i==5) {
+System.out.println("i is prime");
+}
+clear()
+System.out.printf("%d * %d = %d", 5, i, 5*i).println()
+clear()
+System.out.printf("%d * %d = %d", 5, i, 5*i).println()
+i = i + 1
+System.out.printf("%d * %d = %d", 5, i, 5*i).println()
+i = i + 1
+System.out.printf("%d * %d = %d", 5, i, 5*i).println()
+for( i =1; i<=10; i++) {
+   System.out.printf("%d * %d = %d", 5, i, 5*i).println();
+}
+for( i =1; i<=10; i++) {
+   System.out.printf("%d * %d = %d", 6, i, 6*i).println();
+}
+for( i =1; i<=10; i++) {
+   System.out.printf("%d * %d = %d", 7, i, 7*i).println();
+}
+int table = 7;
+for( i =1; i<=10; i++) {
+   System.out.printf("%d * %d = %d", table, i, table*i).println();
+}
+table = 8
+for( i =1; i<=10; i++) {
+   System.out.printf("%d * %d = %d", table, i, table*i).println();
+}
+table = 8
+for( i =1; i<=10; i++) {
+   System.out.printf("%d * %d = %d", table, i, table*i).println();
+}
+table = 9
+for( i =1; i<=10; i++) {
+   System.out.printf("%d * %d = %d", table, i, table*i).println();
+}
+for(i =1; i<=10; i++) {
+   System.out.printf("%d", i).println();
+}
+clear()
+for(i=10; i<=1  ;i--) {
+   System.out.printf("%d", i).println();
+}
+for(i=10; i>=1  ;i--) {
+   System.out.printf("%d", i).println();
+}
+for(i=10; i>=1  ;i = i - 2) {
+   System.out.printf("%d", i).println();
+}
+for(i=9; i>=1  ;i = i - 2) {
+   System.out.printf("%d", i).println();
+}
+for(i =1; i<=10; i++) {
+   System.out.printf("%d", i * i).println();
+}
+for(i =2; i<=10; i = i + 2) {
+   System.out.printf("%d", i * i).println();
+}
+for(i =2; i<=20; i = i + 2) {
+   System.out.printf("%d", i * i).println();
+}
+for(i =1; i<=10; i++) {
+   System.out.printf("%d", (2 * i) * (2 * i) ).println();
+}
+for(i =1; i<=20; i = i + 2) {
+   System.out.printf("%d", i * i).println();
+}
+clear()
+clear()
+int i = 1;
+for ( ;i<=10 ;i++ );
+i
+for (i=1 ;i<=10 ;i++ );
+int j;
+for (i=1, j=2 ;i<=10 ;i++, j++ );
+i
+j
+for (i=1, j=2 ;i<=10 ;i++, j--);
+i
+j
+for(;;);
+for(int i=1; i<=10; i++) {
+System.out.println("No 1");
+System.out.println("No 2");
+}
+for(int i=1; i<=10; i++) {
+System.out.println("No 1");
+System.out.println("No 2");
+}
+   System.out.println("i is less than 5");
+System.out.print("\033[H\033[2J ");

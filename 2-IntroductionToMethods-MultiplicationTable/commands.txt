@@ -1,0 +1,180 @@
+3 * 4
+$2
+$2 * 3
+clear()
+for( i =1; i<=10; i++) {
+System.out.printf("%d * %d = %d", table, i, table*i).println();
+}
+clear()
+for( i =1; i<=10; i++) {
+    System.out.printf("%d * %d = %d", table, i, table*i).println();
+}
+clear()
+for( i =1; i<=10; i++) {
+    System.out.printf("%d * %d = %d", table, i, table*i).println();
+}
+clear()
+void clear() { 
+  System.out.print("\033[H\033[2J ");
+}
+class Test {
+	void printOutput() {
+		System.out.println("Text");
+	}
+}
+new Test().printOutput()
+System.out.println(i)
+printMultipleTimes(2, "You are awesome");
+ireturn()
+for( i =1; i<=10; i++) {
+   System.out.printf("%d * %d = %d", table, i, table*i).println();
+}
+int table = 7;
+for( i =1; i<=10; i++) {
+System.out.printf("%d * %d = %d", table, i, table*i).println();
+}
+table = 8
+for( i =1; i<=10; i++) {
+System.out.printf("%d * %d = %d", table, i, table*i).println();
+}
+System.out.println("Hello World")
+System.out.println("Hello World")
+System.out.println("Hello World")
+System.out.println("Hello World");
+ System.out.println("Hello World");
+clear()
+System.out.println("Hello World");
+ System.out.println("Hello World");
+sayHelloWorldTwice()
+sayHelloWorldTwice()
+void sayHelloWorldThrice(){
+ System.out.println("Hello World");
+ System.out.println("Hello World");
+ System.out.println("Hello World");
+}
+sayHelloWorldThrice()
+printLearningExperience()
+printLearningExperience()
+void NameOfMethod(){
+}
+void nameOfMethod(){
+}
+clear()
+clear()
+void sayHelloWorldTwice(){
+   System.out.println("HelloWorld");
+   System.out.println("HelloWorld");
+}
+sayHelloWorldTwice()
+void printLearningExperience() {
+System.out.println("I've created sdf first variable");
+System.out.println("I've created fsadjf first method");
+System.out.println("I've created fsajdfl first loop");
+System.out.println("I'm excited fasdflkjfskfsd learn Java");
+}
+printLearningExperience()
+clear()
+clear()
+clear()
+sayHelloWorldThrice()
+sayHelloWorldTwice()
+sayHelloWorld(1)
+sayHelloWorld(1)
+sayHelloWorld(2)
+sayHelloWorld(2)
+sayHelloWorld(4)
+sayHelloWorld(6)
+void sayHelloWorld(int noOfTimes) {
+	for(int i=1; i<=noOfTimes; i++) {
+		System.out.println("Hello World");
+	}
+}
+sayHelloWorld(6)
+sayHelloWorld(3)
+sayHelloWorld(2)
+void printNumbers(int n) {
+    for(int i=1; i<=n; i++) {
+	    System.out.println(i);
+    }
+}
+printNumbers(10)
+printNumbers(3)
+void printSquaresOfNumbers(int n) {
+    for(int i=1; i<=n; i++) {
+         System.out.println(i*i);
+    }
+}
+printSquaresOfNumbers(5)
+printSquaresOfNumbers(3)
+clear()
+sayHelloWorld(4)
+clear()
+for( i =1; i<=10; i++) {
+	System.out.printf("%d * %d = %d", table, i, table*i).println();
+}
+clear()
+int i;
+for(i=1;i<=10;i++)
+    System.out.printf("%d * %d = %d", 5, i, 5 * i).println();
+for(i=1;i<=10;i++) {
+    System.out.printf("%d * %d = %d", 5, i, 5 * i).println();
+}
+void printMultiplicationTable() {
+	for(int i=1;i<=10;i++) {
+		System.out.printf("%d * %d = %d", 5, i, 5 * i).println();
+	}
+}
+printMultiplicationTable()
+
+void printMultiplicationTable(int table) {
+	for(int i=1;i<=10;i++) {
+		System.out.printf("%d * %d = %d", table, i, table * i).println();
+	}
+}
+
+printMultiplicationTable(6)
+printMultiplicationTable(7)
+printMultiplicationTable()
+printMultiplicationTable(6)
+clear()
+Math.max(1,2)
+void sum(int firstNumber,int secondNumber) {
+     int sum = firstNumber + secondNumber;
+     System.out.println(sum);
+}
+sum(5, 10)
+void sum(int firstNumber,int secondNumber, int thirdNumber) {
+     int sum = firstNumber + secondNumber + thirdNumber;
+     System.out.println(sum);
+}
+sum(5, 10, 15)
+clear()
+Math.max(4,5)
+$110
+int max = Math.max(15, 25);
+max
+sum(1, 10)
+int sumOfTwoNumbers(int firstNumber, int secondNumber) {
+    int sum = firstNumber + secondNumber;
+    return sum;
+}
+sumOfTwoNumbers(1,1)
+clear()
+int sum = sumOfThreeNumbers(2,3,4);
+calculateThirdAngle(20, 50)
+clear()
+clear()
+int sumOfThreeNumbers(int firstNumber, int secondNumber, int thirdNumber) {
+      int sum = firstNumber + secondNumber + thirdNumber;
+      return sum;
+}
+sumOfThreeNumbers(1,2,3)
+sumOfThreeNumbers(15,2,3)
+int calculateThirdAngle(int angle1, int angle2) {
+       int angle3 = 180 - (angle1 + angle2);
+       return angle3;
+}
+calculateThirdAngle(20, 20)
+clear()
+calculateThirdAngle(20, 20)
+clear()

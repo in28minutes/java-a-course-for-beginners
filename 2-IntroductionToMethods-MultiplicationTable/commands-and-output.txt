@@ -1,0 +1,1193 @@
+jshell> int table = 7;
+table ==> 7
+
+jshell> for( i =1; i<=10; i++) {
+   ...> System.out.printf("%d * %d = %d", table, i, table*i).println();
+   ...> }
+7 * 1 = 7
+7 * 2 = 14
+7 * 3 = 21
+7 * 4 = 28
+7 * 5 = 35
+7 * 6 = 42
+7 * 7 = 49
+7 * 8 = 56
+7 * 9 = 63
+7 * 10 = 70
+
+jshell> table = 8
+table ==> 8
+
+jshell> for( i =1; i<=10; i++) {
+   ...> System.out.printf("%d * %d = %d", table, i, table*i).println();
+   ...> }
+8 * 1 = 8
+8 * 2 = 16
+8 * 3 = 24
+8 * 4 = 32
+8 * 5 = 40
+8 * 6 = 48
+8 * 7 = 56
+8 * 8 = 64
+8 * 9 = 72
+8 * 10 = 80
+
+jshell> printMultiplicationTable(8)
+|  Error:
+|  cannot find symbol
+|    symbol:   method printMultiplicationTable(int)
+|  printMultiplicationTable(8)
+|  ^----------------------^
+
+jshell> System.out.prinln("Hello World")
+|  Error:
+|  cannot find symbol
+|    symbol:   method prinln(java.lang.String)
+|  System.out.prinln("Hello World")
+|  ^---------------^
+
+jshell> System.out.println("Hello World")
+Hello World
+
+jshell> System.out.prinln("Hello World");
+|  Error:
+|  cannot find symbol
+|    symbol:   method prinln(java.lang.String)
+|  System.out.prinln("Hello World");
+|  ^---------------^
+
+jshell> System.out.println("Hello World")
+Hello World
+
+jshell> System.out.println("Hello World")
+Hello World
+
+jshell> System.out.println("Hello World"); System.out.println("Hello World");
+Hello World
+Hello World
+
+jshell> clear()
+
+ 
+jshell> System.out.println("Hello World"); System.out.println("Hello World");
+Hello World
+Hello World
+
+jshell> void sayHelloWorldTwice(){
+   ...>    System.out.println("Hello World");
+   ...>    System.out.println("Hello World");
+   ...> }
+|  created method sayHelloWorldTwice()
+
+jshell> sayHelloWorldTwice()
+Hello World
+Hello World
+
+jshell> void sayHelloWorldThrice(){
+   ...>  System.out.println("Hello World");
+   ...>  System.out.println("Hello World");
+   ...>  System.out.println("Hello World");
+   ...> }
+|  created method sayHelloWorldThrice()
+
+jshell> sayHelloWorldThrice()
+Hello World
+Hello World
+Hello World
+
+jshell> void printLearningExperience() {
+   ...> System.out.println("I've created my first variable");
+   ...> System.out.println("I've created my first method");
+   ...> System.out.println("I've created my first loop");
+   ...> System.out.println("I'm excited to learn Java");
+   ...> }
+|  created method printLearningExperience()
+
+jshell> printLearningExperience()
+I've created my first variable
+I've created my first method
+I've created my first loop
+I'm excited to learn Java
+
+jshell> printLearningExperience
+|  Error:
+|  cannot find symbol
+|    symbol:   variable printLearningExperience
+|  printLearningExperience
+|  ^---------------------^
+
+jshell> printLearningExperience()
+I've created my first variable
+I've created my first method
+I've created my first loop
+I'm excited to learn Java
+
+jshell> void 2things() {
+   ...> }
+|  Error:
+|  illegal start of expression
+|  void 2things() {
+|  ^--^
+|  Error:
+|  ';' expected
+|  void 2things() {
+|      ^
+|  Error:
+|  ';' expected
+|  void 2things() {
+|                ^
+|  Error:
+|  cannot find symbol
+|    symbol:   method things()
+|  void 2things() {
+|        ^----^
+
+jshell> void void(){
+   ...> }
+|  Error:
+|  illegal start of expression
+|  void void(){
+|  ^--^
+|  Error:
+|  ';' expected
+|  void void(){
+|      ^
+|  Error:
+|  illegal start of expression
+|  void void(){
+|       ^--^
+|  Error:
+|  ';' expected
+|  void void(){
+|           ^
+
+jshell> void for(){
+|  Error:
+|  illegal start of expression
+|  void for(){
+|  ^--^
+|  Error:
+|  ';' expected
+|  void for(){
+|      ^
+|  Error:
+|  illegal start of expression
+|  void for(){
+|           ^
+|  Error:
+|  reached end of file while parsing
+|  void for(){
+|             ^
+|  Error:
+|  missing return statement
+|  void for(){
+|  ^---------^
+
+jshell> void if(){
+|  Error:
+|  illegal start of expression
+|  void if(){
+|  ^--^
+|  Error:
+|  ';' expected
+|  void if(){
+|      ^
+|  Error:
+|  illegal start of expression
+|  void if(){
+|          ^
+|  Error:
+|  reached end of file while parsing
+|  void if(){
+|            ^
+|  Error:
+|  missing return statement
+|  void if(){
+|  ^--------^
+
+jshell> void NameOfMethod(){
+   ...> }
+|  created method NameOfMethod()
+
+jshell> void nameOfMethod(){
+   ...> }
+|  created method nameOfMethod()
+
+jshell> clear()
+
+ 
+jshell> /methods
+|    void clear()
+|    void sayHelloWorld(int)
+|    void sayHelloWorld()
+|    void printMultipleTimes(int)
+|    void printMultipleTimes(int,String)
+|    void test()
+|    int ireturn()
+|    void sayHelloWorldTwice()
+|    void sayHelloWorldThrice()
+|    void printLearningExperience()
+|    void NameOfMethod()
+|    void nameOfMethod()
+
+jshell> /remove
+|  No such command or snippet id: /remove
+|  Type /help for help.
+
+jshell> /help
+|  Type a Java language expression, statement, or declaration.
+|  Or type one of the following commands:
+|  /list [<name or id>|-all|-start]
+|  	list the source you have typed
+|  /edit <name or id>
+|  	edit a source entry referenced by name or id
+|  /drop <name or id>
+|  	delete a source entry referenced by name or id
+|  /save [-all|-history|-start] <file>
+|  	Save snippet source to a file.
+|  /open <file>
+|  	open a file as source input
+|  /vars [<name or id>|-all|-start]
+|  	list the declared variables and their values
+|  /methods [<name or id>|-all|-start]
+|  	list the declared methods and their signatures
+|  /types [<name or id>|-all|-start]
+|  	list the declared types
+|  /imports 
+|  	list the imported items
+|  /exit 
+|  	exit jshell
+|  /env [-class-path <path>] [-module-path <path>] [-add-modules <modules>] ...
+|  	view or change the evaluation context
+|  /reset [-class-path <path>] [-module-path <path>] [-add-modules <modules>]...
+|  	reset jshell
+|  /reload [-restore] [-quiet] [-class-path <path>] [-module-path <path>]...
+|  	reset and replay relevant history -- current or previous (-restore)
+|  /history 
+|  	history of what you have typed
+|  /help [<command>|<subject>]
+|  	get information about jshell
+|  /set editor|start|feedback|mode|prompt|truncation|format ...
+|  	set jshell configuration information
+|  /? [<command>|<subject>]
+|  	get information about jshell
+|  /! 
+|  	re-run last snippet
+|  /<id> 
+|  	re-run snippet by id
+|  /-<n> 
+|  	re-run n-th previous snippet
+|  
+|  For more information type '/help' followed by the name of a
+|  command or a subject.
+|  For example '/help /list' or '/help intro'.
+|  
+|  Subjects:
+|  
+|  intro
+|  	an introduction to the jshell tool
+|  shortcuts
+|  	a description of keystrokes for snippet and command completion,
+|  	information access, and automatic code generation
+|  context
+|  	the evaluation context options for /env /reload and /reset
+
+jshell> /
+|  Command: '/' is ambiguous: /list, /edit, /drop, /save, /open, /vars, /methods, /types, /imports, /exit, /env, /reset, /reload, /history, /debug, /help, /set, /?, /!
+|  Type /help for help.
+
+jshell> /methods
+|    void clear()
+|    void sayHelloWorld(int)
+|    void sayHelloWorld()
+|    void printMultipleTimes(int)
+|    void printMultipleTimes(int,String)
+|    void test()
+|    int ireturn()
+|    void sayHelloWorldTwice()
+|    void sayHelloWorldThrice()
+|    void printLearningExperience()
+|    void NameOfMethod()
+|    void nameOfMethod()
+
+jshell> /methods                    
+|    void clear()
+|    void sayHelloWorld(int)
+|    void sayHelloWorld()
+|    void printMultipleTimes(int)
+|    void printMultipleTimes(int,String)
+|    void test()
+|    int ireturn()
+|    void sayHelloWorldTwice()
+|    void sayHelloWorldThrice()
+|    void printLearningExperience()
+|    void NameOfMethod()
+|    void nameOfMethod()
+
+jshell> /drop ireturn
+|  dropped method ireturn()
+
+jshell> /drop sayHelloWorld
+|  The argument references more than one import, variable, method, or class.
+|  Use one of: 
+|  /drop 21    :   void sayHelloWorld(int numberOfTimes) {
+|           for(int i=1; i<=numberOfTimes; i++)
+|         System.out.println("Hello World");
+|         }, 
+|  /drop 22    :   void sayHelloWorld() {
+|               System.out.println("Hello World");
+|         }
+
+jshell> /drop 21
+|  dropped method sayHelloWorld(int)
+
+jshell> /drop 22
+|  dropped method sayHelloWorld()
+
+jshell> /methods
+|    void clear()
+|    void printMultipleTimes(int)
+|    void printMultipleTimes(int,String)
+|    void test()
+|    void sayHelloWorldTwice()
+|    void sayHelloWorldThrice()
+|    void printLearningExperience()
+|    void NameOfMethod()
+|    void nameOfMethod()
+
+jshell> /drop printMultipleTimes
+|  The argument references more than one import, variable, method, or class.
+|  Use one of: 
+|  /drop 23    :   void printMultipleTimes(int numberOfTimes) {
+|           for(int i=1; i<=numberOfTimes; i++)
+|         System.out.println("Hello World");
+|         }, 
+|  /drop 25    :   void printMultipleTimes(int numberOfTimes, String str) {
+|           for(int i=1; i<=numberOfTimes; i++)
+|                System.out.println(str);
+|         }
+
+jshell> /drop 23
+|  dropped method printMultipleTimes(int)
+
+jshell> /drop 25
+|  dropped method printMultipleTimes(int,String)
+
+jshell> /methods
+|    void clear()
+|    void test()
+|    void sayHelloWorldTwice()
+|    void sayHelloWorldThrice()
+|    void printLearningExperience()
+|    void NameOfMethod()
+|    void nameOfMethod()
+
+jshell> /drop test
+|  dropped method test()
+
+jshell> /methods
+|    void clear()
+|    void sayHelloWorldTwice()
+|    void sayHelloWorldThrice()
+|    void printLearningExperience()
+|    void NameOfMethod()
+|    void nameOfMethod()
+
+jshell> clear()
+
+ 
+jshell> /methods
+|    void clear()
+|    void sayHelloWorldTwice()
+|    void sayHelloWorldThrice()
+|    void printLearningExperience()
+|    void NameOfMethod()
+|    void nameOfMethod()
+
+jshell> /save backup.txt 
+
+jshell> /edit sayHelloWorldTwice
+|  modified method sayHelloWorldTwice()
+
+jshell> sayHelloWorldTwice()
+HelloWorld
+HelloWorld
+
+jshell> /edit printLearningExperience
+|  modified method printLearningExperience()
+
+jshell> printLearningExperience()
+I've created sdf first variable
+I've created fsadjf first method
+I've created fsajdfl first loop
+I'm excited fasdflkjfskfsd learn Java
+
+jshell> /list
+
+   2 : 3 * 4
+   3 : $2
+   4 : $2 * 3
+   6 : clear()
+   8 : for( i =1; i<=10; i++) {
+       System.out.printf("%d * %d = %d", table, i, table*i).println();
+       }
+   9 : clear()
+  11 : for( i =1; i<=10; i++) {
+           System.out.printf("%d * %d = %d", table, i, table*i).println();
+       }
+  12 : clear()
+  14 : for( i =1; i<=10; i++) {
+           System.out.printf("%d * %d = %d", table, i, table*i).println();
+       }
+  15 : clear()
+  16 : void clear() { 
+         System.out.print("\033[H\033[2J ");
+       }
+  18 : class Test {
+       	void printOutput() {
+       		System.out.println("Text");
+       	}
+       }
+  19 : new Test().printOutput()
+  20 : System.out.println(i)
+  26 : printMultipleTimes(2, "You are awesome");
+  28 : int i;
+  30 : ireturn()
+  32 : for( i =1; i<=10; i++) {
+          System.out.printf("%d * %d = %d", table, i, table*i).println();
+       }
+  33 : int table = 7;
+  34 : for( i =1; i<=10; i++) {
+       System.out.printf("%d * %d = %d", table, i, table*i).println();
+       }
+  35 : table = 8
+  36 : for( i =1; i<=10; i++) {
+       System.out.printf("%d * %d = %d", table, i, table*i).println();
+       }
+  37 : System.out.println("Hello World")
+  38 : System.out.println("Hello World")
+  39 : System.out.println("Hello World")
+  40 : System.out.println("Hello World");
+  41 :  System.out.println("Hello World");
+  42 : clear()
+  43 : System.out.println("Hello World");
+  44 :  System.out.println("Hello World");
+  46 : sayHelloWorldTwice()
+  47 : sayHelloWorldTwice()
+  48 : void sayHelloWorldThrice(){
+        System.out.println("Hello World");
+        System.out.println("Hello World");
+        System.out.println("Hello World");
+       }
+  49 : sayHelloWorldThrice()
+  51 : printLearningExperience()
+  52 : printLearningExperience()
+  53 : void NameOfMethod(){
+       }
+  54 : void nameOfMethod(){
+       }
+  55 : clear()
+  56 : clear()
+  57 : void sayHelloWorldTwice(){
+          System.out.println("HelloWorld");
+          System.out.println("HelloWorld");
+       }
+  58 : sayHelloWorldTwice()
+  59 : void printLearningExperience() {
+       System.out.println("I've created sdf first variable");
+       System.out.println("I've created fsadjf first method");
+       System.out.println("I've created fsajdfl first loop");
+       System.out.println("I'm excited fasdflkjfskfsd learn Java");
+       }
+  60 : printLearningExperience()
+
+jshell> clear()
+
+ 
+jshell> /methods
+|    void clear()
+|    void sayHelloWorldThrice()
+|    void NameOfMethod()
+|    void nameOfMethod()
+|    void sayHelloWorldTwice()
+|    void printLearningExperience()
+
+jshell> /list printLearningExperience
+
+  59 : void printLearningExperience() {
+       System.out.println("I've created sdf first variable");
+       System.out.println("I've created fsadjf first method");
+       System.out.println("I've created fsajdfl first loop");
+       System.out.println("I'm excited fasdflkjfskfsd learn Java");
+       }
+
+jshell> clear()
+
+
+
+ 
+jshell> /methods
+|    void clear()
+|    void sayHelloWorldThrice()
+|    void NameOfMethod()
+|    void nameOfMethod()
+|    void sayHelloWorldTwice()
+|    void printLearningExperience()
+
+jshell> /edit printLearningExperience
+
+jshell> /list printLearningExperience
+
+  59 : void printLearningExperience() {
+       System.out.println("I've created sdf first variable");
+       System.out.println("I've created fsadjf first method");
+       System.out.println("I've created fsajdfl first loop");
+       System.out.println("I'm excited fasdflkjfskfsd learn Java");
+       }
+
+jshell> /clear
+|  No such command or snippet id: /clear
+|  Type /help for help.
+
+jshell> clear()
+
+ 
+jshell> /methods
+|    void clear()
+|    void sayHelloWorldThrice()
+|    void NameOfMethod()
+|    void nameOfMethod()
+|    void sayHelloWorldTwice()
+|    void printLearningExperience()
+
+jshell> sayHelloWorldThrice()
+Hello World
+Hello World
+Hello World
+
+jshell> sayHelloWorldTwice()
+HelloWorld
+HelloWorld
+
+jshell> void sayHelloWorld(int noOfTimes) {
+   ...>             //Body of the method
+   ...> }
+|  created method sayHelloWorld(int)
+
+jshell> sayHelloWorld()
+|  Error:
+|  method sayHelloWorld in class  cannot be applied to given types;
+|    required: int
+|    found: no arguments
+|    reason: actual and formal argument lists differ in length
+|  sayHelloWorld()
+|  ^-----------^
+
+jshell> sayHelloWorld(1)
+
+jshell> //I'm writing something
+
+jshell> int i=10;//I has a value of 10
+i ==> 10
+
+jshell> /edit sayHelloWorld
+|  modified method sayHelloWorld(int)
+
+jshell> sayHelloWorld(1)
+1
+
+jshell> sayHelloWorld(2)
+2
+
+jshell> /list sayHelloWorld
+
+  69 : void sayHelloWorld(int noOfTimes) {
+       	System.out.println(noOfTimes);
+       }
+
+jshell> /list sayHelloWorld
+
+  69 : void sayHelloWorld(int noOfTimes) {
+       	System.out.println(noOfTimes);
+       }
+
+jshell> /edit sayHelloWorld
+|  modified method sayHelloWorld(int)
+
+jshell> /list sayHelloWorld
+
+  72 : void sayHelloWorld(int noOfTimes) {
+       	for(int i=1; i<=noOfTimes; i++) {
+       		System.out.println(noOfTimes);
+       	}
+       }
+
+jshell> sayHelloWorld(2)
+2
+2
+
+jshell> sayHelloWorld(4)
+4
+4
+4
+4
+
+jshell> sayHelloWorld(6)
+6
+6
+6
+6
+6
+6
+
+jshell> /edit sayHelloWorld
+|  modified method sayHelloWorld(int)
+
+jshell> sayHelloWorld(6)
+Hello World
+Hello World
+Hello World
+Hello World
+Hello World
+Hello World
+
+jshell> sayHelloWorld(3)
+Hello World
+Hello World
+Hello World
+
+jshell> sayHelloWorld(2)
+Hello World
+Hello World
+
+jshell> void printNumbers(int n) {
+   ...>     for(int i=1; i<=n; i++) {
+   ...>         System.out.println(i);
+   ...>     }
+   ...> }
+|  created method printNumbers(int)
+
+jshell> printNumbers(10)
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+
+jshell> printNumbers(3)
+1
+2
+3
+
+jshell> /list printNumbers
+
+  80 : void printNumbers(int n) {
+           for(int i=1; i<=n; i++) {
+       	    System.out.println(i);
+           }
+       }
+
+jshell> /edit printNumbers
+
+jshell> void printSquaresOfNumbers(int n) {
+   ...>     for(int i=1; i<=n; i++) {
+   ...>         System.out.println(i*i);
+|  Error:
+|  not a statement
+|  	    System.out.println(i);i*i);
+|                             ^-^
+|  Error:
+|  ';' expected
+|  	    System.out.println(i);i*i);
+|                                ^
+|  Error:
+|  reached end of file while parsing
+|  	    System.out.println(i);i*i);
+|                                  ^
+
+jshell> void printSquaresOfNumbers(int n) {
+   ...>     for(int i=1; i<=n; i++) {
+   ...>          System.out.println(i*i);
+   ...>     }
+   ...> }
+|  created method printSquaresOfNumbers(int)
+
+jshell> printSquaresOfNumbers(5)
+1
+4
+9
+16
+25
+
+jshell> printSquaresOfNumbers(3)
+1
+4
+9
+
+jshell> clear()
+
+ 
+jshell> /methods
+|    void clear()
+|    void sayHelloWorldThrice()
+|    void NameOfMethod()
+|    void nameOfMethod()
+|    void sayHelloWorldTwice()
+|    void printLearningExperience()
+|    void sayHelloWorld(int)
+|    void printNumbers(int)
+|    void printSquaresOfNumbers(int)
+
+jshell> /list sayHelloWorld
+
+  76 : void sayHelloWorld(int noOfTimes) {
+       	for(int i=1; i<=noOfTimes; i++) {
+       		System.out.println("Hello World");
+       	}
+       }
+
+jshell> sayHelloWorld()
+|  Error:
+|  method sayHelloWorld in class  cannot be applied to given types;
+|    required: int
+|    found: no arguments
+|    reason: actual and formal argument lists differ in length
+|  sayHelloWorld()
+|  ^-----------^
+
+jshell> sayHelloWorld("Value")
+|  Error:
+|  incompatible types: java.lang.String cannot be converted to int
+|  sayHelloWorld("Value")
+|                ^-----^
+
+jshell> sayHelloWorld(4.5)
+|  Error:
+|  incompatible types: possible lossy conversion from double to int
+|  sayHelloWorld(4.5)
+|                ^-^
+
+jshell> sayHelloWorld(4)
+Hello World
+Hello World
+Hello World
+Hello World
+
+jshell> /save ~/Desktop/backup-middle-of-section-2-methods.txt
+
+jshell> clear()
+
+ 
+jshell> /list sayHelloWorld
+
+  76 : void sayHelloWorld(int noOfTimes) {
+       	for(int i=1; i<=noOfTimes; i++) {
+       		System.out.println("Hello World");
+       	}
+       }
+
+jshell> for( i =1; i<=10; i++) {
+   ...>     System.out.printf("%d * %d = %d", table, i, table*i).println();
+   ...> }
+8 * 1 = 8
+8 * 2 = 16
+8 * 3 = 24
+8 * 4 = 32
+8 * 5 = 40
+8 * 6 = 48
+8 * 7 = 56
+8 * 8 = 64
+8 * 9 = 72
+8 * 10 = 80
+
+jshell> clear()
+
+ 
+jshell> /list sayHelloWorld
+
+  76 : void sayHelloWorld(int noOfTimes) {
+       	for(int i=1; i<=noOfTimes; i++) {
+       		System.out.println("Hello World");
+       	}
+       }
+
+jshell> int i;
+i ==> 0
+
+jshell> for(i=1;i<=10;i++)
+   ...>     System.out.printf("%d * %d = %d", 5, i, 5 * i).println();
+5 * 1 = 5
+5 * 2 = 10
+5 * 3 = 15
+5 * 4 = 20
+5 * 5 = 25
+5 * 6 = 30
+5 * 7 = 35
+5 * 8 = 40
+5 * 9 = 45
+5 * 10 = 50
+
+jshell> for(i=1;i<=10;i++) {
+   ...>     System.out.printf("%d * %d = %d", 5, i, 5 * i).println();
+   ...> }
+5 * 1 = 5
+5 * 2 = 10
+5 * 3 = 15
+5 * 4 = 20
+5 * 5 = 25
+5 * 6 = 30
+5 * 7 = 35
+5 * 8 = 40
+5 * 9 = 45
+5 * 10 = 50
+
+jshell> /list sayHelloWorld
+
+  76 : void sayHelloWorld(int noOfTimes) {
+       	for(int i=1; i<=noOfTimes; i++) {
+       		System.out.println("Hello World");
+       	}
+       }
+
+jshell> void printMultiplicationTable() { 
+   ...>     for(i=1;i<=10;i++) {
+   ...> System.out.printf("%d * %d = %d", 5, i, 5 * i).println();
+   ...> }
+   ...> }
+|  created method printMultiplicationTable()
+
+jshell> void printMultiplicationTable() {
+   ...> }
+|  modified method printMultiplicationTable()
+
+jshell> /edit printMultiplicationTable
+|  modified method printMultiplicationTable()
+
+jshell> printMultiplicationTable()
+printMultiplicationTable()   
+
+jshell> printMultiplicationTable()
+5 * 1 = 5
+5 * 2 = 10
+5 * 3 = 15
+5 * 4 = 20
+5 * 5 = 25
+5 * 6 = 30
+5 * 7 = 35
+5 * 8 = 40
+5 * 9 = 45
+5 * 10 = 50
+
+jshell> /list printMultiplicationTable
+
+  96 : void printMultiplicationTable() {
+       	for(int i=1;i<=10;i++) {
+       		System.out.printf("%d * %d = %d", 5, i, 5 * i).println();
+       	}
+       }
+
+jshell> printMultiplicationTable(6)
+|  Error:
+|  method printMultiplicationTable in class  cannot be applied to given types;
+|    required: no arguments
+|    found: int
+|    reason: actual and formal argument lists differ in length
+|  printMultiplicationTable(6)
+|  ^----------------------^
+
+jshell> /edit printMultiplicationTable
+|  created method printMultiplicationTable(int)
+
+jshell> printMultiplicationTable(6)
+6 * 1 = 6
+6 * 2 = 12
+6 * 3 = 18
+6 * 4 = 24
+6 * 5 = 30
+6 * 6 = 36
+6 * 7 = 42
+6 * 8 = 48
+6 * 9 = 54
+6 * 10 = 60
+
+jshell> printMultiplicationTable(7)
+7 * 1 = 7
+7 * 2 = 14
+7 * 3 = 21
+7 * 4 = 28
+7 * 5 = 35
+7 * 6 = 42
+7 * 7 = 49
+7 * 8 = 56
+7 * 9 = 63
+7 * 10 = 70
+
+jshell> /edit printMultiplicationTable
+
+jshell> /edit printMultiplicationTable
+
+jshell> printMultiplicationTable()
+5 * 1 = 5
+5 * 2 = 10
+5 * 3 = 15
+5 * 4 = 20
+5 * 5 = 25
+5 * 6 = 30
+5 * 7 = 35
+5 * 8 = 40
+5 * 9 = 45
+5 * 10 = 50
+
+jshell> printMultiplicationTable(6)
+6 * 1 = 6
+6 * 2 = 12
+6 * 3 = 18
+6 * 4 = 24
+6 * 5 = 30
+6 * 6 = 36
+6 * 7 = 42
+6 * 8 = 48
+6 * 9 = 54
+6 * 10 = 60
+
+jshell> /edit printMultiplicationTable
+
+jshell> clear()
+
+ 
+jshell> /list sayHelloWorld
+
+  76 : void sayHelloWorld(int noOfTimes) {
+       	for(int i=1; i<=noOfTimes; i++) {
+       		System.out.println("Hello World");
+       	}
+       }
+
+jshell> Math.max(1,2)
+$104 ==> 2
+
+jshell> void sum(int firstNumber,int secondNumber) {
+   ...>      int sum = firstNumber + secondNumber;
+   ...>      System.out.println(sum);
+   ...> }
+|  created method sum(int,int)
+
+jshell> sum(1)
+|  Error:
+|  method sum in class  cannot be applied to given types;
+|    required: int,int
+|    found: int
+|    reason: actual and formal argument lists differ in length
+|  sum(1)
+|  ^-^
+
+jshell> sum(5, 10)
+15
+
+jshell> sum(5, 10, 15)
+|  Error:
+|  method sum in class  cannot be applied to given types;
+|    required: int,int
+|    found: int,int,int
+|    reason: actual and formal argument lists differ in length
+|  sum(5, 10, 15)
+|  ^-^
+
+jshell> void sum(int firstNumber,int secondNumber, int thirdNumber) {
+   ...>      int sum = firstNumber + secondNumber + thirdNumber;
+   ...>      System.out.println(sum);
+   ...> }
+|  created method sum(int,int,int)
+
+jshell> sum(5, 10, 15)
+30
+
+jshell> clear()
+
+ 
+jshell> Math.max(4,5)
+$110 ==> 5
+
+jshell> $110
+$110 ==> 5
+
+jshell> int max = Math.max(15, 25)
+max ==> 25
+
+jshell> max
+max ==> 25
+
+jshell> sum(1, 10)
+11
+
+jshell> /list sum
+
+ 105 : void sum(int firstNumber,int secondNumber) {
+            int sum = firstNumber + secondNumber;
+            System.out.println(sum);
+       }
+ 107 : void sum(int firstNumber,int secondNumber, int thirdNumber) {
+            int sum = firstNumber + secondNumber + thirdNumber;
+            System.out.println(sum);
+       }
+ 115 : list sum;
+
+jshell> int sum = sum(1,10)
+|  Error:
+|  incompatible types: void cannot be converted to int
+|  int sum = sum(1,10);
+|            ^-------^
+
+jshell> int sumOfTwoNumbers(int firstNumber, int secondNumber) {
+   ...>     int sum = firstNumber + secondNumber;
+   ...>     return sum;
+   ...> }
+|  created method sumOfTwoNumbers(int,int)
+
+jshell> sumOfTwoNumbers(1,1)
+$117 ==> 2
+
+jshell> int sum = sumOfTwoNumbers(1,1)
+sum ==> 2
+
+jshell> int sum = sumOfTwoNumbers(15,15)
+sum ==> 30
+
+jshell> clear()
+
+ 
+jshell> int sumOfThreeNumbers(int firstNumber, int secondNumber, int thirdNumber) {
+   ...>       int sum = firstNumber + secondNumber + thirdNumber;
+   ...>       return sum;
+   ...> }
+|  created method sumOfThreeNumbers(int,int,int)
+
+jshell> int sum = sumOfThreeNumbers(2,3,4)
+sum ==> 9
+
+jshell> int calculateThirdAngle(int angle1, int angle2) {
+   ...>        int angle3 = 180 - (angle1 + angle2);
+   ...>        return angle3;
+   ...> }
+|  created method calculateThirdAngle(int,int)
+
+jshell> calculateThirdAngle(20, 50)
+$124 ==> 110
+
+jshell> clear()
+
+
+ 
+jshell> int sumOfNumbers(int n) {
+   ...>    for(int i=1; i<= n; i++) {
+   ...>       
+   ...> }}
+|  Error:
+|  missing return statement
+|  int sumOfNumbers(int n) {
+|                          ^
+
+jshell> int sumOfNumbers(int n) {
+   ...>      int sum = 0;
+   ...> }
+|  Error:
+|  missing return statement
+|  int sumOfNumbers(int n) {
+|                          ^
+
+jshell> REMOVE THE COMPLEX EXERCIOSESE
+|  Error:
+|  ';' expected
+|  REMOVE THE COMPLEX EXERCIOSESE;
+|            ^
+
+jshell> clear()
+
+ 
+jshell> int sumOfThreeNumbers(int firstNumber, int secondNumber, int thirdNumber) {
+   ...>       int sum = firstNumber + secondNumber + thirdNumber;
+   ...>       return sum;
+   ...> }
+|  modified method sumOfThreeNumbers(int,int,int)
+
+jshell> sumOfThreeNumbers(1,2,3)
+$128 ==> 6
+
+jshell> sumOfThreeNumbers(15,2,3)
+$129 ==> 20
+
+jshell> int calculateThirdAngle(int angle1, int angle2) {
+   ...>        int angle3 = 180 - (angle1 + angle2);
+   ...>        return angle3;
+   ...> }
+|  modified method calculateThirdAngle(int,int)
+
+jshell> calculateThirdAngle(20, 20)
+$131 ==> 140
+
+jshell> clear()
+
+ 
+jshell> /list calculateThirdAngle
+
+ 130 : int calculateThirdAngle(int angle1, int angle2) {
+              int angle3 = 180 - (angle1 + angle2);
+              return angle3;
+       }
+
+jshell> calculateThirdAngle(20, 20)
+$133 ==> 140
+
+jshell> /save ~/Desktop/backup-middle-of-section-2-methods.txt
+
+jshell> clear()
+
+
+
+
+
+
+
+
+ 
+jshell> /methods
+|    void clear()
+|    void sayHelloWorldThrice()
+|    void NameOfMethod()
+|    void nameOfMethod()
+|    void sayHelloWorldTwice()
+|    void printLearningExperience()
+|    void sayHelloWorld(int)
+|    void printNumbers(int)
+|    void printSquaresOfNumbers(int)
+|    void printMultiplicationTable()
+|    void printMultiplicationTable(int)
+|    void sum(int,int)
+|    void sum(int,int,int)
+|    int sumOfTwoNumbers(int,int)
+|    int sumOfThreeNumbers(int,int,int)
+|    int calculateThirdAngle(int,int)
+
+jshell> /list printMultiplicationTable
+
+  96 : void printMultiplicationTable() {
+       	for(int i=1;i<=10;i++) {
+       		System.out.printf("%d * %d = %d", 5, i, 5 * i).println();
+       	}
+       }
+  98 : void printMultiplicationTable(int table) {
+       	for(int i=1;i<=10;i++) {
+       		System.out.printf("%d * %d = %d", table, i, table * i).println();
+       	}
+       }
+
+jshell> /save ~/Desktop/backup-middle-of-section-2-methods.txt
+
+jshell> /save ~/Desktop/backup-end-of-section-2-methods.txt
+
+jshell> 
