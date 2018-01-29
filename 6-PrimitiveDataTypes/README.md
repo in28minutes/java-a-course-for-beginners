@@ -107,9 +107,16 @@ float avg2 = 36.01F; //f or F is fine
 ```
 
 Exercise
+
+Simple Interest Formula 
+
+Total Amount = principal + principal * interest * noOfYears;
+
 ```java
- SimpleInterestCalculator calculator = new SimpleInterestCalculator("4500.00", "7.5");
- BigDecimal totalValue = calculator.calculateTotalValue(5);// 5 years
+ SimpleInterestCalculator calculator = 
+        new SimpleInterestCalculator("4500.00", "7.5");
+ BigDecimal totalValue = 
+        calculator.calculateTotalValue(5);// 5 years
  System.out.println(totalSum);
 ```
 
