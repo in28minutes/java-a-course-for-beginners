@@ -1,0 +1,34 @@
+Last login: Mon Jan 29 10:33:44 on ttys000
+Rangas-MacBook-Pro:~ rangaraokaranam$ jshell
+|  Welcome to JShell -- Version 9.0.1
+|  For an introduction type: /help intro
+
+jshell> class Cart {
+   ...> };
+|  created class Cart
+
+jshell> Cart cart1 = new Cart();
+cart1 ==> Cart@3f49dace
+
+jshell> class Cart {
+   ...>     Cart() {
+   ...>     }
+   ...> };
+|  replaced class Cart
+|    update replaced variable cart1, reset to null
+
+jshell> Cart cart1 = new Cart();
+cart1 ==> Cart@59494225
+
+jshell> class Cart {
+   ...>     Cart() {
+   ...>         System.out.println("Constructor is called");
+   ...>     }
+   ...> }
+|  modified class Cart
+
+jshell> Cart cart1 = new Cart();
+Constructor is called
+cart1 ==> Cart@6e1567f1
+
+jshell> 
