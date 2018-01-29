@@ -193,7 +193,6 @@ char a = 97;
 char ch1 = 66000; //COMPILER ERROR!
 ```
 
-```
 
 ```
 MyChar myChar = new MyChar('c');
