@@ -1,6 +1,6 @@
 # Primitive Data Types in Depth
 
-## Getting Started
+## Quick Revision
 
 Primitive Data Types
 - Integer
@@ -27,8 +27,6 @@ In-Depth
 - Operators are +, -, /, *, %, Increment and Decrement operators
 - Implicit Conversion if literal fits in the variable type
 - Explicit Conversion otherwise
-- Exercise
-  - Create a class BiNumber
 
 ```java
 int eight = 010; 
@@ -77,6 +75,7 @@ System.out.println(i + " " + j);//26 25
 
 ```
 
+Exercise
 ```java
    BiNumber numbers = new BiNumber(2, 3);
    System.out.println(numbers.add());
@@ -105,6 +104,13 @@ float avg = (float) 36.01;//Explicit Casting
 float avg1 = 36.01f;
 float avg2 = 36.01F; //f or F is fine
 
+```
+
+Exercise
+```
+ SimpleInterestCalculator calculator = new SimpleInterestCalculator("4500.00", "7.5");
+ BigDecimal totalValue = calculator.calculateTotalValue(5);// 5 years
+ System.out.println(totalSum);
 ```
 
 ## Boolean Data Types
