@@ -97,7 +97,7 @@ Exercise
   - BigDecimal
     - How to explore a class in JShell?
 
-```
+```java
 float f = 100; //Implicit Casting 
 //float avg = 36.01;//COMPILER ERROR. Default Double
 float avg = (float) 36.01;//Explicit Casting
@@ -107,7 +107,7 @@ float avg2 = 36.01F; //f or F is fine
 ```
 
 Exercise
-```
+```java
  SimpleInterestCalculator calculator = new SimpleInterestCalculator("4500.00", "7.5");
  BigDecimal totalValue = calculator.calculateTotalValue(5);// 5 years
  System.out.println(totalSum);
