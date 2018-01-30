@@ -1,16 +1,33 @@
-# [TITLE_OF_THE_BEST_COURSE]
-## Caption for the course.
+# Java Course For Beginners
 
-* [Course Overview](#course-overview)
-  - [Course Steps](#step-list)
-  - [Expectations](#expectations)
-* [Installing Eclipse, Maven and Java](#installing-tools)
-* [Running Examples](#running-examples)
-* [About in28Minutes](#about-in28minutes)
-  - [Our Beliefs](#our-beliefs)
-  - [Our Approach](#our-approach)
-  - [Find Us](#useful-links)
-  - [Other Courses](#other-courses)
+## Learn Programming with Java
+- Introduction To Java Programming With JShell - MultiplicationTable
+- Introduction To Methods - MultiplicationTable
+- Introduction To Java Platform
+- Introduction To Eclipse - First Java Project
+- Introduction To Object Oriented Programming
+- Primitive Data Types And Alternatives
+- Branching and Loops
+- Reference Types 
+  - String, StringBuffer, StringBuilder Wrapper Classes
+  - Immutablity
+  - Reference Types vs Primitives
+      - memory
+      - assignment
+- OOPS - Level 2
+  - Composition
+    - Using Multiple Data Types
+    - Football Game
+  - Object class
+     - toString, equals etc
+- Arrays
+  - Of Objects
+- Playing with Text
+  - String is an array
+- OOPS - Level 3
+- Collections
+- Exceptions
+- Miscellaneous
 
 ## Course Checklist
 
