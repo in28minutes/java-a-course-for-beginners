@@ -377,11 +377,14 @@ switch (number) {
 
 #### Switch Exercises
 - ```public static boolean isWeekDay(int dayNumber) {``` 
-  - given number of day 0- Sunday to 6 - Saturday. return if the day is a Week Day.   
+  - input - number of day 0 (Sunday) to 6(Saturday)
+  - return if the day is a Week Day.   
 - ```public static String determineNameOfMonth(int monthNumber) {```
-  - given number of month 1- January to 12 - December.
+  - input - number of month 1(January) to 12(December)
+  - output - Name of month
 - ```public static String determineNameOfDay(int dayNumber) {```
-  - given number of day 0- Sunday to 6 - Saturday. Return the day of week in text
+  - input - number of day 0 (Sunday) to 6(Saturday)
+  - Return the day of week in text
 
 #### Implement the Menu with Switch
 
