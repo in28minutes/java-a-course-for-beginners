@@ -1,5 +1,36 @@
 # Conditionals
 
+## Exercise : Designing a Menu
+
+- Ask User for input
+  - Enter two numbers 
+  - Choose an Operation
+      - add
+      - multiply
+      - divide 
+      - subtract
+
+```
+Enter Number1: 
+2
+
+Enter Number2: 
+4
+
+1 - Add
+2 - Subtract
+3 - Divide
+4 - Multiply
+Choose Operation: 4
+
+Result is - 8
+```
+
+```
+
+```
+## Basics of If Statement
+
 - Conditionally execute code! 
 
 > Code inside If is executed only if the condition is true.
@@ -76,7 +107,7 @@ if(number < 0)
     number++; //This statement is not part of if. Executed.
 System.out.println(number);//prints 6
 ```
-#### If else Puzzles
+## If else Puzzles
 
 ```
 //Puzzle 1
@@ -162,8 +193,6 @@ if(isTrue=true){
 Puzzle - Variables in a block
 
 #### If Else Exercises
-
-- Is n a leap year?
 - Largest of two numbers
 - Largest of three numbers
 - public char getSimpleGrade(int score) { A,B
@@ -171,6 +200,44 @@ Puzzle - Variables in a block
 - Sum of digits for a 2 digit number
 - Sum of digits for a 3 digit number
 - Is it a good triangle? With sides. Length of two sides should always be greater than the third side.
+- Is n a leap year?
+
+## Implementing Menu with if else
+
+```
+package com.in28minutes.primitive.datatypes;
+
+import java.util.Scanner;
+
+public class BasicMenu {
+  public static void main(String[] args) {
+    Scanner scanner = new Scanner(System.in);
+    
+    System.out.println("Enter Number1: ");
+    int number1 = scanner.nextInt();
+    
+    System.out.println("Enter Number2: ");
+    int number2 = scanner.nextInt();
+    
+    System.out.println("Add: 1");
+    System.out.println("Subtract: 2");
+    System.out.println("Choose Operation: ");
+    int choice = scanner.nextInt();
+    
+    int result = 0;
+    if(choice==1) {
+      result = number1 + number2;
+    } else if(choice == 2) {
+      result = number1 - number2;
+    }
+    
+    System.out.println(result);
+  }
+
+}
+
+```
+
 
 ### Switch Statement
 - Choose between a set of options.
@@ -326,17 +393,8 @@ switch (number) {
     - case 0: System.out.print("Sunday"); break;
     - case 1: System.out.print("Monday"); break;
 
-Designing a menu
-- Accepting input from user
-- Puzzles 
-- if, if/else
-- Blocks of Code
-- Designing a Menu
-  - Getting input from user
-  - Start with 2 menu options
-  //if 1 followed by //if 2
-  - Use if else  - Add options 3, 4, 5
-  - Use Switch
+#### Implement the Menu with Switch
+
 - Introduce Math class and check out the API
 - Comments
 - Conditional Operator
