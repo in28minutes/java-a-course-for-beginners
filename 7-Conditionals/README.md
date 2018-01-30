@@ -365,7 +365,7 @@ Switch can be used only with char, byte, short, int, String or enum
 long l = 15;
 /*switch(l){//COMPILER ERROR. Not allowed.
 }*/
-
+```
 Case value should be a compile time constant.
 ```
 number = 10;
