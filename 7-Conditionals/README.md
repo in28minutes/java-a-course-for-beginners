@@ -194,15 +194,6 @@ if(isTrue=true){
 
 Puzzle - Variables in a block
 
-#### If Else Exercises
-- Largest of two numbers
-- Largest of three numbers
-- public char getSimpleGrade(int score) { A,B
-- public char getComplexGrade(int score) { A,B,C,D
-- Sum of digits for a 2 digit number
-- Sum of digits for a 3 digit number
-- Is it a good triangle? With sides. Length of two sides should always be greater than the third side.
-- Is n a leap year?
 
 ## Implementing Menu with if else
 
