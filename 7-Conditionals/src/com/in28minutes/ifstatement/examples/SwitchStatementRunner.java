@@ -2,7 +2,7 @@ package com.in28minutes.ifstatement.examples;
 
 public class SwitchStatementRunner {
 	public static void main(String[] args) {
-
+		puzzle4();
 	}
 
 	private static void puzzle1() {
@@ -73,25 +73,17 @@ public class SwitchStatementRunner {
 
 	private static void puzzle5() {
 		long l = 15;
-		/*switch(l){//COMPILER ERROR. Not allowed.
+		/*switch(l){
+		
 		}*/
 	}
 
 	private static void puzzle6() {
-		//Should be constant.
-		//Cannot have a Condition
-	}
-
-	private static void puzzle7() {
-	}
-
-	private static void puzzle8() {
-	}
-
-	private static void puzzle9() {
-	}
-
-	private static void puzzle10() {
+		int number = 10;
+		int i = number * 2;
+		switch (number) {
+		 //case number>5: System.out.println("number>5");
+		}
 	}
 
 }

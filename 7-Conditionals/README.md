@@ -376,15 +376,12 @@ switch (number) {
 ```
 
 #### Switch Exercises
-- public boolean isHoliday(int dayNumber) {
-- public String getTypeOfDayWithSwitchStatement(String dayOfWeekArg) {
-- switch (month) case 1: result = "January";
-- switch (month)
-  - case 1: System.out.println("January"); break;
-  - case 2: System.out.println("February"); break;
-- switch (day)
-    - case 0: System.out.print("Sunday"); break;
-    - case 1: System.out.print("Monday"); break;
+- ```public static boolean isWeekDay(int dayNumber) {``` 
+  - given number of day 0- Sunday to 6 - Saturday. return if the day is a Week Day.   
+- ```public static String determineNameOfMonth(int monthNumber) {```
+  - given number of month 1- January to 12 - December.
+- ```public static String determineNameOfDay(int dayNumber) {```
+  - given number of day 0- Sunday to 6 - Saturday. Return the day of week in text
 
 #### Implement the Menu with Switch
 
