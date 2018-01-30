@@ -1,0 +1,893 @@
+Last login: Mon Jan 29 11:22:26 on ttys001
+Rangas-MacBook-Pro:~ rangaraokaranam$ Byte.SIZE
+-bash: Byte.SIZE: command not found
+Rangas-MacBook-Pro:~ rangaraokaranam$ jshell
+|  Welcome to JShell -- Version 9.0.1
+|  For an introduction type: /help intro
+
+jshell> Byte.SIZE
+$1 ==> 8
+
+jshell> Byte.BYTES
+$2 ==> 1
+
+jshell> Byte.MAX_VALUE
+$3 ==> 127
+
+jshell> Byte.MIN_VALUE
+$4 ==> -128
+
+jshell> Short.BYTES
+$5 ==> 2
+
+jshell> Integer.BYTES
+$6 ==> 4
+
+jshell> Long.BYTES
+$7 ==> 8
+
+jshell> Integer.MAX_VALUE
+$8 ==> 2147483647
+
+jshell> Short.MAX_VALUE
+$9 ==> 32767
+
+jshell> int i = 560;
+i ==> 560
+
+jshell> long l = 540
+l ==> 540
+
+jshell> 
+
+jshell> 
+
+jshell> Byte.SIZE
+$12 ==> 8
+
+jshell> Byte.MIN_VALUE
+$13 ==> -128
+
+jshell> Byte.MAX_VALUE
+$14 ==> 127
+
+jshell> Short.BYTES
+$15 ==> 2
+
+jshell> Integer.BYTES
+$16 ==> 4
+
+jshell> Long.BYTES
+$17 ==> 8
+
+jshell> Integer.MAX_VALUE
+$18 ==> 2147483647
+
+jshell> int i = 100000;
+i ==> 100000
+
+jshell> long l = 50000000000;
+|  Error:
+|  integer number too large: 50000000000
+|  long l = 50000000000;
+|           ^
+
+jshell> long l = 50000000000l;
+l ==> 50000000000
+
+jshell> i = l
+|  Error:
+|  incompatible types: possible lossy conversion from long to int
+|  i = l
+|      ^
+
+jshell> i = (int) l
+i ==> -1539607552
+
+jshell> l = i
+l ==> -1539607552
+
+jshell> void clear() { System.out.print("\033[H\033[2J ");}
+|  created method clear()
+
+jshell> clear()
+
+ 
+jshell> int eight = 010;
+eight ==> 8
+
+jshell> int sixteen = 0x10;
+sixteen ==> 16
+
+jshell> int fifteen = 0XF;
+fifteen ==> 15
+
+jshell> int eight = 099;
+|  Error:
+|  integer number too large: 099
+|  int eight = 099;
+|              ^
+
+jshell> int eight = 08;
+|  Error:
+|  integer number too large: 08
+|  int eight = 08;
+|              ^
+
+jshell> int big = 0XBBAACC;
+big ==> 12298956
+
+jshell> byte b = 128
+|  Error:
+|  incompatible types: possible lossy conversion from int to byte
+|  byte b = 128;
+|           ^-^
+
+jshell> short s = 123456
+|  Error:
+|  incompatible types: possible lossy conversion from int to short
+|  short s = 123456;
+|            ^----^
+
+jshell> Short.MAX_VALUE
+$33 ==> 32767
+
+jshell> int i = 3456
+i ==> 3456
+
+jshell> short s = i
+|  Error:
+|  incompatible types: possible lossy conversion from int to short
+|  short s = i;
+|            ^
+
+jshell> short s = (int) i
+|  Error:
+|  incompatible types: possible lossy conversion from int to short
+|  short s = (int) i;
+|            ^-----^
+
+jshell> short s = (short) i
+s ==> 3456
+
+jshell> int i1 = s
+i1 ==> 3456
+
+jshell> clear()
+
+ 
+jshell> int i = 10;
+i ==> 10
+
+jshell> int j = i++;
+j ==> 10
+
+jshell> i
+i ==> 11
+
+jshell> int i = 10;
+i ==> 10
+
+jshell> int j = ++i;
+j ==> 11
+
+jshell> i
+i ==> 11
+
+jshell> int i = 10;
+i ==> 10
+
+jshell> int j = i--;
+j ==> 10
+
+jshell> i
+i ==> 9
+
+jshell> int i = 10;
+i ==> 10
+
+jshell> int j = --i;
+j ==> 9
+
+jshell> i
+i ==> 9
+
+jshell> clear()
+
+ 
+jshell> 34.5
+$51 ==> 34.5
+
+jshell> 34.56789
+$52 ==> 34.56789
+
+jshell> float f = 34.5
+|  Error:
+|  incompatible types: possible lossy conversion from double to float
+|  float f = 34.5;
+|            ^--^
+
+jshell> float f = 34.5f
+f ==> 34.5
+
+jshell> float f = 34.5F
+f ==> 34.5
+
+jshell> double dbl = 34.5678
+dbl ==> 34.5678
+
+jshell> float f2 = dbl
+|  Error:
+|  incompatible types: possible lossy conversion from double to float
+|  float f2 = dbl;
+|             ^-^
+
+jshell> float f2 = (float)dbl
+f2 ==> 34.5678
+
+jshell> dbl++
+$57 ==> 34.5678
+
+jshell> dbl--
+$58 ==> 35.5678
+
+jshell> dbl % 5
+$59 ==> 4.567799999999998
+
+jshell> int i = f2
+|  Error:
+|  incompatible types: possible lossy conversion from float to int
+|  int i = f2;
+|          ^^
+
+jshell> int i = (int) f2
+i ==> 34
+
+jshell> float f = i;
+f ==> 34.0
+
+jshell> clear()
+
+ 
+jshell> 34.56789876 + 34.2234
+$63 ==> 68.79129875999999
+
+jshell> BigDecimal number1 = new BigDecimal("34.56789876");
+number1 ==> 34.56789876
+
+jshell> BigDecimal number2 = new BigDecimal("34.2234");
+number2 ==> 34.2234
+
+jshell> number1.add(number2);
+$66 ==> 68.79129876
+
+jshell> BigDecimal number3 = number1.add(number2);
+number3 ==> 68.79129876
+
+jshell> number1
+number1 ==> 34.56789876
+
+jshell> number1.
+abs(                     add(                     byteValue()              
+byteValueExact()         compareTo(               divide(                  
+divideAndRemainder(      divideToIntegralValue(   doubleValue()            
+equals(                  floatValue()             getClass()               
+hashCode()               intValue()               intValueExact()          
+longValue()              longValueExact()         max(                     
+min(                     movePointLeft(           movePointRight(          
+multiply(                negate(                  notify()                 
+notifyAll()              plus(                    pow(                     
+precision()              remainder(               round(                   
+scale()                  scaleByPowerOfTen(       setScale(                
+shortValue()             shortValueExact()        signum()                 
+sqrt(                    stripTrailingZeros()     subtract(                
+toBigInteger()           toBigIntegerExact()      toEngineeringString()    
+toPlainString()          toString()               ulp()                    
+unscaledValue()          wait(                    
+
+jshell> BigDecimal number1 = new BigDecimal("34.56789876");
+number1 ==> 34.56789876
+
+jshell> BigDecimal number2 = new BigDecimal("34.2234");
+number2 ==> 34.2234
+
+jshell> BigDecimal number10 = new BigDecimal(34.2234);
+number10 ==> 34.223399999999998044586391188204288482666015625
+
+jshell> BigDecimal number11 = new BigDecimal(34.56789876);
+number11 ==> 34.56789875999999850364474696107208728790283203125
+
+jshell> BigDecimal number11 = new BigDecimal("34.56789876");
+number11 ==> 34.56789876
+
+jshell> BigDecimal number11 = new BigDecimal("34.56789876");
+number11 ==> 34.56789876
+
+jshell> number10 + number11
+|  Error:
+|  bad operand types for binary operator '+'
+|    first type:  java.math.BigDecimal
+|    second type: java.math.BigDecimal
+|  number10 + number11
+|  ^-----------------^
+
+jshell> number10.add(number11)
+$76 ==> 68.791298759999998044586391188204288482666015625
+
+jshell> number10.multiply(number11)
+$77 ==> 1183.03102642298393240546033666760195046663284301757812500
+
+jshell> clear()
+
+ 
+jshell> BigDecimal number = new BigDecimal("11.5");
+number ==> 11.5
+
+jshell> BigDecimal number2 = new BigDecimal("23.45678");
+number2 ==> 23.45678
+
+jshell> number.add(number2)
+$81 ==> 34.95678
+
+jshell> int i = 5
+i ==> 5
+
+jshell> number.add(i)
+|  Error:
+|  incompatible types: int cannot be converted to java.math.BigDecimal
+|  number.add(i)
+|             ^
+
+jshell> number.add(new BigDecimal(i))
+$83 ==> 16.5
+
+jshell> number.multiply(new BigDecimal(i))
+$84 ==> 57.5
+
+jshell> number.divide(100)
+|  Error:
+|  incompatible types: int cannot be converted to java.math.BigDecimal
+|  number.divide(100)
+|                ^-^
+
+jshell> number.divide(new BigDecimal(100))
+$85 ==> 0.115
+
+jshell> number.divide(new BigDecimal("100.012"))
+|  java.lang.ArithmeticException thrown: Non-terminating decimal expansion; no exact representable decimal result.
+|        at BigDecimal.divide (BigDecimal.java:1716)
+|        at (#87:1)
+
+jshell> number.divide(new BigDecimal("100.12"))
+|  java.lang.ArithmeticException thrown: Non-terminating decimal expansion; no exact representable decimal result.
+|        at BigDecimal.divide (BigDecimal.java:1716)
+|        at (#88:1)
+
+jshell> number.divide(new BigDecimal("100.1"))
+|  java.lang.ArithmeticException thrown: Non-terminating decimal expansion; no exact representable decimal result.
+|        at BigDecimal.divide (BigDecimal.java:1716)
+|        at (#89:1)
+
+jshell> number.divide(new BigDecimal("1001"))
+|  java.lang.ArithmeticException thrown: Non-terminating decimal expansion; no exact representable decimal result.
+|        at BigDecimal.divide (BigDecimal.java:1716)
+|        at (#90:1)
+
+jshell> number.divide(new BigDecimal("100"))
+$91 ==> 0.115
+
+jshell> clear()
+
+ 
+jshell> new BigDecimal(
+$1        $12       $13       $14       $15       $16       $17       $18       
+$2        $3        $33       $4        $5        $51       $52       $57       
+$58       $59       $6        $63       $7        $8        $9        big       
+c         dbl       eight     f         f2        fifteen   i         i1        
+j         l         s         sixteen   
+
+Signatures:
+BigDecimal(char[] in, int offset, int len)
+BigDecimal(char[] in, int offset, int len, MathContext mc)
+BigDecimal(char[] in)
+BigDecimal(char[] in, MathContext mc)
+BigDecimal(String val)
+BigDecimal(String val, MathContext mc)
+BigDecimal(double val)
+BigDecimal(double val, MathContext mc)
+BigDecimal(BigInteger val)
+BigDecimal(BigInteger val, MathContext mc)
+BigDecimal(BigInteger unscaledVal, int scale)
+BigDecimal(BigInteger unscaledVal, int scale, MathContext mc)
+BigDecimal(int val)
+BigDecimal(int val, MathContext mc)
+BigDecimal(long val)
+BigDecimal(long val, MathContext mc)
+
+<press tab again to see documentation>
+
+jshell> new BigDecimal(
+BigDecimal(char[] in, int offset, int len)
+Translates a character array representation of a BigDecimal into a BigDecimal ,
+accepting the same sequence of characters as the #BigDecimal(String) constructor,
+while allowing a sub-array to be specified.
+
+Parameters:
+in - char array that is the source of characters.
+offset - first character in the array to inspect.
+len - number of characters to consider.
+
+Thrown Exceptions:
+NumberFormatException - if in is not a valid representation of a BigDecimal or the
+                        defined subarray is not wholly within in .
+
+<press tab to see next documentation>
+
+jshell> new BigDecimal(
+BigDecimal(char[] in, int offset, int len, MathContext mc)
+Translates a character array representation of a BigDecimal into a BigDecimal ,
+accepting the same sequence of characters as the #BigDecimal(String) constructor,
+while allowing a sub-array to be specified and with rounding according to the
+context settings.
+
+Parameters:
+in - char array that is the source of characters.
+offset - first character in the array to inspect.
+len - number of characters to consider.
+mc - the context to use.
+
+Thrown Exceptions:
+ArithmeticException - if the result is inexact but the rounding mode is UNNECESSARY
+                      .
+NumberFormatException - if in is not a valid representation of a BigDecimal or the
+                        defined subarray is not wholly within in .
+
+<press tab to see next documentation>
+
+jshell> new BigDecimal(
+BigDecimal(char[] in)
+Translates a character array representation of a BigDecimal into a BigDecimal ,
+accepting the same sequence of characters as the #BigDecimal(String) constructor.
+
+Parameters:
+in - char array that is the source of characters.
+
+Thrown Exceptions:
+NumberFormatException - if in is not a valid representation of a BigDecimal .
+
+<press tab to see next documentation>
+
+jshell> new BigDecimal(
+BigDecimal(char[] in, MathContext mc)
+Translates a character array representation of a BigDecimal into a BigDecimal ,
+accepting the same sequence of characters as the #BigDecimal(String) constructor and
+with rounding according to the context settings.
+
+Parameters:
+in - char array that is the source of characters.
+mc - the context to use.
+
+Thrown Exceptions:
+ArithmeticException - if the result is inexact but the rounding mode is UNNECESSARY
+                      .
+NumberFormatException - if in is not a valid representation of a BigDecimal .
+
+<press tab to see next documentation>
+
+jshell> new BigDecimal(    
+$1        $12       $13       $14       $15       $16       $17       $18       
+$2        $3        $33       $4        $5        $51       $52       $57       
+$58       $59       $6        $63       $7        $8        $9        big       
+c         dbl       eight     f         f2        fifteen   i         i1        
+j         l         s         sixteen   
+
+Signatures:
+BigDecimal(char[] in, int offset, int len)
+BigDecimal(char[] in, int offset, int len, MathContext mc)
+BigDecimal(char[] in)
+BigDecimal(char[] in, MathContext mc)
+BigDecimal(String val)
+BigDecimal(String val, MathContext mc)
+BigDecimal(double val)
+BigDecimal(double val, MathContext mc)
+BigDecimal(BigInteger val)
+BigDecimal(BigInteger val, MathContext mc)
+BigDecimal(BigInteger unscaledVal, int scale)
+BigDecimal(BigInteger unscaledVal, int scale, MathContext mc)
+BigDecimal(int val)
+BigDecimal(int val, MathContext mc)
+BigDecimal(long val)
+BigDecimal(long val, MathContext mc)
+
+<press tab again to see documentation>
+
+jshell> clear()
+
+ 
+jshell> number1.
+abs(                     add(                     byteValue()              
+byteValueExact()         compareTo(               divide(                  
+divideAndRemainder(      divideToIntegralValue(   doubleValue()            
+equals(                  floatValue()             getClass()               
+hashCode()               intValue()               intValueExact()          
+longValue()              longValueExact()         max(                     
+min(                     movePointLeft(           movePointRight(          
+multiply(                negate(                  notify()                 
+notifyAll()              plus(                    pow(                     
+precision()              remainder(               round(                   
+scale()                  scaleByPowerOfTen(       setScale(                
+shortValue()             shortValueExact()        signum()                 
+sqrt(                    stripTrailingZeros()     subtract(                
+toBigInteger()           toBigIntegerExact()      toEngineeringString()    
+toPlainString()          toString()               ulp()                    
+unscaledValue()          wait(                    
+
+jshell> clear()
+
+
+ 
+jshell> boolean isValue = true
+isValue ==> true
+
+jshell> boolean isValue = false
+isValue ==> false
+
+jshell> boolean isValid = false
+isValid ==> false
+
+jshell> boolean isValid = False
+|  Error:
+|  cannot find symbol
+|    symbol:   variable False
+|  boolean isValid = False;
+|                    ^---^
+
+jshell> boolean isValid = FALSE
+|  Error:
+|  cannot find symbol
+|    symbol:   variable FALSE
+|  boolean isValid = FALSE;
+|                    ^---^
+
+jshell> int i = 7;
+i ==> 7
+
+jshell> i > 7
+$99 ==> false
+
+jshell> i >= 7
+$100 ==> true
+
+jshell> i < 7
+$101 ==> false
+
+jshell> i <= 7
+$102 ==> true
+
+jshell> i == 6
+$103 ==> false
+
+jshell> i == 7
+$104 ==> true
+
+jshell> i == 8
+$105 ==> false
+
+jshell> i = 8
+i ==> 8
+
+jshell> i = 7
+i ==> 7
+
+jshell> i == 7
+$108 ==> true
+
+jshell> clear()
+
+ 
+jshell> int i = 10
+i ==> 10
+
+jshell> i > 15
+$111 ==> false
+
+jshell> clear()
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+jshell> int i = 17
+i ==> 17
+
+jshell> i >= 15
+$114 ==> true
+
+jshell> i <= 25
+$115 ==> true
+
+jshell> i >= 15 && i <= 25
+$116 ==> true
+
+jshell> i = 30
+i ==> 30
+
+jshell> i >= 15 && i <= 25
+$118 ==> false
+
+jshell> i = 5
+i ==> 5
+
+jshell> i >= 15 && i <= 25
+$120 ==> false
+
+jshell> true && true
+$121 ==> true
+
+jshell> true && false
+$122 ==> false
+
+jshell> false && true
+$123 ==> false
+
+jshell> false && false
+$124 ==> false
+
+jshell> false || true
+$126 ==> true
+
+jshell> true || false
+$127 ==> true
+
+jshell> true || true
+$128 ==> true
+
+jshell> false || false
+$129 ==> false
+
+jshell> false ^ false
+$130 ==> false
+
+jshell> false ^ true
+$131 ==> true
+
+jshell> true ^ false
+$132 ==> true
+
+jshell> true ^ true
+$133 ==> false
+
+jshell> !true
+$134 ==> false
+
+jshell> !false
+$135 ==> true
+
+jshell> !x>7
+|  Error:
+|  cannot find symbol
+|    symbol:   variable x
+|  !x>7
+|   ^
+
+jshell> int x = 6
+x ==> 6
+
+jshell> !(x>7)
+$138 ==> true
+
+jshell> clear()
+
+
+
+ 
+jshell> int i = 10
+i ==> 10
+
+jshell> int j = 15
+j ==> 15
+
+jshell> j > 15 && i++ > 5
+$145 ==> false
+
+jshell> j
+j ==> 15
+
+jshell> i
+i ==> 10
+
+jshell> j > 15 & i++ > 5
+$148 ==> false
+
+jshell> j
+j ==> 15
+
+jshell> i
+i ==> 11
+
+jshell> i++;
+$151 ==> 11
+
+jshell> i++;
+$152 ==> 12
+
+jshell> clear()
+
+ 
+jshell> char ch = a
+|  Error:
+|  cannot find symbol
+|    symbol:   variable a
+|  char ch = a;
+|            ^
+
+jshell> char ch = 'a'
+ch ==> 'a'
+
+jshell> char ch = 'ab'
+|  Error:
+|  unclosed character literal
+|  char ch = 'ab'
+|            ^
+
+jshell> char ch = 'a'
+ch ==> 'a'
+
+jshell> char ch2 = '\u0022'
+ch2 ==> '"'
+
+jshell> char ch3 = '\u00A2'
+ch3 ==> '¢'
+
+jshell> char ch = 65
+ch ==> 'A'
+
+jshell> ch++
+$159 ==> 'A'
+
+jshell> ch
+ch ==> 'B'
+
+jshell> ++ch
+$161 ==> 'C'
+
+jshell> ++ch
+$162 ==> 'D'
+
+jshell> ch + 5
+$163 ==> 73
+
+jshell> ch
+ch ==> 'D'
+
+jshell> (int)ch
+$165 ==> 68
+
+jshell> char ch = '\n'
+ch ==> '\n'
+
+jshell> ch
+ch ==> '\n'
+
+jshell> System.out.println(ch);
+
+
+
+jshell> char ch = '/t'
+|  Error:
+|  unclosed character literal
+|  char ch = '/t'
+|            ^
+
+jshell> char ch = '\t'
+ch ==> '\t'
+
+jshell> System.out.println(ch);
+	
+
+jshell> System.out.println(ch);
+	
+
+jshell> (int)'1'
+$172 ==> 49
+
+jshell> (int)'0'
+$173 ==> 48
+
+jshell> (int)'9'
+$174 ==> 57
+
+jshell> (int)'2'
+$175 ==> 50
+
+jshell> (int)'a'
+$176 ==> 97
+
+jshell> (int)'z'
+$177 ==> 122
+
+jshell> (int)'A'
+$178 ==> 65
+
+jshell> (int)'Z'
+$179 ==> 90
+
+jshell>         for (char ch = 'A'; ch <= 'Z'; ch++) {
+   ...>             System.out.println(ch);
+   ...> 
+   ...> }
+A
+B
+C
+D
+E
+F
+G
+H
+I
+J
+K
+L
+M
+N
+O
+P
+Q
+R
+S
+T
+U
+V
+W
+X
+Y
+Z
+
+jshell>   for (char ch = 'A'; ch <= 'Z'; ch++) {
+   ...>             System.out.println(ch);
+   ...> }
+A
+B
+C
+D
+E
+F
+G
+H
+I
+J
+K
+L
+M
+N
+O
+P
+Q
+R
+S
+T
+U
+V
+W
+X
+Y
+Z
+
+jshell>   for (char ch = 'A'; ch <= 'C'; ch++) {
+   ...>             System.out.println(ch);
+   ...> }
+A
+B
+C
+
+jshell> }

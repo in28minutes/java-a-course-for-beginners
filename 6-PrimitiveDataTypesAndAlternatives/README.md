@@ -198,7 +198,7 @@ char ch1 = 66000; //COMPILER ERROR!
 MyChar myChar = new MyChar('c');
 System.out.println(myChar.isVowel());
         //'a', 'e', 'i', 'o', 'u' and Capitals
-System.out.println(myChar.isNumber());
+System.out.println(myChar.isDigit());
 System.out.println(myChar.isAlphabet());
 MyChar.printLowerCaseAlphabets();
 MyChar.printUpperCaseAlphabets();

@@ -1,0 +1,155 @@
+Byte.SIZE
+Byte.BYTES
+Byte.MAX_VALUE
+Byte.MIN_VALUE
+Short.BYTES
+Integer.BYTES
+Long.BYTES
+Integer.MAX_VALUE
+Short.MAX_VALUE
+Byte.SIZE
+Byte.MIN_VALUE
+Byte.MAX_VALUE
+Short.BYTES
+Integer.BYTES
+Long.BYTES
+Integer.MAX_VALUE
+byte c = 13;
+long l = 50000000000l;
+i = (int) l
+l = i
+void clear() { System.out.print("\033[H\033[2J ");}
+clear()
+int eight = 010;
+int sixteen = 0x10;
+int fifteen = 0XF;
+int big = 0XBBAACC;
+Short.MAX_VALUE
+short s = (short) i;
+int i1 = s;
+clear()
+i
+i
+i
+i
+clear()
+34.5
+34.56789
+double dbl = 34.5678;
+float f2 = (float)dbl;
+dbl++
+dbl--
+dbl % 5
+float f = i;
+clear()
+34.56789876 + 34.2234
+number1.add(number2);
+number1
+BigDecimal number3 = number1.add(number2);
+number1
+BigDecimal number1 = new BigDecimal("34.56789876");
+BigDecimal number10 = new BigDecimal(34.2234);
+BigDecimal number11 = new BigDecimal("34.56789876");
+number10.add(number11)
+number10.multiply(number11)
+clear()
+BigDecimal number = new BigDecimal("11.5");
+BigDecimal number2 = new BigDecimal("23.45678");
+number.add(number2)
+number.add(new BigDecimal(i))
+number.multiply(new BigDecimal(i))
+number.divide(new BigDecimal(100))
+number.divide(new BigDecimal("100.01234"))
+number.divide(new BigDecimal("100.012"))
+number.divide(new BigDecimal("100.12"))
+number.divide(new BigDecimal("100.1"))
+number.divide(new BigDecimal("1001"))
+number.divide(new BigDecimal("100"))
+clear()
+clear()
+clear()
+boolean isValue = false;
+i > 7
+i >= 7
+i < 7
+i <= 7
+i == 6
+i == 7
+i == 8
+i = 8
+i = 7
+i == 7
+clear()
+i > 15
+clear()
+i >= 15
+i <= 25
+i >= 15 && i <= 25
+i = 30
+i >= 15 && i <= 25
+i = 5
+i >= 15 && i <= 25
+true && true
+true && false
+false && true
+false && false
+false || true
+false || true
+true || false
+true || true
+false || false
+false ^ false
+false ^ true
+true ^ false
+true ^ true
+!true
+!false
+int x = 6;
+!(x>7)
+!(x>7)
+clear()
+true || ++i==11
+i
+int i = 10;
+int j = 15;
+j > 15 && i++ > 5
+j
+i
+j > 15 & i++ > 5
+j
+i
+i++;
+i++;
+clear()
+char ch2 = '\u0022';
+char ch3 = '\u00A2';
+ch++
+ch
+++ch
+++ch
+ch + 5
+ch
+(int)ch
+ch
+System.out.println(ch);
+char ch = '\t';
+System.out.println(ch);
+System.out.println(ch);
+(int)'1'
+(int)'0'
+(int)'9'
+(int)'2'
+(int)'a'
+(int)'z'
+(int)'A'
+(int)'Z'
+		for (char ch = 'A'; ch <= 'Z'; ch++) {
+			System.out.println(ch);
+
+}
+		for (char ch = 'A'; ch <= 'Z'; ch++) {
+			System.out.println(ch);
+}
+		for (char ch = 'A'; ch <= 'C'; ch++) {
+			System.out.println(ch);
+}
