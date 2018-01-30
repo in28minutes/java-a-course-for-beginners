@@ -10,6 +10,7 @@
 - Branching and Loops
 - Reference Types 
   - String, StringBuffer, StringBuilder Wrapper Classes
+  - Date
   - Immutablity
   - Reference Types vs Primitives
       - memory
@@ -22,12 +23,23 @@
      - toString, equals etc
 - Arrays
   - Of Objects
+  - 2 D Arrays
 - Playing with Text
   - String is an array
 - OOPS - Level 3
 - Collections
 - Exceptions
 - Miscellaneous
+  - Filess
+  - Variable Arguments
+  - Modifiers
+    - scope and initialization
+  - Serialization
+  - Enum
+  - Cloning
+  - Garbage Collection
+- Multithreading
+- Functional Programming
 
 ## Course Checklist
 
