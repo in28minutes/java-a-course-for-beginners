@@ -1,6 +1,6 @@
 # Conditionals
 
-## Exercise : Designing a Menu
+## Problem : Designing a Menu
 
 - Ask User for input
   - Enter two numbers 
@@ -9,6 +9,8 @@
       - multiply
       - divide 
       - subtract
+      - ...
+  - Publish Result
 
 ```
 Enter Number1: 
