@@ -386,18 +386,7 @@ switch (number) {
   - input - number of day 0 (Sunday) to 6(Saturday)
   - Return the day of week in text
 
-#### Implement the Menu with Switch
-
-- Introduce Math class and check out the API
-- Comments
 - Conditional Operator
   - Conditional Operator is a Ternary Operator (3 Operands)
   - syntax : ```booleanCondition ? ResultIfTrue: ResultIfFalse;```
   - age >= 18 ? "Can Vote": "Cannot Vote"
-- Puzzles around return values
-  - Is it valid to return two times?
-  - What if the else is removed?
-  - Will code after return be executed?
-  - Can I have code after return?
-  - Can I return from a void function?
-  - Can I return a different type?
