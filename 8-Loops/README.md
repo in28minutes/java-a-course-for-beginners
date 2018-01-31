@@ -69,7 +69,7 @@ while(count < 5){//condn is false. So, code in while is not executed.
 
 ```java
 
-WhileNumberPlayer player = new WhileNumberPlayer(10);
+WhileNumberPlayer player = new WhileNumberPlayer(30);//limit
 
 player.printSquaresUptoLimit();
 //For limit = 30, output would be 1 4 9 16 25
@@ -102,6 +102,21 @@ do{
 }while(count < 5);
 //output is 5
 ```
+
+#### Exercise
+- Ask user for a number. 
+- Print the cube of the number. 
+- Do this repeatedly until user enters a negative number.
+
+```
+Enter a number: 5
+Cube is 125
+Enter a number: 3
+Cube is 27
+Enter a number: -1
+Thank You! Have Fun!
+```
+
 
 ### Break Statement
 

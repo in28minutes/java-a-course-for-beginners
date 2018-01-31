@@ -157,8 +157,7 @@ i *= 5
 i
 i /= 4
 i %= 2
-void clear() { System.out.print("\033[H\033[2J ");
-}
+void clear() { System.out.print("\033[H\033[2J ");}
 ;
 clear()
 long l = 6_000_000_000l;
