@@ -6,7 +6,6 @@ A loop is used to run same code again and again.
 
 For loop is used to loop code specified number of times.
 
-For Loop Example 1
 ```java
 for (int i = 0; i < 10; i++) {
     System.out.print(i);
@@ -19,12 +18,11 @@ Syntax - For loop statement has 3 parts
 - Condition => i<10. Condition is checked every time before the loop is executed.
 - Operation (Increment or Decrement usually) => i++. Operation is invoked at the start of every loop (except for first time).
 
-
 For Loop Puzzles
 - Any of 3 parts in a for loop can be empty.
 - There can be multiple statements in Initialization or Operation separated by commas
 
-Exercises
+#### Exercises
 
 ```java
 MyNumber number = new MyNumber(9);
@@ -35,10 +33,9 @@ number.isPrime(); //Is a number Prime?
 int sum = number.sumUptoN();//Sum of numbers upto n?
 //1 + 2 + 3 + 4 + 5 + 6
 
-number.printPrimesUptoN();
-//Print all prime numbers upto n
+int sumOfDivisors = number.sumOfDivisors();
 
-number.printANumberTriangle;
+number.printANumberTriangle();
 //1
 //1 2
 //1 2 3
@@ -47,6 +44,7 @@ number.printANumberTriangle;
 ```
 
 ### While Loop
+
 ```
 int count = 0;
 
@@ -56,8 +54,6 @@ while(count < 5){//while this condn is true, loop is executed.
 }
 //Output - 01234
 ```
-
-While loop Example 2
 
 ```java
 count = 5;
@@ -192,24 +188,32 @@ for (int j = 0; j < 2; j++) {
 
 ```
 
-- For Loop
-Exercise
-  - loop in loop
-- Check out these test files - DoWhileLoopTest, WhileLoopTest, ForLoopTest, Enhanced For Loop Test
-- Loops deep dive
-  - Sum of digits for a number
-  - Reverse a Number
-  - Sum of divisors
-  - Perfect Number - A positive integer is called a perfect number if it is equal to the sum of all of its positive divisors, excluding itself. For example, 6 is the first perfect number because 6 = 3 + 2 + 1. The next is 28 = 14 + 7 + 4 + 2 + 1.  Find all the four perfect numbers less than 10,000.
-- Do While 
-   - do{System.out.print("Do you want to play again (yes/no)? "); playAgain = usersConsole.nextLine();
-   - } while ("yes".equals(playAgain));
-    - Accepting a Menu from a User
-      - 1 - action1
-      - 2 - action2
-      - 3 - action3
-      - 4 - action4
-      - 5 - quit
-- While, Do While and For Loop
-  - Count 1 to 100
-  - Count 100 to 1
+## Difficult Loops Exercises
+
+```
+AdvancedNumber number = new AdvancedNumber(500);
+number.printPrimesUptoN();
+
+int sumOfDigits = number.sumOfDigits();
+//547 Return value - 5 + 4 + 7
+
+int reverse =number.reverse();
+//543 => 345
+
+number.printPerfectNumbersUptoN();
+// Perfect Number - Number = Sum of all positive divisors, excluding itself
+// Examples 6 = 3 + 2 + 1 28 = 14 + 7 + 4 + 2 + 1
+// There are 4 Perfect numbers below 10,000. Find other two.
+```
+
+## Choosing a Loop
+- Do you know how many times to run? 
+  - For Loop
+- Do you when to end the loop? 
+  - While
+- Do you want to execute the loop atleast once? 
+  - Do While
+
+Actually you can write code with any of the loops. Its readability that matters.
+
+Problem : What would we use for the Menu if we would want to run the Menu again and again?
