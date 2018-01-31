@@ -7,7 +7,7 @@ A loop is used to run same code again and again.
 For loop is used to loop code specified number of times.
 
 For Loop Example 1
-```
+```java
 for (int i = 0; i < 10; i++) {
     System.out.print(i);
 }
@@ -26,7 +26,7 @@ For Loop Puzzles
 
 Exercises
 
-```
+```java
 MyNumber number = new MyNumber(9);
 
 number.isPrime(); //Is a number Prime? 
@@ -59,7 +59,7 @@ while(count < 5){//while this condn is true, loop is executed.
 
 While loop Example 2
 
-```
+```java
 count = 5;
 while(count < 5){//condn is false. So, code in while is not executed.
     System.out.print(count);
@@ -80,7 +80,7 @@ while(count < 5){//condn is false. So, code in while is not executed.
 - In a do while loop, condition check occurs after the code in loop is executed once.
 
 Do While loop Example 1
-```
+```java
 int count = 0;
 do{
     System.out.print(count);
@@ -90,7 +90,7 @@ do{
 ```
 
 Do While loop Example 2
-```
+```java
 count = 5;
 do{
     System.out.print(count);
@@ -104,7 +104,7 @@ do{
 Break statement breaks out of a loop
 
 Example 1
-```
+```java
 for (int i = 0; i < 10; i++) {
     System.out.print(i);
     if (i == 5) {
@@ -117,7 +117,7 @@ for (int i = 0; i < 10; i++) {
 ```
 
 Break can be used in a while also.
-```
+```java
 int i = 0;
 while (i < 10) {
     System.out.print(i);
@@ -148,7 +148,7 @@ if (k == 5) {
 ### Continue Statement
 - Continue statement skips rest of the statements in the loop and starts next iteration
 
-```
+```java
 for (int i = 0; i < 10; i++) {
     if (i == 5) {
       continue;
@@ -164,7 +164,7 @@ for (int i = 0; i < 10; i++) {
 
 ```
 Continue can be used in a while also
-```
+```java
 int i = 0;
 while (i < 10) {
     i++;
@@ -177,7 +177,7 @@ while (i < 10) {
 ```
 
 Continue statement takes execution to next iteration of inner most loop.
-```
+```java
 for (int j = 0; j < 2; j++) {
     for (int k = 0; k < 10; k++) {
        if (k == 5) {
