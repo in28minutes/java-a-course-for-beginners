@@ -211,24 +211,6 @@ for (int j = 0; j < 2; j++) {
 
 ```
 
-## Difficult Loops Exercises
-
-```
-AdvancedNumber number = new AdvancedNumber(500);
-number.printPrimesUptoN();
-
-int sumOfDigits = number.sumOfDigits();
-//547 Return value - 5 + 4 + 7
-
-int reverse =number.reverse();
-//543 => 345
-
-number.printPerfectNumbersUptoN();
-// Perfect Number - Number = Sum of all positive divisors, excluding itself
-// Examples 6 = 3 + 2 + 1 28 = 14 + 7 + 4 + 2 + 1
-// There are 4 Perfect numbers below 10,000. Find other two.
-```
-
 ## Choosing a Loop
 - Do you know how many times to run? 
   - For Loop
