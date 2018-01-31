@@ -1,15 +1,21 @@
 ## Reference Types 
-- Reference Types vs Primitive Types
+
+- Reference Variables vs Primitive Variables
   - memory
   - assignment
   - initialization (null)
-- Predefined classes in Java
-  - String, StringBuffer, StringBuilder 
+
+- Predefined Reference Types in Java
+  - String
   - Wrapper Classes
-- Reading an API and using a Java API
-  - Date
+  - LocalDate, LocalDateTime
 
 ### Reference Variables
+
+- What are Reference Variables?
+- How are they stored in memory?
+- How are they initialized?
+- How does assignement and equality work with Reference Variables
 
 ```
 Animal dog = new Animal();
@@ -27,44 +33,32 @@ dog1 = new Animal();
 ```
 
 What will happen?
+
 Two objects of type Animal are created. Only one reference variable is created.
 
 ```
 Animal animal1 = new Animal();
 Animal animal2 = new Animal();
 animal1 = animal2;
-
 ```
 
 What will happen? What would happen if the same was done with primitive variables?
 
+
 #### == (equals) operator
-Let's look at how == equals operator works with primitives and reference variables.
-
-#### Primitive Variables
-
 - Equality for Primitives only compares values
+- For reference variables, == compares if they are referring to the same object.
 
 ```
 int a = 5;
 int b = 5;
-```
-
-Below statement compares if a and b have same value.
-
-```
 System.out.println(a == b);//true
 ```
-#### Reference Variables
 
 ```
 Integer aReference = new Integer(5);
 Integer bReference = new Integer(5);
-```
 
-For reference variables, == compares if they are referring to the same object.
-
-```
 System.out.println(aReference == bReference);//false
 
 bReference = aReference;
@@ -75,11 +69,9 @@ System.out.println(aReference == bReference);//true
 
 ### String Class
 
-- A String class can store a sequence of characters. String is not a primitive in Java but a Class in its own right.
-
-#### Strings are immutable
-
-- Value of a String Object once created cannot be modified. Any modification on a String object creates a new String object.
+- A String class can store a sequence of characters. 
+- String is not a primitive in Java but a Class in its own right.
+- Strings are immutable. Value of a String Object once created cannot be modified. Any modification on a String object creates a new String object.
 
 ```
 String str3 = "value1";
@@ -94,41 +86,13 @@ String concat = str3.concat("value2");
 System.out.println(concat); //value1value2
 ```
 
-## Where are string literals stored in memory?
+### Where are string literals stored in memory?
+
 All strings literals are stored in "String constant pool". If compiler finds a String literal,it checks if it exists in the pool. If it exists, it is reused.
 Following statement creates 1 string object (created on the pool) and 1 reference variable.
-```
-String str1 = "value"; 
-```
-However, if new operator is used to create string object, the new object is created on the heap. Following piece of code create 2 objects.
-```
-//1. String Literal "value" - created in the "String constant pool"
-//2. String Object - created on the heap
-String str2 = new String("value");
-```
-## String vs StringBuffer vs StringBuilder
-- Immutability : String
-- Thread Safety : String(immutable), StringBuffer
-- Performance : StringBuilder (especially when a number of modifications are made.)
-- [Example 1](src/main/java/com/in28minutes/java/string/StringBufferBuilderExamples.java)
-
-
-#### String Constant Pool
-
-- All strings literals are stored in "String constant pool". If compiler finds a String literal,it checks if it exists in the pool. If it exists, it is reused.
-
-- Following statement creates 1 string object (created on the pool) and 1 reference variable.
 
 ```
 String str1 = "value"; 
-```
-
-- However, if new operator is used to create string object, the new object is created on the heap. Following piece of code create 2 objects.
-
-```
-//1. String Literal "value" - created in the "String constant pool"
-//2. String Object - created on the heap
-String str2 = new String("value");
 ```
 
 #### String Method Examples
@@ -179,10 +143,10 @@ System.out.println("abcdefghij".toUpperCase()); //ABCDEFGHIJ
 //trim removes leading and trailings spaces
 System.out.println(" abcd  ".trim()); //abcd
 ```
-### String Concatenation Operator
 
-#### Three Rules of String Concatenation
-- RULE1: Expressions are evaluated from left to right.Except if there are parenthesis.
+### String Concatenation Operator
+- RULE1: Expressions are evaluated from left to right.
+    - Except if there are parenthesis.
 - RULE2: number + number = number
 - RULE3: number + String = String
 
@@ -196,8 +160,9 @@ System.out.println("" + 5 + 5 + "25"); //5525
 System.out.println(5 + (5 + "25")); //5525
 System.out.println(5 + 5 + 25); //35
 ```
-
-
+## String vs StringBuffer vs StringBuilder
+- Immutability : String
+- Thread Safety : String(immutable), StringBuffer
 
 ### Wrapper Classes
 
