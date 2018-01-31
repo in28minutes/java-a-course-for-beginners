@@ -1,0 +1,94 @@
+void clear() { System.out.print("\033[H\033[2J ");}
+clear()
+clear()
+for (int i = 0; i<= 10; i++) {
+   System.out.print (i + " ");
+}
+for (int i = 0; i<= 10; i = i + 2) {
+   System.out.print (i + " ");
+}
+for (int i = 1; i<= 10; i = i + 2) {
+   System.out.print (i + " ");
+}
+for (int i = 11; i<= 10; i = i + 2) {
+   System.out.print (i + " ");
+}
+for (int i = 11; i<= 20;) {
+   System.out.print (i + " ");
+   i++;
+}
+for (; i<= 30;i++) {
+   System.out.print (i + " ");
+}
+clear()
+9 % 2
+9 % 3
+clear()
+if (i>2) {
+   System.out.println("i>2");
+}
+int i = 3;
+if (i>2) {
+   System.out.println("i>2");
+}
+i = 0
+while (i <5) {
+   System.out.println(i);
+   i++;
+}
+i
+i = 6
+while (i < 5) {
+   System.out.println(i);
+   i++;
+}
+i = -2
+while (i < 5) {
+   System.out.println(i);
+}
+while (i < 5) {
+   System.out.println(i);
+   i++;
+}
+i
+clear()
+while (i < 5) {
+   System.out.print(i + " ");
+   i++;
+}
+i
+i = 1
+do {
+   System.out.print(i + " ");
+   i++;
+} while (i<5);
+i = 10
+while (i < 5) {
+   System.out.print(i + " ");
+   i++;
+}
+do {
+   System.out.print(i + " ");
+   i++;
+} while (i<5);
+clear()
+for(i=1;i<=10;i++) {
+   if(i==5)
+      break;
+   System.out.print(i + " ");
+}
+for(i=1;i<=10;i++) {
+   if(i%2==0)
+      break;
+   System.out.print(i + " ");
+}
+for(i=1;i<=10;i++) {
+   if(i%2==0)
+     continue;
+   System.out.print(i + " ");
+}
+for(i=1;i<=10;i++) {
+   if(i%2!=0)
+     continue;
+   System.out.print(i + " ");
+}

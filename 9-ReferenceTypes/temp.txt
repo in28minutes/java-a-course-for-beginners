@@ -1,0 +1,16 @@
+import java.time.LocalDate;
+LocalDate now = LocalDate.now();
+now.getDayOfMonth()
+now.getDayOfWeek()
+now.getDayOfYear()
+now.getEra()
+now.getMonth()
+now.getMonthValue()
+now.isBefore(LocalDate.now())
+now.isBefore(LocalDate.of(2020,1,1))
+now.isLeapYear()
+now.plusDays(10)
+now.plusMonths(10)
+now.plusYears(10)
+now.lengthOfMonth()
+now.lengthOfYear()
