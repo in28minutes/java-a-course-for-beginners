@@ -1,0 +1,76 @@
+if(true) {
+   System.out.println("True");
+}
+if(false) {
+   System.out.println("True");
+}
+if(i==3) {
+   System.out.println("True");
+}
+if(i<2) {
+    System.out.println("True");
+}
+if(i<=3 || i>=35) {
+    System.out.println("True");
+}
+if(i<=3 && i>=35) {
+    System.out.println("True");
+}
+if (i==3) {
+   System.out.println("True");
+} else {
+   System.out.println("i is not 3");
+}
+i = 5
+if (i==3) {
+   System.out.println("True");
+} else {
+   System.out.println("i is not 3");
+}
+void clear() { System.out.print("\033[H\033[2J ");}
+clear()
+if(i==1) {
+   System.out.println("i");
+}
+switch (i) {
+   case 1 : System.out.println("1");
+   case 5 : System.out.println("5");
+   default : System.out.println("default");
+}
+i = 1
+switch (i) {
+   case 1 : System.out.println("1");
+   case 5 : System.out.println("5");
+   default : System.out.println("default");
+}
+switch (i) {
+   case 1 : System.out.println("1"); break;
+   case 5 : System.out.println("5"); break;
+   default : System.out.println("default"); break;
+}
+clear()
+boolean isEven;
+int i =5;
+if(i%2==0) {
+  isEven = true;
+} else {
+  isEven = false;
+}
+isEven
+i = 6
+if(i%2==0) {
+  isEven = false;
+}
+if(i%2==0) {
+  isEven = true;
+} else {
+  isEven = false;
+}
+isEven
+isEven = ( i%2==0 ? true : false  )
+i = 6
+isEven = ( i%2==0 ? true : false  )
+i = 7
+isEven = ( i%2==0 ? true : false  )
+i = 6
+String even = ( i%2 ==0 ? "YES" : "NO" );

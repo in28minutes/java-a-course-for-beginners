@@ -1,0 +1,205 @@
+Last login: Mon Jan 29 12:46:01 on ttys001
+Rangas-MacBook-Pro:~ rangaraokaranam$ jshell
+|  Welcome to JShell -- Version 9.0.1
+|  For an introduction type: /help intro
+
+jshell> if(true) {
+   ...>    System.out.println("True");
+   ...> }
+True
+
+jshell> if(false) {
+   ...>    System.out.println("True");
+   ...> }
+
+jshell> int i = 3
+i ==> 3
+
+jshell> if(i==3) {
+   ...>    System.out.println("True");
+   ...> }
+True
+
+jshell> if(i<2) {
+   ...>     System.out.println("True");
+   ...> }
+
+jshell> if(i<=3 || i>=35) {
+   ...>     System.out.println("True");
+   ...> }
+True
+
+jshell> if(i<=3 && i>=35) {
+   ...>     System.out.println("True");
+   ...> }
+
+jshell> if (i==3) {
+   ...>    System.out.println("True");
+   ...> } else {
+   ...>    System.out.println("i is not 3");
+   ...> }
+True
+
+jshell> i = 5
+i ==> 5
+
+jshell> if (i==3) {
+   ...>    System.out.println("True");
+   ...> } else {
+   ...>    System.out.println("i is not 3");
+   ...> }
+i is not 3
+
+jshell> clear()
+|  Error:
+|  cannot find symbol
+|    symbol:   method clear()
+|  clear()
+|  ^---^
+
+jshell> void clear() { System.out.print("\033[H\033[2J ");}
+|  created method clear()
+
+jshell> clear
+|  Error:
+|  cannot find symbol
+|    symbol:   variable clear
+|  clear
+|  ^---^
+
+jshell> clear()
+
+ 
+jshell> int i = 0;
+i ==> 0
+
+jshell> if(i) {
+   ...>    System.out.println("i");
+   ...> }
+|  Error:
+|  incompatible types: int cannot be converted to boolean
+|  if(i) {
+|     ^
+
+jshell> if(i=1) {
+   ...>    System.out.println("i");
+   ...> }
+|  Error:
+|  incompatible types: int cannot be converted to boolean
+|  if(i=1) {
+|     ^-^
+
+jshell> if(i==1) {
+   ...>    System.out.println("i");
+   ...> }
+
+jshell> int i = 5;
+i ==> 5
+
+jshell> switch (i) {
+   ...>    case 1 : System.out.println("1");
+   ...>    case 5 : System.out.println("5");
+   ...>    default : System.out.println("default");
+   ...> }
+5
+default
+
+jshell> i = 1
+i ==> 1
+
+jshell> switch (i) {
+   ...>    case 1 : System.out.println("1");
+   ...>    case 5 : System.out.println("5");
+   ...>    default : System.out.println("default");
+   ...> }
+1
+5
+default
+
+jshell> switch (i) {
+   ...>    case 1 : System.out.println("1"); break;
+   ...>    case 5 : System.out.println("5"); break;
+   ...>    default : System.out.println("default"); break;
+   ...> }
+1
+
+jshell> clear()
+
+ 
+jshell> boolean isEven;
+isEven ==> false
+
+jshell> int i =5;
+i ==> 5
+
+jshell> if(i%2==0) {
+   ...>   isEven = true;
+   ...> } else {
+   ...>   isEven = false;
+   ...> }
+
+jshell> isEven
+isEven ==> false
+
+jshell> i = 6
+i ==> 6
+
+jshell> if(i%2==0) {
+   ...>   isEven = false;
+   ...> }
+
+jshell> if(i%2==0) {
+   ...>   isEven = true;
+   ...> } else {
+   ...>   isEven = false;
+   ...> }
+
+jshell> isEven
+isEven ==> true
+
+jshell> isEven = ( i%2==0 ? true : false  )
+isEven ==> true
+
+jshell> i = 6
+i ==> 6
+
+jshell> isEven = ( i%2==0 ? true : false  )
+isEven ==> true
+
+jshell> i = 7
+i ==> 7
+
+jshell> isEven = ( i%2==0 ? true : false  )
+isEven ==> false
+
+jshell> String even = ( i%2 ==0 ? "YES" : "NO")
+even ==> "NO"
+
+jshell> i = 6
+i ==> 6
+
+jshell> String even = ( i%2 ==0 ? "YES" : "NO")
+even ==> "YES"
+
+jshell> String even = ( i%2 ==0 ? "YES" : 4)
+|  Error:
+|  incompatible types: bad type in conditional expression
+|      int cannot be converted to java.lang.String
+|  String even = ( i%2 ==0 ? "YES" : 4);
+|                                    ^
+
+jshell> String even = ( i%2 ==0 ? "YES" : true)
+|  Error:
+|  incompatible types: bad type in conditional expression
+|      boolean cannot be converted to java.lang.String
+|  String even = ( i%2 ==0 ? "YES" : true);
+|                                    ^--^
+
+jshell> String even = ( i%2 ==0 ? "YES" : "NO" )
+even ==> "YES"
+
+jshell> 
+<press tab again to see all possible completions; total possible completions: 549>
+jshell> /save /in28Minutes/git/java-a-course-for-beginners/7-Conditionals/commands.txt
+
+jshell> 
