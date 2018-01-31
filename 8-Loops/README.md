@@ -65,11 +65,19 @@ while(count < 5){//condn is false. So, code in while is not executed.
 
 > Do not forget the increment!
 
-- While Loop
-  - Print all squares of numbers less than a given limit.
-     - For limit = 30, output would be 1 4 9 16 25
-  - Print all cubes of numbers less than a given limit.
-    - For limit = 30, output would be 1 8 27
+#### Exercises
+
+```java
+
+WhileNumberPlayer player = new WhileNumberPlayer(10);
+
+player.printSquaresUptoLimit();
+//For limit = 30, output would be 1 4 9 16 25
+
+player.printCubesUptoLimit();
+//For limit = 30, output would be 1 8 27
+
+```
 
 ### Do While Loop
 - The difference between a while and a do while is that the code in do while is executed at least once. 
