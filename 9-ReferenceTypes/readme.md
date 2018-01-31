@@ -68,83 +68,55 @@ System.out.println(aReference == bReference);//true
 ```
 
 ### String Class
-
 - A String class can store a sequence of characters. 
 - String is not a primitive in Java but a Class in its own right.
+
+
+```
+//Get Data From String
+"This is a piece of Text".length()
+
+//Get Characters from String
+str.charAt(0)
+str.charAt(1)
+str.charAt(20)
+str.charAt(22)
+str.charAt(-22)
+
+//Get Substring from String
+str.substring(11)
+str.substring(11, 15)
+
+//Searching Content of a String
+str.indexOf('C')
+"test".indexOf("te")
+str.lastIndexOf('C')
+"test".lastIndexOf("te")
+
+//Checking Content of a String
+str.equalsIgnoreCase("test");
+str.contains("ABCD");
+str.endsWith("78")
+str.startsWith("01");
+str.isEmpty();
+```
+
+## String Puzzles
+
+- Modification of a String 
 - Strings are immutable. Value of a String Object once created cannot be modified. Any modification on a String object creates a new String object.
 
 ```
 String str3 = "value1";
 str3.concat("value2");
 System.out.println(str3); //value1
+str.toLowerCase()
+str.toUpperCase()
+"012301230123".replace('0', '4')
+" abcd  ".trim()
 ```
 
-Note that the value of str3 is not modified in the above example.  The result should be assigned to a new reference variable (or same variable can be reused).
-
-```
-String concat = str3.concat("value2");
-System.out.println(concat); //value1value2
-```
-
-### Where are string literals stored in memory?
-
-All strings literals are stored in "String constant pool". If compiler finds a String literal,it checks if it exists in the pool. If it exists, it is reused.
-Following statement creates 1 string object (created on the pool) and 1 reference variable.
-
-```
-String str1 = "value"; 
-```
-
-#### String Method Examples
-
-String class defines a number of methods to get information about the string content.
-
-```
-String str = "abcdefghijk";
-```
-
-##### Get information from String
-
-Following methods help to get information from a String.
-
-```
-//char charAt(int paramInt)
-System.out.println(str.charAt(2)); //prints a char - c
-System.out.println("ABCDEFGH".length());//8
-System.out.println("abcdefghij".toString()); //abcdefghij
-System.out.println("ABC".equalsIgnoreCase("abc"));//true
-
-//Get All characters from index paramInt
-//String substring(int paramInt)
-System.out.println("abcdefghij".substring(3)); //cdefghij
-
-//All characters from index 3 to 6
-System.out.println("abcdefghij".substring(3,7)); //defg
-```
-
-#### String Manipulation methods
-
-Most important thing to remember is a String object cannot be modified. When any of these methods are called, they return a new String with the modified value. The original String remains unchanged.
-
-```
-//String concat(String paramString)
-System.out.println(str.concat("lmn"));//abcdefghijklmn
-
-//String replace(char paramChar1, char paramChar2)
-System.out.println("012301230123".replace('0', '4'));//412341234123
-
-//String replace(CharSequence paramCharSequence1, CharSequence paramCharSequence2)
-System.out.println("012301230123".replace("01", "45"));//452345234523
-
-System.out.println("ABCDEFGHIJ".toLowerCase()); //abcdefghij
-
-System.out.println("abcdefghij".toUpperCase()); //ABCDEFGHIJ
-
-//trim removes leading and trailings spaces
-System.out.println(" abcd  ".trim()); //abcd
-```
-
-### String Concatenation Operator
+String Concatenation Operator
 - RULE1: Expressions are evaluated from left to right.
     - Except if there are parenthesis.
 - RULE2: number + number = number
@@ -160,45 +132,61 @@ System.out.println("" + 5 + 5 + "25"); //5525
 System.out.println(5 + (5 + "25")); //5525
 System.out.println(5 + 5 + 25); //35
 ```
-## String vs StringBuffer vs StringBuilder
+
+#### String vs StringBuffer vs StringBuilder
 - Immutability : String
 - Thread Safety : String(immutable), StringBuffer
 
 ### Wrapper Classes
 
-- Wrapper Classes
-   - Creation - valueOf vs Constructor
-      - Look at the code of Integer.valueOf
-   - Reasons why we need Wrapper Classes
-      - • null is a possible value
-      - • use it in a Collection
-      - • Methods that support Object like creation from other types.. like String Integernumber2=newInteger("55");//String
-   - Autoboxing
-      - Autoboxing is the automatic conversion that the Java compiler makes between the primitive types and their corresponding object wrapper classes.Auto Boxing helps in saving memory by reusing already created Wrapper objects. Auto Boxing uses the static valueOf methods.                
+#### What are Wrapper Classes?
 
-- [Example 1](src/main/java/com/in28minutes/java/wrapper/WrapperExamples.java)
 - A wrapper class wraps (encloses) around a data type and gives it an object appearance
+- Wrapper classes are final and immutable.
+
+Types
 - Wrapper: Boolean,Byte,Character,Double,Float,Integer,Long,Short 
 - Primitive: boolean,byte,char ,double, float, int , long,short
-- Examples of creating wrapper classes are listed below.
-  - Integer number = new Integer(55);//int;
-  - Integer number2 = new Integer("55");//String
-  - Float number3 = new Float(55.0);//double argument  
-  - Float number4 = new Float(55.0f);//float argument  
-  - Float number5 = new Float("55.0f");//String 
-  - Character c1 = new Character('C');//Only char constructor 
-  - Boolean b = new Boolean(true); 
-- Reasons
-  - null is a possible value
-  - use it in a Collection
-  - Object like creation from other types.. like String
-
-- A primitive wrapper class in the Java programming language is one of eight classes provided in the java.lang package to provide object methods for the eight primitive types. All of the primitive wrapper classes in Java are immutable.
-
-Wrapper classes are final and immutable.
 
 
-#### Creating Wrapper Classes
+#### Why Wrapper Classes?
+
+Creation from other data types
+
+```java
+Integer hundred = Integer.valueOf("100");
+Boolean value = Boolean.valueOf("True");
+```
+
+Utility Methods
+
+```
+//Conversion
+
+Float floatWrapper = Float.valueOf(57.0f);
+int floatToInt = floatWrapper.intValue();//57
+
+Integer seven = 
+    Integer.valueOf("111", 2);
+
+Integer.toString(seven, 2);
+
+```
+
+Storing into a collection
+
+#### Creation of Wrapper Classes
+
+Prefer valueOf instead of Constructors!
+
+```
+Integer seven = 
+    Integer.valueOf("111", 2);//binary 111 is converted to 7
+
+Integer hundred = 
+    Integer.valueOf("100");//100 is stored in variable
+```
+
 
 ```
 Integer number = new Integer(55);//int
@@ -221,24 +209,10 @@ Boolean b3 = new Boolean("False");//value stored - false
 Boolean b4 = new Boolean("SomeString");//value stored - false
 
 b = false;
-```
-#### Wrapper Class Utility Methods
-
-- A number of utility methods are defined in wrapper classes to create and convert them.
-
-#### valueOf  Methods
-
-Provide another way of creating a Wrapper Object
 
 ```
-Integer seven = 
-    Integer.valueOf("111", 2);//binary 111 is converted to 7
 
-Integer hundred = 
-    Integer.valueOf("100");//100 is stored in variable
-```
-
-#### xxxValue methods 
+#### Convert Wrappers to Primitives
 
 xxxValue methods help in creating primitives
 
@@ -252,42 +226,28 @@ int floatToInt = floatWrapper.intValue();//57
 float floatToFloat = floatWrapper.floatValue();//57.0f
 ```
 
-#### parseXxx methods
+#### Creating Primitives from other Data Types
 
 parseXxx methods are similar to valueOf but they return primitive values
 
 ```
+int hundredPrimitive = 
+    Integer.parseInt("100");//100 is stored in variable
+
 int sevenPrimitive = 
     Integer.parseInt("111", 2);//binary 111 is converted to 7
 
-int hundredPrimitive = 
-    Integer.parseInt("100");//100 is stored in variable
 ```
 
-#### static toString method
-
-Look at the example of the toString static method below.
-
-```
-Integer wrapperEight = new Integer(8);
-System.out.println(Integer.
-toString(wrapperEight));//String Output: 8
-```
-
-#### Overloaded static toString method
-
-2nd parameter: radix
-
-```
-System.out.println(Integer
-.toString(wrapperEight, 2));//String Output: 1000
-```
-
-#### static toYyyyString methods. 
+#### Conversion between Numeric Systems
 
 Yyyy can be Hex,Binary,Octal
 
 ```
+Integer wrapperEight = new Integer(8);
+
+System.out.println(Integer
+.toString(wrapperEight, 2));//String Output: 1000
 System.out.println(Integer
 .toHexString(wrapperEight));//String Output:8 
 System.out.println(Integer
@@ -296,25 +256,35 @@ System.out.println(Integer
 .toOctalString(wrapperEight));//String Output:10
 ```
 
-#### Wrapper Class , Auto Boxing
+#### Wrapper Constants
+```
+jshell> Integer.MAX_VALUE
+$2 ==> 2147483647
+
+jshell> Integer.MIN_VALUE
+$3 ==> -2147483648
+
+jshell> Integer.SIZE
+$4 ==> 32
+
+jshell> Integer.BYTES
+$5 ==> 4
+```
+
+#### Autoboxing
+- Autoboxing is the automatic conversion that the Java compiler makes between the primitive types and their corresponding object wrapper classes.
+- Auto Boxing helps in saving memory by reusing already created Wrapper objects. 
+- Auto Boxing uses the static valueOf methods.                
+
 ```
 Integer ten = new Integer(10);
-ten++;//allowed. Java does the work behind the screen for us
+ten++;
+//allowed. Java does the work behind the screen for us
+//But the value of ten is not incremented!
 
 ```
-#### Boxing and new instances
-- Auto Boxing helps in saving memory by reusing already created Wrapper objects. However wrapper classes created using new are not reused.
-- Two wrapper objects created using new are not same object.
 
-```
-Integer nineA = new Integer(9);
-Integer nineB = new Integer(9);
-System.out.println(nineA == nineB);//false
-System.out.println(nineA.equals(nineB));//true
-```
-
-- Two wrapper objects created using boxing are same object.
-
+Two wrapper objects created using boxing are same object.
 ```
 Integer nineC = 9;
 Integer nineD = 9;
@@ -322,25 +292,43 @@ System.out.println(nineC == nineD);//true
 System.out.println(nineC.equals(nineD));//true
 ```
 
-
-
 ### Basic of LocalDate API
 
 ```
 import java.time.LocalDate;
 LocalDate now = LocalDate.now();
+
+//Get Specific Data from the date
 now.getDayOfMonth()
 now.getDayOfWeek()
 now.getDayOfYear()
 now.getEra()
 now.getMonth()
 now.getMonthValue()
+
+//Get General Data from the date
+now.isLeapYear()
+now.lengthOfMonth()
+now.lengthOfYear()
+
+//Compare with other dates
 now.isBefore(LocalDate.now())
 now.isBefore(LocalDate.of(2020,1,1))
-now.isLeapYear()
+
+//Addition and Subtraction of Days, Months, Year
 now.plusDays(10)
 now.plusMonths(10)
 now.plusYears(10)
-now.lengthOfMonth()
-now.lengthOfYear()
+now.minusDays(10)
+
+//Setting specific attribute - Day, Month, Year to a specific value
+now.withDayOfMonth(2)
+now.withDayOfYear(200)
+now.withMonth(5)
+now.withYear(2019)
+
 ```
+
+LocalDateTime offers similar API for Date & Time.
+
+Local Time offers similar API from Time.
