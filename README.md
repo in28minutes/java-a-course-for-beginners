@@ -17,22 +17,22 @@
   - Reference Types vs Primitives
       - memory
       - assignment
+- Arrays
+  - Of Objects
+  - 2 D Arrays
+- Playing with Text
+  - String is an array
 - OOPS - Level 2
   - Composition
     - Using Multiple Data Types
     - Football Game
   - Object class
      - toString, equals etc
-- Arrays
-  - Of Objects
-  - 2 D Arrays
-- Playing with Text
-  - String is an array
 - OOPS - Level 3
 - Collections
 - Exceptions
 - Miscellaneous
-  - Filess
+  - Files
   - Variable Arguments
   - Modifiers
     - scope and initialization
