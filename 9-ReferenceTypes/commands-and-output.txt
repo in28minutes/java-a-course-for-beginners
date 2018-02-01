@@ -1,0 +1,668 @@
+Last login: Wed Jan 31 17:39:19 on ttys002
+Rangas-MacBook-Pro:~ rangaraokaranam$ "Test".length()
+> 
+Rangas-MacBook-Pro:~ rangaraokaranam$ jshell
+|  Welcome to JShell -- Version 9.0.1
+|  For an introduction type: /help intro
+
+jshell> "Test".length()
+$1 ==> 4
+
+jshell> String str = "Test"
+str ==> "Test"
+
+jshell> BigDecimal bd = new BigDecimal("1.0");
+bd ==> 1.0
+
+jshell> String str = new String("Test")
+str ==> "Test"
+
+jshell> String str = "Test"
+str ==> "Test"
+
+jshell> str.charAt(0)
+$6 ==> 'T'
+
+jshell> str.charAt(2)
+$7 ==> 's'
+
+jshell> str.charAt(3)
+$8 ==> 't'
+
+jshell> String biggerString = "This is a lot of text"
+biggerString ==> "This is a lot of text"
+
+jshell> biggerString.substring(5)
+$11 ==> "is a lot of text"
+
+jshell> biggerString.substring(5,13)
+$12 ==> "is a lot"
+
+jshell> str.charAt(13)
+|  java.lang.StringIndexOutOfBoundsException thrown: String index out of range: 13
+|        at StringLatin1.charAt (StringLatin1.java:44)
+|        at String.charAt (String.java:704)
+|        at (#13:1)
+
+jshell> biggerString.charAt(13)
+$14 ==> ' '
+
+jshell> biggerString.charAt(456)
+|  java.lang.StringIndexOutOfBoundsException thrown: String index out of range: 456
+|        at StringLatin1.charAt (StringLatin1.java:44)
+|        at String.charAt (String.java:704)
+|        at (#15:1)
+
+jshell> String someString = "This is a lot of text again"
+someString ==> "This is a lot of text again"
+
+jshell> clear()
+|  Error:
+|  cannot find symbol
+|    symbol:   method clear()
+|  clear()
+|  ^---^
+
+jshell> void clear() { System.out.print("\033[H\033[2J ");}
+|  created method clear()
+
+jshell> clear()
+
+ 
+jshell> String someString = "This is a lot of text again"
+someString ==> "This is a lot of text again"
+
+jshell> someString.length()
+$20 ==> 27
+
+jshell> someString.charAt(5)
+$21 ==> 'i'
+
+jshell> for(int i= 0; i<someString.length(); i++) {
+   ...>     System.out.println(someString.charAt(i));
+   ...> }
+T
+h
+i
+s
+ 
+i
+s
+ 
+a
+ 
+l
+o
+t
+ 
+o
+f
+ 
+t
+e
+x
+t
+ 
+a
+g
+a
+i
+n
+
+jshell> clear()
+
+ 
+jshell> String someString = "This is a lot of text again"
+someString ==> "This is a lot of text again"
+
+jshell> someString.indexOf("lot")
+$25 ==> 10
+
+jshell> someString.charAt(10)
+$26 ==> 'l'
+
+jshell> someString.charAt('i')
+|  java.lang.StringIndexOutOfBoundsException thrown: String index out of range: 105
+|        at StringLatin1.charAt (StringLatin1.java:44)
+|        at String.charAt (String.java:704)
+|        at (#27:1)
+
+jshell> someString.indexOf('i')
+$28 ==> 2
+
+jshell> someString.lastIndexOf('i')
+$29 ==> 25
+
+jshell> someString.contains("text")
+$30 ==> true
+
+jshell> String someString = "This is a lot of text again"
+someString ==> "This is a lot of text again"
+
+jshell> clear()
+
+ 
+jshell> String someString = "This is a lot of text again"
+someString ==> "This is a lot of text again"
+
+jshell> someString.startsWith("This")
+$34 ==> true
+
+jshell> someString.startsWith("jfsdklfj")
+$35 ==> false
+
+jshell> someString.endsWith("jfsdklfj")
+$36 ==> false
+
+jshell> someString.endsWith("in")
+$37 ==> true
+
+jshell> someString.endsWith("ain")
+$38 ==> true
+
+jshell> someString.endsWith("again")
+$39 ==> true
+
+jshell> someString.endsWith("againfsda")
+$40 ==> false
+
+jshell> someString.empty()
+|  Error:
+|  cannot find symbol
+|    symbol:   method empty()
+|  someString.empty()
+|  ^--------------^
+
+jshell> someString.isEmpty()
+$41 ==> false
+
+jshell> "fjsadlkfj".isEmpty()
+$42 ==> false
+
+jshell> "".isEmpty()
+$43 ==> true
+
+jshell> "true".equals("true")
+$44 ==> true
+
+jshell> "value".equals("value")
+$45 ==> true
+
+jshell> Str str = "value"
+|  Error:
+|  cannot find symbol
+|    symbol:   class Str
+|  Str str = "value";
+|  ^-^
+
+jshell> String str = "value"
+str ==> "value"
+
+jshell> str.equals("value")
+$47 ==> true
+
+jshell> str.equals("VAlue")
+$48 ==> false
+
+jshell> str.equalsIgnoreCase("VAlue")
+$49 ==> true
+
+jshell> clear()
+
+ 
+jshell> String str = "in28Minutes"
+str ==> "in28Minutes"
+
+jshell> str.concat("is awesome");
+$52 ==> "in28Minutesis awesome"
+
+jshell> str
+str ==> "in28Minutes"
+
+jshell> String anotherString = str.concat(" is awesome");
+anotherString ==> "in28Minutes is awesome"
+
+jshell> str
+str ==> "in28Minutes"
+
+jshell> anotherString
+anotherString ==> "in28Minutes is awesome"
+
+jshell> String string2 = anotherString.concat(".");
+string2 ==> "in28Minutes is awesome."
+
+jshell> str
+str ==> "in28Minutes"
+
+jshell> anotherString
+anotherString ==> "in28Minutes is awesome"
+
+jshell> string2
+string2 ==> "in28Minutes is awesome."
+
+jshell> clear()
+
+ 
+jshell> String str = "in28Minutes is awesome."
+str ==> "in28Minutes is awesome."
+
+jshell> str.toUpperCase()
+$63 ==> "IN28MINUTES IS AWESOME."
+
+jshell> str.toLowerCase()
+$64 ==> "in28minutes is awesome."
+
+jshell> String str2 = "  in28Minutes is awesome.   "
+str2 ==> "  in28Minutes is awesome.   "
+
+jshell> str2.trim()
+$68 ==> "in28Minutes is awesome."
+
+jshell> clear()
+
+
+
+
+
+ 
+jshell> 1 + 2
+$70 ==> 3
+
+jshell> "1" + "2"
+$71 ==> "12"
+
+jshell> "1" + 2
+$72 ==> "12"
+
+jshell> "1" + 23
+$73 ==> "123"
+
+jshell> 1 + 23
+$74 ==> 24
+
+jshell> 1 + 2 + "3"
+$75 ==> "33"
+
+jshell> "1" + 2 + 3
+$76 ==> "123"
+
+jshell> int i = 20;
+i ==> 20
+
+jshell> System.out.println("Value is " + 20)
+Value is 20
+
+jshell> System.out.println("Value is " + 20 + 20)
+Value is 2020
+
+jshell> System.out.println("Value is " + (20 + 20))
+Value is 40
+
+jshell> String.join(",", "2", "3", "4")
+$81 ==> "2,3,4"
+
+jshell> String.join(",", "A", "B","C")
+$82 ==> "A,B,C"
+
+jshell> String.join(",", "A")
+$83 ==> "A"
+
+jshell> String.join(",", "A", "B")
+$84 ==> "A,B"
+
+jshell> "abcd".replace('a', 'z');
+$85 ==> "zbcd"
+
+jshell> "abcd".replace("ab", "xyz");
+$86 ==> "xyzcd"
+
+jshell> String str = "jdsfja "
+str ==> "jdsfja "
+
+jshell> str.
+charAt(                chars()                codePointAt(           
+codePointBefore(       codePointCount(        codePoints()           
+compareTo(             compareToIgnoreCase(   concat(                
+contains(              contentEquals(         endsWith(              
+equals(                equalsIgnoreCase(      getBytes(              
+getChars(              getClass()             hashCode()             
+indexOf(               intern()               isEmpty()              
+lastIndexOf(           length()               matches(               
+notify()               notifyAll()            offsetByCodePoints(    
+regionMatches(         replace(               replaceAll(            
+replaceFirst(          split(                 startsWith(            
+subSequence(           substring(             toCharArray()          
+toLowerCase(           toString()             toUpperCase(           
+trim()                 wait(                  
+
+jshell> String.
+CASE_INSENSITIVE_ORDER   class                    copyValueOf(             
+format(                  join(                    valueOf(                 
+
+jshell> clear()
+
+ 
+jshell> "123" + "123" + "1234" + "123456"
+$89 ==> "1231231234123456"
+
+jshell> StringBuffer sb = "TEst";
+|  Error:
+|  incompatible types: java.lang.String cannot be converted to java.lang.StringBuffer
+|  StringBuffer sb = "TEst";
+|                    ^----^
+
+jshell> StringBuffer sb = new StringBuffer("TEst");
+sb ==> TEst
+
+jshell> sb.append
+append(            appendCodePoint(   
+
+jshell> sb.append(" 123")
+$91 ==> TEst 123
+
+jshell> sb
+sb ==> TEst 123
+
+jshell> sb.setCharAt(1,'e')
+
+jshell> sb
+sb ==> Test 123
+
+jshell> StringBuilder sb = new StringBuilder("test");
+sb ==> test
+
+jshell> clear()
+
+
+
+
+
+
+
+ 
+jshell> int i = 5
+i ==> 5
+
+jshell> Integer integer = new Integer(5);
+integer ==> 5
+
+jshell> Integer integer1 = new Integer(5);
+integer1 ==> 5
+
+jshell> Integer integer = Integer.valueOf(5);
+integer ==> 5
+
+jshell> Integer integer1 = Integer.valueOf(5);
+integer1 ==> 5
+
+jshell> Integer integer = new Integer("5234");
+integer ==> 5234
+
+jshell> Integer integer1 = new Integer("5234");
+integer1 ==> 5234
+
+jshell> Integer integer2 = new Integer("5234");
+integer2 ==> 5234
+
+jshell> clear()
+
+ 
+jshell> Integer i1 = new Integer(5)
+i1 ==> 5
+
+jshell> Integer i2 = new Integer(5)
+i2 ==> 5
+
+jshell> Integer i3 = Integer.valueOf(5)
+i3 ==> 5
+
+jshell> Integer i4 = Integer.valueOf(5)
+i4 ==> 5
+
+jshell> i1 == i2
+$111 ==> false
+
+jshell> i3 == i4
+$112 ==> true
+
+jshell> clear()
+
+
+ 
+jshell> Integer integer = Integer.valueOf("4567");
+integer ==> 4567
+
+jshell> int i = integer.intValue();
+i ==> 4567
+
+jshell> Float f = Float.valueOf("12.45")
+f ==> 12.45
+
+jshell> f.floatValue()
+$117 ==> 12.45
+
+jshell> f.intValue()
+$118 ==> 12
+
+jshell> Integer eight = Integer.valueOf(8);
+eight ==> 8
+
+jshell> Integer.toBinaryString(
+toBinaryString(   
+
+jshell> Integer.toBinaryString(eight);
+$120 ==> "1000"
+
+jshell> Integer.toHexString(eight);
+$121 ==> "8"
+
+jshell> Integer eightyEight = Integer.valueOf(88);
+eightyEight ==> 88
+
+jshell> Integer.toHexString(eightyEight);
+$123 ==> "58"
+
+jshell> clear()
+
+ 
+jshell> Integer seven = Integer.valueOf(7);
+seven ==> 7
+
+jshell> Integer seven = 7;
+seven ==> 7
+
+jshell> Integer sevenAgain = 7;
+sevenAgain ==> 7
+
+jshell> seven == sevenAgain
+$133 ==> true
+
+jshell> Integer.MAX_VALUE
+$134 ==> 2147483647
+
+jshell> Integer.MIN_VALUE
+$135 ==> -2147483648
+
+jshell> Integer.SIZE
+$136 ==> 32
+
+jshell> Integer.BYTES
+$137 ==> 4
+
+jshell> clear()
+
+ 
+jshell> LocalDate now = LocalDate.now()
+|  Error:
+|  cannot find symbol
+|    symbol:   class LocalDate
+|  LocalDate now = LocalDate.now();
+|  ^-------^
+|  Error:
+|  cannot find symbol
+|    symbol:   variable LocalDate
+|  LocalDate now = LocalDate.now();
+|                  ^-------^
+
+jshell> /imports
+|    import java.io.*
+|    import java.math.*
+|    import java.net.*
+|    import java.nio.file.*
+|    import java.util.*
+|    import java.util.concurrent.*
+|    import java.util.function.*
+|    import java.util.prefs.*
+|    import java.util.regex.*
+|    import java.util.stream.*
+
+jshell> import java.time.LocalDate
+
+jshell> LocalDate now = LocalDate.now()
+now ==> 2018-02-01
+
+jshell> LocalDateTime now = LocalDateTime.now()
+|  Error:
+|  cannot find symbol
+|    symbol:   class LocalDateTime
+|  LocalDateTime now = LocalDateTime.now();
+|  ^-----------^
+|  Error:
+|  cannot find symbol
+|    symbol:   variable LocalDateTime
+|  LocalDateTime now = LocalDateTime.now();
+|                      ^-----------^
+
+jshell> import java.time.LocalDateTime
+
+jshell> import java.time.*
+
+jshell> LocalDateTime now = LocalDateTime.now()
+now ==> 2018-02-01T15:50:48.423164
+
+jshell> LocalDate now = LocalDate.now()
+now ==> 2018-02-01
+
+jshell> LocalTime now = LocalTime.now()
+now ==> 15:51:09.642001
+
+jshell> clear()
+
+ 
+jshell> LocalDate today = LocalDate.now()
+today ==> 2018-02-01
+
+jshell> import java.time.*
+
+jshell> today.getYear()
+getYear()   
+
+jshell> today.getYear()
+$149 ==> 2018
+
+jshell> today.getDayOf()
+getDayOfMonth()   getDayOfWeek()    getDayOfYear()    
+
+jshell> today.getDayOfWeek()
+$150 ==> THURSDAY
+
+jshell> today.getDayOfMonth()
+$151 ==> 1
+
+jshell> today.getDayOfYear()
+$152 ==> 32
+
+jshell> today.getMonth()
+$153 ==> FEBRUARY
+
+jshell> today.getMonthValue()
+$154 ==> 2
+
+jshell> today.isLeapYear()
+isLeapYear()   
+
+jshell> today.isLeapYear()
+$155 ==> false
+
+jshell> today.lengthOfYear()
+$156 ==> 365
+
+jshell> today.lengthOfMonth()
+$157 ==> 28
+
+jshell> today.plusDays(100)
+$158 ==> 2018-05-12
+
+jshell> today.plusMonths(100)
+$159 ==> 2026-06-01
+
+jshell> today.plusYears(100)
+$160 ==> 2118-02-01
+
+jshell> today.minusYears(100)
+$161 ==> 1918-02-01
+
+jshell> LocalDate hundredYearsBefore = today.minusYears(100)
+hundredYearsBefore ==> 1918-02-01
+
+jshell> today
+today ==> 2018-02-01
+
+jshell> LocalDateTime now = LocalDateTime.now()
+now ==> 2018-02-01T16:03:37.567117
+
+jshell> now.plus
+plus(          plusDays(      plusHours(     plusMinutes(   plusMonths(    
+plusNanos(     plusSeconds(   plusWeeks(     plusYears(     
+
+jshell> now.get
+get(              getChronology()   getClass()        getDayOfMonth()   
+getDayOfWeek()    getDayOfYear()    getHour()         getLong(          
+getMinute()       getMonth()        getMonthValue()   getNano()         
+getSecond()       getYear()         
+
+jshell> clear()
+
+ 
+jshell> LocalDate today = LocalDate.now()
+today ==> 2018-02-01
+
+jshell> LocalDate yesterady = LocalDate.of(2018, 01. 31)
+|  Error:
+|  ')' expected
+|  LocalDate yesterady = LocalDate.of(2018, 01. 31);
+|                                              ^
+
+jshell> LocalDate yesterady = LocalDate.of(2018, 01, 31)
+yesterady ==> 2018-01-31
+
+jshell> LocalDate yesterday = LocalDate.of(2018, 01, 31)
+yesterday ==> 2018-01-31
+
+jshell> today
+today ==> 2018-02-01
+
+jshell> yesterday
+yesterday ==> 2018-01-31
+
+jshell> today.withYear(2016)
+$171 ==> 2016-02-01
+
+jshell> today.withDayOfMonth(20)
+$172 ==> 2018-02-20
+
+jshell> today.withMonth(3)
+$173 ==> 2018-03-01
+
+jshell> today.withDayOfYear(120)
+$174 ==> 2018-04-30
+
+jshell> today.isBefore(yesterday)
+$175 ==> false
+
+jshell> today.isAfter(yesterday)
+$176 ==> true
+
+jshell> /save /in28Minutes/git/java-a-course-for-beginners/9-ReferenceTypes/commands.txt
+
+jshell> 

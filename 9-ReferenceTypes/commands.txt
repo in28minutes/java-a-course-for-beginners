@@ -1,0 +1,184 @@
+class Planet {
+}
+Planet jupiter = new Planet();
+int i = 5;
+class Animal {
+    int id;
+    Animal(int id) {
+       this.id = id;
+    }
+}
+Animal nothing;
+nothing = cat
+nothing.id = 10
+cat.id
+nothing = dog
+nothing.id
+int j = i;
+j = 6
+i
+i == j
+j = 5
+i == j
+Animal dog = new Animal(12);
+Animal cat = new Animal(10);
+Animal ref = cat;
+Animal dog2 = new Animal(12);
+cat == dog
+cat == ref
+dog == dog2
+void clear() { System.out.print("\033[H\033[2J ");}
+clear()
+1
+2
+12.34
+"Test".length()
+BigDecimal bd = new BigDecimal("1.0");
+str.charAt(0)
+str.charAt(2)
+str.charAt(3)
+String biggerString = "This is a lot of text";
+str.substring(5)
+biggerString.substring(5)
+biggerString.substring(5,13)
+str.charAt(13)
+biggerString.charAt(13)
+biggerString.charAt(456)
+void clear() { System.out.print("\033[H\033[2J ");}
+clear()
+someString.length()
+someString.charAt(5)
+for(int i= 0; i<someString.length(); i++) {
+    System.out.println(someString.charAt(i));
+}
+clear()
+someString.indexOf("lot")
+someString.charAt(10)
+someString.charAt('i')
+someString.indexOf('i')
+someString.lastIndexOf('i')
+someString.contains("text")
+clear()
+String someString = "This is a lot of text again";
+someString.startsWith("This")
+someString.startsWith("jfsdklfj")
+someString.endsWith("jfsdklfj")
+someString.endsWith("in")
+someString.endsWith("ain")
+someString.endsWith("again")
+someString.endsWith("againfsda")
+someString.isEmpty()
+"fjsadlkfj".isEmpty()
+"".isEmpty()
+"true".equals("true")
+"value".equals("value")
+str.equals("value")
+str.equals("VAlue")
+str.equalsIgnoreCase("VAlue")
+clear()
+str.concat("is awesome");
+str
+String anotherString = str.concat(" is awesome");
+str
+anotherString
+String string2 = anotherString.concat(".");
+str
+anotherString
+string2
+clear()
+str.toUpperCase()
+str.toLowerCase()
+str2.trim()
+String str2 = "  in28Minutes is awesome.   ";
+str2.trim()
+clear()
+1 + 2
+"1" + "2"
+"1" + 2
+"1" + 23
+1 + 23
+1 + 2 + "3"
+"1" + 2 + 3
+System.out.println("Value is " + 20)
+System.out.println("Value is " + 20 + 20)
+System.out.println("Value is " + (20 + 20))
+String.join(",", "2", "3", "4")
+String.join(",", "A", "B","C")
+String.join(",", "A")
+String.join(",", "A", "B")
+"abcd".replace('a', 'z');
+"abcd".replace("ab", "xyz");
+String str = "jdsfja ";
+clear()
+"123" + "123" + "1234" + "123456"
+sb.append(" 123")
+sb
+sb
+sb.setCharAt(1,'e')
+sb
+StringBuilder sb = new StringBuilder("test");
+clear()
+Integer integer1 = new Integer("5234");
+Integer integer2 = new Integer("5234");
+clear()
+Integer i1 = new Integer(5);
+Integer i2 = new Integer(5);
+Integer i3 = Integer.valueOf(5);
+Integer i4 = Integer.valueOf(5);
+i1 == i2
+i3 == i4
+clear()
+Integer integer = Integer.valueOf("4567");
+int i = integer.intValue();
+Float f = Float.valueOf("12.45");
+f.floatValue()
+f.intValue()
+Integer eight = Integer.valueOf(8);
+Integer.toBinaryString(eight);
+Integer.toHexString(eight);
+Integer eightyEight = Integer.valueOf(88);
+Integer.toHexString(eightyEight);
+clear()
+seven++
+seven
+seven == sevenAgain
+Integer seven = 7;
+Integer sevenAgain = 7;
+seven == sevenAgain
+Integer.MAX_VALUE
+Integer.MIN_VALUE
+Integer.SIZE
+Integer.BYTES
+clear()
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+clear()
+import java.time.*;
+today.getYear()
+today.getDayOfWeek()
+today.getDayOfMonth()
+today.getDayOfYear()
+today.getMonth()
+today.getMonthValue()
+today.isLeapYear()
+today.lengthOfYear()
+today.lengthOfMonth()
+today.plusDays(100)
+today.plusMonths(100)
+today.plusYears(100)
+today.minusYears(100)
+LocalDate hundredYearsBefore = today.minusYears(100);
+today
+LocalDateTime now = LocalDateTime.now();
+clear()
+LocalDate today = LocalDate.now();
+LocalDate yesterady = LocalDate.of(2018, 01, 31);
+LocalDate yesterday = LocalDate.of(2018, 01, 31);
+today
+yesterday
+today.withYear(2016)
+today.withDayOfMonth(20)
+today.withMonth(3)
+today.withDayOfYear(120)
+today.isBefore(yesterday)
+today.isAfter(yesterday)
