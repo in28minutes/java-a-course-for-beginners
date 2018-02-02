@@ -22,7 +22,17 @@ public class StudentRunner {
 		
 		BigDecimal average = student.getAverageMarks();
 		System.out.println("average : " + average);
+		
+		System.out.println(student);
+		
+		student.addNewMark(35);
+		
+		System.out.println(student);
 
+		student.removeMarkAtIndex(1);
+		
+		System.out.println(student);
+		
 	}
 
 }
