@@ -17,32 +17,32 @@
   - Reference Types vs Primitives
       - memory
       - assignment
-- Arrays
+- Introduction to Arrays and ArrayList
   - Of Objects
-  - 2 D Arrays
-- Playing with Text
-  - String is an array
 - OOPS - Level 2
   - Composition
     - Using Multiple Data Types
     - Football Game
   - Object class
      - toString, equals etc
-- OOPS - Level 3
+  - Inheritance
+  - Interface
+  - Polymorphism
 - Collections
 - Exceptions
 - Miscellaneous
-  - Files
-  - Variable Arguments
   - Modifiers
     - scope and initialization
   - Serialization
   - Enum
   - Cloning
   - Garbage Collection
-- Multithreading
 - Java New Features
-  - Functional Programming
+- Functional Programming
+- Files
+- Multithreading
+  
+- 2 D Arrays
 
 ## Course Checklist
 
