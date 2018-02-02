@@ -138,7 +138,8 @@ Arrays.sort(rollNos);
 System.out.println(Arrays.toString(rollNos));//[5, 7, 9, 12]
 ```
 
-## Let's create a Student class with this knowledge
+## Let's create Student class now
+
 ```
 Student student = new Student (name, list of marks);
 int number = student.getNumberOfMarks();
