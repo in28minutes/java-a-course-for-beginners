@@ -170,12 +170,16 @@ persons[2] = new Person();
 //Creating and initializing person array in one statement
 Person[] personsAgain = { new Person(),new Person(),new Person()};
 
-String[] daysOfWeek = { "Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday" };
 ```
 
-Exercise
-- Find Longest String
-- Print array backwards
+#### Exercise
+
+- Create a string array with days of the week
+   - "Sunday", "Monday", "Tuesday", "Wednesday"
+   - "Thursday", "Friday", "Saturday"
+- Find the day with most number of letters in it 
+	- Longest String
+- Print days of the week backwards
 
 ## Let's create a Course with an array of Students
 
