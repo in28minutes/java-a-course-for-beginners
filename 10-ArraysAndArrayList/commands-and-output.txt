@@ -1,0 +1,492 @@
+Last login: Fri Feb  2 10:03:13 on ttys000
+Rangas-MacBook-Pro:~ rangaraokaranam$ jshell
+|  Welcome to JShell -- Version 9.0.1
+|  For an introduction type: /help intro
+
+jshell> int mark1;
+mark1 ==> 0
+
+jshell> mark1 = 100
+mark1 ==> 100
+
+jshell> int mark2 = 75
+mark2 ==> 75
+
+jshell> int mark3 = 60
+mark3 ==> 60
+
+jshell> int sum = mark1 + mark2 + mark3;
+sum ==> 235
+
+jshell> int mark4 = 56
+mark4 ==> 56
+
+jshell> sum = mark1 + mark2 + mark3 + mark4;
+sum ==> 291
+
+jshell> int[] marks = { 75, 60, 56}
+marks ==> int[3] { 75, 60, 56 }
+
+jshell> int sum = 0
+sum ==> 0
+
+jshell> for(int mark:marks) {
+   ...>   sum = sum + mark;
+   ...> }
+
+jshell> sum
+sum ==> 191
+
+jshell> void clear() { System.out.print("\033[H\033[2J ");}
+|  created method clear()
+
+jshell> clear()
+
+ 
+jshell> int[] marks = {1,2,3}
+marks ==> int[3] { 1, 2, 3 }
+
+jshell> int[] marks2 = {1,2,3,4,5}
+marks2 ==> int[5] { 1, 2, 3, 4, 5 }
+
+jshell> int[] marks2 = {1}
+marks2 ==> int[1] { 1 }
+
+jshell> int[] marks2 = {}
+marks2 ==> int[0] {  }
+
+jshell> int[] marks3 = new int[5];
+marks3 ==> int[5] { 0, 0, 0, 0, 0 }
+
+jshell> marks3[0]
+$27 ==> 0
+
+jshell> marks3[0] = 10
+$28 ==> 10
+
+jshell> marks3[0]
+$29 ==> 10
+
+jshell> marks3[0] = 1
+$30 ==> 1
+
+jshell> marks3[1] = 2
+$31 ==> 2
+
+jshell> marks3[2] = 3
+$32 ==> 3
+
+jshell> marks3[3] = 4
+$33 ==> 4
+
+jshell> marks3[4] = 5
+$34 ==> 5
+
+jshell> marks3
+marks3 ==> int[5] { 1, 2, 3, 4, 5 }
+
+jshell> marks2
+marks2 ==> int[0] {  }
+
+jshell> int[] marks2 = {1,2,3,4,5}
+marks2 ==> int[5] { 1, 2, 3, 4, 5 }
+
+jshell> int[] marks3 = new int[5]
+marks3 ==> int[5] { 0, 0, 0, 0, 0 }
+
+jshell> marks2.length
+$39 ==> 5
+
+jshell> marks.length
+$40 ==> 3
+
+jshell> marks3.length
+$41 ==> 5
+
+jshell> clear()
+
+ 
+jshell> int[] marks = {1,2,3,4,5,6,7,8}
+marks ==> int[8] { 1, 2, 3, 4, 5, 6, 7, 8 }
+
+jshell> marks.length
+$44 ==> 8
+
+jshell> for(int i=0; i< marks.length-1; i++) {
+   ...>     System.out.println(marks[i]);
+   ...> }
+1
+2
+3
+4
+5
+6
+7
+
+jshell> for(int i=0; i< marks.length; i++) {
+   ...>     System.out.println(marks[i]);
+   ...> }
+1
+2
+3
+4
+5
+6
+7
+8
+
+jshell> clear()
+
+ 
+jshell> int[] marks = new int[5]
+marks ==> int[5] { 0, 0, 0, 0, 0 }
+
+jshell> double[] values = new double[5]
+values ==> double[5] { 0.0, 0.0, 0.0, 0.0, 0.0 }
+
+jshell> boolean[] test = new boolean[5]
+test ==> boolean[5] { false, false, false, false, false }
+
+jshell> class Person {
+   ...> }
+|  created class Person
+
+jshell> Person[] persons = new Person[5]
+persons ==> Person[5] { null, null, null, null, null }
+
+jshell> int[5] marks;
+|  Error:
+|  ']' expected
+|  int[5] marks;
+|      ^
+
+jshell> int[] marks = new int[];
+|  Error:
+|  array dimension missing
+|  int[] marks = new int[];
+|                ^-------^
+
+jshell> int[] marks = new int[5];
+marks ==> int[5] { 0, 0, 0, 0, 0 }
+
+jshell> int[6]
+|  Error:
+|  ']' expected
+|  int[6]
+|      ^
+
+jshell> marks[6]
+|  java.lang.ArrayIndexOutOfBoundsException thrown: 6
+|        at (#54:1)
+
+jshell> int[] marks = {1,2,3,4.0};
+|  Error:
+|  incompatible types: possible lossy conversion from double to int
+|  int[] marks = {1,2,3,4.0};
+|                       ^-^
+
+jshell> int[] marks = {1,2,3,4,5}
+marks ==> int[5] { 1, 2, 3, 4, 5 }
+
+jshell> System.out.println(marks);
+[I@6c49835d
+
+jshell> System.out.println(Arrays.toString(marks));
+[1, 2, 3, 4, 5]
+
+jshell> clear()
+
+ 
+jshell> int[] marks = {100, 99, 95, 96, 100}
+marks ==> int[5] { 100, 99, 95, 96, 100 }
+
+jshell> for(int mark:marks) 
+   ...>    System.out.println(mark);
+100
+99
+95
+96
+100
+
+jshell> for(int i=0; i<marks.length; i++) {
+   ...>    System.out.println(marks[i]);
+   ...> }
+100
+99
+95
+96
+100
+
+jshell> clear()
+
+ 
+jshell> int[] marks = new int[5];
+marks ==> int[5] { 0, 0, 0, 0, 0 }
+
+jshell> Arrays.fill(marks,100)
+
+jshell> marks
+marks ==> int[5] { 100, 100, 100, 100, 100 }
+
+jshell> int[] array1 = {1,2,3}
+array1 ==> int[3] { 1, 2, 3 }
+
+jshell> int[] array2 = {1,2,3}
+array2 ==> int[3] { 1, 2, 3 }
+
+jshell> Arrays.equals(array1, array2)
+$68 ==> true
+
+jshell> int[] array3 = {3,2,3}
+array3 ==> int[3] { 3, 2, 3 }
+
+jshell> Arrays.equals(array1, array2)
+$70 ==> true
+
+jshell> Arrays.equals(array1, array3)
+$71 ==> false
+
+jshell> Arrays.sort(array3)
+
+jshell> array3
+array3 ==> int[3] { 2, 3, 3 }
+
+jshell> clear()
+
+ 
+jshell> int sum(int i, int j) {
+   ...> }
+|  Error:
+|  missing return statement
+|  int sum(int i, int j) {
+|                        ^
+
+jshell> int sum(int i, int j) {
+   ...>    return i + j;
+   ...> }
+|  created method sum(int,int)
+
+jshell> sum(1,2)
+$76 ==> 3
+
+jshell> sum(1,2,3)
+|  Error:
+|  method sum in class  cannot be applied to given types;
+|    required: int,int
+|    found: int,int,int
+|    reason: actual and formal argument lists differ in length
+|  sum(1,2,3)
+|  ^-^
+
+jshell> int sum(int i, int j, int k) {
+   ...>    return i + j + k;
+   ...> }
+|  created method sum(int,int,int)
+
+jshell> void print(int... values) {
+   ...>    System.out.println(Arrays.toString(values));
+   ...> }
+|  created method print(int...)
+
+jshell> print(1)
+[1]
+
+jshell> print(1,2)
+[1, 2]
+
+jshell> print(1,2,3)
+[1, 2, 3]
+
+jshell> int sum(int... values) {
+   ...>     int sum = 0;
+   ...>     for(int value:values) {
+   ...>        sum += value;
+   ...>     }
+   ...> }
+|  Error:
+|  missing return statement
+|  int sum(int... values) {
+|                         ^
+
+jshell> int sum(int... values) {
+   ...>     int sum = 0;
+   ...>     for(int value:values) {
+   ...>        sum += value;
+   ...>     }
+   ...>     return sum;
+   ...> }
+|  created method sum(int...)
+
+jshell> sum(1,2)
+$83 ==> 3
+
+jshell> sum(1,2,3,4)
+$84 ==> 10
+
+jshell> sum(1,2,3,4,5,6)
+$85 ==> 21
+
+jshell> clear()
+
+ 
+jshell> void print(int... value, String name) {
+   ...> }
+|  Error:
+|  varargs parameter must be the last parameter
+|  void print(int... value, String name) {
+|             ^----------^
+
+jshell> clear()
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+jshell> class Person {
+   ...> }
+|  modified class Person
+
+jshell> Person[] persons = new Person[5];
+persons ==> Person[5] { null, null, null, null, null }
+
+jshell> persons[1] = new Person();
+$90 ==> Person@394e1a0f
+
+jshell> persons
+persons ==> Person[5] { null, Person@394e1a0f, null, null, null }
+
+jshell> persons[0] = new Person();
+$93 ==> Person@1e965684
+
+jshell> persons
+persons ==> Person[5] { Person@1e965684, Person@394e1a0f, null, null, null }
+
+jshell> Person[] person2 = { new Person(), new Person()};
+person2 ==> Person[2] { Person@3b088d51, Person@1786dec2 }
+
+jshell> String[] textValues = {"Apple", "Ball", "Cat"}
+textValues ==> String[3] { "Apple", "Ball", "Cat" }
+
+jshell> clear()
+
+ 
+jshell> int[] marks = {12 ,34, 45}
+marks ==> int[3] { 12, 34, 45 }
+
+jshell> int[] newMarks = new int[marks.length +1]
+newMarks ==> int[4] { 0, 0, 0, 0 }
+
+jshell> int[] newMarksWithOneDeleted = new int[marks.length -1]
+newMarksWithOneDeleted ==> int[2] { 0, 0 }
+
+jshell> clear()
+
+
+
+
+
+
+
+
+
+
+
+ 
+jshell> ArrayList arrayList = new ArrayList()
+arrayList ==> []
+
+jshell> arrayList.add("Apple");
+|  Warning:
+|  unchecked call to add(E) as a member of the raw type java.util.ArrayList
+|  arrayList.add("Apple");
+|  ^--------------------^
+$103 ==> true
+
+jshell> arrayList.add("Bat");
+|  Warning:
+|  unchecked call to add(E) as a member of the raw type java.util.ArrayList
+|  arrayList.add("Bat");
+|  ^------------------^
+$104 ==> true
+
+jshell> arrayList.add("Cat");
+|  Warning:
+|  unchecked call to add(E) as a member of the raw type java.util.ArrayList
+|  arrayList.add("Cat");
+|  ^------------------^
+$105 ==> true
+
+jshell> arrayList
+arrayList ==> [Apple, Bat, Cat]
+
+jshell> arrayList.remove("Cat")
+$107 ==> true
+
+jshell> arrayList
+arrayList ==> [Apple, Bat]
+
+jshell> arrayList.add(1);
+|  Warning:
+|  unchecked call to add(E) as a member of the raw type java.util.ArrayList
+|  arrayList.add(1);
+|  ^--------------^
+$109 ==> true
+
+jshell> arrayList
+arrayList ==> [Apple, Bat, 1]
+
+jshell> ArrayList<String> items = new ArrayList<String>()
+items ==> []
+
+jshell> items.add("Apple");
+$112 ==> true
+
+jshell> items.add(1)
+|  Error:
+|  no suitable method found for add(int)
+|      method java.util.Collection.add(java.lang.String) is not applicable
+|        (argument mismatch; int cannot be converted to java.lang.String)
+|      method java.util.List.add(java.lang.String) is not applicable
+|        (argument mismatch; int cannot be converted to java.lang.String)
+|      method java.util.AbstractCollection.add(java.lang.String) is not applicable
+|        (argument mismatch; int cannot be converted to java.lang.String)
+|      method java.util.AbstractList.add(java.lang.String) is not applicable
+|        (argument mismatch; int cannot be converted to java.lang.String)
+|      method java.util.ArrayList.add(java.lang.String) is not applicable
+|        (argument mismatch; int cannot be converted to java.lang.String)
+|  items.add(1)
+|  ^-------^
+
+jshell> items.add("Bat")
+$113 ==> true
+
+jshell> items.add("Cat")
+$114 ==> true
+
+jshell> items
+items ==> [Apple, Bat, Cat]
+
+jshell> items.remove("Cat")
+$116 ==> true
+
+jshell> items
+items ==> [Apple, Bat]
+
+jshell> items.remove(0)
+$118 ==> "Apple"
+
+jshell> items
+items ==> [Bat]
+
+jshell> /save /in28Minutes/git/java-a-course-for-beginners/10-ArraysAndArrayList/commands.txt
+
+jshell> 

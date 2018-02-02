@@ -1,0 +1,126 @@
+int mark1;
+mark1 = 100
+int mark2 = 75;
+int mark3 = 60;
+int mark4 = 56;
+sum = mark1 + mark2 + mark3 + mark4;
+for(int mark:marks)
+   sum+= mark;
+sum;
+sum
+for(int mark:marks)
+   sum+= mark;
+sum
+int sum = 0;
+for(int mark:marks) {
+  sum = sum + mark;
+}
+sum
+void clear() { System.out.print("\033[H\033[2J ");}
+clear()
+marks[0]
+marks3[0]
+marks3[0] = 10
+marks3[0]
+marks3[0] = 1
+marks3[1] = 2
+marks3[2] = 3
+marks3[3] = 4
+marks3[4] = 5
+marks3
+marks2
+int[] marks2 = {1,2,3,4,5};
+int[] marks3 = new int[5];
+marks2.length
+marks.length
+marks3.length
+clear()
+marks.length
+for(int i=0; i< marks.length-1; i++) {
+    System.out.println(marks[i]);
+}
+for(int i=0; i< marks.length; i++) {
+    System.out.println(marks[i]);
+}
+clear()
+double[] values = new double[5];
+boolean[] test = new boolean[5];
+marks[6]
+System.out.println(marks);
+System.out.println(Arrays.toString(marks));
+clear()
+for(int mark:marks)
+   System.out.println(mark);
+for(int i=0; i<marks.length; i++) {
+   System.out.println(marks[i]);
+}
+clear()
+Arrays.fill(marks,100)
+marks
+int[] array1 = {1,2,3};
+int[] array2 = {1,2,3};
+Arrays.equals(array1, array2)
+int[] array3 = {3,2,3};
+Arrays.equals(array1, array2)
+Arrays.equals(array1, array3)
+Arrays.sort(array3)
+array3
+clear()
+int sum(int i, int j) {
+   return i + j;
+}
+sum(1,2)
+int sum(int i, int j, int k) {
+   return i + j + k;
+}
+void print(int... values) {
+   System.out.println(Arrays.toString(values));
+}
+print(1)
+print(1,2)
+print(1,2,3)
+int sum(int... values) {
+    int sum = 0;
+    for(int value:values) {
+       sum += value;
+    }
+    return sum;
+}
+sum(1,2)
+sum(1,2,3,4)
+sum(1,2,3,4,5,6)
+clear()
+clear()
+class Person {
+}
+Person[] persons = new Person[5];
+persons[1] = new Person();
+persons
+persons[0] = new Person();
+persons[0] = new Person();
+persons
+Person[] person2 = { new Person(), new Person()};
+String[] textValues = {"Apple", "Ball", "Cat"};
+clear()
+int[] marks = {12 ,34, 45};
+int[] newMarks = new int[marks.length +1];
+int[] newMarksWithOneDeleted = new int[marks.length -1];
+clear()
+ArrayList arrayList = new ArrayList();
+arrayList.add("Apple");
+arrayList.add("Bat");
+arrayList.add("Cat");
+arrayList
+arrayList.remove("Cat")
+arrayList
+arrayList.add(1);
+arrayList
+ArrayList<String> items = new ArrayList<String>();
+items.add("Apple");
+items.add("Bat")
+items.add("Cat")
+items
+items.remove("Cat")
+items
+items.remove(0)
+items
