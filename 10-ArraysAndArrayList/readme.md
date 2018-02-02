@@ -181,18 +181,11 @@ Person[] personsAgain = { new Person(),new Person(),new Person()};
 	- Longest String
 - Print days of the week backwards
 
-## Let's create a Course with an array of Students
-
-- Create a List of Students
-- Find Student with Maximum Sum of Marks
 
 ## Let's add methods to add and delete elements
 ```
 student.addNewMark(35);
 student.removeMarkAtIndex(5);
-
-course.addStudent(student);
-course.removeStudentAtIndex(5);
 ```
 
 ## Let's do ArrayList
