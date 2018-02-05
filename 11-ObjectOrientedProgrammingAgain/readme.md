@@ -39,7 +39,23 @@ Exercise
   - void currencyExchange(BigDecimal amount, String from, String to)
   - void payBill(String billType, String to, BigDecimal amount)
 
-Exercise
+#### Exercise
+Book > id, name, author
+ > Reviews > id, description, rating
+
+```java 
+ Book book = 
+    new Book(123, "Object Oriented Programming with Java", 
+          "Ranga");
+ book.addReview(
+    new Review(10, "Great Book", 5));
+ book.addReview(
+    new Review(101, "Awesome", 5);
+
+ System.out.println(book);
+ ```
+
+
 - Social Media Application like Facebook
  - users (name, address, hobbies)
    - friends 
