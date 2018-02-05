@@ -86,9 +86,17 @@ Another kind of Account for Senior Citizens?
 
 ### Inheritance Basics
 
-public class Person name,address,phone,email;
-- Student > college, grades, subjects, scholarship
-- Employee > title, employer, employeeGrade, salary
+public class Person name,phone,email;
+
+- Student 
+  - college
+  - class
+- Employee 
+  - title
+  - employer
+  - employeeGrade
+  - salary
+  - toString (print all values including those of Person)
 
 ### Apply Inheritance to Savings Account
 
