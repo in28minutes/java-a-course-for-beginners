@@ -18,10 +18,9 @@
 Exercise
 
 - public class Rectangle
-  - int length
-  - int width;
-  - int calculateArea()
-  - calculatePerimeter();
+  - length, width;
+  - What constructors?
+  - What Operations?
 
 ### Object Composition
 
@@ -146,6 +145,12 @@ An abstract class cannot be instantiated.
 
 ### One more example of an Abstract Class
 public abstract class Instruction { void perform() { firstStep(); secondStep(); thirdStep(); } abstract void firstStep(); abstract void secondStep(); abstract void thirdStep(); }
+
+Cooking Recipe
+- firstStep - Review Availability of Oven, Stove and Utensils
+- The usual recipe steps
+- lastSteps - Switch off microwave oven, stove and clean everything!
+
 
 - An example of an abstract class in the JDK is AbstractMap, which is part of the Collections Framework. Its subclasses (which include HashMap, TreeMap, and ConcurrentHashMap) share many methods (including get, put, isEmpty, containsKey, and containsValue) that AbstractMap defines. 
 - An example abstract method : public abstract Set<Entry<K,V>> entrySet();
