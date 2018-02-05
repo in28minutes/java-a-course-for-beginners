@@ -1,0 +1,78 @@
+class Pet extends Animal {
+     public void groom() {
+        System.out.println("Groom");
+     }
+}
+dog.toString()
+dog.groom()
+Pet pet = new Dog();
+pet.groom()
+pet instanceof Pet
+pet instanceof Dog
+pet instanceof Animal
+pet instanceof Object
+animal instanceof Pet
+animal instanceof Dog
+animal instanceof Object
+void clear() { System.out.print("\033[H\033[2J ");}
+clear()
+class Animal {
+   public void bark() {
+       System.out.println("TEst");
+   }
+}
+animal.bark()
+abstract class AbstractAnimal {
+    abstract public void bark();
+}
+class Dog extends AbstractAnimal {
+    public void bark() {
+       System.out.println("Bow Bow");
+    }
+}
+Dog dog = new Dog();
+dog.bark()
+clear()
+abstract class AbstractTest {
+}
+abstract class Algorithm1 extends AbstractAlgorithm {
+}
+abstract class AbstractAlgorithm {
+     private int stepCount;
+     public int getStepCount() {
+          return stepCount();
+     }
+}
+clear()
+class Implementation implements Interface2 {
+   public void method2() { }
+   public void method1() { }
+}
+abstract class ImplementationAbstract implements Interface2 {
+   public void method1() { }
+}
+interface Interface3 {
+  int test = 5;
+}
+interface Interface4 {
+    default void print() {
+       System.out.println("default");
+    }
+}
+class Test implements Interface4 {
+}
+test.print()
+class Test1 implements Interface4 {
+   public void print() {
+      System.out.println("override");
+   }
+}
+Test1 test = new Test1();
+test.print()
+interface Interface1 {
+ void method1();
+}
+interface Interface2 {
+ void method2();
+}
+clear()

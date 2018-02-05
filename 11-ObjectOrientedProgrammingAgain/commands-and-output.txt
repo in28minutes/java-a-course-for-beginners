@@ -1,0 +1,347 @@
+Last login: Mon Feb  5 14:43:37 on ttys001
+Rangas-MacBook-Pro:~ rangaraokaranam$ jshell
+|  Welcome to JShell -- Version 9.0.1
+|  For an introduction type: /help intro
+
+jshell> class Animal {
+   ...> }
+|  created class Animal
+
+jshell> class Pet {
+   ...> }
+|  created class Pet
+
+jshell> class Dog extends Animal, Pet {
+   ...> }
+|  Error:
+|  '{' expected
+|  class Dog extends Animal, Pet {
+|                          ^
+
+jshell> class Animal {
+   ...> }
+|  modified class Animal
+
+jshell> class Pet extends Animal {
+   ...>      public void groom() {
+   ...>         System.out.println("Groom");
+   ...>      }
+   ...> }
+|  replaced class Pet
+
+jshell> class Dog extends Pet {
+   ...> }
+|  created class Dog
+
+jshell> Dog dog = new Dog();
+dog ==> Dog@72d818d1
+
+jshell> dog.toString()
+$7 ==> "Dog@72d818d1"
+
+jshell> dog.groom()
+Groom
+
+jshell> Pet pet = new Dog()
+pet ==> Dog@4fe3c938
+
+jshell> pet.groom()
+Groom
+
+jshell> Dog dog = new Pet()
+|  Error:
+|  incompatible types: Pet cannot be converted to Dog
+|  Dog dog = new Pet();
+|            ^-------^
+
+jshell> pet instanceof Pet
+$11 ==> true
+
+jshell> pet instanceof Dog
+$12 ==> true
+
+jshell> pet instanceof String
+|  Error:
+|  incompatible types: Pet cannot be converted to java.lang.String
+|  pet instanceof String
+|  ^-^
+
+jshell> pet instanceof Animal
+$13 ==> true
+
+jshell> pet instanceof Object
+$14 ==> true
+
+jshell> Animal animal = new Animal()
+animal ==> Animal@3632be31
+
+jshell> animal instanceof pet
+|  Error:
+|  cannot find symbol
+|    symbol:   class pet
+|  animal instanceof pet
+|                    ^-^
+
+jshell> animal instanceof Pet
+$16 ==> false
+
+jshell> animal instanceof Dog
+$17 ==> false
+
+jshell> animal instanceof Object
+$18 ==> true
+
+jshell> clear()
+|  Error:
+|  cannot find symbol
+|    symbol:   method clear()
+|  clear()
+|  ^---^
+
+jshell> void clear() { System.out.print("\033[H\033[2J ");}
+|  created method clear()
+
+jshell> clear()
+
+ 
+jshell> class Animal {
+   ...>    public void bark() {
+   ...>        System.out.println("TEst");
+   ...>    }
+   ...> }
+|  replaced class Animal
+|    update replaced variable animal, reset to null
+
+jshell> Animal animal = new Animal()
+animal ==> Animal@335eadca
+
+jshell> animal.bark()
+TEst
+
+jshell> class AbstractAnimal {
+   ...>    public void bark();
+   ...> }
+|  Error:
+|  missing method body, or declare abstract
+|     public void bark();
+|     ^-----------------^
+
+jshell> class AbstractAnimal {
+   ...>    abstract public void bark();
+   ...> }
+|  Error:
+|  AbstractAnimal is not abstract and does not override abstract method bark() in AbstractAnimal
+|  class AbstractAnimal {
+|  ^---------------------...
+
+jshell> abstract class AbstractAnimal {
+   ...>     abstract public void bark();
+   ...> }
+|  created class AbstractAnimal
+
+jshell> class Dog extends AbstractAnimal {
+   ...> }
+|  Error:
+|  Dog is not abstract and does not override abstract method bark() in AbstractAnimal
+|  class Dog extends AbstractAnimal {
+|  ^---------------------------------...
+
+jshell> class Dog extends AbstractAnimal {
+   ...>     public void bark() {
+   ...>        System.out.println("Bow Bow");
+   ...>     }
+   ...> }
+|  created class Dog
+
+jshell> Dog dog = new Dog()
+dog ==> Dog@5a8e6209
+
+jshell> dog.bark()
+Bow Bow
+
+jshell> AbstractAnimal animal = new AbstractAnimal()
+|  Error:
+|  AbstractAnimal is abstract; cannot be instantiated
+|  AbstractAnimal animal = new AbstractAnimal();
+|                          ^------------------^
+
+jshell> clear()
+
+ 
+jshell> abstract class AbstractTest {
+   ...> }
+|  created class AbstractTest
+
+jshell> abstract class AbstractAlgorithm {
+   ...>     abstract void steps();
+   ...> }
+|  created class AbstractAlgorithm
+
+jshell> class Algorithm1 extends AbstractAlgorithm {
+   ...> }
+|  Error:
+|  Algorithm1 is not abstract and does not override abstract method steps() in AbstractAlgorithm
+|  class Algorithm1 extends AbstractAlgorithm {
+|  ^-------------------------------------------...
+
+jshell> abstract class Algorithm1 extends AbstractAlgorithm {
+   ...> }
+|  created class Algorithm1
+
+jshell> abstract class AbstractAlgorithm {
+   ...>      private int stepCount;
+   ...> }
+|  replaced class AbstractAlgorithm
+
+jshell> abstract class AbstractAlgorithm {
+   ...>      private int stepCount;
+   ...>      public int getStepCount() {
+   ...>           return stepCount();
+   ...>      }
+   ...> }
+|  replaced class AbstractAlgorithm, however, it cannot be instantiated or its methods invoked until method stepCount() is declared
+
+jshell> clear()
+
+ 
+jshell> interface Interface1 {
+   ...>   void method1();
+   ...> }
+|  created interface Interface1
+
+jshell> interface Interface2 extends Interface1 {
+   ...>   void method2();
+   ...> }
+|  created interface Interface2
+
+jshell> class Implementation implements Interface2 {
+   ...> }
+|  Error:
+|  Implementation is not abstract and does not override abstract method method2() in Interface2
+|  class Implementation implements Interface2 {
+|  ^-------------------------------------------...
+
+jshell> class Implementation implements Interface2 {
+   ...>    void method2() { }
+jshell> class Implementation implements Interface2 {
+   ...>    public void method2() { }
+   ...> }
+|  Error:
+|  Implementation is not abstract and does not override abstract method method1() in Interface1
+|  class Implementation implements Interface2 {
+|  ^-------------------------------------------...
+
+jshell> class Implementation implements Interface2 {
+   ...>    public void method2() { }
+   ...>    public void method1() { }
+   ...> }
+|  created class Implementation
+
+jshell> abstract class ImplementationAbstract implements Interface2 {
+   ...>    public void method1() { }
+   ...> }
+|  created class ImplementationAbstract
+
+jshell> interface Interface3 {
+   ...>   int test;
+   ...> }
+|  Error:
+|  = expected
+|    int test;
+|            ^
+
+jshell> interface Interface3 {
+   ...>   int test = 5;
+   ...> }
+|  created interface Interface3
+
+jshell> interace Interface4 {
+   ...>     default void print() {
+   ...>        System.out.println("default");
+   ...>     }
+   ...> }
+|  Error:
+|  ';' expected
+|  interace Interface4 {
+|                     ^
+
+jshell> interface Interface4 {
+   ...>     default void print() {
+   ...>        System.out.println("default");
+   ...>     }
+   ...> }
+|  created interface Interface4
+
+jshell> class Test implements Interface4 {
+   ...> }
+|  created class Test
+
+jshell> Test test = new Test();
+test ==> Test@6ebc05a6
+
+jshell> test.print()
+default
+
+jshell> class Test1 implements Interface4 {
+   ...>    public void print() {
+   ...>       System.out.println("override");
+   ...>    }
+   ...> }
+|  created class Test1
+
+jshell> Test1 test = new Test1();
+test ==> Test1@3d99d22e
+
+jshell> test.print()
+override
+
+jshell> interface Interface1 {
+   ...>  void method1();
+   ...> }
+|  modified interface Interface1
+
+jshell> interface Interface2 {
+   ...>  void method2();
+   ...> }
+|  replaced interface Interface2
+
+jshell> class Impl implements Interface1, Interface2 {
+   ...>      void method2() {
+   ...>      }
+   ...>      void method1() {
+   ...>      }
+   ...> }
+|  Error:
+|  method1() in Impl cannot implement method1() in Interface1
+|    attempting to assign weaker access privileges; was public
+|       void method1() {
+|       ^---------------...
+|  Error:
+|  method2() in Impl cannot implement method2() in Interface2
+|    attempting to assign weaker access privileges; was public
+|       void method2() {
+|       ^---------------...
+
+jshell> clear()
+
+ 
+jshell> /save /in28Minutes/git/java-a-course-for-beginners/11-ObjectOrientedProgrammingAgain/commands.txt
+
+jshell> 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

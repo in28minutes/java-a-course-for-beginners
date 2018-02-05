@@ -26,18 +26,9 @@ Exercise
 
 ### Object Composition
 
-- public class CheckingAccount {
-  - Customer customer > Name, Address
-  - int id
-  - BigDecimal balance
-  - Date dateCreated
-  - private ArrayList<Transaction> transactions 
-    >  type, date, amount, balance, description;
-  - BigDecimal overDraftLimit;
-  - boolean withdraw(BigDecimal amount)
-  - void deposit(BigDecimal amount)
-  - void currencyExchange(BigDecimal amount, String from, String to)
-  - void payBill(String billType, String to, BigDecimal amount)
+Customer
+- homeAddress
+- workAddress
 
 #### Exercise
 Book > id, name, author
@@ -56,33 +47,8 @@ Book > id, name, author
  ```
 
 
-- Social Media Application like Facebook
- - users (name, address, hobbies)
-   - friends 
-   - posts (description, link, image)
-      - likes
-      - comments
-
-- Book
-  - id, name
-  - Author > name address
-  - Publisher > name address
-  - Reviews > rating, description
-
-- Survey
-  - id, title, description, list of questions
-
 
 ## Inheritance Basics
-
-### Why Inheritance?
-
-How do we create a new kind of Account called Savings Account?
-- annualInterestRate
-- calculateMonthlyInterest()
-
-Another kind of Account for Senior Citizens?
-- homeDeliveryOfCash()
 
 ### Inheritance Basics
 
@@ -162,15 +128,12 @@ public class ConstructorExamples {
 
 ## Abstract Class
 
-### Why Abstract Class? Savings Account Example
-
 ### Basics of an Abstract Class
 
 - An abstract class is a class that cannot be instantiated, but must be inherited from. An abstract class may be fully implemented, but is more usually partially implemented or not implemented at all, thereby encapsulating common methodality for inherited classes.
 An abstract class cannot be instantiated.
 
 ### One more example of an Abstract Class
-public abstract class Instruction { void perform() { firstStep(); secondStep(); thirdStep(); } abstract void firstStep(); abstract void secondStep(); abstract void thirdStep(); }
 
 Cooking Recipe
 - firstStep - Review Availability of Oven, Stove and Utensils
@@ -178,9 +141,6 @@ Cooking Recipe
 - lastSteps - Switch off microwave oven, stove and clean everything!
 
 
-- An example of an abstract class in the JDK is AbstractMap, which is part of the Collections Framework. Its subclasses (which include HashMap, TreeMap, and ConcurrentHashMap) share many methods (including get, put, isEmpty, containsKey, and containsValue) that AbstractMap defines. 
-- An example abstract method : public abstract Set<Entry<K,V>> entrySet();
-- [Another Example - Spring AbstractController] (https://github.com/spring-projects/spring-framework/blob/master/spring-webmvc/src/main/java/org/springframework/web/servlet/mvc/AbstractController.java)
 
 
 ### Abstract Class Puzzles
@@ -271,3 +231,46 @@ Polymorphism is defined as "Same Code" having "Different Behavior".
   - A concrete child class of an Abstract Class must define all the abstract methods. An Abstract child class can have abstract methods. An interface extending another interface need not provide default implementation for methods inherited from the parent interface. 
   - A child class can only extend a single class. An interface can extend multiple interfaces. A class can implement multiple interfaces.
   - A child class can define abstract methods with the same or less restrictive visibility, whereas a class implementing an interface must define all interface methods as public
+
+  - public class CheckingAccount {
+  - Customer customer > Name, Address
+  - int id
+  - BigDecimal balance
+  - Date dateCreated
+  - private ArrayList<Transaction> transactions 
+    >  type, date, amount, balance, description;
+  - BigDecimal overDraftLimit;
+  - boolean withdraw(BigDecimal amount)
+  - void deposit(BigDecimal amount)
+  - void currencyExchange(BigDecimal amount, String from, String to)
+  - void payBill(String billType, String to, BigDecimal amount)
+
+- Social Media Application like Facebook
+ - users (name, address, hobbies)
+   - friends 
+   - posts (description, link, image)
+      - likes
+      - comments
+
+- Book
+  - id, name
+  - Author > name address
+  - Publisher > name address
+  - Reviews > rating, description
+
+- Survey
+  - id, title, description, list of questions
+
+
+### Why Inheritance?
+
+How do we create a new kind of Account called Savings Account?
+- annualInterestRate
+- calculateMonthlyInterest()
+
+Another kind of Account for Senior Citizens?
+- homeDeliveryOfCash()
+
+- An example of an abstract class in the JDK is AbstractMap, which is part of the Collections Framework. Its subclasses (which include HashMap, TreeMap, and ConcurrentHashMap) share many methods (including get, put, isEmpty, containsKey, and containsValue) that AbstractMap defines. 
+- An example abstract method : public abstract Set<Entry<K,V>> entrySet();
+- [Another Example - Spring AbstractController] (https://github.com/spring-projects/spring-framework/blob/master/spring-webmvc/src/main/java/org/springframework/web/servlet/mvc/AbstractController.java)
