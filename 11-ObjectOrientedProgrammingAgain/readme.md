@@ -2,19 +2,20 @@
 
 ### Objects have state and behaviour
 
-- public class Fan (Has different data types)
-  - private String make;
-  - private double radius;
-  - private String color;
-  - private boolean isOn;
-  - private int speed;
-- methods
+- State (Member Variables)
+  - make;
+  - radius;
+  - color;
+  - isOn;
+  - speed;
+- Constructors
   - Fan(String make, double radius, String color) 
+- Behavior (Member Methods)
   - void switchOn()
   - void switchOff()
   - void changeSpeed()
   - String toString() using String.format method
-  
+
 Exercise
 
 - public class Rectangle
