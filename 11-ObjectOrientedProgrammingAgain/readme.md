@@ -2,6 +2,7 @@
 
 ### Objects have state and behaviour
 
+Fan Class
 - State (Member Variables)
   - make;
   - radius;
