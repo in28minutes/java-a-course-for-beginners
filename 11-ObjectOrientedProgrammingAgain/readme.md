@@ -140,9 +140,6 @@ Cooking Recipe
 - The usual recipe steps
 - lastSteps - Switch off microwave oven, stove and clean everything!
 
-
-
-
 ### Abstract Class Puzzles
 Abstract class can contain instance and static variables
 //An Abstract method does not contain body.
@@ -221,6 +218,25 @@ A class can implement multiple interfaces. It should implement all the method de
 
 A class should implement all the methods in an interface, unless it is declared abstract.
 
+## Exerices Interface and Abstract Class
+
+### Interface
+interface Flyable 
+- void fly();
+- Bird "with wings"
+- Aeroplane "with fuel"
+- Flyable flyingObjects = {new Bird(), new Aeroplane()};
+- Loop and invoke fly method
+
+### Abstract Class
+
+abstract class Animal
+- void bark()
+- Dog "Bow Bow"
+- Cat "Meow Meow"
+- Animal[] animals = {new Cat(), new Dog()};
+- Loop and invoke bark method
+
 ## Polymorphism
 Polymorphism is defined as "Same Code" having "Different Behavior".  
 
@@ -274,3 +290,4 @@ Another kind of Account for Senior Citizens?
 - An example of an abstract class in the JDK is AbstractMap, which is part of the Collections Framework. Its subclasses (which include HashMap, TreeMap, and ConcurrentHashMap) share many methods (including get, put, isEmpty, containsKey, and containsValue) that AbstractMap defines. 
 - An example abstract method : public abstract Set<Entry<K,V>> entrySet();
 - [Another Example - Spring AbstractController] (https://github.com/spring-projects/spring-framework/blob/master/spring-webmvc/src/main/java/org/springframework/web/servlet/mvc/AbstractController.java)
+
