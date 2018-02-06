@@ -28,11 +28,11 @@
   - Inheritance
   - Interface
   - Polymorphism
-- Collections
+- Collections & Generics
 - Exceptions
-- Miscellaneous
-  - Modifiers
-    - scope and initialization
+- Modifiers
+  - scope and initialization
+- Miscellaneous Topics
   - Serialization
   - Enum
   - Cloning
@@ -41,8 +41,7 @@
 - Functional Programming
 - Files
 - Multithreading
-  
-- 2 D Arrays
+- Pitfalls
 
 ## Course Checklist
 

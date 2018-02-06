@@ -4,6 +4,8 @@ public class MotorBike {
 	//state
 	private int speed; //member variable
 	
+
+	//constructors
 	MotorBike() {
 		this(5);
 	}
@@ -11,7 +13,8 @@ public class MotorBike {
 	MotorBike(int speed) {
 		this.speed = speed;
 	}
-			
+	
+	//behavior
 	public int getSpeed() {
 		return speed;
 	}
