@@ -28,7 +28,8 @@
   - Inheritance
   - Interface
   - Polymorphism
-- Collections & Generics
+- Collections 
+- Generics
 - Exceptions
   - What is the aim? What happens when exceptions are not handled - stack trace, method flow?  Basics of try catch. Basics of finally. Puzzles. Hierachy of Exceptions. Follow as it is in the Interview Guide
 - Modifiers
