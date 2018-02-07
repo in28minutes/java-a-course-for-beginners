@@ -1,0 +1,124 @@
+p("Functional Programming is about giving first class status to functions!")
+
+public void p(String str) { System.out.println(str);}
+
+Example 1
+List<Integer> numbers = List.of(1, 2, 5, 7, 9, 18, 12);
+for(Integer number:numbers) {
+    System.out.println(number);
+}
+numbers.stream().forEach(n->System.out.println(n))
+p("We are passing a funtion to another function")
+
+Exercise - Create a list of strings and print all the values using Lambda Expression!
+
+Example 2
+for(Integer number:numbers) {
+    if(number%2 ==0)
+        System.out.println(number);
+}
+numbers.stream().filter(n -> n.intValue()%2==0).forEach(n->System.out.println(n))
+
+Example 3
+Integer sum = 0;
+for(Integer number:numbers) {
+          sum += number;
+}
+numbers.stream().reduce(0, (n1,n2) -> (n1+n2))
+
+Example 4
+IntStream.range(1,10).forEach(n -> System.out.println(n))
+
+Exercise - Update above code to print sum of only even numbers!
+
+How is Functionals Programming Different?
+- No mutation 
+- Focus on what to do rather than how to do?
+
+Terminology:
+Lambda Expression -
+Stream - A Stream is a source of objects. In the above example, we created a stream from List.
+
+Streams and Operations
+Streams have Intermediate Operations and Terminal Operations. In the example above, we used filter as intermediate operation and reduce as a terminal operation.
+
+Intermediate Operation - Filter
+numbers.stream().filter(n -> n.intValue()%2==0).forEach(n->System.out.println(n))
+
+Executing Methods  - List.of("Apple", "Ant", "Bat").stream().filter(s -> s.startsWith("A")).forEach(n->System.out.println(n))
+
+Intermediate Operation - Sorting
+numbers.stream().filter(n -> n.intValue()%2==0).sorted().forEach(n->System.out.println(n))
+
+Intermediate Operation - Mapping
+List.of("Apple", "Ant", "Bat").stream().filter(s -> s.startsWith("A")).map(String::toLowerCase).forEach(n->System.out.println(n))
+
+Exercise - Print squares of first 10 numbers!
+IntStream.range(1,10).map(n -> n*n).forEach(n -> System.out.println(n))
+Exercise - Print cubes of first 10 numbers!
+
+Intermediate Operation - Distinct
+List.of("Apple", "Ant", "Apple").stream().distinct().forEach(n->System.out.println(n))
+
+Terminal Operation - Sum
+numbers.stream().reduce(0, (n1,n2) -> (n1+n2))
+
+Exercise - Print sum of squares of first 10 numbers!
+IntStream.range(1,10).map(n -> n*n).reduce(0, (n1,n2) -> (n1+n2))
+
+Terminal Operation - Min, Max
+numbers.stream().min((n1,n2) -> Integer.compare(n1,n2)).get()
+
+Terminal Operation - Collect
+numbers.stream().filter(n -> n.intValue()%2==0).collect(Collectors.toList())
+Exercise - Create a list with sum of squares of first 10 numbers!
+
+Understanding Lambdas in Depth
+
+List.of("Apple", "Ant", "Bat").stream().forEach(n->System.out.println(n))
+
+forEach function has an interface - void java.util.stream.Stream.forEach(Consumer<T> action)
+
+How does n->System.out.println(n) become Consumer?
+
+class StringPrinter implements Consumer<String> {
+	@Override
+	public void accept(String string) {
+		System.out.println(string);
+	}
+}
+
+List.of("Apple", "Ant", "Bat").stream().forEach(new StringPrinter())
+
+n->System.out.println(n) is a short cut for all the code we wrote here!
+
+Exercise - Find out the interface behind the filter in this example and create a implementation class for it and use it
+numbers.stream().filter(n -> n.intValue()%2==0).collect(Collectors.toList())
+
+Introduction to Functional Interfaces
+- Consumer
+- Predicate
+- Function
+
+Using Method References instead of Lambda Expressions
+List.of("Apple", "Ant", "Bat").stream().forEach(System.out::println)
+Exercise - Convert earlier examples to method references
+
+
+First Class Status for Functions
+
+Passing Functions as parameters => numbers.stream().filter(n -> n.intValue()%2==0).collect(Collectors.toList())
+
+Creating variables storing method code!
+Consumer<String> consumer = n->System.out.println(n);
+
+List.of("Apple", "Ant", "Bat").stream().forEach(consumer)
+
+Creating methods which return code! (Higher Order Functions)
+public Consumer<String> printConsumer() {
+	return n->System.out.println(n);
+}
+
+List.of("Apple", "Ant", "Bat").stream().forEach(printConsumer())
+
+Functional Programming is an ocean. It deserves a book on it own. Idea is to introduce beauty of functional programming to you!

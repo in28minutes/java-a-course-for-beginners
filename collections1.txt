@@ -1,0 +1,88 @@
+class Student {
+     Student(int year, String country) {
+         this.year = year;
+         this.country = country;
+     }
+     int year;
+     String country;
+}
+list.add(5)
+list.add(8)
+list.add(5)
+list
+list.remove(5)
+list
+list.remove(Integer.valueOf(5))
+list
+list.remove(Integer.valueOf(5))
+list.remove(Integer.valueOf(5))
+list
+list
+for(Integer number:list) {
+   if(number%2==0)
+       list.remove(number);
+}
+Iterator<Integer> iterator = list.iterator();
+while(iterator.hasNext()) {
+      Integer number = iterator.next();
+      if(number%2==0)
+          iterator.remove();
+}
+iterator.hasNext()
+list
+list.remove(1)
+list.remove(Integer.valueOf(1))
+list
+List<Integer> arraylist = new ArrayList<>(list);
+list.add(1)
+list.add(2)
+list
+Set<Integer> set = new TreeSet<>(list);
+public void p(String str) { System.out.println(str);}
+p("Why do we need collections?")
+p("Arrays are not dynamic. Once an array of a particular size is declared, the size cannot be modified. To add a new element to the array, a new array has to be created with bigger size and all the elements from the old array copied to new array.");
+p("Collections are used in situations where data is dynamic. Collections allow adding an element, deleting an element and host of other operations. There are a number of Collections in Java allowing to choose the right Collection for the right context.");
+p("Types of Collections - List, Set, Map and Queue")
+p("Lets start with list - list is an interface");
+List list = List.of(1,2,3,4,5,6,7,8,9,10);
+p("This is Java 9 new feature to create a list");
+p("Get details from a list");
+list.size()
+list.isEmpty()
+list.get(0)
+list.indexOf(6)
+list.lastIndexOf(6)
+p("By default List.of provides immutable list");
+list.add(5)
+List<Integer> arrayList = new ArrayList<>(list);
+arrayList.add(11)
+list
+arrayList
+arrayList.add(0, 15)
+arrayList
+arrayList.add(3)
+arrayList
+p("Array List can have duplicates")
+arrayList.set(0,0)
+arrayList
+arrayList.remove(15)
+arrayList.remove(Integer.valueOf(15))
+arrayList.remove(Integer.valueOf(3))
+arrayList
+arrayList.remove(Integer.valueOf(3))
+arrayList
+arrayList.contains(Integer.valueOf(5))
+arrayList.contains(5)
+for(Integer number:arrayList) {
+   System.out.println(number);
+}
+for(Integer number:arrayList) {
+   System.out.println(number);
+}
+Iterator<Integer> arraylistIterator = arraylist .iterator();
+while (arraylistIterator.hasNext()) {
+Integer str = arraylistIterator.next();
+System.out.println(str);//Prints the 4 names in the list on separate lines.
+}
+p("Exercise - Create a class Student with marks stored as a list. Average, Sum, Create a new List with marks > 80, Remove marks for a subject")
+p("**** Collections only work with Objects")

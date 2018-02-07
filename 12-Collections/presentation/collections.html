@@ -1,0 +1,351 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>reveal.js – The HTML Presentation Framework</title>
+
+		<meta name="description" content="A framework for easily creating beautiful presentations using HTML">
+		<meta name="author" content="Hakim El Hattab">
+
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/theme/white.css" id="theme">
+		<link rel="stylesheet" href="css/reveal-override.css"/>
+
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+
+		<!--[if lt IE 9]>
+		<script src="lib/js/html5shiv.js"></script>
+		<![endif]-->
+	</head>
+
+	<body>
+
+		<div class="reveal">
+
+			<!-- Any section element inside of this container is displayed as a slide -->
+			<div class="slides">
+
+
+                <!-- Slides are separated by three dashes (quick 'n dirty regular expression) -->
+                <!---
+ ![](images/In28MinutesLogo-300X50.png)
+ JavaEE_Model1_Architecture
+JavaEE_Model2_Architecture
+JavaEE_Model2_Architecture_Front_Controller
+JavaEETypicalArchitecture
+SpringModules 
+ -->
+                <section data-markdown data-separator="---">
+                    <script type="text/template">
+
+# Collections
+---
+# Array
+![](images/Java-Collections-Arrays.png)
+---
+# LinkedList
+![](images/Java-Collections-LinkedList.png)
+---
+# Hashing
+![](images/Java-Collections-Hashing.png)
+---
+# Tree
+![](images/Java-Collections-Tree.png)
+---
+# Collections
+- List
+- Set
+- Queue
+- Map
+---
+# Collection Interface
+```java
+interface Collection<E> extends Iterable<E> {
+  int size();
+
+  boolean isEmpty();
+
+  boolean contains(Object paramObject);
+
+  Iterator<E> iterator();
+
+  Object[] toArray();
+
+  boolean add(E paramE);
+
+  boolean remove(Object paramObject);
+
+  boolean containsAll(Collection<?> paramCollection);
+
+  boolean addAll(Collection<? extends E> paramCollection);
+
+  boolean removeAll(Collection<?> paramCollection);
+
+  boolean retainAll(Collection<?> paramCollection);
+
+  void clear();
+
+  boolean equals(Object paramObject);
+
+  int hashcode();
+}
+```
+---
+# List
+- Cares about which position each object is in
+- Elements can be added in by specifying position - where should it be added in
+- If element is added without specifying position - it is added at the end
+
+---
+# List Interface
+
+```java
+interface List<E> extends Collection<E> {
+
+  boolean addAll(int paramInt, Collection<? extends E> paramCollection);
+
+  E get(int position);
+
+  E set(int position, E paramE);
+
+  void add(int position, E paramE);
+
+  E remove(int paramInt);
+
+  int indexOf(Object paramObject);
+
+  int lastIndexOf(Object paramObject);
+
+  ListIterator<E> listIterator();
+
+  ListIterator<E> listIterator(int paramInt);
+
+  List<E> subList(int paramInt1, int paramInt2);
+}
+```
+---
+```java
+
+class ArrayList  implements List<E>{
+  // Insertion and Deletion are slower compared to LinkedList
+  // almost constant time - access
+}
+```
+---
+```java
+
+class LinkedList  implements List<E> {
+  // Elements are doubly linked - forward and backword - to one another
+  // Iteration is slower than ArrayList
+  // Faster Insertion and Deletion
+}
+```
+---
+```java
+
+class Vector  implements List<E>{
+  // Thread Safe - Synchronized Methods
+  // almost constant time - access
+}
+```
+---
+# Set Interface
+```java
+// Unique things only - Does not allow duplication.
+// If obj1.equals(obj2) then only one of them can be in the Set.
+interface Set<E> extends Collection<E> {
+
+}
+```
+---
+```java
+
+// A, X , B
+// X, A ,B
+class HashSet  implements Set {
+  // unordered, unsorted - iterates in random order
+  // uses hashcode()
+}
+```
+---
+```java
+
+// A, X, B
+// A, X, B
+class LinkedHashSet  implements Set {
+  // ordered - iterates in order of insertion
+  // unsorted
+  // uses hashcode()
+}
+```
+---
+```java
+
+// A,C,B
+// A,B,C
+class TreeSet  implements Set,NavigableSet {
+  // 3,5,7
+  // sorted - natural order
+  // implements NavigableSet
+}
+```
+---
+# Queue
+- Arranged in order of processing - A to-do list for example
+- Queue interface extends Collection. So, it supports all Collection Methods.
+
+---
+```java
+interface Queue<E> extends Collection<E> {
+  boolean add(E paramE);
+  boolean offer(E paramE);
+  E remove();
+  E poll();
+  E peek();
+}
+```
+---
+```java
+
+class PriorityQueue  implements Queue {
+  // sorted - natural order
+  //
+
+}
+```
+---
+# Map
+
+- Key - Value Pair
+  - {["key1",value1],["key2",value2],["key3",value3]}
+- Example - A,C,A,C,E,C,M,D,H,A
+   - {("A",3),("C",3)}
+
+---
+
+# Map Interface
+
+```java
+
+interface Map<K, V> {
+  int size();
+  boolean isEmpty();
+  boolean containsKey(Object paramObject);
+  boolean containsValue(Object paramObject);
+  V get(Object key);
+  V put(K key, V value);
+  V remove(Object key);
+  void putAll(Map<? extends K, ? extends V> paramMap);
+  void clear();
+  Set<K> keySet();
+  Collection<V> values();
+  Set<Entry<K, V>> entrySet();
+  boolean equals(Object paramObject);
+  int hashcode();
+  public static abstract interface Entry<K, V> {
+    K getKey();
+
+    V getValue();
+
+    V setValue(V paramV);
+
+    boolean equals(Object paramObject);
+
+    int hashcode();
+  }
+}
+```
+---
+```java
+
+class HashMap  implements Map {
+  // unsorted, unordered
+  // key's hashcode() is used
+}
+```
+---
+```java
+
+class Hashtable  implements Map {
+  // Synchronized - Thread Safe - version of HashMap
+  // unsorted, unordered
+  // key's hashcode() is used
+  // HashMap allows a key with null value. Hashtable doesn't.
+}
+```
+---
+```java
+
+class LinkedHashMap  implements Map {
+  // insertion order is maintained (optionally can maintain access order as
+  // well)
+  // slower insertion and deletion
+  // faster iteration
+}
+```
+---
+```java
+// A,C,B
+// A,B,C
+class TreeMap  implements Map,NavigableMap {
+  // sorted order is maintained
+  // implements NavigableMap
+}
+```
+---
+# Thank You
+---
+                    </script>
+                </section>
+
+			</div>
+
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.js"></script>
+
+
+		<script>
+
+			// ![](images/NAME.png) More info https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: false,
+				progress: false,
+				history: true,
+				center: true,
+
+				transition: 'slide', // none/fade/slide/convex/concave/zoom
+
+				// More info https://github.com/hakimel/reveal.js#dependencies
+				dependencies: [
+					{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: 'plugin/zoom-js/zoom.js', async: true },
+					{ src: 'plugin/notes/notes.js', async: true }
+				]
+			});
+
+		</script>
+
+	</body>
+</html>

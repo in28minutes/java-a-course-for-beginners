@@ -1,0 +1,159 @@
+public void p(String str) { System.out.println(str);}
+p("Create an ArrayList of Students and play with it");
+students.add(new Student(7, "Raja"))
+students.remove(new Student(1, "Ranga"))
+p("We will fix this later")
+p("You can play around with it")
+p("Lets now try to sort elements in ArrayList")
+List<String> numbers = new ArrayList<String>();
+ numbers.add("one");
+numbers.add("two");
+numbers.add("two");
+numbers.add("three");
+numbers.add("four");
+ System.out.println(numbers);
+Collections.sort(numbers);
+ System.out.println(numbers);
+class Student {
+       public String name;
+       public int id;
+       public Student(String name, int id) {
+         this.name=name;
+         this.id =id;
+       }
+}
+ArrayList<Student> students = new ArrayList<>(List.of(new Student("Ranga", 100), new Student("Adam",2)));
+class AscendingSorter implements Comparator<Student> {public int compare(Student student1, Student student2) {if (student1.id > student2.id) { return 1; }
+if (student1.id < student2.id) { return -1;}
+return 0; }}
+Collections.sort(students, new AscendingSorter())
+students
+p("implements Comparable<Cricketer> and code for method public int compareTo(Cricketer that) {")
+p("Alternatives to ArrayList");
+p("What is Vector class? How is it different from an ArrayList?")
+p("Vector has the same operations as an ArrayList. However, all methods in Vector are synchronized. So, we can use Vector if we share a list between two threads and we would want to them synchronized.");
+p("What is LinkedList? What interfaces does it implement? How is it different from an ArrayList?")
+p("Set @@@@@@@@@")
+p("Set interface does not allow duplication")
+Set set = Set.of("1","2","3");//Fails
+Set hashSet = new HashSet<>(Set.of("1","2","3"));
+hashSet.add("4")
+hashSet
+hashSet.add("2")
+hashSet.add("2.5")
+hashSet
+hashSet.add("0")
+hashSet
+p("HashSet does not support ordering. The order in which elements are inserted is not maintained.")
+p("LinkedHashSet maintains order")
+p("TreeSet stores element’s in Sorted Order.");
+TreeSet<Integer> treeSet = new TreeSet<Integer>(Set.of(55,25,35,5,45));
+treeSet.floor(25);
+treeSet.lower(25);//5
+treeSet.floor(25);//25
+treeSet.higher(25);//35
+treeSet.ceiling(25);
+treeSet.subSet(25,true,55,true);
+treeSet.subSet(25,55);
+treeSet.headSet(25);
+treeSet.tailSet(25);
+treeSet.pollFirst();
+treeSet.pollLast();
+p("HashSet, LinkedHashSet and TreeSet implement the Set interface");
+p("*****Queue Interface")
+queue.addAll(List.of("Apple", "Zebra" , "Ball"));
+queue
+queue.add("Cat");
+queue
+queue.peek()
+queue.poll()
+queue
+queue.poll()
+queue.add("Bat")
+queue
+queue.poll()
+Comparator reverseComparator = new Comparator<String>() { public int compare(String s1,
+String s2) { return Integer.compare(s1.length(), s2.length());} };
+queue.addAll(List.of("Apple", "Zebra" , "Ball"))
+queue
+queue.poll()
+queue.add("Cat");
+queue
+queue.poll()
+queue
+p("For a capacity-constrained queue, the difference is that add() always returns true and throws an exception if it can't add the element, whereas offer() is allowed to return false if it can't add the element. However, this doesn't apply to PriorityQueue ; the two functions are synonymous.")
+p("&**** MAP")
+p("Map interface does not extend Collection interface. So, it does not inherit any of the methods from the Collection interface.");
+p("Set interface can be used for an exercise problem - Find unique characters in a String");
+p("Set interface can be used for an exercise problem - Find unique characters in a String in Sorted Order - Exercise 2");
+p("Set interface can be used for an exercise problem - Find unique characters in a String in Order They are found in the string - Exercise 3");
+p("Set interface can be used for an exercise problem - Find unique words in a String");
+map.keySet()
+map.values()
+map.entrySet()
+map.get("The")
+map.get("Unknown")
+map.put("The", 10)
+map
+map.put("A",5)
+map.put("New",5)
+map
+map.put("New",10)
+map
+TreeMap<String, Integer> map = new TreeMap<>(Map.of("A",1,"An",5,"The",6));
+System.out.println(map.lowerKey("An"))
+map.floorKey("An")
+map.higherKey("An")
+map
+map.ceilingKey("An")
+map.firstEntry()
+map.lastEntry()
+p("fsfaljk");
+p("Find number of occurances of each word in a String");
+p("Find number of occurances of each vowel in a String");
+p("Find number of occurances of all characters in a String");
+p("Collections class static methods ******")
+set
+List<Integer> list = new ArrayList<>(List.of(3,2,4));
+Collections.reverse(list)
+list
+Comparator reverseReverseComparator = Collections.reverseOrder(reverseComparator);
+Queue<String> queue = new PriorityQueue<>(reverseReverseComparator);
+queue.addAll(List.of("Apple","Ball","Check","Elephant"))
+queue
+queue.poll()
+ myList.add("Value 1");
+class MyList {
+private List<String> values = new ArrayList<String>();
+void add(String value) { values.add(value);
+}
+void remove(String value) { values.remove(value);
+}
+}
+MyList myList = new MyList();
+ myList.add("Value 1");
+ myList.add("Value 2");
+class MyListGeneric<T> { private List<T> values = new ArrayList<T>();
+void add(T value) { values.add(value);
+}
+void remove(T value) { values.remove(value);
+}
+}
+MyListGeneric<String> myListString = new MyListGeneric<String>();
+ myListString.add("Value 1");
+myListString.add("Value 2");
+MyListGeneric<Integer> myListInteger = new MyListGeneric<Integer>();
+ myListInteger.add(1);
+myListInteger.add(2);
+p("If a generic is declared as part of class declaration, it can be used any where a type can be used in a class - method (return type or argument), member variable etc. For Example: See how T is used as a parameter and return type in the class MyListGeneric.")
+class MyListRestricted<T extends Number> {
+}
+p("In MyListGeneric, Type T is defined as part of class declaration. Any Java Type can be used a type for this class. If we would want to restrict the types allowed for a Generic Type, we can use a Generic Restrictions. Consider the example class below: In declaration of the class, we specified a constraint T extends Number. We can use the class MyListRestricted with any class extending (any sub class of) Number - Float, Integer, Double etc.");
+p("How can we restrict Generics to a super class of particular class? T super Number");
+p("Generic Method");
+static <X extends Number> X doSomething(X number){ X result = number;
+//do something with result
+return result;
+}
+Integer i = 5;
+Integer k = doSomething(i);

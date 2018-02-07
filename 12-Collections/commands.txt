@@ -1,0 +1,271 @@
+void clear() { System.out.print("\033[H\033[2J ");}
+clear()
+clear()
+words.size()
+words.isEmpty()
+words.get(0)
+words.contains("Dog");
+words.contains("Cat");
+words.indexOf("Cat")
+words
+words.indexOf("Dog")
+clear()
+words.add("Dog")
+List<String> wordsLinkedList = new LinkedList<String>(words);
+List<String> wordsVector = new Vector<String>(words);
+wordsArrayList.add("Dog")
+wordsArrayList
+wordsArrayList.add("Elephant")
+wordsArrayList.add(2, "Ball")
+wordsArrayList
+wordsArrayList.add("Ball")
+wordsArrayList
+List<String> newList = List.of("Yak","Zebra");
+wordsArrayList.addAll(newList)
+wordsArrayList
+wordsArrayList.set(6, "Fish")
+wordsArrayList
+wordsArrayList.remove(2)
+wordsArrayList
+wordsArrayList.remove("Dog")
+wordsArrayList
+wordsArrayList.remove("Dog")
+clear()
+for(int i=0; i < words.size(); i++) {
+     System.out.println(words.get(i));
+}
+for(String word:words) {
+     System.out.println(word);
+}
+Iterator wordsIterator = words.iterator();
+while(wordsIterator.hasNext()) {
+      System.out.println(wordsIterator.next());
+}
+List<String> wordsArrayList = new ArrayList<String>(words);
+for(String word:words) {
+   if(word.endsWith("at")) {
+        words.remove(word);
+   }
+}
+for(String word:wordsArrayList) {
+   if(word.endsWith("at")) {
+        wordsArrayList.remove(word);
+   }
+}
+wordsArrayList
+for(String word:words) {
+   if(word.endsWith("at"))
+      System.out.println(word);
+}
+for(String word:wordsAl) {
+   if(word.endsWith("at")) {
+        words.remove(word);
+   }
+}
+for(String word:wordsAl) {
+   if(word.endsWith("at")) {
+        wordsAl.remove(word);
+   }
+}
+wordsAl
+clear()
+List<String> words = List.of("Apple", "Bat" , "Cat");
+List<String> wordsAl = new ArrayList<>(words);
+Iterator<String> iterator = wordsAl.iterator();
+while(iterator.hasNext()) {
+     if(iterator.next().endsWith("at")) {
+          iterator.remove();
+     }
+}
+wordsAl
+clear()
+List value = List.of("A", 'A' , 1, 1.0);
+value.get(2)
+value.get(2) instanceof Integer
+value.get(1) instanceof Character
+value.get(3) instanceof Double
+numbers.indexOf(101);
+numbersAl.indexOf(101)
+numbersAl.remove(101);
+numbersAl.remove(101)
+numbersAl.remove(Integer.valueOf(101))
+numbersAl
+clear()
+List<Integer> numbersAl = new ArrayList<>(numbers);
+Collections.sort(numbersAl);
+numbersAl
+clear()
+set.add("Apple");
+Set<String> hashset = new HashSet<>(set);
+hashset.add("Apple")
+hashset
+Set<String> set = Set.of("A", "Z","D", "C", "B");
+hashSet.add("A")
+hashSet.add("B")
+hashSet
+hashSet.add("C")
+hashSet
+hashSet.add("CA")
+hashSet
+hashSet.add("CAfsadfa")
+hashSet
+treeSet.add("Cat")
+treeSet.add("Bat")
+treeSet.add("Apple")
+treeSet
+hashSet.add("Cat");
+hashSet.add("Bat");
+hashSet.add("Apple");
+hashSet
+hashSet.add("Dog");
+hashSet
+hashSet.add("Elephant");
+hashSet.add(5);
+hashSet.add(4);
+hashSet.add(3);
+hashSet.add(2);
+hashSet.add(1);
+hashSet
+Set<Integer> hashSet = new HashSet<>();
+hashSet.add(589789);
+hashSet.add(58978);
+hashSet.add(5897);
+hashSet.add(589);
+hashSet.add(58);
+hashSet.add(5);
+hashSet
+Set<Integer> linkedHashSet = new LinkedHashSet<>();
+linkedHashSet.add(589789);
+linkedHashSet.add(58978);
+linkedHashSet.add(5897);
+linkedHashSet.add(589);
+linkedHashSet.add(58);
+linkedHashSet.add(5);
+linkedHashSet
+Set<Integer> treeSet = new TreeSet<>();
+treeSet.add(584567);
+treeSet.add(58456);
+treeSet.add(5845);
+treeSet.add(584);
+treeSet.add(58);
+treeSet.add(5);
+treeSet
+numbers.add(765432);
+numbers.add(76543);
+numbers.add(7654);
+numbers.add(765);
+numbers.add(76);
+numbers
+numbers.add(765432);
+numbers.add(76543);
+numbers.add(7654);
+numbers.add(765);
+numbers.add(76);
+numbers
+numbers.add(765789);
+numbers
+numbers.add(76)
+numbers
+numbers.add(765432);
+numbers.add(76543);
+numbers.add(7654);
+numbers.add(765);
+numbers.add(76);
+numbers
+numbers.add(76)
+List<Character> characters = List.of('A','Z','A', 'B', 'Z','F');
+clear()
+clear()
+TreeSet<Integer> numbers = new TreeSet<>(Set.of(65,54,34,12,99));
+numbers.floor(40)
+numbers.floor(34)
+numbers.lower(34)
+numbers.ceiling(34)
+numbers.ceiling(36)
+numbers.higher(34)
+numbers
+numbers.subSet(20,80)
+numbers.subSet(34,54)
+numbers.subSet(34,65)
+numbers.subSet(34,true,65,true)
+numbers.subSet(34,false,65,false)
+numbers.headSet(50)
+numbers.tailSet(50)
+clear()
+Queue<String> queue = new PriorityQueue<>();
+queue.poll()
+queue.offer("Apple")
+queue.addAll(List.of("Zebra", "Monkey", "Cat"))
+queue
+queue.poll()
+queue
+queue.poll()
+queue.poll()
+queue.poll()
+queue.poll()
+clear()
+clear()
+map.put("R",1);
+map
+map.get("Z")
+map.get("A")
+map.get("C")
+map.size()
+map.isEmpty()
+map.containsKey("A")
+map.containsKey("F")
+map.containsValue(3)
+map
+map.containsValue(4)
+map.keySet()
+map.values()
+map
+hashmap.put("F",5)
+hashmap
+hashmap.put("Z",11)
+hashmap
+Map<String, Integer> map = Map.of("A",3,"Z",5,"B",10);
+Map<String, Integer> linkedHashmap = new LinkedHashMap<>(map);
+clear()
+HashMap<String, Integer> hashmap = new HashMap<>();
+hashmap.put("Z",5)
+hashmap.put("A",15)
+hashmap.put("F",25)
+hashmap.put("L",250)
+hashmap
+LinkedHashMap<String, Integer> linkedHashMap = new LinkedHashMap<>();
+hashmap
+linkedHashMap.put("F",25)
+linkedHashMap.put("A",15)
+linkedHashMap.put("Z",5)
+linkedHashMap.put("L",250)
+linkedHashMap
+treemap.put("F",25)
+treemap.put("A",15)
+treemap.put("Z",5)
+treemap.put("L",250)
+treemap
+clear()
+TreeMap<String, Integer> treemap = new TreeMap<>();
+treemap.put("F",25)
+treemap.put("Z",5)
+treemap.put("L",250)
+treemap.put("A",15)
+treemap.put("B",25)
+treemap.put("G",25)
+treemap
+treemap.higherKey("C")
+treemap.lowerKey("C")
+treemap.lowerKey("B")
+treemap.floorKey("B")
+treemap.higherKey("B")
+treemap.higherKey("C")
+treemap.ceilingKey("B")
+treemap.lowerKey("B")
+treemap.floorKey("B")
+treemap.firstEntry()
+treemap.lastEntry()
+treemap
+treemap.subMap("C", "Y")
+treemap.subMap("B", "Z")
+treemap.subMap("B",true, "Z",true)

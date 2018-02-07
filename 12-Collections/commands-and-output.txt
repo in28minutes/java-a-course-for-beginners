@@ -1,0 +1,2809 @@
+Last login: Mon Feb  5 14:43:43 on ttys001
+Rangas-MacBook-Pro:~ rangaraokaranam$ jshell
+|  Welcome to JShell -- Version 9.0.1
+|  For an introduction type: /help intro
+
+jshell> class Student {
+   ...>    int year;
+   ...>    String country;
+   ...> }
+|  created class Student
+
+jshell> class Student {
+   ...>      Student(int year, String country) {
+   ...>          this.year = year;
+   ...>          this.country = country;
+   ...>      }
+   ...>      int year;
+   ...>      String country;
+   ...> }
+|  replaced class Student
+
+jshell> List list = List.of(1,2,3,4,5,6,7,1,2);
+list ==> [1, 2, 3, 4, 5, 6, 7, 1, 2]
+
+jshell> list.
+add(               addAll(            clear()            contains(          
+containsAll(       equals(            forEach(           get(               
+getClass()         hashCode()         indexOf(           isEmpty()          
+iterator()         lastIndexOf(       listIterator(      notify()           
+notifyAll()        parallelStream()   remove(            removeAll(         
+removeIf(          replaceAll(        retainAll(         set(               
+size()             sort(              spliterator()      stream()           
+subList(           toArray(           toString()         wait(              
+
+jshell> list.add(5)
+|  Warning:
+|  unchecked call to add(E) as a member of the raw type java.util.List
+|  list.add(5)
+|  ^---------^
+|  java.lang.UnsupportedOperationException thrown: 
+|        at ImmutableCollections.uoe (ImmutableCollections.java:71)
+|        at ImmutableCollections$AbstractImmutableList.add (ImmutableCollections.java:77)
+|        at (#4:1)
+
+jshell> List list = List.(1,2,3,4,5,6,7,1,2);
+of(   
+
+<press tab again to see all possible completions>
+
+jshell> List list = List
+List                 ListIterator         ListResourceBundle   
+
+jshell> List list = List.
+of(   
+
+<press tab again to see all possible completions>
+
+jshell> List list = List.
+class   of(     
+
+jshell> List list = Mut
+jshell> List list = Mutable
+jshell> List list = MutableList
+jshell> List list = MutableList.
+jshell> List list = new ArrayList(List.of(1,2,3,4,5,6,7));
+|  Warning:
+|  unchecked call to ArrayList(java.util.Collection<? extends E>) as a member of the raw type java.util.ArrayList
+|  List list = new ArrayList(List.of(1,2,3,4,5,6,7));
+|              ^-----------------------------------^
+list ==> [1, 2, 3, 4, 5, 6, 7]
+
+jshell> List list = new ArrayList<Integer>(List.of(1,2,3,4,5,6,7));
+list ==> [1, 2, 3, 4, 5, 6, 7]
+
+jshell> list.add(8)
+|  Warning:
+|  unchecked call to add(E) as a member of the raw type java.util.List
+|  list.add(8)
+|  ^---------^
+$7 ==> true
+
+jshell> List<Integer> list = new ArrayList<Integer>(List.of(1,2,3,4,5,6,7));
+list ==> [1, 2, 3, 4, 5, 6, 7]
+
+jshell> list.add(5)
+$9 ==> true
+
+jshell> list
+list ==> [1, 2, 3, 4, 5, 6, 7, 5]
+
+jshell> list.remove(5)
+$11 ==> 6
+
+jshell> list
+list ==> [1, 2, 3, 4, 5, 7, 5]
+
+jshell> list.remove
+remove(      removeAll(   removeIf(    
+
+jshell> list.
+add(               addAll(            clear()            contains(          
+containsAll(       equals(            forEach(           get(               
+getClass()         hashCode()         indexOf(           isEmpty()          
+iterator()         lastIndexOf(       listIterator(      notify()           
+notifyAll()        parallelStream()   remove(            removeAll(         
+removeIf(          replaceAll(        retainAll(         set(               
+size()             sort(              spliterator()      stream()           
+subList(           toArray(           toString()         wait(              
+
+jshell> list.remove(
+$11    $4     $7     $9     list   
+
+Signatures:
+boolean List<E extends Object>.remove(Object o)
+E List<E extends Object>.remove(int index)
+
+<press tab again to see documentation>
+
+jshell> list.remove(
+boolean List<E extends Object>.remove(Object o)
+Removes the first occurrence of the specified element from this list, if it is
+present (optional operation).If this list does not contain the element, it is
+unchanged. More formally, removes the element with the lowest index i such that
+Objects.equals(o, get(i)) (if such an element exists). Returns true if this list
+contained the specified element (or equivalently, if this list changed as a result
+of the call).
+
+Parameters:
+o - element to be removed from this list, if present
+
+Returns:
+true if this list contained the specified element
+
+Thrown Exceptions:
+ClassCastException - if the type of the specified element is incompatible with this
+                     list ( optional )
+NullPointerException - if the specified element is null and this list does not
+
+<press tab again to see next page>
+
+jshell> list.remove(
+                       permit null elements ( optional )
+UnsupportedOperationException - if the remove operation is not supported by this
+                                list
+
+<press tab to see next documentation>
+
+jshell> list.remove(
+E List<E extends Object>.remove(int index)
+Removes the element at the specified position in this list (optional
+operation).Shifts any subsequent elements to the left (subtracts one from their
+indices). Returns the element that was removed from the list.
+
+Parameters:
+index - the index of the element to be removed
+
+Returns:
+the element previously at the specified position
+
+Thrown Exceptions:
+UnsupportedOperationException - if the remove operation is not supported by this
+                                list
+IndexOutOfBoundsException - if the index is out of range ( index < 0 || index >=
+                            size() )
+
+<press tab again to see all possible completions; total possible completions: 551>
+
+jshell> list.remove(
+$11                                      $4                                       
+$7                                       $9                                       
+AbstractCollection                       AbstractExecutorService                  
+AbstractList                             AbstractMap                              
+AbstractMethodError                      AbstractPreferences                      
+AbstractQueue                            AbstractSequentialList                   
+AbstractSet                              AccessDeniedException                    
+AccessMode                               Appendable                               
+ArithmeticException                      ArrayBlockingQueue                       
+ArrayDeque                               ArrayIndexOutOfBoundsException           
+ArrayList                                ArrayStoreException                      
+Arrays                                   AssertionError                           
+AtomicMoveNotSupportedException          Authenticator                            
+AutoCloseable                            BackingStoreException                    
+Base64                                   BaseStream                               
+BiConsumer                               BiFunction                               
+BiPredicate                              BigDecimal                               
+BigInteger                               BinaryOperator                           
+BindException                            BitSet                                   
+BlockingDeque                            BlockingQueue                            
+Boolean                                  BooleanSupplier                          
+BootstrapMethodError                     BrokenBarrierException                   
+BufferedInputStream                      BufferedOutputStream                     
+BufferedReader                           BufferedWriter                           
+Builder                                  Byte                                     
+ByteArrayInputStream                     ByteArrayOutputStream                    
+CacheRequest                             CacheResponse                            
+Calendar                                 Callable                                 
+CancellationException                    CharArrayReader                          
+CharArrayWriter                          CharConversionException                  
+CharSequence                             Character                                
+Class                                    ClassCastException                       
+ClassCircularityError                    ClassFormatError                         
+ClassLoader                              ClassNotFoundException                   
+ClassValue                               CloneNotSupportedException               
+Cloneable                                Closeable                                
+ClosedDirectoryStreamException           ClosedFileSystemException                
+ClosedWatchServiceException              Collection                               
+Collections                              Collector                                
+Collectors                               Comparable                               
+Comparator                               Compiler                                 
+CompletableFuture                        CompletionException                      
+CompletionService                        CompletionStage                          
+ConcurrentHashMap                        ConcurrentLinkedDeque                    
+ConcurrentLinkedQueue                    ConcurrentMap                            
+ConcurrentModificationException          ConcurrentNavigableMap                   
+ConcurrentSkipListMap                    ConcurrentSkipListSet                    
+ConnectException                         Console                                  
+Consumer                                 ContentHandler                           
+ContentHandlerFactory                    CookieHandler                            
+CookieManager                            CookiePolicy                             
+CookieStore                              CopyOnWriteArrayList                     
+CopyOnWriteArraySet                      CopyOption                               
+CountDownLatch                           CountedCompleter                         
+Currency                                 CyclicBarrier                            
+DataInput                                DataInputStream                          
+DataOutput                               DataOutputStream                         
+DatagramPacket                           DatagramSocket                           
+DatagramSocketImpl                       DatagramSocketImplFactory                
+Date                                     DelayQueue                               
+Delayed                                  Deprecated                               
+Deque                                    Dictionary                               
+DirectoryIteratorException               DirectoryNotEmptyException               
+DirectoryStream                          Double                                   
+DoubleBinaryOperator                     DoubleConsumer                           
+DoubleFunction                           DoublePredicate                          
+DoubleStream                             DoubleSummaryStatistics                  
+DoubleSupplier                           DoubleToIntFunction                      
+DoubleToLongFunction                     DoubleUnaryOperator                      
+DuplicateFormatFlagsException            EOFException                             
+EmptyStackException                      Enum                                     
+EnumConstantNotPresentException          EnumMap                                  
+EnumSet                                  Enumeration                              
+Error                                    EventListener                            
+EventListenerProxy                       EventObject                              
+Exception                                ExceptionInInitializerError              
+Exchanger                                ExecutionException                       
+Executor                                 ExecutorCompletionService                
+ExecutorService                          Executors                                
+Externalizable                           File                                     
+FileAlreadyExistsException               FileDescriptor                           
+FileFilter                               FileInputStream                          
+FileNameMap                              FileNotFoundException                    
+FileOutputStream                         FilePermission                           
+FileReader                               FileStore                                
+FileSystem                               FileSystemAlreadyExistsException         
+FileSystemException                      FileSystemLoopException                  
+FileSystemNotFoundException              FileSystems                              
+FileVisitOption                          FileVisitResult                          
+FileVisitor                              FileWriter                               
+FilenameFilter                           Files                                    
+FilterInputStream                        FilterOutputStream                       
+FilterReader                             FilterWriter                             
+Float                                    Flow                                     
+Flushable                                ForkJoinPool                             
+ForkJoinTask                             ForkJoinWorkerThread                     
+FormatFlagsConversionMismatchException   Formattable                              
+FormattableFlags                         Formatter                                
+FormatterClosedException                 Function                                 
+FunctionalInterface                      Future                                   
+FutureTask                               GregorianCalendar                        
+HashMap                                  HashSet                                  
+Hashtable                                HttpCookie                               
+HttpRetryException                       HttpURLConnection                        
+IDN                                      IOError                                  
+IOException                              IdentityHashMap                          
+IllegalAccessError                       IllegalAccessException                   
+IllegalArgumentException                 IllegalCallerException                   
+IllegalFormatCodePointException          IllegalFormatConversionException         
+IllegalFormatException                   IllegalFormatFlagsException              
+IllegalFormatPrecisionException          IllegalFormatWidthException              
+IllegalMonitorStateException             IllegalStateException                    
+IllegalThreadStateException              IllformedLocaleException                 
+IncompatibleClassChangeError             IndexOutOfBoundsException                
+Inet4Address                             Inet6Address                             
+InetAddress                              InetSocketAddress                        
+InheritableThreadLocal                   InputMismatchException                   
+InputStream                              InputStreamReader                        
+InstantiationError                       InstantiationException                   
+IntBinaryOperator                        IntConsumer                              
+IntFunction                              IntPredicate                             
+IntStream                                IntSummaryStatistics                     
+IntSupplier                              IntToDoubleFunction                      
+IntToLongFunction                        IntUnaryOperator                         
+Integer                                  InterfaceAddress                         
+InternalError                            InterruptedException                     
+InterruptedIOException                   InvalidClassException                    
+InvalidObjectException                   InvalidPathException                     
+InvalidPreferencesFormatException        InvalidPropertiesFormatException         
+IsoCountryCode                           Iterable                                 
+Iterator                                 JarURLConnection                         
+LayerInstantiationException              LineNumberInputStream                    
+LineNumberReader                         LinkOption                               
+LinkPermission                           LinkageError                             
+LinkedBlockingDeque                      LinkedBlockingQueue                      
+LinkedHashMap                            LinkedHashSet                            
+LinkedList                               LinkedTransferQueue                      
+List                                     ListIterator                             
+ListResourceBundle                       Locale                                   
+Long                                     LongBinaryOperator                       
+LongConsumer                             LongFunction                             
+LongPredicate                            LongStream                               
+LongSummaryStatistics                    LongSupplier                             
+LongToDoubleFunction                     LongToIntFunction                        
+LongUnaryOperator                        MalformedURLException                    
+Map                                      MatchResult                              
+Matcher                                  Math                                     
+MathContext                              MissingFormatArgumentException           
+MissingFormatWidthException              MissingResourceException                 
+Module                                   ModuleLayer                              
+MulticastSocket                          NavigableMap                             
+NavigableSet                             NegativeArraySizeException               
+NetPermission                            NetworkInterface                         
+NoClassDefFoundError                     NoRouteToHostException                   
+NoSuchElementException                   NoSuchFieldError                         
+NoSuchFieldException                     NoSuchFileException                      
+NoSuchMethodError                        NoSuchMethodException                    
+NodeChangeEvent                          NodeChangeListener                       
+NotActiveException                       NotDirectoryException                    
+NotLinkException                         NotSerializableException                 
+NullPointerException                     Number                                   
+NumberFormatException                    ObjDoubleConsumer                        
+ObjIntConsumer                           ObjLongConsumer                          
+Object                                   ObjectInput                              
+ObjectInputFilter                        ObjectInputStream                        
+ObjectInputValidation                    ObjectOutput                             
+ObjectOutputStream                       ObjectStreamClass                        
+ObjectStreamConstants                    ObjectStreamException                    
+ObjectStreamField                        Objects                                  
+Observable                               Observer                                 
+OpenOption                               Optional                                 
+OptionalDataException                    OptionalDouble                           
+OptionalInt                              OptionalLong                             
+OutOfMemoryError                         OutputStream                             
+OutputStreamWriter                       Override                                 
+Package                                  PasswordAuthentication                   
+Path                                     PathMatcher                              
+Paths                                    Pattern                                  
+PatternSyntaxException                   Phaser                                   
+PipedInputStream                         PipedOutputStream                        
+PipedReader                              PipedWriter                              
+PortUnreachableException                 Predicate                                
+PreferenceChangeEvent                    PreferenceChangeListener                 
+Preferences                              PreferencesFactory                       
+PrimitiveIterator                        PrintStream                              
+PrintWriter                              PriorityBlockingQueue                    
+PriorityQueue                            Process                                  
+ProcessBuilder                           ProcessHandle                            
+Properties                               PropertyPermission                       
+PropertyResourceBundle                   ProtocolException                        
+ProtocolFamily                           ProviderMismatchException                
+ProviderNotFoundException                Proxy                                    
+ProxySelector                            PushbackInputStream                      
+PushbackReader                           Queue                                    
+Random                                   RandomAccess                             
+RandomAccessFile                         ReadOnlyFileSystemException              
+Readable                                 Reader                                   
+RecursiveAction                          RecursiveTask                            
+ReflectiveOperationException             RejectedExecutionException               
+RejectedExecutionHandler                 ResourceBundle                           
+ResponseCache                            RoundingMode                             
+Runnable                                 RunnableFuture                           
+RunnableScheduledFuture                  Runtime                                  
+RuntimeException                         RuntimePermission                        
+SafeVarargs                              Scanner                                  
+ScheduledExecutorService                 ScheduledFuture                          
+ScheduledThreadPoolExecutor              SecureCacheResponse                      
+SecureDirectoryStream                    SecurityException                        
+SecurityManager                          Semaphore                                
+SequenceInputStream                      Serializable                             
+SerializablePermission                   ServerSocket                             
+ServiceConfigurationError                ServiceLoader                            
+Set                                      Short                                    
+SimpleFileVisitor                        SimpleTimeZone                           
+Socket                                   SocketAddress                            
+SocketException                          SocketImpl                               
+SocketImplFactory                        SocketOption                             
+SocketOptions                            SocketPermission                         
+SocketTimeoutException                   SortedMap                                
+SortedSet                                Spliterator                              
+Spliterators                             SplittableRandom                         
+Stack                                    StackOverflowError                       
+StackTraceElement                        StackWalker                              
+StandardCopyOption                       StandardOpenOption                       
+StandardProtocolFamily                   StandardSocketOptions                    
+StandardWatchEventKinds                  Stream                                   
+StreamCorruptedException                 StreamSupport                            
+StreamTokenizer                          StrictMath                               
+String                                   StringBuffer                             
+StringBufferInputStream                  StringBuilder                            
+StringIndexOutOfBoundsException          StringJoiner                             
+StringReader                             StringTokenizer                          
+StringWriter                             Student                                  
+SubmissionPublisher                      Supplier                                 
+SuppressWarnings                         SyncFailedException                      
+SynchronousQueue                         System                                   
+Thread                                   ThreadDeath                              
+ThreadFactory                            ThreadGroup                              
+ThreadLocal                              ThreadLocalRandom                        
+ThreadPoolExecutor                       Throwable                                
+TimeUnit                                 TimeZone                                 
+TimeoutException                         Timer                                    
+TimerTask                                ToDoubleBiFunction                       
+ToDoubleFunction                         ToIntBiFunction                          
+ToIntFunction                            ToLongBiFunction                         
+ToLongFunction                           TooManyListenersException                
+TransferQueue                            TreeMap                                  
+TreeSet                                  TypeNotPresentException                  
+URI                                      URISyntaxException                       
+URL                                      URLClassLoader                           
+URLConnection                            URLDecoder                               
+URLEncoder                               URLPermission                            
+URLStreamHandler                         URLStreamHandlerFactory                  
+UTFDataFormatException                   UUID                                     
+UnaryOperator                            UncheckedIOException                     
+UnknownError                             UnknownFormatConversionException         
+UnknownFormatFlagsException              UnknownHostException                     
+UnknownServiceException                  UnsatisfiedLinkError                     
+UnsupportedClassVersionError             UnsupportedEncodingException             
+UnsupportedOperationException            Vector                                   
+VerifyError                              Version                                  
+VirtualMachineError                      Void                                     
+WatchEvent                               WatchKey                                 
+WatchService                             Watchable                                
+WeakHashMap                              WriteAbortedException                    
+Writer                                   apple                                    
+boolean                                  byte                                     
+char                                     com                                      
+double                                   float                                    
+int                                      java                                     
+javafx                                   javax                                    
+jdk                                      list                                     
+long                                     netscape                                 
+oracle                                   org                                      
+short                                    sun                                      
+void                                     
+
+jshell> list.remove(
+$11    $4     $7     $9     list   
+
+Signatures:
+boolean List<E extends Object>.remove(Object o)
+E List<E extends Object>.remove(int index)
+
+<press tab again to see documentation>
+
+jshell> list.remove(Integer.valueOf(5))
+$13 ==> true
+
+jshell> list
+list ==> [1, 2, 3, 4, 7, 5]
+
+jshell> list.remove(Integer.valueOf(5))
+$15 ==> true
+
+jshell> list.remove(Integer.valueOf(5))
+$16 ==> false
+
+jshell> list
+list ==> [1, 2, 3, 4, 7]
+
+jshell> list.
+add(               addAll(            clear()            contains(          
+containsAll(       equals(            forEach(           get(               
+getClass()         hashCode()         indexOf(           isEmpty()          
+iterator()         lastIndexOf(       listIterator(      notify()           
+notifyAll()        parallelStream()   remove(            removeAll(         
+removeIf(          replaceAll(        retainAll(         set(               
+size()             sort(              spliterator()      stream()           
+subList(           toArray(           toString()         wait(              
+
+jshell> list
+list ==> [1, 2, 3, 4, 7]
+
+jshell> for(Integer number:list) {
+   ...>    if(number%2==0) 
+   ...>        list.remove(number);
+   ...> }
+|  java.util.ConcurrentModificationException thrown: 
+|        at ArrayList$Itr.checkForComodification (ArrayList.java:939)
+|        at ArrayList$Itr.next (ArrayList.java:893)
+|        at (#19:1)
+
+jshell> Iterator iterator = list.iterator()
+iterator()   
+
+jshell> Iterator iterator = list.iterator();
+iterator ==> java.util.ArrayList$Itr@7d0587f1
+
+jshell> while(iterator.hasNext()) {
+   ...>       Integer number = iterator.
+hashCode()   
+
+<press tab again to see all possible completions>
+   ...>       Integer number = iterator.next();
+   ...>       if(number%2==0)
+   ...>           iterator.remove()
+remove()   
+   ...>           iterator.remove();
+   ...> }
+|  Error:
+|  incompatible types: java.lang.Object cannot be converted to java.lang.Integer
+|        Integer number = iterator.next();
+|                         ^-------------^
+
+jshell> Iterator<Integer> iterator = list.iterator();
+iterator ==> java.util.ArrayList$Itr@5d76b067
+
+jshell> while(iterator.hasNext()) {
+   ...>       Integer number = iterator.next();
+   ...>       if(number%2==0)
+   ...>           iterator.remove();
+   ...> }
+
+jshell> iterator.hasNext()
+$23 ==> false
+
+jshell> list
+list ==> [1, 3, 7]
+
+jshell> List list = IntStream.range(1,100)
+|  Error:
+|  incompatible types: java.util.stream.IntStream cannot be converted to java.util.List
+|  List list = IntStream.range(1,100);
+|              ^--------------------^
+
+jshell> List list = IntStream.range(1,100).
+allMatch(             anyMatch(             asDoubleStream()      
+asLongStream()        average()             boxed()               
+close()               collect(              count()               
+distinct()            dropWhile(            equals(               
+filter(               findAny()             findFirst()           
+flatMap(              forEach(              forEachOrdered(       
+getClass()            hashCode()            isParallel()          
+iterator()            limit(                map(                  
+mapToDouble(          mapToLong(            mapToObj(             
+max()                 min()                 noneMatch(            
+notify()              notifyAll()           onClose(              
+parallel()            peek(                 reduce(               
+sequential()          skip(                 sorted()              
+spliterator()         sum()                 summaryStatistics()   
+takeWhile(            toArray()             toString()            
+unordered()           wait(                 
+
+jshell> List list = IntStream.range(1,100).asLongStream().
+allMatch(             anyMatch(             asDoubleStream()      
+average()             boxed()               close()               
+collect(              count()               distinct()            
+dropWhile(            equals(               filter(               
+findAny()             findFirst()           flatMap(              
+forEach(              forEachOrdered(       getClass()            
+hashCode()            isParallel()          iterator()            
+limit(                map(                  mapToDouble(          
+mapToInt(             mapToObj(             max()                 
+min()                 noneMatch(            notify()              
+notifyAll()           onClose(              parallel()            
+peek(                 reduce(               sequential()          
+skip(                 sorted()              spliterator()         
+sum()                 summaryStatistics()   takeWhile(            
+toArray()             toString()            unordered()           
+wait(                 
+
+jshell> List list = IntStream.range(1,100).boxed()
+jshell> List list = IntStream.range(1,100).boxed().collect(Collectors.toList())
+list ==> [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 1 ... 3, 94, 95, 96, 97, 98, 99]
+
+jshell> List<Integer> list = new ArrayList<>(list);
+list ==> [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 1 ... 3, 94, 95, 96, 97, 98, 99]
+
+jshell> list.remove(1)
+$27 ==> 2
+
+jshell> list.remove(Integer.valueOf(1))
+$28 ==> true
+
+jshell> list
+list ==> [3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 79, 80, 81, 82, 83, 84, 85, 86, 87, 88, 89, 90, 91, 92, 93, 94, 95, 96, 97, 98, 99]
+
+jshell> List<Integer> list = new ArrayList<>(list);
+list ==> [3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, ... 3, 94, 95, 96, 97, 98, 99]
+
+jshell> List list = IntStream.range(1,100).boxed().collect(Collectors.toList())
+list ==> [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 1 ... 3, 94, 95, 96, 97, 98, 99]
+
+jshell> List<Integer> list = new TreeSet<>(list);
+|  Error:
+|  incompatible types: cannot infer type arguments for java.util.TreeSet<>
+|      reason: no instance(s) of type variable(s) E exist so that java.util.TreeSet<E> conforms to java.util.List<java.lang.Integer>
+|  List<Integer> list = new TreeSet<>(list);
+|                           ^-------^
+
+jshell> Set<Integer> set = new TreeSet<>(list);
+|  Error:
+|  cannot find symbol
+|    symbol:   variable list
+|  Set<Integer> set = new TreeSet<>(list);
+|                                   ^--^
+
+jshell> list
+|  Error:
+|  cannot find symbol
+|    symbol:   variable list
+|  list
+|  ^--^
+
+jshell> List list = IntStream.range(1,100).boxed().collect(Collectors.toList())
+list ==> [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 1 ... 3, 94, 95, 96, 97, 98, 99]
+
+jshell> Set<Integer> set = new TreeSet<>(list);
+|  Warning:
+|  unchecked method invocation: constructor <init> in class java.util.TreeSet is applied to given types
+|    required: java.util.Collection<? extends E>
+|    found: java.util.List
+|  Set<Integer> set = new TreeSet<>(list);
+|                     ^-----------------^
+|  Warning:
+|  unchecked conversion
+|    required: java.util.Collection<? extends E>
+|    found:    java.util.List
+|  Set<Integer> set = new TreeSet<>(list);
+|                                   ^--^
+|  Warning:
+|  unchecked conversion
+|    required: java.util.Set<java.lang.Integer>
+|    found:    java.util.TreeSet
+|  Set<Integer> set = new TreeSet<>(list);
+|                     ^-----------------^
+set ==> [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 1 ... 3, 94, 95, 96, 97, 98, 99]
+
+jshell> List list = IntStream.range(1,100).boxed().collect(Collectors.toList())
+list ==> [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 1 ... 3, 94, 95, 96, 97, 98, 99]
+
+jshell> List<Integer> arraylist = new ArrayList<>(list);
+|  Warning:
+|  unchecked method invocation: constructor <init> in class java.util.ArrayList is applied to given types
+|    required: java.util.Collection<? extends E>
+|    found: java.util.List
+|  List<Integer> arraylist = new ArrayList<>(list);
+|                            ^-------------------^
+|  Warning:
+|  unchecked conversion
+|    required: java.util.Collection<? extends E>
+|    found:    java.util.List
+|  List<Integer> arraylist = new ArrayList<>(list);
+|                                            ^--^
+|  Warning:
+|  unchecked conversion
+|    required: java.util.List<java.lang.Integer>
+|    found:    java.util.ArrayList
+|  List<Integer> arraylist = new ArrayList<>(list);
+|                            ^-------------------^
+arraylist ==> [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 1 ... 3, 94, 95, 96, 97, 98, 99]
+
+jshell> list.add(1)
+|  Warning:
+|  unchecked call to add(E) as a member of the raw type java.util.List
+|  list.add(1)
+|  ^---------^
+$36 ==> true
+
+jshell> list.add(2)
+|  Warning:
+|  unchecked call to add(E) as a member of the raw type java.util.List
+|  list.add(2)
+|  ^---------^
+$37 ==> true
+
+jshell> list
+list ==> [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 79, 80, 81, 82, 83, 84, 85, 86, 87, 88, 89, 90, 91, 92, 93, 94, 95, 96, 97, 98, 99, 1, 2]
+
+jshell> Set<Integer> set = new TreeSet<>(list);
+|  Warning:
+|  unchecked method invocation: constructor <init> in class java.util.TreeSet is applied to given types
+|    required: java.util.Collection<? extends E>
+|    found: java.util.List
+|  Set<Integer> set = new TreeSet<>(list);
+|                     ^-----------------^
+|  Warning:
+|  unchecked conversion
+|    required: java.util.Collection<? extends E>
+|    found:    java.util.List
+|  Set<Integer> set = new TreeSet<>(list);
+|                                   ^--^
+|  Warning:
+|  unchecked conversion
+|    required: java.util.Set<java.lang.Integer>
+|    found:    java.util.TreeSet
+|  Set<Integer> set = new TreeSet<>(list);
+|                     ^-----------------^
+set ==> [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 1 ... 3, 94, 95, 96, 97, 98, 99]
+
+jshell> clear()
+|  Error:
+|  cannot find symbol
+|    symbol:   method clear()
+|  clear()
+|  ^---^
+
+jshell> public void p(String str) { System.out.println(str);}
+|  created method p(String)
+
+jshell> p("Why do we need collections?")
+Why do we need collections?
+
+jshell> p("Arrays are not dynamic. Once an array of a particular size is declared, the size cannot be modified. To add a new element to the array, a new array has to be created with bigger size and all the elements from the old array copied to new array."
+   ...> ;
+   ...> )
+|  Error:
+|  ')' expected
+|  p("Arrays are not dynamic. Once an array of a particular size is declared, the size cannot be modified. To add a new element to the array, a new array has to be created with bigger size and all the elements from the old array copied to new array."
+|                                                                                                                                                                                                                                                         ^
+
+jshell> p("Arrays are not dynamic. Once an array of a particular size is declared, the size cannot be modified. To add a new element to the array, a new array has to be created with bigger size and all the elements from the old array copied to new array.");
+Arrays are not dynamic. Once an array of a particular size is declared, the size cannot be modified. To add a new element to the array, a new array has to be created with bigger size and all the elements from the old array copied to new array.
+
+jshell> p("Collections are used in situations where data is dynamic. Collections allow adding an element, deleting an element and host of other operations. There are a number of Collections in Java allowing to choose the right Collection for the right context.");
+Collections are used in situations where data is dynamic. Collections allow adding an element, deleting an element and host of other operations. There are a number of Collections in Java allowing to choose the right Collection for the right context.
+
+jshell> p("Types of Collections - List, Set, Map and Queue")
+Types of Collections - List, Set, Map and Queue
+
+jshell> p("Lets start with list - list is an interface");
+Lets start with list - list is an interface
+
+jshell> List list = List.of(1,2,3,4,5,6,7,8,9,10);
+list ==> [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+
+jshell> p("This is Java 9 new feature to create a list");
+This is Java 9 new feature to create a list
+
+jshell> p("Get details from a list");
+Get details from a list
+
+jshell> list.size()
+$49 ==> 10
+
+jshell> list.isEmpty()
+$50 ==> false
+
+jshell> list.get(0)
+$51 ==> 1
+
+jshell> list.indexOf(6)
+$52 ==> 5
+
+jshell> list.lastIndexOf(6)
+$53 ==> 5
+
+jshell> p("By default List.of provides immutable list");
+By default List.of provides immutable list
+
+jshell> list.add(5)
+|  Warning:
+|  unchecked call to add(E) as a member of the raw type java.util.List
+|  list.add(5)
+|  ^---------^
+|  java.lang.UnsupportedOperationException thrown: 
+|        at ImmutableCollections.uoe (ImmutableCollections.java:71)
+|        at ImmutableCollections$AbstractImmutableList.add (ImmutableCollections.java:77)
+|        at (#55:1)
+
+jshell> List arrayList = new ArrayList(list);
+|  Warning:
+|  unchecked call to ArrayList(java.util.Collection<? extends E>) as a member of the raw type java.util.ArrayList
+|  List arrayList = new ArrayList(list);
+|                   ^-----------------^
+arrayList ==> [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+
+jshell> List<Integer> arrayList = new ArrayList<>(list);
+|  Warning:
+|  unchecked method invocation: constructor <init> in class java.util.ArrayList is applied to given types
+|    required: java.util.Collection<? extends E>
+|    found: java.util.List
+|  List<Integer> arrayList = new ArrayList<>(list);
+|                            ^-------------------^
+|  Warning:
+|  unchecked conversion
+|    required: java.util.Collection<? extends E>
+|    found:    java.util.List
+|  List<Integer> arrayList = new ArrayList<>(list);
+|                                            ^--^
+|  Warning:
+|  unchecked conversion
+|    required: java.util.List<java.lang.Integer>
+|    found:    java.util.ArrayList
+|  List<Integer> arrayList = new ArrayList<>(list);
+|                            ^-------------------^
+arrayList ==> [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+
+jshell> List<Integer> arrayList = new ArrayList<Integer>(list);
+|  Warning:
+|  unchecked method invocation: constructor <init> in class java.util.ArrayList is applied to given types
+|    required: java.util.Collection<? extends E>
+|    found: java.util.List
+|  List<Integer> arrayList = new ArrayList<Integer>(list);
+|                            ^--------------------------^
+|  Warning:
+|  unchecked conversion
+|    required: java.util.Collection<? extends E>
+|    found:    java.util.List
+|  List<Integer> arrayList = new ArrayList<Integer>(list);
+|                                                   ^--^
+arrayList ==> [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+
+jshell> List<Integer> arrayList = new ArrayList<>(list);
+|  Warning:
+|  unchecked method invocation: constructor <init> in class java.util.ArrayList is applied to given types
+|    required: java.util.Collection<? extends E>
+|    found: java.util.List
+|  List<Integer> arrayList = new ArrayList<>(list);
+|                            ^-------------------^
+|  Warning:
+|  unchecked conversion
+|    required: java.util.Collection<? extends E>
+|    found:    java.util.List
+|  List<Integer> arrayList = new ArrayList<>(list);
+|                                            ^--^
+|  Warning:
+|  unchecked conversion
+|    required: java.util.List<java.lang.Integer>
+|    found:    java.util.ArrayList
+|  List<Integer> arrayList = new ArrayList<>(list);
+|                            ^-------------------^
+arrayList ==> [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+
+jshell> arrayList.add(11)
+$60 ==> true
+
+jshell> list
+list ==> [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+
+jshell> arrayList
+arrayList ==> [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11]
+
+jshell> arrayList.add(0, 15)
+
+jshell> arrayList
+arrayList ==> [15, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11]
+
+jshell> arrayList.add(3)
+$65 ==> true
+
+jshell> arrayList
+arrayList ==> [15, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 3]
+
+jshell> p("Array List can have duplicates")
+Array List can have duplicates
+
+jshell> arrayList.set(0,0)
+$68 ==> 15
+
+jshell> arrayList
+arrayList ==> [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 3]
+
+jshell> arrayList.remove(15)
+|  java.lang.IndexOutOfBoundsException thrown: Index 15 out-of-bounds for length 13
+|        at Preconditions.outOfBounds (Preconditions.java:64)
+|        at Preconditions.outOfBoundsCheckIndex (Preconditions.java:70)
+|        at Preconditions.checkIndex (Preconditions.java:248)
+|        at Objects.checkIndex (Objects.java:372)
+|        at ArrayList.remove (ArrayList.java:517)
+|        at (#70:1)
+
+jshell> arrayList.remove(Integer.valueOf(15))
+$71 ==> false
+
+jshell> arrayList.remove(Integer.valueOf(3))
+$72 ==> true
+
+jshell> arrayList
+arrayList ==> [0, 1, 2, 4, 5, 6, 7, 8, 9, 10, 11, 3]
+
+jshell> arrayList.remove(Integer.valueOf(3))
+$74 ==> true
+
+jshell> arrayList
+arrayList ==> [0, 1, 2, 4, 5, 6, 7, 8, 9, 10, 11]
+
+jshell> arrayList.contains(Integer.valueOf(5))
+$76 ==> true
+
+jshell> arrayList.contains(5)
+$77 ==> true
+
+jshell> for(Integer number:arrayList) {
+   ...>    System.out.println(number);
+   ...> }
+|  Error:
+|  cannot find symbol
+|    symbol:   variable arraylistIterator
+|  while (arraylistIterator.hasNext()) {
+|         ^---------------^
+
+jshell> for(Integer number:arrayList) {
+   ...>    System.out.println(number);
+   ...> }
+0
+1
+2
+4
+5
+6
+7
+8
+9
+10
+11
+
+jshell> Iterator<Integer> arraylistIterator = arraylist .iterator();
+arraylistIterator ==> java.util.ArrayList$Itr@5ed828d
+
+jshell> while (arraylistIterator.hasNext()) {
+   ...> Integer str = arraylistIterator.next();
+   ...> System.out.println(str);//Prints the 4 names in the list on separate lines.
+   ...> }
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+
+jshell> p("Exercise - Create a class Student with marks stored as a list. Average, Sum, Create a new List with marks > 80, Remove marks for a subject")
+Exercise - Create a class Student with marks stored as a list. Average, Sum, Create a new List with marks > 80, Remove marks for a subject
+
+jshell> p("**** Collections only work with Objects")
+**** Collections only work with Objects
+
+jshell> /save /in28Minutes/git/java-a-course-for-beginners/collections1.txt
+
+jshell> exit
+|  Error:
+|  cannot find symbol
+|    symbol:   variable exit
+|  exit
+|  ^--^
+
+jshell> /exit
+|  Goodbye
+Rangas-MacBook-Pro:~ rangaraokaranam$ jshell
+|  Welcome to JShell -- Version 9.0.1
+|  For an introduction type: /help intro
+        }public void p(String str) { System.out.println(str);}
+|  Error:
+|  illegal start of statement
+|  }public void p(String str) { System.out.println(str);}
+|  ^
+
+jshell> public void p(String str) { System.out.println(str);}
+|  created method p(String)
+
+jshell> p("Create an ArrayList of Students and play with it");
+Create an ArrayList of Students and play with it
+
+jshell> class Student {
+   ...>        private int id;
+   ...>        private String name;
+   ...>        Student(int id, String name) {
+   ...>           this.id = id; this.name = name;
+   ...>        }
+   ...> }
+|  created class Student
+
+jshell> ArrayList<Student> students = new ArrayList<>(List.of(new Student(1, "Ranga"), new Student(2, "Adam"), new Student(3, "Eve"))
+   ...> )
+students ==> [Student@1e397ed7, Student@490ab905, Student@56ac3a89]
+
+jshell> students.add(new Student(7, "Raja"))
+$5 ==> true
+
+jshell> students.remove(new Student(1, "Ranga"))
+$6 ==> false
+
+jshell> p("We will fix this later")
+We will fix this later
+
+jshell> p("You can play around with it")
+You can play around with it
+
+jshell> p("Lets now try to sort elements in ArrayList")
+Lets now try to sort elements in ArrayList
+
+jshell> List<String> numbers = new ArrayList<String>(); numbers.add("one");
+numbers ==> []
+$11 ==> true
+
+jshell> numbers.add("two");
+$12 ==> true
+
+jshell> numbers.add("two");
+$13 ==> true
+
+jshell> numbers.add("three");
+$14 ==> true
+
+jshell> numbers.add("four"); System.out.println(numbers);
+$15 ==> true
+[one, two, two, three, four]
+
+jshell> Collections.sort(numbers); System.out.println(numbers);
+[four, one, three, two, two]
+
+jshell> Collections.sort(students);
+|  Error:
+|  no suitable method found for sort(java.util.ArrayList<Student>)
+|      method java.util.Collections.<T>sort(java.util.List<T>) is not applicable
+|        (inference variable T has incompatible bounds
+|          equality constraints: Student
+|          upper bounds: java.lang.Comparable<? super T>)
+|      method java.util.Collections.<T>sort(java.util.List<T>,java.util.Comparator<? super T>) is not applicable
+|        (cannot infer type-variable(s) T
+|          (actual and formal argument lists differ in length))
+|  Collections.sort(students);
+|  ^--------------^
+
+jshell> class AscendingSorter implements Comparator<Student> {public int compare(Student student1, Student student2) {if (student1.id > student2.id) { return 1; }
+   ...> if (student1.id < student2.id) { return -1;}
+   ...> return 0; }}
+|  Error:
+|  id has private access in Student
+|  class AscendingSorter implements Comparator<Student> {public int compare(Student student1, Student student2) {if (student1.id > student2.id) { return 1; }
+|                                                                                                                    ^---------^
+|  Error:
+|  id has private access in Student
+|  class AscendingSorter implements Comparator<Student> {public int compare(Student student1, Student student2) {if (student1.id > student2.id) { return 1; }
+|                                                                                                                                  ^---------^
+|  Error:
+|  id has private access in Student
+|  if (student1.id < student2.id) { return -1;}
+|      ^---------^
+|  Error:
+|  id has private access in Student
+|  if (student1.id < student2.id) { return -1;}
+|                    ^---------^
+
+jshell> class Student {
+   ...>        public String name;
+   ...>        public String name;
+   ...> }
+|  Error:
+|  variable name is already defined in class Student
+|         public String name;
+|         ^-----------------^
+
+jshell> class Student {
+   ...>        public String name;
+   ...>        public int id;
+   ...>        public Student(String name, int id) {
+   ...>          this.name=name;
+   ...>          this.id =id;
+   ...>        }
+   ...> }
+|  created class Student
+
+jshell> ArrayList<Student> students = new ArrayList<>(List.of(new Student(1, "Ranga"), new Student(2, "Adam"), new Student(3, "Eve"))
+   ...> )
+|  Error:
+|  incompatible types: int cannot be converted to java.lang.String
+|  ArrayList<Student> students = new ArrayList<>(List.of(new Student(1, "Ranga"), new Student(2, "Adam"), new Student(3, "Eve"))
+|                                                                    ^
+|  Error:
+|  incompatible types: int cannot be converted to java.lang.String
+|  ArrayList<Student> students = new ArrayList<>(List.of(new Student(1, "Ranga"), new Student(2, "Adam"), new Student(3, "Eve"))
+|                                                                                             ^
+|  Error:
+|  incompatible types: int cannot be converted to java.lang.String
+|  ArrayList<Student> students = new ArrayList<>(List.of(new Student(1, "Ranga"), new Student(2, "Adam"), new Student(3, "Eve"))
+|                                                                                                                     ^
+
+jshell> ArrayList<Student> students = new ArrayList<>(List.of(new Student("Ranga", 100), new Student("Adam",2)));
+students ==> [Student@3159c4b8, Student@73846619]
+
+jshell> class AscendingSorter implements Comparator<Student> {public int compare(Student student1, Student student2) {if (student1.id > student2.id) { return 1; }
+   ...> if (student1.id < student2.id) { return -1;}
+   ...> return 0; }}
+|  created class AscendingSorter
+
+jshell> 
+
+jshell> Collections.sort(students, new AscendingSorter())
+
+jshell> students
+students ==> [Student@73846619, Student@3159c4b8]
+
+jshell> p("implements Comparable<Cricketer> and code for method public int compareTo(Cricketer that) {")
+implements Comparable<Cricketer> and code for method public int compareTo(Cricketer that) {
+
+jshell> p("Alternatives to ArrayList");
+Alternatives to ArrayList
+
+jshell> p("What is Vector class? How is it different from an ArrayList?")
+What is Vector class? How is it different from an ArrayList?
+
+jshell> p("Vector has the same operations as an ArrayList. However, all methods in Vector are synchronized. So, we can use Vector if we share a list between two threads and we would want to them synchronized.");
+Vector has the same operations as an ArrayList. However, all methods in Vector are synchronized. So, we can use Vector if we share a list between two threads and we would want to them synchronized.
+
+jshell> p("What is LinkedList? What interfaces does it implement? How is it different from an ArrayList?")
+What is LinkedList? What interfaces does it implement? How is it different from an ArrayList?
+
+jshell> p("Set @@@@@@@@@")
+Set @@@@@@@@@
+
+jshell> p("Set interface does not allow duplication")
+Set interface does not allow duplication
+
+jshell> Set set = Set.of("1","2","3","1");//Fails
+|  java.lang.IllegalArgumentException thrown: duplicate element: 1
+|        at ImmutableCollections$SetN.<init> (ImmutableCollections.java:463)
+|        at Set.of (Set.java:520)
+|        at (#31:1)
+
+jshell> Set set = Set.of("1","2","3");//Fails
+set ==> [1, 3, 2]
+
+jshell> Set hashSet = new HashSet<>(Set.of("1","2","3"))
+hashSet ==> [1, 2, 3]
+
+jshell> hashSet.add("4")
+|  Warning:
+|  unchecked call to add(E) as a member of the raw type java.util.Set
+|  hashSet.add("4")
+|  ^--------------^
+$34 ==> true
+
+jshell> hashSet
+hashSet ==> [1, 2, 3, 4]
+
+jshell> hashSet.add("2")
+|  Warning:
+|  unchecked call to add(E) as a member of the raw type java.util.Set
+|  hashSet.add("2")
+|  ^--------------^
+$36 ==> false
+
+jshell> hashSet.add("2.5")
+|  Warning:
+|  unchecked call to add(E) as a member of the raw type java.util.Set
+|  hashSet.add("2.5")
+|  ^----------------^
+$37 ==> true
+
+jshell> hashSet
+hashSet ==> [1, 2, 3, 4, 2.5]
+
+jshell> hashSet.
+add(               addAll(            clear()            contains(          
+containsAll(       equals(            forEach(           getClass()         
+hashCode()         isEmpty()          iterator()         notify()           
+notifyAll()        parallelStream()   remove(            removeAll(         
+removeIf(          retainAll(         size()             spliterator()      
+stream()           toArray(           toString()         wait(              
+
+jshell> hashSet.add("0")
+|  Warning:
+|  unchecked call to add(E) as a member of the raw type java.util.Set
+|  hashSet.add("0")
+|  ^--------------^
+$39 ==> true
+
+jshell> hashSet
+hashSet ==> [0, 1, 2, 3, 4, 2.5]
+
+jshell> p("HashSet does not support ordering. The order in which elements are inserted is not maintained.
+|  Error:
+|  unclosed string literal
+|  p("HashSet does not support ordering. The order in which elements are inserted is not maintained.
+|    ^
+
+jshell> p("HashSet does not support ordering. The order in which elements are inserted is not maintained.
+|  Error:
+|  unclosed string literal
+|  p("HashSet does not support ordering. The order in which elements are inserted is not maintained.
+|    ^
+
+jshell> p("HashSet does not support ordering. The order in which elements are inserted is not maintained.")
+HashSet does not support ordering. The order in which elements are inserted is not maintained.
+
+jshell> p("LinkedHashSet maintains order") 
+LinkedHashSet maintains order
+
+jshell> p("TreeSet stores element’s in Sorted Order.
+|  Error:
+|  unclosed string literal
+|  p("TreeSet stores element’s in Sorted Order.
+|    ^
+
+jshell> p("TreeSet stores element’s in Sorted Order.");
+TreeSet stores element’s in Sorted Order.
+
+jshell> p("Set<Integer> treeSet = new TreeSet<Integer>(Set.of(55,25,35,5,45));
+<press tab again to see all possible completions; total possible completions: 563>
+
+jshell> Set<Integer> treeSet = new TreeSet<Integer>(Set.of(55,25,35,5,45));
+treeSet ==> [5, 25, 35, 45, 55]
+
+jshell> numbersTreeSet.lower(25);//5
+|  Error:
+|  cannot find symbol
+|    symbol:   variable numbersTreeSet
+|  numbersTreeSet.lower(25);//5
+|  ^------------^
+
+jshell> numbersTreeSet.floor(25);//25
+|  Error:
+|  cannot find symbol
+|    symbol:   variable numbersTreeSet
+|  numbersTreeSet.floor(25);//25
+|  ^------------^
+
+jshell> treeSet.lower(25);//5
+|  Error:
+|  cannot find symbol
+|    symbol:   method lower(int)
+|  treeSet.lower(25);//5
+|  ^-----------^
+
+jshell> treeSet.floor(25);//25
+|  Error:
+|  cannot find symbol
+|    symbol:   method floor(int)
+|  treeSet.floor(25);//25
+|  ^-----------^
+
+jshell> treeSet.floor(Integer.valueOf(25));//25
+|  Error:
+|  cannot find symbol
+|    symbol:   method floor(java.lang.Integer)
+|  treeSet.floor(Integer.valueOf(25));//25
+|  ^-----------^
+
+jshell> Set<Integer> treeSet = new TreeSet<Integer>(Set.of(55,25,35,5,45));
+treeSet ==> [5, 25, 35, 45, 55]
+
+jshell> treeSet.floor(25);
+|  Error:
+|  cannot find symbol
+|    symbol:   method floor(int)
+|  treeSet.floor(25);
+|  ^-----------^
+
+jshell> TreeSet<Integer> treeSet = new TreeSet<Integer>(Set.of(55,25,35,5,45));
+treeSet ==> [5, 25, 35, 45, 55]
+
+jshell> treeSet.floor(25);
+$47 ==> 25
+
+jshell> treeSet.lower(25);//5
+$48 ==> 5
+
+jshell> treeSet.floor(25);//25
+$49 ==> 25
+
+jshell> treeSet.higher(25);//35
+$50 ==> 35
+
+jshell> treeSet.ceiling(25);
+$51 ==> 25
+
+jshell> treeSet.subset(25,55);
+|  Error:
+|  cannot find symbol
+|    symbol:   method subset(int,int)
+|  treeSet.subset(25,55);
+|  ^------------^
+
+jshell> treeSet.subset(25,true,55,true);
+|  Error:
+|  cannot find symbol
+|    symbol:   method subset(int,boolean,int,boolean)
+|  treeSet.subset(25,true,55,true);
+|  ^------------^
+
+jshell> treeSet.subSet(25,true,55,true);
+$52 ==> [25, 35, 45, 55]
+
+jshell> treeSet.subSet(25,55);
+$53 ==> [25, 35, 45]
+
+jshell> treeSet.headSet(25);
+$54 ==> [5]
+
+jshell> treeSet.tailSet(25);
+$55 ==> [25, 35, 45, 55]
+
+jshell> treeSet.pollFirst();
+$56 ==> 5
+
+jshell> treeSet.pollLast();
+$57 ==> 55
+
+jshell> p("HashSet, LinkedHashSet and TreeSet implement the Set interface");
+HashSet, LinkedHashSet and TreeSet implement the Set interface
+
+jshell> p("*****Queue Interface")
+*****Queue Interface
+
+jshell> Queue queue = Queue.of(3,4,1,2,9,8,3);
+|  Error:
+|  cannot find symbol
+|    symbol:   method of(int,int,int,int,int,int,int)
+|  Queue queue = Queue.of(3,4,1,2,9,8,3);
+|                ^------^
+
+jshell> Queue queue = Queue.class
+jshell> Queue queue = Queue.class
+jshell> Queue<Integer> queue = new PriorityQueue<>();
+queue ==> []
+
+jshell> queue.add
+add(      addAll(   
+
+jshell> queue.addAll(2,1,3,67,45,12);
+|  Error:
+|  method addAll in interface java.util.Collection<E> cannot be applied to given types;
+|    required: java.util.Collection<? extends java.lang.Integer>
+|    found: int,int,int,int,int,int
+|    reason: actual and formal argument lists differ in length
+|  queue.addAll(2,1,3,67,45,12);
+|  ^----------^
+
+jshell> queue.addAll(Integer.valueOf(2),Integer.valueOf(1),3,67,45,12);
+|  Error:
+|  method addAll in interface java.util.Collection<E> cannot be applied to given types;
+|    required: java.util.Collection<? extends java.lang.Integer>
+|    found: java.lang.Integer,java.lang.Integer,int,int,int,int
+|    reason: actual and formal argument lists differ in length
+|  queue.addAll(Integer.valueOf(2),Integer.valueOf(1),3,67,45,12);
+|  ^----------^
+
+jshell> Queue<String> queue = new PriorityQueue<>();
+queue ==> []
+
+jshell> queue.addAll("Apple", "Zebra" , "Ball");
+|  Error:
+|  method addAll in interface java.util.Collection<E> cannot be applied to given types;
+|    required: java.util.Collection<? extends java.lang.String>
+|    found: java.lang.String,java.lang.String,java.lang.String
+|    reason: actual and formal argument lists differ in length
+|  queue.addAll("Apple", "Zebra" , "Ball");
+|  ^----------^
+
+jshell> queue.addAll(List.of("Apple", "Zebra" , "Ball"));
+$62 ==> true
+
+jshell> queue
+queue ==> [Apple, Zebra, Ball]
+
+jshell> queue.add("Cat");
+$64 ==> true
+
+jshell> queue
+queue ==> [Apple, Cat, Ball, Zebra]
+
+jshell> queue.peek()
+$66 ==> "Apple"
+
+jshell> queue.poll()
+$67 ==> "Apple"
+
+jshell> queue
+queue ==> [Ball, Cat, Zebra]
+
+jshell> queue.poll()
+$69 ==> "Ball"
+
+jshell> queue.add("Bat")
+$70 ==> true
+
+jshell> queue
+queue ==> [Bat, Zebra, Cat]
+
+jshell> queue.poll()
+$72 ==> "Bat"
+
+jshell> Comparator reverseComparator = new Comparator<String>() { public int compare(String paramT1,
+   ...> String paramT2) { return Integer.compare(o1.length(), o2.length());
+   ...> } };
+|  Error:
+|  cannot find symbol
+|    symbol: variable o1
+|  String paramT2) { return Integer.compare(o1.length(), o2.length());
+|                                           ^^
+|  Error:
+|  cannot find symbol
+|    symbol: variable o2
+|  String paramT2) { return Integer.compare(o1.length(), o2.length());
+|                                                        ^^
+
+jshell> Comparator reverseComparator = new Comparator<String>() { public int compare(String s1,
+   ...> String s2) { return Integer.compare(s1.length(), s2.length());} };
+reverseComparator ==> 1@7e2d773b
+
+jshell> Queue<String> queue = new PriorityQueue<>(reverseComparator);
+|  Warning:
+|  unchecked method invocation: constructor <init> in class java.util.PriorityQueue is applied to given types
+|    required: java.util.Comparator<? super E>
+|    found: java.util.Comparator
+|  Queue<String> queue = new PriorityQueue<>(reverseComparator);
+|                        ^------------------------------------^
+|  Warning:
+|  unchecked conversion
+|    required: java.util.Comparator<? super E>
+|    found:    java.util.Comparator
+|  Queue<String> queue = new PriorityQueue<>(reverseComparator);
+|                                            ^---------------^
+|  Warning:
+|  unchecked conversion
+|    required: java.util.Queue<java.lang.String>
+|    found:    java.util.PriorityQueue
+|  Queue<String> queue = new PriorityQueue<>(reverseComparator);
+|                        ^------------------------------------^
+queue ==> []
+
+jshell> String s2) { return Integer.compare(s1.length(), s2.length());} };
+jshell> queue.addAll(List.of("Apple", "Zebra" , "Ball"))
+$75 ==> true
+
+jshell> queue
+queue ==> [Ball, Zebra, Apple]
+
+jshell> queue.poll()
+$77 ==> "Ball"
+
+jshell> queue.add("Cat");
+$78 ==> true
+
+jshell> queue
+queue ==> [Cat, Zebra, Apple]
+
+jshell> queue.poll()
+$80 ==> "Cat"
+
+jshell> queu
+|  Error:
+|  cannot find symbol
+|    symbol:   variable queu
+|  queu
+|  ^--^
+
+jshell> queue
+queue ==> [Apple, Zebra]
+
+jshell> p("For a capacity-constrained queue, the difference is that add() always returns true and throws an exception if it can't add the element, whereas offer() is allowed to return false if it can't add the element. However, this doesn't apply to PriorityQueue ; the two functions are synonymous.")
+For a capacity-constrained queue, the difference is that add() always returns true and throws an exception if it can't add the element, whereas offer() is allowed to return false if it can't add the element. However, this doesn't apply to PriorityQueue ; the two functions are synonymous.
+
+jshell> p("&**** MAP")
+&**** MAP
+
+jshell> p("Map interface does not extend Collection interface. So, it does not inherit any of the methods from the Collection interface.
+|  Error:
+|  unclosed string literal
+|  p("Map interface does not extend Collection interface. So, it does not inherit any of the methods from the Collection interface.
+|    ^
+
+jshell> p("Map interface does not extend Collection interface. So, it does not inherit any of the methods from the Collection interface.");
+Map interface does not extend Collection interface. So, it does not inherit any of the methods from the Collection interface.
+
+jshell> p("Set interface can be used for an exercise problem - Find unique characters in a String");
+Set interface can be used for an exercise problem - Find unique characters in a String
+
+jshell> p("Set interface can be used for an exercise problem - Find unique characters in a String in Sorted Order - Exercise 2");
+Set interface can be used for an exercise problem - Find unique characters in a String in Sorted Order - Exercise 2
+
+jshell> p("Set interface can be used for an exercise problem - Find unique characters in a String in Order They are found in the string - Exercise 3");
+Set interface can be used for an exercise problem - Find unique characters in a String in Order They are found in the string - Exercise 3
+
+jshell> p("Set interface can be used for an exercise problem - Find unique words in a String");
+Set interface can be used for an exercise problem - Find unique words in a String
+
+jshell> Map<String, Integer> map = Map.of("A",1,"An",5,"The",6);
+map ==> {A=1, The=6, An=5}
+
+jshell> map.keySet()
+$90 ==> [A, The, An]
+
+jshell> map.valueSet()
+|  Error:
+|  cannot find symbol
+|    symbol:   method valueSet()
+|  map.valueSet()
+|  ^----------^
+
+jshell> map.values()
+values()   
+
+jshell> map.values()
+$91 ==> [1, 6, 5]
+
+jshell> map.entrySet()
+entrySet()   
+
+jshell> map.entrySet()
+$92 ==> [A=1, The=6, An=5]
+
+jshell> map.get
+get(            getClass()      getOrDefault(   
+
+jshell> map.get("The")
+$93 ==> 6
+
+jshell> map.get("Unknown")
+$94 ==> null
+
+jshell> Map<String, Integer> map = new HashMap<>(Map.of("A",1,"An",5,"The",6));
+map ==> {The=6, A=1, An=5}
+
+jshell> map.put("The", 10)
+$96 ==> 6
+
+jshell> map
+map ==> {The=10, A=1, An=5}
+
+jshell> map.put("A",5)
+$98 ==> 1
+
+jshell> map.put("New",5)
+$99 ==> null
+
+jshell> map
+map ==> {The=10, A=5, New=5, An=5}
+
+jshell> Map<String, Integer> map = new TreeMap<>(Map.of("A",1,"An",5,"The",6));
+map ==> {A=1, An=5, The=6}
+
+jshell> map.put("New",10)
+$102 ==> null
+
+jshell> map
+map ==> {A=1, An=5, New=10, The=6}
+
+jshell> System.out.println(map.lowerKey("An"))
+|  Error:
+|  cannot find symbol
+|    symbol:   method lowerKey(java.lang.String)
+|  System.out.println(map.lowerKey("An"))
+|                     ^----------^
+
+jshell> TreeMap<String, Integer> map = new TreeMap<>(Map.of("A",1,"An",5,"The",6));
+map ==> {A=1, An=5, The=6}
+
+jshell> System.out.println(map.lowerKey("An"))
+A
+
+jshell> map.lowerKey("An",true)
+|  Error:
+|  method lowerKey in class java.util.TreeMap<K,V> cannot be applied to given types;
+|    required: java.lang.String
+|    found: java.lang.String,boolean
+|    reason: actual and formal argument lists differ in length
+|  map.lowerKey("An",true)
+|  ^----------^
+
+jshell> map.floorKey("An")
+$106 ==> "An"
+
+jshell> map.higherKey("An")
+$107 ==> "The"
+
+jshell> map
+map ==> {A=1, An=5, The=6}
+
+jshell> map.ceilingKey("An")
+$109 ==> "An"
+
+jshell> map.firstEntry()
+$110 ==> A=1
+
+jshell> map.lastEntry()
+$111 ==> The=6
+
+jshell> p("fsfaljk");
+fsfaljk
+
+jshell> p("Find number of occurances of each word in a String");
+Find number of occurances of each word in a String
+
+jshell> p("Find number of occurances of each vowel in a String");
+Find number of occurances of each vowel in a String
+
+jshell> p("Find number of occurances of all characters in a String");
+Find number of occurances of all characters in a String
+
+jshell> p("Collections class static methods ******")
+Collections class static methods ******
+
+jshell> list.reverse()
+|  Error:
+|  cannot find symbol
+|    symbol:   variable list
+|  list.reverse()
+|  ^--^
+
+jshell> Collections.reverse(list)
+|  Error:
+|  cannot find symbol
+|    symbol:   variable list
+|  Collections.reverse(list)
+|                      ^--^
+
+jshell> list
+|  Error:
+|  cannot find symbol
+|    symbol:   variable list
+|  list
+|  ^--^
+
+jshell> Collections.reverse(set)
+|  Error:
+|  incompatible types: java.util.Set cannot be converted to java.util.List<?>
+|  Collections.reverse(set)
+|                      ^-^
+
+jshell> set
+set ==> [1, 3, 2]
+
+jshell> List<Integer> list = new ArrayList<>(List.of(3,2,4));
+list ==> [3, 2, 4]
+
+jshell> Collections.reverse(set)
+|  Error:
+|  incompatible types: java.util.Set cannot be converted to java.util.List<?>
+|  Collections.reverse(set)
+|                      ^-^
+
+jshell> Collections.reverse(list)
+
+jshell> list
+list ==> [4, 2, 3]
+
+jshell> Comparator reverseReverseComparator = Collections.reverseOrder(reverseComparator)
+|  Warning:
+|  unchecked method invocation: method reverseOrder in class java.util.Collections is applied to given types
+|    required: java.util.Comparator<T>
+|    found: java.util.Comparator
+|  Comparator reverseReverseComparator = Collections.reverseOrder(reverseComparator);
+|                                        ^-----------------------------------------^
+|  Warning:
+|  unchecked conversion
+|    required: java.util.Comparator<T>
+|    found:    java.util.Comparator
+|  Comparator reverseReverseComparator = Collections.reverseOrder(reverseComparator);
+|                                                                 ^---------------^
+reverseReverseComparator ==> java.util.Collections$ReverseComparator2@fe2d773b
+
+jshell> Queue<String> queue = new PriorityQueue<>(reverseComparator);
+|  Warning:
+|  unchecked method invocation: constructor <init> in class java.util.PriorityQueue is applied to given types
+|    required: java.util.Comparator<? super E>
+|    found: java.util.Comparator
+|  Queue<String> queue = new PriorityQueue<>(reverseComparator);
+|                        ^------------------------------------^
+|  Warning:
+|  unchecked conversion
+|    required: java.util.Comparator<? super E>
+|    found:    java.util.Comparator
+|  Queue<String> queue = new PriorityQueue<>(reverseComparator);
+|                                            ^---------------^
+|  Warning:
+|  unchecked conversion
+|    required: java.util.Queue<java.lang.String>
+|    found:    java.util.PriorityQueue
+|  Queue<String> queue = new PriorityQueue<>(reverseComparator);
+|                        ^------------------------------------^
+queue ==> []
+
+jshell> Queue<String> queue = new PriorityQueue<>(reverseReverseComparator);
+|  Warning:
+|  unchecked method invocation: constructor <init> in class java.util.PriorityQueue is applied to given types
+|    required: java.util.Comparator<? super E>
+|    found: java.util.Comparator
+|  Queue<String> queue = new PriorityQueue<>(reverseReverseComparator);
+|                        ^-------------------------------------------^
+|  Warning:
+|  unchecked conversion
+|    required: java.util.Comparator<? super E>
+|    found:    java.util.Comparator
+|  Queue<String> queue = new PriorityQueue<>(reverseReverseComparator);
+|                                            ^----------------------^
+|  Warning:
+|  unchecked conversion
+|    required: java.util.Queue<java.lang.String>
+|    found:    java.util.PriorityQueue
+|  Queue<String> queue = new PriorityQueue<>(reverseReverseComparator);
+|                        ^-------------------------------------------^
+queue ==> []
+
+jshell> queue.addAll(List.of("Apple","Ball","Check","Elephant"))
+$124 ==> true
+
+jshell> queue
+queue ==> [Elephant, Apple, Check, Ball]
+
+jshell> queue.poll()
+$126 ==> "Elephant"
+
+jshell> class MyList {
+   ...> private List<String> values;
+   ...> void add(String value) { values.add(value);
+   ...> }
+   ...> void remove(String value) { values.remove(value);
+   ...> }
+   ...> }
+|  created class MyList
+
+jshell> MyList myList = new MyList(); myList.add("Value 1"); myList.add("Value 2");
+myList ==> MyList@5ed828d
+|  java.lang.NullPointerException thrown: 
+|        at MyList.add (#127:3)
+|        at (#129:1)
+
+jshell> class MyList {
+   ...> private List<String> values = new ArrayList<String>;
+|  Error:
+|  '(' or '[' expected
+|  private List<String> values = new ArrayList<String>;
+|                                                     ^
+|  Error:
+|  reached end of file while parsing
+|  private List<String> values = new ArrayList<String>;
+|                                                      ^
+
+jshell> class MyList {
+   ...> private List<String> values = new ArrayList<String>();
+   ...> void add(String value) { values.add(value);
+   ...> }
+   ...> void remove(String value) { values.remove(value);
+   ...> }
+   ...> }
+|  modified class MyList
+
+jshell> MyList myList = new MyList(); myList.add("Value 1"); myList.add("Value 2");
+myList ==> MyList@1b26f7b2
+
+jshell> class MyListGeneric<T> { private List<T> values = new ArrayList<T>();
+   ...> void add(T value) { values.add(value);
+   ...> }
+   ...> void remove(T value) { values.remove(value);
+   ...> }
+   ...> }
+|  created class MyListGeneric
+
+jshell> MyListGeneric<String> myListString = new MyListGeneric<String>(); myListString.add("Value 1");
+myListString ==> MyListGeneric@757942a1
+
+jshell> myListString.add("Value 2");
+
+jshell> MyListGeneric<Integer> myListInteger = new MyListGeneric<Integer>(); myListInteger.add(1);
+myListInteger ==> MyListGeneric@37374a5e
+
+jshell> myListInteger.add(2);
+
+jshell> p("If a generic is declared as part of class declaration, it can be used any where a type can be used in a class - method (return type or argument), member variable etc. For Example: See how T is used as a parameter and return type in the class MyListGeneric.")
+If a generic is declared as part of class declaration, it can be used any where a type can be used in a class - method (return type or argument), member variable etc. For Example: See how T is used as a parameter and return type in the class MyListGeneric.
+
+jshell> class MyListRestricted<T extends Number> {
+   ...> }
+|  created class MyListRestricted
+
+jshell> g("In MyListGeneric, Type T is defined as part of class declaration. Any Java Type can be used a type for this class. If we would want to restrict the types allowed for a Generic Type, we can use a Generic Restrictions. Consider the example class below: In declaration of the class, we specified a constraint "T extends Number". We can use the class MyListRestricted with any class extending (any sub class of) Number - Float, Integer, Double etc.
+|  Error:
+|  ')' expected
+|  g("In MyListGeneric, Type T is defined as part of class declaration. Any Java Type can be used a type for this class. If we would want to restrict the types allowed for a Generic Type, we can use a Generic Restrictions. Consider the example class below: In declaration of the class, we specified a constraint "T extends Number". We can use the class MyListRestricted with any class extending (any sub class of) Number - Float, Integer, Double etc.
+|                                                                                                                                                                                                                                                                                                                        ^
+
+jshell> g("In MyListGeneric, Type T is defined as part of class declaration. Any Java Type can be used a type for this class. If we would want to restrict the types allowed for a Generic Type, we can use a Generic Restrictions. Consider the example class below: In declaration of the class, we specified a constraint "T extends Number". We can use the class MyListRestricted with any class extending (any sub class of) Number - Float, Integer, Double etc.");
+|  Error:
+|  ')' expected
+|  g("In MyListGeneric, Type T is defined as part of class declaration. Any Java Type can be used a type for this class. If we would want to restrict the types allowed for a Generic Type, we can use a Generic Restrictions. Consider the example class below: In declaration of the class, we specified a constraint "T extends Number". We can use the class MyListRestricted with any class extending (any sub class of) Number - Float, Integer, Double etc.");
+|                                                                                                                                                                                                                                                                                                                        ^
+
+jshell> g("In MyListGeneric, Type T is defined as part of class declaration. Any Java Type can be used a type for this class. If we would want to restrict the types allowed for a Generic Type, we can use a Generic Restrictions. Consider the example class below: In declaration of the class, we specified a constraint T extends Number. We can use the class MyListRestricted with any class extending (any sub class of) Number - Float, Integer, Double etc.");
+|  Error:
+|  cannot find symbol
+|    symbol:   method g(java.lang.String)
+|  g("In MyListGeneric, Type T is defined as part of class declaration. Any Java Type can be used a type for this class. If we would want to restrict the types allowed for a Generic Type, we can use a Generic Restrictions. Consider the example class below: In declaration of the class, we specified a constraint T extends Number. We can use the class MyListRestricted with any class extending (any sub class of) Number - Float, Integer, Double etc.");
+|  ^
+
+jshell> p("In MyListGeneric, Type T is defined as part of class declaration. Any Java Type can be used a type for this class. If we would want to restrict the types allowed for a Generic Type, we can use a Generic Restrictions. Consider the example class below: In declaration of the class, we specified a constraint T extends Number. We can use the class MyListRestricted with any class extending (any sub class of) Number - Float, Integer, Double etc.");
+In MyListGeneric, Type T is defined as part of class declaration. Any Java Type can be used a type for this class. If we would want to restrict the types allowed for a Generic Type, we can use a Generic Restrictions. Consider the example class below: In declaration of the class, we specified a constraint T extends Number. We can use the class MyListRestricted with any class extending (any sub class of) Number - Float, Integer, Double etc.
+
+jshell> p("How can we restrict Generics to a super class of particular class? T super Number");
+How can we restrict Generics to a super class of particular class? T super Number
+
+jshell> p("Generic Method");
+Generic Method
+
+jshell> static <X extends Number> X doSomething(X number){ X result = number;
+   ...> //do something with result
+   ...> return result;
+   ...> }
+|  Warning:
+|  Modifier 'static'  not permitted in top-level declarations, ignored
+|  static <X extends Number> X doSomething(X number){ X result = number;
+|  ^----^
+|  created method doSomething(X)
+
+jshell> Integer k = doSomething(i);
+|  Error:
+|  cannot find symbol
+|    symbol:   variable i
+|  Integer k = doSomething(i);
+|                          ^
+
+jshell> Integer i = 5;
+i ==> 5
+
+jshell> Integer k = doSomething(i);
+k ==> 5
+
+jshell> /save /in28Minutes/git/java-a-course-for-beginners/collections2.txt
+
+jshell> /exit
+|  Goodbye
+Rangas-MacBook-Pro:~ rangaraokaranam$ jshell
+|  Welcome to JShell -- Version 9.0.1
+|  For an introduction type: /help intro
+
+jshell> public void p(String str) { System.out.println(str);}
+|  created method p(String)
+
+jshell> static List<Integer> numbers = List.of(1, 2, 5, 7, 9, 18, 12);
+|  Warning:
+|  Modifier 'static'  not permitted in top-level declarations, ignored
+|  static List<Integer> numbers = List.of(1, 2, 5, 7, 9, 18, 12);
+|  ^----^
+numbers ==> [1, 2, 5, 7, 9, 18, 12]
+
+jshell> List<Integer> numbers = List.of(1, 2, 5, 7, 9, 18, 12);
+numbers ==> [1, 2, 5, 7, 9, 18, 12]
+
+jshell> for(Number number:numbers) {
+   ...>     if(number%2 ==0)
+   ...>         System.out.println(number);
+   ...> }
+|  Error:
+|  bad operand types for binary operator '%'
+|    first type:  java.lang.Number
+|    second type: int
+|      if(number%2 ==0)
+|         ^------^
+
+jshell> for(Number number:numbers) {
+   ...>     if(number.intValue()%2 ==0)
+   ...>         System.out.println(number);
+   ...> }
+2
+18
+12
+
+jshell> numbers.stream().filter(n -> n.intValue()%2==0).forEach(n->System.out.println(n))
+2
+18
+12
+
+jshell> p("We are passing a funtion to another function")
+We are passing a funtion to another function
+
+jshell> int sum = 0;
+sum ==> 0
+
+jshell> for(Number number:numbers) {
+   ...>     if(number.intValue()%2 ==0)
+   ...>           sum += number;
+   ...> }
+|  Error:
+|  bad operand types for binary operator '+'
+|    first type:  int
+|    second type: java.lang.Number
+|            sum += number;
+|            ^-----------^
+
+jshell> Integer sum = 0;
+sum ==> 0
+
+jshell> for(Number number:numbers) {
+   ...>     if(number.intValue()%2 ==0)
+   ...>           sum += number;
+   ...> }
+|  Error:
+|  bad operand types for binary operator '+'
+|    first type:  java.lang.Integer
+|    second type: java.lang.Number
+|            sum += number;
+|            ^-----------^
+
+jshell> clear()
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+jshell> List<String> words = List.of("Apple", "Bat" , "Cat");
+words ==> [Apple, Bat, Cat]
+
+jshell> words.length()
+|  Error:
+|  cannot find symbol
+|    symbol:   method length()
+|  words.length()
+|  ^----------^
+
+jshell> words.size()
+$5 ==> 3
+
+jshell> words.isEmpty()
+$6 ==> false
+
+jshell> words.get(0)
+$7 ==> "Apple"
+
+jshell> words.contains("Dog");
+$8 ==> false
+
+jshell> words.contains("Cat");
+$9 ==> true
+
+jshell> words.indexOf("Cat")
+$10 ==> 2
+
+jshell> words
+words ==> [Apple, Bat, Cat]
+
+jshell> words.indexOf("Dog")
+$12 ==> -1
+
+jshell> clear()
+
+ 
+jshell> List<String> words = List.of("Apple", "Bat" , "Cat");
+words ==> [Apple, Bat, Cat]
+
+jshell> words.add("Dog")
+|  java.lang.UnsupportedOperationException thrown: 
+|        at ImmutableCollections.uoe (ImmutableCollections.java:71)
+|        at ImmutableCollections$AbstractImmutableList.add (ImmutableCollections.java:77)
+|        at (#15:1)
+
+jshell> List<String> wordsArrayList = new ArrayList<String>(words)
+wordsArrayList ==> [Apple, Bat, Cat]
+
+jshell> List<String> wordsLinkedList = new LinkedList<String>(words)
+wordsLinkedList ==> [Apple, Bat, Cat]
+
+jshell> List<String> wordsVector = new Vector<String>(words)
+wordsVector ==> [Apple, Bat, Cat]
+
+jshell> wordsArrayList.add("Dog")
+$19 ==> true
+
+jshell> wordsArrayList
+wordsArrayList ==> [Apple, Bat, Cat, Dog]
+
+jshell> wordsArrayList.add("Elephant")
+$21 ==> true
+
+jshell> wordsArrayList.add(2, "Ball")
+
+jshell> wordsArrayList
+wordsArrayList ==> [Apple, Bat, Ball, Cat, Dog, Elephant]
+
+jshell> wordsArrayList.add("Ball")
+$24 ==> true
+
+jshell> wordsArrayList
+wordsArrayList ==> [Apple, Bat, Ball, Cat, Dog, Elephant, Ball]
+
+jshell> List<String> newList = List.of("Yak","Zebra");
+newList ==> [Yak, Zebra]
+
+jshell> wordsArrayList.addAll(newList)
+$27 ==> true
+
+jshell> wordsArrayList
+wordsArrayList ==> [Apple, Bat, Ball, Cat, Dog, Elephant, Ball, Yak, Zebra]
+
+jshell> wordsArrayList.set(6, "Fish")
+$29 ==> "Ball"
+
+jshell> wordsArrayList
+wordsArrayList ==> [Apple, Bat, Ball, Cat, Dog, Elephant, Fish, Yak, Zebra]
+
+jshell> wordsArrayList.remove(2)
+$31 ==> "Ball"
+
+jshell> wordsArrayList
+wordsArrayList ==> [Apple, Bat, Cat, Dog, Elephant, Fish, Yak, Zebra]
+
+jshell> wordsArrayList.remove("Dog")
+$33 ==> true
+
+jshell> wordsArrayList
+wordsArrayList ==> [Apple, Bat, Cat, Elephant, Fish, Yak, Zebra]
+
+jshell> wordsArrayList.remove("Dog")
+$35 ==> false
+
+jshell> clear()
+
+ 
+jshell> List<String> words = List.of("Apple", "Bat" , "Cat");
+words ==> [Apple, Bat, Cat]
+
+jshell> for(int i=0; i < words.size(); i++) {
+   ...>      System.out.println(words.get(i));
+   ...> }
+Apple
+Bat
+Cat
+
+jshell> for(String word:words) {
+   ...>      System.out.println(word);
+   ...> }
+Apple
+Bat
+Cat
+
+jshell> Iterator wordsIterator = words.iterator();
+wordsIterator ==> java.util.AbstractList$Itr@3712b94
+
+jshell> while(wordsIterator.hasNext()) {
+   ...>       System.out.println(wordsIterator.next());
+   ...> }
+Apple
+Bat
+Cat
+
+jshell> List<String> words = List.of("Apple", "Bat" , "Cat");
+words ==> [Apple, Bat, Cat]
+
+jshell> List<String> wordsAl = new ArrayList<>(words);
+wordsAl ==> [Apple, Bat, Cat]
+
+jshell> for(String word:words) {
+   ...>    if(word.endsWith("at")
+   ...>       System.out.println(word);
+   ...> }
+|  Error:
+|  ')' expected
+|     if(word.endsWith("at")
+|                           ^
+
+jshell> for(String word:words) {
+   ...>    if(word.endsWith("at"))
+   ...>       System.out.println(word);
+   ...> }
+Bat
+Cat
+
+jshell> for(String word:wordsAl) {
+   ...>    if(word.endsWith("at")) {
+   ...>         words.remove(word);
+   ...>    }
+   ...> }
+|  java.lang.UnsupportedOperationException thrown: 
+|        at ImmutableCollections.uoe (ImmutableCollections.java:71)
+|        at ImmutableCollections$AbstractImmutableList.remove (ImmutableCollections.java:81)
+|        at (#50:3)
+
+jshell> for(String word:wordsAl) {
+   ...>    if(word.endsWith("at")) {
+   ...>         wordsAl.remove(word);
+   ...>    }
+   ...> }
+
+jshell> clear()
+
+
+
+
+
+
+
+
+
+
+ 
+jshell> List<String> words = List.of("Apple", "Bat" , "Cat");
+words ==> [Apple, Bat, Cat]
+
+jshell> List<String> wordsAl = new ArrayList<>(words);
+wordsAl ==> [Apple, Bat, Cat]
+
+jshell> Iterator<String> iterator = wordsAl.iterator();
+iterator ==> java.util.ArrayList$Itr@467aecef
+
+jshell> while(iterator.hasNext()) {
+   ...>      if(iterator.next().endsWith("at")) {
+   ...>           iterator.remove();
+   ...>      }
+   ...> }
+
+jshell> wordsAl
+wordsAl ==> [Apple]
+
+jshell> clear()
+
+
+ 
+jshell> List value = List.of("A", 'A' , 1, 1.0)
+value ==> [A, A, 1, 1.0]
+
+jshell> value.get(2)
+$64 ==> 1
+
+jshell> value.get(2) instanceof Integer
+$65 ==> true
+
+jshell> value.get(1) instanceof Character
+$66 ==> true
+
+jshell> value.get(3) instanceof Double
+$67 ==> true
+
+jshell> List<String> textValues = List.of("A", 'A' , 1, 1.0)
+|  Error:
+|  incompatible types: inference variable E has incompatible bounds
+|      equality constraints: java.lang.String
+|      lower bounds: java.lang.Double,java.lang.Integer,java.lang.Character,java.lang.String
+|  List<String> textValues = List.of("A", 'A' , 1, 1.0);
+|                            ^------------------------^
+
+jshell> List<Integer> numbers = List.of(101,102,103,104,105);
+numbers ==> [101, 102, 103, 104, 105]
+
+jshell> numbers.indexOf(101);
+$69 ==> 0
+
+jshell> List<Integer> numbersAl = new ArrayList<>(numbers);
+numbersAl ==> [101, 102, 103, 104, 105]
+
+jshell> numbersAl.indexOf(101)
+$71 ==> 0
+
+jshell> numbersAl.remove(101);
+|  java.lang.IndexOutOfBoundsException thrown: Index 101 out-of-bounds for length 5
+|        at Preconditions.outOfBounds (Preconditions.java:64)
+|        at Preconditions.outOfBoundsCheckIndex (Preconditions.java:70)
+|        at Preconditions.checkIndex (Preconditions.java:248)
+|        at Objects.checkIndex (Objects.java:372)
+|        at ArrayList.remove (ArrayList.java:517)
+|        at (#72:1)
+
+jshell> numbersAl.remove(
+$10               $12               $15               $19               
+$21               $24               $27               $29               
+$31               $33               $35               $5                
+$6                $64               $65               $66               
+$67               $69               $7                $71               
+$72               $8                $9                iterator          
+newList           numbers           numbersAl         value             
+words             wordsAl           wordsArrayList    wordsIterator     
+wordsLinkedList   wordsVector       
+
+Signatures:
+boolean List<E extends Object>.remove(Object o)
+E List<E extends Object>.remove(int index)
+
+<press tab again to see documentation>
+
+jshell> numbersAl.remove(101)
+|  java.lang.IndexOutOfBoundsException thrown: Index 101 out-of-bounds for length 5
+|        at Preconditions.outOfBounds (Preconditions.java:64)
+|        at Preconditions.outOfBoundsCheckIndex (Preconditions.java:70)
+|        at Preconditions.checkIndex (Preconditions.java:248)
+|        at Objects.checkIndex (Objects.java:372)
+|        at ArrayList.remove (ArrayList.java:517)
+|        at (#73:1)
+
+jshell> numbersAl.remove(Integer.valueOf(101))
+$74 ==> true
+
+jshell> numbersAl
+numbersAl ==> [102, 103, 104, 105]
+
+jshell> clear()
+
+ 
+jshell> List<Integer> numbers = List.of(123,12,3,45);
+numbers ==> [123, 12, 3, 45]
+
+jshell> List<Integer> numbersAl = new ArrayList<>(numbers);
+numbersAl ==> [123, 12, 3, 45]
+
+jshell> numbersAl.sort(
+sort(   
+
+jshell> numbersAl.sort();
+|  Error:
+|  method sort in interface java.util.List<E> cannot be applied to given types;
+|    required: java.util.Comparator<? super java.lang.Integer>
+|    found: no arguments
+|    reason: actual and formal argument lists differ in length
+|  numbersAl.sort();
+|  ^------------^
+
+jshell> Collections.sort(numbersAl);
+
+jshell> numbersAl
+numbersAl ==> [3, 12, 45, 123]
+
+jshell> clear()
+
+ 
+jshell> Set<String> set = Set.of("Apple", "Banana", "Cat")
+set ==> [Banana, Apple, Cat]
+
+jshell> set.add("Apple");
+|  java.lang.UnsupportedOperationException thrown: 
+|        at ImmutableCollections.uoe (ImmutableCollections.java:71)
+|        at ImmutableCollections$AbstractImmutableSet.add (ImmutableCollections.java:281)
+|        at (#83:1)
+
+jshell> Set<String> hashset = new HashSet<>(set)
+hashset ==> [Apple, Cat, Banana]
+
+jshell> hashset.add("Apple")
+$85 ==> false
+
+jshell> hashset
+hashset ==> [Apple, Cat, Banana]
+
+jshell> hashset.add(2, "Apple")
+|  Error:
+|  no suitable method found for add(int,java.lang.String)
+|      method java.util.Collection.add(java.lang.String) is not applicable
+|        (actual and formal argument lists differ in length)
+|      method java.util.Set.add(java.lang.String) is not applicable
+|        (actual and formal argument lists differ in length)
+|  hashset.add(2, "Apple")
+|  ^---------^
+
+jshell> Set<String> set = Set.of("A", "Z","D", "C", "B")
+set ==> [D, A, C, B, Z]
+
+jshell> Set<String> hashSet = new HashSet<>(set);
+hashSet ==> [A, B, C, D, Z]
+
+jshell> Set<Integer> numbers = new HashSet<>();
+numbers ==> []
+
+jshell> numbers.add(765432);
+$144 ==> true
+
+jshell> numbers.add(76543);
+$145 ==> true
+
+jshell> numbers.add(7654);
+$146 ==> true
+
+jshell> numbers.add(765);
+$147 ==> true
+
+jshell> numbers.add(76);
+$148 ==> true
+
+jshell> numbers
+numbers ==> [765432, 7654, 76, 765, 76543]
+
+jshell> Set<Integer> numbers = new LinkedHashSet<>();
+numbers ==> []
+
+jshell> numbers.add(765432);
+$151 ==> true
+
+jshell> numbers.add(76543);
+$152 ==> true
+
+jshell> numbers.add(7654);
+$153 ==> true
+
+jshell> numbers.add(765);
+$154 ==> true
+
+jshell> numbers.add(76);
+$155 ==> true
+
+jshell> numbers
+numbers ==> [765432, 76543, 7654, 765, 76]
+
+jshell> numbers.add(765789);
+$157 ==> true
+
+jshell> numbers
+numbers ==> [765432, 76543, 7654, 765, 76, 765789]
+
+jshell> numbers.add(76)
+$159 ==> false
+
+jshell> numbers
+numbers ==> [765432, 76543, 7654, 765, 76, 765789]
+
+jshell> Set<Integer> numbers = new TreeSet<>();
+numbers ==> []
+
+jshell> numbers.add(765432);
+$162 ==> true
+
+jshell> numbers.add(76543);
+$163 ==> true
+
+jshell> numbers.add(7654);
+$164 ==> true
+
+jshell> numbers.add(765);
+$165 ==> true
+
+jshell> numbers.add(76);
+$166 ==> true
+
+jshell> numbers
+numbers ==> [76, 765, 7654, 76543, 765432]
+
+jshell> numbers.add(76)
+$168 ==> false
+
+jshell> List<Character> characters = List.of('A','Z','A', 'B', 'Z','F'); 
+characters ==> [A, Z, A, B, Z, F]
+
+jshell> clear()
+
+
+
+
+
+
+
+
+
+
+ 
+jshell> TreeSet<Integer> numbers = new TreeSet<>(Set.of(65,54,34,12,99))
+numbers ==> [12, 34, 54, 65, 99]
+
+jshell> numbers.floor(40)
+$174 ==> 34
+
+jshell> numbers.floor(34)
+$175 ==> 34
+
+jshell> numbers.lower(34)
+$176 ==> 12
+
+jshell> numbers.ceiling(34)
+$177 ==> 34
+
+jshell> numbers.ceiling(36)
+$178 ==> 54
+
+jshell> numbers.upper(34)
+|  Error:
+|  cannot find symbol
+|    symbol:   method upper(int)
+|  numbers.upper(34)
+|  ^-----------^
+
+jshell> numbers.higher(34)
+$179 ==> 54
+
+jshell> numbers
+numbers ==> [12, 34, 54, 65, 99]
+
+jshell> numbers.subSet(20,80)
+$181 ==> [34, 54, 65]
+
+jshell> numbers.subSet(34,54)
+$182 ==> [34]
+
+jshell> numbers.subSet(34,65)
+$183 ==> [34, 54]
+
+jshell> numbers.subSet(34,true,65,true)
+$184 ==> [34, 54, 65]
+
+jshell> numbers.subSet(34,false,65,false)
+$185 ==> [54]
+
+jshell> numbers.headSet(50)
+$186 ==> [12, 34]
+
+jshell> numbers.tailSet(50)
+$187 ==> [54, 65, 99]
+
+jshell> clear()
+
+ 
+jshell> Queue<String> queue = new PriorityQueue<>();
+queue ==> []
+
+jshell> queue.poll()
+$190 ==> null
+
+jshell> queue.offer("Apple")
+$191 ==> true
+
+jshell> queue.addAll(List.of("Zebra", "Monkey", "Cat"))
+$192 ==> true
+
+jshell> queue
+queue ==> [Apple, Cat, Monkey, Zebra]
+
+jshell> queue.poll()
+$194 ==> "Apple"
+
+jshell> queue
+queue ==> [Cat, Zebra, Monkey]
+
+jshell> queue.poll()
+$196 ==> "Cat"
+
+jshell> queue.poll()
+$197 ==> "Monkey"
+
+jshell> queue.poll()
+$198 ==> "Zebra"
+
+jshell> queue.poll()
+$199 ==> null
+
+jshell> clear()
+
+ 
+jshell> Test
+|  Error:
+|  cannot find symbol
+|    symbol:   variable Test
+|  Test
+|  ^--^
+
+jshell> clear()
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+jshell> Map<String, Integer> map = Map.of("A",3,"B",5,"Z",10); 
+map ==> {Z=10, A=3, B=5}
+
+jshell> map.put("R",1);
+|  java.lang.UnsupportedOperationException thrown: 
+|        at ImmutableCollections.uoe (ImmutableCollections.java:71)
+|        at ImmutableCollections$AbstractImmutableMap.put (ImmutableCollections.java:558)
+|        at (#203:1)
+
+jshell> map
+map ==> {Z=10, A=3, B=5}
+
+jshell> map.get("Z")
+$205 ==> 10
+
+jshell> map.get("A")
+$206 ==> 3
+
+jshell> map.get("C")
+$207 ==> null
+
+jshell> map.size()
+$208 ==> 3
+
+jshell> map.isEmpty()
+$209 ==> false
+
+jshell> map.containsKey("A")
+$210 ==> true
+
+jshell> map.containsKey("F")
+$211 ==> false
+
+jshell> map.containsValue(3)
+$212 ==> true
+
+jshell> map
+map ==> {Z=10, A=3, B=5}
+
+jshell> map.containsValue(4)
+$214 ==> false
+
+jshell> map.keySet()
+$215 ==> [Z, A, B]
+
+jshell> map.values()
+$216 ==> [10, 3, 5]
+
+jshell> map
+map ==> {Z=10, A=3, B=5}
+
+jshell> Map<String, Integer> map = Map.of("A",3,"B",5,"Z",10); 
+map ==> {Z=10, A=3, B=5}
+
+jshell> Map<String, Integer> hashmap = new HashMap<>(map);
+hashmap ==> {A=3, Z=10, B=5}
+
+jshell> hashmap.put("F",5)
+$220 ==> null
+
+jshell> hashmap
+hashmap ==> {A=3, Z=10, B=5, F=5}
+
+jshell> hashmap.put("Z",11)
+$222 ==> 10
+
+jshell> hashmap
+hashmap ==> {A=3, Z=11, B=5, F=5}
+
+jshell> clear()
+
+
+
+
+
+
+
+
+
+ 
+jshell> HashMap<String, Integer> hashmap = new HashMap<>();
+hashmap ==> {}
+
+jshell> hashmap.put("Z",5)
+$229 ==> null
+
+jshell> hashmap.put("A",15)
+$230 ==> null
+
+jshell> hashmap.put("F",25)
+$231 ==> null
+
+jshell> hashmap.put("L",250)
+$232 ==> null
+
+jshell> hashmap
+hashmap ==> {A=15, F=25, Z=5, L=250}
+
+jshell> LinkedHashMap<String, Integer> linkedHashMap = new HashMap<>();
+|  Error:
+|  incompatible types: cannot infer type arguments for java.util.HashMap<>
+|      reason: no instance(s) of type variable(s) K,V exist so that java.util.HashMap<K,V> conforms to java.util.LinkedHashMap<java.lang.String,java.lang.Integer>
+|  LinkedHashMap<String, Integer> linkedHashMap = new HashMap<>();
+|                                                     ^-------^
+
+jshell> LinkedHashMap<String, Integer> linkedHashMap = new LinkedHashMap<>();
+linkedHashMap ==> {}
+
+jshell> hashmap
+hashmap ==> {A=15, F=25, Z=5, L=250}
+
+jshell> linkedHashMap.put("F",25)
+$236 ==> null
+
+jshell> linkedHashMap.put("A",15)
+$237 ==> null
+
+jshell> linkedHashMap.put("Z",5)
+$238 ==> null
+
+jshell> linkedHashMap.put("L",250)
+$239 ==> null
+
+jshell> linkedHashMap
+linkedHashMap ==> {F=25, A=15, Z=5, L=250}
+
+jshell> TreeMap<String, Integer> treemap = new TreeMap<>();
+treemap ==> {}
+
+jshell> treemap.put("F",25)
+$242 ==> null
+
+jshell> treemap.put("A",15)
+$243 ==> null
+
+jshell> treemap.put("Z",5)
+$244 ==> null
+
+jshell> treemap.put("L",250)
+$245 ==> null
+
+jshell> treemap
+treemap ==> {A=15, F=25, L=250, Z=5}
+
+jshell> clear()
+
+ 
+jshell> TreeMap<String, Integer> treemap = new TreeMap<>();
+treemap ==> {}
+
+jshell> treemap.put("F",25)
+$249 ==> null
+
+jshell> treemap.put("Z",5)
+$250 ==> null
+
+jshell> treemap.put("L",250)
+$251 ==> null
+
+jshell> treemap.put("A",15)
+$252 ==> null
+
+jshell> treemap.put("B",25)
+$253 ==> null
+
+jshell> treemap.put("G",25)
+$254 ==> null
+
+jshell> treemap
+treemap ==> {A=15, B=25, F=25, G=25, L=250, Z=5}
+
+jshell> treemap.higherKey("B")
+$260 ==> "F"
+
+jshell> treemap.higherKey("C")
+$261 ==> "F"
+
+jshell> treemap.ceilingKey("B")
+$262 ==> "B"
+
+jshell> treemap.lowerKey("B")
+$263 ==> "A"
+
+jshell> treemap.floorKey("B")
+$264 ==> "B"
+
+jshell> treemap.firstEntry()
+$265 ==> A=15
+
+jshell> treemap.lastEntry()
+$266 ==> Z=5
+
+jshell> treemap
+treemap ==> {A=15, B=25, F=25, G=25, L=250, Z=5}
+
+jshell> treemap.subMap(
+subMap(   
+
+jshell> treemap.subMap("C", "Y")
+$268 ==> {F=25, G=25, L=250}
+
+jshell> treemap.subMap("B", "Z")
+$269 ==> {B=25, F=25, G=25, L=250}
+
+jshell> treemap.subMap("B",true, "Z",true)
+$270 ==> {B=25, F=25, G=25, L=250, Z=5}
+
+jshell> /save /in28Minutes/git/
+.DS_Store                                               
+.tmp.drivedownload/                                     
+10-Steps-to-High-Quality-Java-Developer/                
+BasicWebServletsIn28Minutes/                            
+In28MinutesTemplate/                                    
+JUnitIn28Minutes/                                       
+JavaInterviewQuestionsAndAnswers/                       
+JavaObjectOrientedProgramming/                          
+JavaTutorialForBeginners/                               
+JavaWebApplicationStepByStep/                           
+MavenIn28Minutes/                                       
+MockitoIn28Minutes/                                     
+MockitoTutorialForBeginners/                            
+README.md                                               
+RealWorldWebApplicationWithServletsAndJspIn28Minutes/   
+SpringBootForBeginners/                                 
+SpringBootWebApplicationStepByStep/                     
+SpringIn28Minutes/                                      
+SpringMvcStepByStep/                                    
+Struts2StepByStep/                                      
+TDDin28Minutes/                                         
+Tips-Database/                                          
+getting-started-in-5-steps/                             
+in28MinutesVision/                                      
+in28minutes-initiatives/                                
+in28minutes.com/                                        
+in28minutes.github.io/                                  
+java-a-course-for-beginners/                            
+java-best-practices/                                    
+java-cheat-sheet/                                       
+java-technology-for-beginners/                          
+jpa-and-hibernate-with-spring-boot/                     
+jshell-for-java-programmers/                            
+microservice-reference-archetype/                       
+spring-boot-examples/                                   
+spring-boot-master-class/                               
+spring-complete-career-path/                            
+spring-interview-questions/                             
+spring-master-class/                                    
+spring-micro-services/                                  
+spring-web-services/                                    
+
+<press tab again to see synopsis>
+
+jshell> /save /in28Minutes/git/java-a-course-for-beginners/12-Collections/commands.txt
+
+jshell> 
