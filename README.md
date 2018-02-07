@@ -44,8 +44,10 @@
 - Java New Features
   - From Interview Guide
 - Pitfalls
-- 4 Principles of Simple Design
-- 
+- What else should a great developer do?
+  - 4 Principles of Simple Design
+  - Unit Testing
+  - TDD
 
 ## Course Checklist
 
