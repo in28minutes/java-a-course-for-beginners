@@ -30,25 +30,25 @@
   - Polymorphism
 - Collections 
 - Generics
+- Functional Programming
+- Multithreading
+- Files
 - Exceptions
   - What is the aim? What happens when exceptions are not handled - stack trace, method flow?  Basics of try catch. Basics of finally. Puzzles. Hierachy of Exceptions. Follow as it is in the Interview Guide
-- Modifiers
-  - scope and initialization
 - Miscellaneous Topics
+  - Concurrent Collections
+  - Modifiers
+    - scope and initialization
   - Enum
   - Cloning
   - Garbage Collection
-- Functional Programming
-- Files
-- Multithreading
-- Concurrent Collections
-- Java New Features
-  - From Interview Guide
-- Pitfalls
-- What else should a great developer do?
-  - 4 Principles of Simple Design
-  - Unit Testing
-  - TDD
+  - Java New Features
+    - From Interview Guide
+  - Pitfalls
+  - What else should a great developer do?
+    - 4 Principles of Simple Design
+    - Unit Testing
+    - TDD
 
 ## Course Checklist
 
