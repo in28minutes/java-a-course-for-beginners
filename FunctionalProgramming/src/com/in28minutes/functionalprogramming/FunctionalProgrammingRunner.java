@@ -33,7 +33,7 @@ public class FunctionalProgrammingRunner {
 	
 	private static void printWithFPWithFiltering(List<String> list) {
 		list.stream()
-			.filter(element -> element.endsWith("at"))
+				.filter(element -> element.endsWith("at"))
 			.forEach(element -> System.out.println("element - " + element));
 	}
 

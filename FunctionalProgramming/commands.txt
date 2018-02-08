@@ -1,0 +1,51 @@
+List<Integer> list = List.of(1,4,7,9);
+list.stream().forEach(
+      element -> System.out.println(element)
+)
+list.stream().filter(
+               element -> element%2 == 1)
+list.stream().filter(
+               element -> element%2 == 1).
+             forEach(
+               element -> System.out.println(element))
+list.stream().filter(element -> element%2==1).forEach(element->System.out.println(element))
+list.stream().filter(element -> element%2==0).forEach(element->System.out.println(element))
+void clear() { System.out.print("\033[H\033[2J ");}
+clear()
+numbers.stream().sorted().forEach(e->System.out.println(e));
+List<Integer> numbers = List.of(3,5,3,213,45,5,7);
+numbers.stream().distinct().forEach(e->System.out.println(e));
+numbers.stream().distinct().sorted().forEach(e->System.out.println(e));
+numbers.stream().distinct().map(e -> e * e).forEach(e->System.out.println(e));
+clear()
+IntStream.range(1,10).forEach(p->System.out.println(p))
+IntStream.range(1,11).forEach(p->System.out.println(p))
+IntStream.range(1,11).map(e -> e * e).forEach(p->System.out.println(p))
+List.of("Apple", "Ant", "Bat").stream().map(s->s.toLowerCase()).forEach(p -> System.out.println(p))
+List.of("Apple", "Ant", "Bat").stream().map(s->s.length()).forEach(p -> System.out.println(p))
+clear()
+IntStream.range(1,11).reduce( 0 , (n1,n2) -> n1+n2)
+List.of(23,12,34,53).stream().max((n1,n2) -> Integer.compare(n1,n2))
+$24.isPresent()
+List.of(23,12,34,53).stream().max((n1,n2) -> Integer.compare(n1,n2)).get()
+List.of(23,12,34,53).stream().max((n1,n2) -> Integer.compare(n1,n2)).get()
+List.of(23,12,34,53).stream().max((n1,n2) -> Integer.compare(n1,n2)).get()
+List.of(23,12,34,53).stream().min((n1,n2) -> Integer.compare(n1,n2)).get()
+List.of(23,12,34,53).stream().filter(e -> e%2==1).forEach(e -> System.out.println(e))
+List.of(23,12,34,53).stream().filter(e -> e%2==1).collect(Collectors.toList())
+List.of(23,12,34,53).stream().filter(e -> e%2==0).collect(Collectors.toList())
+IntStream.range(1,11).map(e -> e * e)
+List.of(23,12,34,53).stream().filter(e -> e%2==0).collect(Collectors.toList())
+IntStream.range(1,10).map(e -> e * e)
+IntStream.range(1,10).map(e -> e * e).boxed().collect(Collectors.toList())
+IntStream.range(1,11).map(e -> e * e).boxed().collect(Collectors.toList())
+clear()
+List.of(23,45,67,12).stream().filter(n -> n%2==0).max( (n1,n2) -> Integer.compare(n1,n2) )
+$39.get()
+$39.isPresent()
+List.of(23,45,67).stream().filter(n -> n%2==0).max( (n1,n2) -> Integer.compare(n1,n2) )
+$42.isPresent()
+$42.orElse(0)
+$42.orElse(0)
+List.of(23,45,67).stream().filter(n -> n%2==0).max( (n1,n2) -> Integer.compare(n1,n2) ).orElse(0)
+List.of(23,45,67,34).stream().filter(n -> n%2==0).max( (n1,n2) -> Integer.compare(n1,n2) ).orElse(0)
