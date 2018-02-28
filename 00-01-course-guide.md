@@ -2712,8 +2712,10 @@ public class StudentRunner {
   - What Operations?
 
 #### Object Composition - Book and Reviews
-Book > id, name, author
- > Reviews > id, description, rating
+
+Object Composition
+- Book - id, name, author
+  - Reviews - id, description, rating
 
 ```java 
  Book book = 
