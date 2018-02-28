@@ -1,0 +1,773 @@
+Last login: Mon Feb  5 17:36:16 on ttys001
+Rangas-MacBook-Pro:~ rangaraokaranam$ jshell
+|  Welcome to JShell -- Version 9.0.1
+|  For an introduction type: /help intro
+
+jshell> List<Integer> list = List.of(1,4,7,9);
+list ==> [1, 4, 7, 9]
+
+jshell> list.stream().forEach(
+   ...>       element -> System.out.println(element)
+   ...> )
+1
+4
+7
+9
+
+jshell> list.stream().filter(
+   ...>                element -> element%2 == 1)
+$3 ==> java.util.stream.ReferencePipeline$2@29ca901e
+
+jshell> list.stream().filter(
+   ...>                element -> element%2 == 1).
+   ...>              forEach( 
+   ...>                element -> System.out.println(element))
+1
+7
+9
+
+jshell> list.stream().filter(element -> element%2==1).forEach(element->System.out.println(element))
+1
+7
+9
+
+jshell> list.stream().filter(element -> element%2==0).forEach(element->System.out.println(element))
+4
+
+jshell> clear()
+|  Error:
+|  cannot find symbol
+|    symbol:   method clear()
+|  clear()
+|  ^---^
+
+jshell> void clear() { System.out.print("\033[H\033[2J ");}
+|  created method clear()
+
+jshell> void clear() { System.out.print("\033[H\033[2J ");}
+|  modified method clear()
+
+jshell> clear()
+
+ 
+jshell> List<Integer> numbers = List.of(3,5,8,213,45,4,7);
+numbers ==> [3, 5, 8, 213, 45, 4, 7]
+
+jshell> numbers.stream().sorted().forEach(e->System.out.println(e));
+3
+4
+5
+7
+8
+45
+213
+
+jshell> List<Integer> numbers = List.of(3,5,3,213,45,5,7);
+numbers ==> [3, 5, 3, 213, 45, 5, 7]
+
+jshell> numbers.stream().distinct().forEach(e->System.out.println(e));
+3
+5
+213
+45
+7
+
+jshell> numbers.stream().distinct().sorted().forEach(e->System.out.println(e));
+3
+5
+7
+45
+213
+
+jshell> numbers.stream().distinct().map(e -> e * e).forEach(e->System.out.println(e));
+9
+25
+45369
+2025
+49
+
+jshell> clear()
+
+ 
+jshell> IntStream.range(1,10).forEach(p->System.out.println(p))
+1
+2
+3
+4
+5
+6
+7
+8
+9
+
+jshell> IntStream.range(1,11).forEach(p->System.out.println(p))
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+
+jshell> IntStream.range(1,11).map(e -> e * e).forEach(p->System.out.println(p))
+1
+4
+9
+16
+25
+36
+49
+64
+81
+100
+
+jshell> List.of("Apple", "Ant", "Bat").stream().map(s->s.lower
+jshell> List.of("Apple", "Ant", "Bat").stream().map(s->s.lowercase()).forEach(p -> System.out.println(p))
+|  Error:
+|  cannot find symbol
+|    symbol:   method lowercase()
+|  List.of("Apple", "Ant", "Bat").stream().map(s->s.lowercase()).forEach(p -> System.out.println(p))
+|                                                 ^---------^
+
+jshell> List.of("Apple", "Ant", "Bat").stream().map(s->s.lowerCase()).forEach(p -> System.out.println(p))
+|  Error:
+|  cannot find symbol
+|    symbol:   method lowerCase()
+|  List.of("Apple", "Ant", "Bat").stream().map(s->s.lowerCase()).forEach(p -> System.out.println(p))
+|                                                 ^---------^
+
+jshell> List.of("Apple", "Ant", "Bat").stream().map(s->s.toLowerCase()).forEach(p -> System.out.println(p))
+apple
+ant
+bat
+
+jshell> List.of("Apple", "Ant", "Bat").stream().map(s->s.length()).forEach(p -> System.out.println(p))
+5
+3
+3
+
+jshell> clear()
+
+ 
+jshell> IntStream.range(1,11).reduce( 0 , (n1,n2) -> n1+n2)
+$23 ==> 55
+
+jshell> List.of(23,12,34,53).stream().max()
+|  Error:
+|  method max in interface java.util.stream.Stream<T> cannot be applied to given types;
+|    required: java.util.Comparator<? super java.lang.Integer>
+|    found: no arguments
+|    reason: actual and formal argument lists differ in length
+|  List.of(23,12,34,53).stream().max()
+|  ^-------------------------------^
+
+jshell> List.of(23,12,34,53).stream().max((n1,n2) -> Integer.compare(n1,n2))
+$24 ==> Optional[53]
+
+jshell> $24.
+equals(            filter(            flatMap(           get()              
+getClass()         hashCode()         ifPresent(         ifPresentOrElse(   
+isPresent()        map(               notify()           notifyAll()        
+or(                orElse(            orElseGet(         orElseThrow(       
+stream()           toString()         wait(              
+
+jshell> $24.isPresent()
+$25 ==> true
+
+jshell> List.of(23,12,34,53).stream().max((n1,n2) -> Integer.compare(n1,n2)).get()
+$26 ==> 53
+
+jshell> List.of().stream().max((n1,n2) -> Integer.compare(n1,n2)).get()
+|  Error:
+|  incompatible types: java.lang.Object cannot be converted to int
+|  List.of().stream().max((n1,n2) -> Integer.compare(n1,n2)).get()
+|                                                    ^^
+
+jshell> List.of().stream().max((n1,n2) -> Integer.compare(n1,n2)).
+equals(            filter(            flatMap(           get()              
+getClass()         hashCode()         ifPresent(         ifPresentOrElse(   
+isPresent()        map(               notify()           notifyAll()        
+or(                orElse(            orElseGet(         orElseThrow(       
+stream()           toString()         wait(              
+
+jshell> List.of().stream().max((n1,n2) -> Integer.compare(n1,n2)).get().orElse(Integer.valueOf(10))
+|  Error:
+|  incompatible types: java.lang.Object cannot be converted to int
+|  List.of().stream().max((n1,n2) -> Integer.compare(n1,n2)).get().orElse(Integer.valueOf(10))
+|                                                    ^^
+|  Error:
+|  cannot find symbol
+|    symbol:   method orElse(java.lang.Integer)
+|  List.of().stream().max((n1,n2) -> Integer.compare(n1,n2)).get().orElse(Integer.valueOf(10))
+|  ^--------------------------------------------------------------------^
+
+jshell> List.of().stream().max((n1,n2) -> Integer.compare(n1,n2)).
+equals(            filter(            flatMap(           get()              
+getClass()         hashCode()         ifPresent(         ifPresentOrElse(   
+isPresent()        map(               notify()           notifyAll()        
+or(                orElse(            orElseGet(         orElseThrow(       
+stream()           toString()         wait(              
+
+jshell> List.of().stream().max((n1,n2) -> Integer.compare(n1,n2)).or(10)
+|  Error:
+|  incompatible types: java.lang.Object cannot be converted to int
+|  List.of().stream().max((n1,n2) -> Integer.compare(n1,n2)).or(10)
+|                                                    ^^
+|  Error:
+|  incompatible types: int cannot be converted to java.util.function.Supplier<? extends java.util.Optional<? extends java.lang.Object>>
+|  List.of().stream().max((n1,n2) -> Integer.compare(n1,n2)).or(10)
+|                                                               ^^
+
+jshell> List.of().stream().max((n1,n2) -> Integer.compare(n1,n2)).orElse(10)
+|  Error:
+|  incompatible types: java.lang.Object cannot be converted to int
+|  List.of().stream().max((n1,n2) -> Integer.compare(n1,n2)).orElse(10)
+|                                                    ^^
+
+jshell> List.of().stream().max((n1,n2) -> Integer.compare(n1,n2)).get(0)
+|  Error:
+|  incompatible types: java.lang.Object cannot be converted to int
+|  List.of().stream().max((n1,n2) -> Integer.compare(n1,n2)).get(0)
+|                                                    ^^
+|  Error:
+|  method get in class java.util.Optional<T> cannot be applied to given types;
+|    required: no arguments
+|    found: int
+|    reason: actual and formal argument lists differ in length
+|  List.of().stream().max((n1,n2) -> Integer.compare(n1,n2)).get(0)
+|  ^-----------------------------------------------------------^
+
+jshell> List.of().stream().max((n1,n2) -> Integer.compare(n1,n2)).orElse(0).get()
+|  Error:
+|  incompatible types: java.lang.Object cannot be converted to int
+|  List.of().stream().max((n1,n2) -> Integer.compare(n1,n2)).orElse(0).get()
+|                                                    ^^
+|  Error:
+|  cannot find symbol
+|    symbol:   method get()
+|  List.of().stream().max((n1,n2) -> Integer.compare(n1,n2)).orElse(0).get()
+|  ^---------------------------------------------------------------------^
+
+jshell> List.of().stream().max((n1,n2) -> Integer.compare(n1,n2)).orElse(Integer.valueOf(0)).get()
+|  Error:
+|  incompatible types: java.lang.Object cannot be converted to int
+|  List.of().stream().max((n1,n2) -> Integer.compare(n1,n2)).orElse(Integer.valueOf(0)).get()
+|                                                    ^^
+|  Error:
+|  cannot find symbol
+|    symbol:   method get()
+|  List.of().stream().max((n1,n2) -> Integer.compare(n1,n2)).orElse(Integer.valueOf(0)).get()
+|  ^--------------------------------------------------------------------------------------^
+
+jshell> List.of().stream().max((n1,n2) -> Integer.compare(n1,n2)).orElse(Integer.valueOf(0))
+|  Error:
+|  incompatible types: java.lang.Object cannot be converted to int
+|  List.of().stream().max((n1,n2) -> Integer.compare(n1,n2)).orElse(Integer.valueOf(0))
+|                                                    ^^
+
+jshell> List.of().stream().max((n1,n2) -> Integer.compare(n1,n2))
+|  Error:
+|  incompatible types: java.lang.Object cannot be converted to int
+|  List.of().stream().max((n1,n2) -> Integer.compare(n1,n2))
+|                                                    ^^
+
+jshell> List.of(23,12,34,53).stream().max((n1,n2) -> Integer.compare(n1,n2)).get()
+$27 ==> 53
+
+jshell> List<Integer>.of().stream().max((n1,n2) -> Integer.compare(n1,n2)).get()
+|  Error:
+|  illegal start of type
+|  List<Integer>.of().stream().max((n1,n2) -> Integer.compare(n1,n2)).get()
+|                  ^
+|  Error:
+|  cannot find symbol
+|    symbol:   method stream()
+|  List<Integer>.of().stream().max((n1,n2) -> Integer.compare(n1,n2)).get()
+|                     ^----^
+|  Error:
+|  missing return statement
+|  List<Integer>.of().stream().max((n1,n2) -> Integer.compare(n1,n2)).get()
+|  ^----------------------------------------------------------------------^
+
+jshell> List.of(23,12,34,53).stream().max((n1,n2) -> Integer.compare(n1,n2)).get()
+$28 ==> 53
+
+jshell> List.of(23,12,34,53).stream().min((n1,n2) -> Integer.compare(n1,n2)).get()
+$29 ==> 12
+
+jshell> List.of(23,12,34,53).stream().filter(e -> e%2==1).forEach(e -> System.out.println(e))
+23
+53
+
+jshell> List.of(23,12,34,53).stream().filter(e -> e%2==1).collect(Collection.toList())
+|  Error:
+|  cannot find symbol
+|    symbol:   method toList()
+|  List.of(23,12,34,53).stream().filter(e -> e%2==1).collect(Collection.toList())
+|                                                            ^---------------^
+
+jshell> List.of(23,12,34,53).stream().filter(e -> e%2==1).collect(Collectors.toList())
+$31 ==> [23, 53]
+
+jshell> List.of(23,12,34,53).stream().filter(e -> e%2==0).collect(Collectors.toList())
+$32 ==> [12, 34]
+
+jshell> IntStream.range(1,11).map(e -> e * e).collect(Collectors.toList())
+|  Error:
+|  method collect in interface java.util.stream.IntStream cannot be applied to given types;
+|    required: java.util.function.Supplier<R>,java.util.function.ObjIntConsumer<R>,java.util.function.BiConsumer<R,R>
+|    found: java.util.stream.Collector<java.lang.Object,capture#1 of ?,java.util.List<java.lang.Object>>
+|    reason: cannot infer type-variable(s) R
+|      (actual and formal argument lists differ in length)
+|  IntStream.range(1,11).map(e -> e * e).collect(Collectors.toList())
+|  ^-------------------------------------------^
+
+jshell> IntStream.range(1,11).map(e -> e * e)
+$33 ==> java.util.stream.IntPipeline$4@a7e666
+
+jshell> $33.collect(
+collect(   
+
+jshell> $33.collect(
+Signatures:
+R IntStream.<R extends Object>collect(Supplier<R> supplier, ObjIntConsumer<R> accumulator, BiConsumer<R,R> combiner)
+
+<press tab again to see documentation>
+
+jshell> $33.collect(
+R IntStream.<R extends Object>collect(Supplier<R> supplier, ObjIntConsumer<R> accumulator, BiConsumer<R,R> combiner)
+Performs a mutable reduction operation on the elements of this stream.A mutable
+reduction is one in which the reduced value is a mutable result container, such as
+an ArrayList , and elements are incorporated by updating the state of the result
+rather than by replacing the result. This produces a result equivalent to: 
+     R result = supplier.get();
+     for (int element : this stream)
+         accumulator.accept(result, element);
+     return result;
+ 
+Like #reduce(int, IntBinaryOperator) , collect operations can be parallelized
+without requiring additional synchronization.
+This is a terminal operation .
+
+Type Parameters:
+R - the type of the mutable result container
+
+Parameters:
+
+<press tab again to see next page>
+
+jshell> $33.collect(
+supplier - a function that creates a new mutable result container. For a parallel
+           execution, this function may be called multiple times and must return a
+           fresh value each time.
+accumulator - an associative , non-interfering , stateless function that must fold
+              an element into a result container.
+combiner - an associative , non-interfering , stateless function that accepts two
+           partial result containers and merges them, which must be compatible with
+           the accumulator function. The combiner function must fold the elements
+           from the second result container into the first result container.
+
+Returns:
+the result of the reduction
+
+<press tab again to see all possible completions; total possible completions: 559>
+
+jshell> $33.collect(
+$23                                      $24                                      
+$25                                      $26                                      
+$27                                      $28                                      
+$29                                      $3                                       
+$31                                      $32                                      
+$33                                      AbstractCollection                       
+AbstractExecutorService                  AbstractList                             
+AbstractMap                              AbstractMethodError                      
+AbstractPreferences                      AbstractQueue                            
+AbstractSequentialList                   AbstractSet                              
+AccessDeniedException                    AccessMode                               
+Appendable                               ArithmeticException                      
+ArrayBlockingQueue                       ArrayDeque                               
+ArrayIndexOutOfBoundsException           ArrayList                                
+ArrayStoreException                      Arrays                                   
+AssertionError                           AtomicMoveNotSupportedException          
+Authenticator                            AutoCloseable                            
+BackingStoreException                    Base64                                   
+BaseStream                               BiConsumer                               
+BiFunction                               BiPredicate                              
+BigDecimal                               BigInteger                               
+BinaryOperator                           BindException                            
+BitSet                                   BlockingDeque                            
+BlockingQueue                            Boolean                                  
+BooleanSupplier                          BootstrapMethodError                     
+BrokenBarrierException                   BufferedInputStream                      
+BufferedOutputStream                     BufferedReader                           
+BufferedWriter                           Builder                                  
+Byte                                     ByteArrayInputStream                     
+ByteArrayOutputStream                    CacheRequest                             
+CacheResponse                            Calendar                                 
+Callable                                 CancellationException                    
+CharArrayReader                          CharArrayWriter                          
+CharConversionException                  CharSequence                             
+Character                                Class                                    
+ClassCastException                       ClassCircularityError                    
+ClassFormatError                         ClassLoader                              
+ClassNotFoundException                   ClassValue                               
+CloneNotSupportedException               Cloneable                                
+Closeable                                ClosedDirectoryStreamException           
+ClosedFileSystemException                ClosedWatchServiceException              
+Collection                               Collections                              
+Collector                                Collectors                               
+Comparable                               Comparator                               
+Compiler                                 CompletableFuture                        
+CompletionException                      CompletionService                        
+CompletionStage                          ConcurrentHashMap                        
+ConcurrentLinkedDeque                    ConcurrentLinkedQueue                    
+ConcurrentMap                            ConcurrentModificationException          
+ConcurrentNavigableMap                   ConcurrentSkipListMap                    
+ConcurrentSkipListSet                    ConnectException                         
+Console                                  Consumer                                 
+ContentHandler                           ContentHandlerFactory                    
+CookieHandler                            CookieManager                            
+CookiePolicy                             CookieStore                              
+CopyOnWriteArrayList                     CopyOnWriteArraySet                      
+CopyOption                               CountDownLatch                           
+CountedCompleter                         Currency                                 
+CyclicBarrier                            DataInput                                
+DataInputStream                          DataOutput                               
+DataOutputStream                         DatagramPacket                           
+DatagramSocket                           DatagramSocketImpl                       
+DatagramSocketImplFactory                Date                                     
+DelayQueue                               Delayed                                  
+Deprecated                               Deque                                    
+Dictionary                               DirectoryIteratorException               
+DirectoryNotEmptyException               DirectoryStream                          
+Double                                   DoubleBinaryOperator                     
+DoubleConsumer                           DoubleFunction                           
+DoublePredicate                          DoubleStream                             
+DoubleSummaryStatistics                  DoubleSupplier                           
+DoubleToIntFunction                      DoubleToLongFunction                     
+DoubleUnaryOperator                      DuplicateFormatFlagsException            
+EOFException                             EmptyStackException                      
+Enum                                     EnumConstantNotPresentException          
+EnumMap                                  EnumSet                                  
+Enumeration                              Error                                    
+EventListener                            EventListenerProxy                       
+EventObject                              Exception                                
+ExceptionInInitializerError              Exchanger                                
+ExecutionException                       Executor                                 
+ExecutorCompletionService                ExecutorService                          
+Executors                                Externalizable                           
+File                                     FileAlreadyExistsException               
+FileDescriptor                           FileFilter                               
+FileInputStream                          FileNameMap                              
+FileNotFoundException                    FileOutputStream                         
+FilePermission                           FileReader                               
+FileStore                                FileSystem                               
+FileSystemAlreadyExistsException         FileSystemException                      
+FileSystemLoopException                  FileSystemNotFoundException              
+FileSystems                              FileVisitOption                          
+FileVisitResult                          FileVisitor                              
+FileWriter                               FilenameFilter                           
+Files                                    FilterInputStream                        
+FilterOutputStream                       FilterReader                             
+FilterWriter                             Float                                    
+Flow                                     Flushable                                
+ForkJoinPool                             ForkJoinTask                             
+ForkJoinWorkerThread                     FormatFlagsConversionMismatchException   
+Formattable                              FormattableFlags                         
+Formatter                                FormatterClosedException                 
+Function                                 FunctionalInterface                      
+Future                                   FutureTask                               
+GregorianCalendar                        HashMap                                  
+HashSet                                  Hashtable                                
+HttpCookie                               HttpRetryException                       
+HttpURLConnection                        IDN                                      
+IOError                                  IOException                              
+IdentityHashMap                          IllegalAccessError                       
+IllegalAccessException                   IllegalArgumentException                 
+IllegalCallerException                   IllegalFormatCodePointException          
+IllegalFormatConversionException         IllegalFormatException                   
+IllegalFormatFlagsException              IllegalFormatPrecisionException          
+IllegalFormatWidthException              IllegalMonitorStateException             
+IllegalStateException                    IllegalThreadStateException              
+IllformedLocaleException                 IncompatibleClassChangeError             
+IndexOutOfBoundsException                Inet4Address                             
+Inet6Address                             InetAddress                              
+InetSocketAddress                        InheritableThreadLocal                   
+InputMismatchException                   InputStream                              
+InputStreamReader                        InstantiationError                       
+InstantiationException                   IntBinaryOperator                        
+IntConsumer                              IntFunction                              
+IntPredicate                             IntStream                                
+IntSummaryStatistics                     IntSupplier                              
+IntToDoubleFunction                      IntToLongFunction                        
+IntUnaryOperator                         Integer                                  
+InterfaceAddress                         InternalError                            
+InterruptedException                     InterruptedIOException                   
+InvalidClassException                    InvalidObjectException                   
+InvalidPathException                     InvalidPreferencesFormatException        
+InvalidPropertiesFormatException         IsoCountryCode                           
+Iterable                                 Iterator                                 
+JarURLConnection                         LayerInstantiationException              
+LineNumberInputStream                    LineNumberReader                         
+LinkOption                               LinkPermission                           
+LinkageError                             LinkedBlockingDeque                      
+LinkedBlockingQueue                      LinkedHashMap                            
+LinkedHashSet                            LinkedList                               
+LinkedTransferQueue                      List                                     
+ListIterator                             ListResourceBundle                       
+Locale                                   Long                                     
+LongBinaryOperator                       LongConsumer                             
+LongFunction                             LongPredicate                            
+LongStream                               LongSummaryStatistics                    
+LongSupplier                             LongToDoubleFunction                     
+LongToIntFunction                        LongUnaryOperator                        
+MalformedURLException                    Map                                      
+MatchResult                              Matcher                                  
+Math                                     MathContext                              
+MissingFormatArgumentException           MissingFormatWidthException              
+MissingResourceException                 Module                                   
+ModuleLayer                              MulticastSocket                          
+NavigableMap                             NavigableSet                             
+NegativeArraySizeException               NetPermission                            
+NetworkInterface                         NoClassDefFoundError                     
+NoRouteToHostException                   NoSuchElementException                   
+NoSuchFieldError                         NoSuchFieldException                     
+NoSuchFileException                      NoSuchMethodError                        
+NoSuchMethodException                    NodeChangeEvent                          
+NodeChangeListener                       NotActiveException                       
+NotDirectoryException                    NotLinkException                         
+NotSerializableException                 NullPointerException                     
+Number                                   NumberFormatException                    
+ObjDoubleConsumer                        ObjIntConsumer                           
+ObjLongConsumer                          Object                                   
+ObjectInput                              ObjectInputFilter                        
+ObjectInputStream                        ObjectInputValidation                    
+ObjectOutput                             ObjectOutputStream                       
+ObjectStreamClass                        ObjectStreamConstants                    
+ObjectStreamException                    ObjectStreamField                        
+Objects                                  Observable                               
+Observer                                 OpenOption                               
+Optional                                 OptionalDataException                    
+OptionalDouble                           OptionalInt                              
+OptionalLong                             OutOfMemoryError                         
+OutputStream                             OutputStreamWriter                       
+Override                                 Package                                  
+PasswordAuthentication                   Path                                     
+PathMatcher                              Paths                                    
+Pattern                                  PatternSyntaxException                   
+Phaser                                   PipedInputStream                         
+PipedOutputStream                        PipedReader                              
+PipedWriter                              PortUnreachableException                 
+Predicate                                PreferenceChangeEvent                    
+PreferenceChangeListener                 Preferences                              
+PreferencesFactory                       PrimitiveIterator                        
+PrintStream                              PrintWriter                              
+PriorityBlockingQueue                    PriorityQueue                            
+Process                                  ProcessBuilder                           
+ProcessHandle                            Properties                               
+PropertyPermission                       PropertyResourceBundle                   
+ProtocolException                        ProtocolFamily                           
+ProviderMismatchException                ProviderNotFoundException                
+Proxy                                    ProxySelector                            
+PushbackInputStream                      PushbackReader                           
+Queue                                    Random                                   
+RandomAccess                             RandomAccessFile                         
+ReadOnlyFileSystemException              Readable                                 
+Reader                                   RecursiveAction                          
+RecursiveTask                            ReflectiveOperationException             
+RejectedExecutionException               RejectedExecutionHandler                 
+ResourceBundle                           ResponseCache                            
+RoundingMode                             Runnable                                 
+RunnableFuture                           RunnableScheduledFuture                  
+Runtime                                  RuntimeException                         
+RuntimePermission                        SafeVarargs                              
+Scanner                                  ScheduledExecutorService                 
+ScheduledFuture                          ScheduledThreadPoolExecutor              
+SecureCacheResponse                      SecureDirectoryStream                    
+SecurityException                        SecurityManager                          
+Semaphore                                SequenceInputStream                      
+Serializable                             SerializablePermission                   
+ServerSocket                             ServiceConfigurationError                
+ServiceLoader                            Set                                      
+Short                                    SimpleFileVisitor                        
+SimpleTimeZone                           Socket                                   
+SocketAddress                            SocketException                          
+SocketImpl                               SocketImplFactory                        
+SocketOption                             SocketOptions                            
+SocketPermission                         SocketTimeoutException                   
+SortedMap                                SortedSet                                
+Spliterator                              Spliterators                             
+SplittableRandom                         Stack                                    
+StackOverflowError                       StackTraceElement                        
+StackWalker                              StandardCopyOption                       
+StandardOpenOption                       StandardProtocolFamily                   
+StandardSocketOptions                    StandardWatchEventKinds                  
+Stream                                   StreamCorruptedException                 
+StreamSupport                            StreamTokenizer                          
+StrictMath                               String                                   
+StringBuffer                             StringBufferInputStream                  
+StringBuilder                            StringIndexOutOfBoundsException          
+StringJoiner                             StringReader                             
+StringTokenizer                          StringWriter                             
+SubmissionPublisher                      Supplier                                 
+SuppressWarnings                         SyncFailedException                      
+SynchronousQueue                         System                                   
+Thread                                   ThreadDeath                              
+ThreadFactory                            ThreadGroup                              
+ThreadLocal                              ThreadLocalRandom                        
+ThreadPoolExecutor                       Throwable                                
+TimeUnit                                 TimeZone                                 
+TimeoutException                         Timer                                    
+TimerTask                                ToDoubleBiFunction                       
+ToDoubleFunction                         ToIntBiFunction                          
+ToIntFunction                            ToLongBiFunction                         
+ToLongFunction                           TooManyListenersException                
+TransferQueue                            TreeMap                                  
+TreeSet                                  TypeNotPresentException                  
+URI                                      URISyntaxException                       
+URL                                      URLClassLoader                           
+URLConnection                            URLDecoder                               
+URLEncoder                               URLPermission                            
+URLStreamHandler                         URLStreamHandlerFactory                  
+UTFDataFormatException                   UUID                                     
+UnaryOperator                            UncheckedIOException                     
+UnknownError                             UnknownFormatConversionException         
+UnknownFormatFlagsException              UnknownHostException                     
+UnknownServiceException                  UnsatisfiedLinkError                     
+UnsupportedClassVersionError             UnsupportedEncodingException             
+UnsupportedOperationException            Vector                                   
+VerifyError                              Version                                  
+VirtualMachineError                      Void                                     
+WatchEvent                               WatchKey                                 
+WatchService                             Watchable                                
+WeakHashMap                              WriteAbortedException                    
+Writer                                   apple                                    
+boolean                                  byte                                     
+char                                     clear()                                  
+com                                      double                                   
+float                                    int                                      
+java                                     javafx                                   
+javax                                    jdk                                      
+list                                     long                                     
+netscape                                 numbers                                  
+oracle                                   org                                      
+short                                    sun                                      
+void                                     
+
+jshell> $33.collect(
+Signatures:
+R IntStream.<R extends Object>collect(Supplier<R> supplier, ObjIntConsumer<R> accumulator, BiConsumer<R,R> combiner)
+
+<press tab again to see documentation>
+
+jshell> $33.collect(Collectors.toList())
+|  Error:
+|  method collect in interface java.util.stream.IntStream cannot be applied to given types;
+|    required: java.util.function.Supplier<R>,java.util.function.ObjIntConsumer<R>,java.util.function.BiConsumer<R,R>
+|    found: java.util.stream.Collector<java.lang.Object,capture#1 of ?,java.util.List<java.lang.Object>>
+|    reason: cannot infer type-variable(s) R
+|      (actual and formal argument lists differ in length)
+|  $33.collect(Collectors.toList())
+|  ^---------^
+
+jshell> List.of(23,12,34,53).stream().filter(e -> e%2==0).collect(Collectors.toList())
+$34 ==> [12, 34]
+
+jshell> IntStream.range(1,10).map(e -> e * e)
+$35 ==> java.util.stream.IntPipeline$4@7c29daf3
+
+jshell> IntStream.range(1,10).map(e -> e * e).boxed().collect(Collectors.toList())
+$36 ==> [1, 4, 9, 16, 25, 36, 49, 64, 81]
+
+jshell> IntStream.range(1,11).map(e -> e * e).boxed().collect(Collectors.toList())
+$37 ==> [1, 4, 9, 16, 25, 36, 49, 64, 81, 100]
+
+jshell> clear()
+
+
+
+
+ 
+jshell> List.of(23,45,67,12).stream().filter(n -> n%2==0).max( (n1,n2) -> Integer.compare(n1,n2) )
+$39 ==> Optional[12]
+
+jshell> $39.get()
+$40 ==> 12
+
+jshell> $39.isPresent()
+isPresent()   
+
+jshell> $39.isPresent()
+$41 ==> true
+
+jshell> List.of(23,45,67).stream().filter(n -> n%2==0).max( (n1,n2) -> Integer.compare(n1,n2) )
+$42 ==> Optional.empty
+
+jshell> $42.isPresent()
+$43 ==> false
+
+jshell> $42.orElse(0)
+$45 ==> 0
+
+jshell> List.of(23,45,67).stream().filter(n -> n%2==0).max( (n1,n2) -> Integer.compare(n1,n2) ).orElse(0)
+$46 ==> 0
+
+jshell> List.of(23,45,67,34).stream().filter(n -> n%2==0).max( (n1,n2) -> Integer.compare(n1,n2) ).orElse(0)
+$47 ==> 34
+                        ,34).stream().filter(n -> n%2==0).max( (n1,n2) -> Integer.compare(n1,n2) ).orElse(0)
+Signatures:
+T Optional<T>.orElse(T other)
+
+<press tab again to see all possible completions>
+        $42.isPresent()
+jshell> /save /in28Minutes/git/
+.DS_Store                                               
+.tmp.drivedownload/                                     
+10-Steps-to-High-Quality-Java-Developer/                
+BasicWebServletsIn28Minutes/                            
+In28MinutesTemplate/                                    
+JUnitIn28Minutes/                                       
+JavaInterviewQuestionsAndAnswers/                       
+JavaObjectOrientedProgramming/                          
+JavaTutorialForBeginners/                               
+JavaWebApplicationStepByStep/                           
+MavenIn28Minutes/                                       
+MockitoIn28Minutes/                                     
+MockitoTutorialForBeginners/                            
+README.md                                               
+RealWorldWebApplicationWithServletsAndJspIn28Minutes/   
+SpringBootForBeginners/                                 
+SpringBootWebApplicationStepByStep/                     
+SpringIn28Minutes/                                      
+SpringMvcStepByStep/                                    
+Struts2StepByStep/                                      
+TDDin28Minutes/                                         
+Tips-Database/                                          
+getting-started-in-5-steps/                             
+in28MinutesVision/                                      
+in28minutes-initiatives/                                
+in28minutes.com/                                        
+in28minutes.github.io/                                  
+java-a-course-for-beginners/                            
+java-best-practices/                                    
+java-cheat-sheet/                                       
+java-technology-for-beginners/                          
+jpa-and-hibernate-with-spring-boot/                     
+jshell-for-java-programmers/                            
+microservice-reference-archetype/                       
+spring-boot-examples/                                   
+spring-boot-master-class/                               
+spring-complete-career-path/                            
+spring-interview-questions/                             
+spring-master-class/                                    
+spring-micro-services/                                  
+spring-web-services/                                    
+
+<press tab again to see synopsis>
+
+jshell> /save /in28Minutes/git/java-a-course-for-beginners/FunctionalProgramming/commands.txt
+
+jshell> 
