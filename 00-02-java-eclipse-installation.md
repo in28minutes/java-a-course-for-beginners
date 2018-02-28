@@ -73,6 +73,13 @@
 2.	Temporarily turn off firewalls and antivirus software.
 3.	If you get file corrupt message, download the installation file again.
 4.	Check if you are on 32-bit OS or 64-bit OS. Remember, Java 9 is not supported on 32 bit windows.
+5. Check if you need PATH variable to point to right Java Version - https://www.java.com/en/download/help/path.xml
+
+### More Help
+- Windows - https://docs.oracle.com/javase/9/install/installation-jdk-and-jre-microsoft-windows-platforms.htm
+- Mac - https://docs.oracle.com/javase/9/install/installation-jdk-and-jre-macos.htm#JSJIG-GUID-2FE451B0-9572-4E38-A1A5-568B77B146DE
+- Linux - https://docs.oracle.com/javase/9/install/installation-jdk-and-jre-linux-platforms.htm#JSJIG-GUID-737A84E4-2EFF-4D38-8E60-3E29D1B884B8
+
 
 ## Setting PATH environment variable in Windows
 
