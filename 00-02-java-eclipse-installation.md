@@ -1,22 +1,24 @@
-Google for "java 9 jdk download"
+#### Google for "java 9 jdk download"
 ![Image](/images/01_Java9JDKDownload.png)
 ---
-Land on the Oracle JDK Download Site
+#### Land on the Oracle JDK Download Site
 ![Image](/images/02_Oracle_Site.png)
 ---
-Accept License Agreement
+#### Accept License Agreement
 ![Image](/images/03_AcceptLicenseAgreement_Error.png)
 ![Image](/images/04_AcceptLicenseAgreement.png)
 ---
-Download JDK for Your Specific Operating System
+#### Download JDK for Your Specific Operating System
 ![Image](/images/05_Download_JDK_9.png)
 ---
-Launch the Downloaded file
+#### Launch the Downloaded file
 ![Image](/images/06_DoubleClick_And_Start_Installation.png)
 ---
-Java Installation Screens
+#### Java Installation Screens
 ![Image](/images/10_Installation_First_Screen.png)
+---
 ![Image](/images/11_Installation_Ready_Screen.png)
+---
 ![Image](/images/12_Installation_Features_Select_Screen.png)
 ![Image](/images/13_Installation_Status_Screen.png)
 ![Image](/images/14_Installation_Choose_Custom_Setup.png)
