@@ -1,4 +1,5 @@
 ## Installing Java
+
 #### Google for "java 9 jdk download"
 ![Image](/images/01_Java9JDKDownload.png)
 ---
@@ -67,6 +68,7 @@
 #### Error In Launching JShell
 ![Image](/images/24_JShell_Version_Error.png)
 ---
+> If you are in windows, ```java -version``` is working and ```jshell -version``` is not working, directly jump to the section ```Setting PATH environment variable in Windows```
 
 ### Troubleshooting
 1.	Check if there are any pre-existing Java installs. Uninstall them and reinstall again.
@@ -124,8 +126,6 @@ Choose the latest available version of Eclipse - Eclipse Oxygen (4.7) or Later.
 
 > Tip : Do not use an old eclipse version!
 
-Installation Video - https://www.youtube.com/watch?v=-KV0QIqh2kA&list=PLBBog2r6uMCSmMVTW_QmDLyASBvovyAO3&index=3
-
 ### Prerequisites
 - Java JDK 9
 
@@ -140,8 +140,23 @@ Installation Video - https://www.youtube.com/watch?v=-KV0QIqh2kA&list=PLBBog2r6u
 3. We recommend to choose “Eclipse IDE for Java EE Developers”. Choose 32 bit or 64 bit based on your operating system. (Right-click My Computer, and then click Properties. If "x64 Edition" is listed under System, your processor is capable of running a 64-bit version of Windows.)
 
 4. Wait for the download to complete. Extract the zip file to a folder (Example : c:\eclipse).
+5. When you unzip Eclipse, the directory layout looks something like this:
 
-5. That it you are ready to launch up eclipse
+```
+   eclipse/
+      features/			''the directory containing Eclipse features''
+      plugins/			''the directory containing Eclipse plugins''
+      eclipse.exe		''platform executable''
+      eclipse.ini
+      eclipsec.exe              ''(windows only) console executable''
+      epl-v10.html		''the EPL license''
+       jre/			''the JRE to run Eclipse with''
+      notice.html	
+      readme	
+```
+6. You can start Eclipse by running eclipse.exe on Windows or eclipse on other platforms. This small launcher essentially finds and loads the JVM. On Windows, the eclipsec.exe console executable can be used for improved command line behavior.
+
+> More Details - https://wiki.eclipse.org/FAQ_How_do_I_run_Eclipse%3F
 
 ### Troubleshooting
 - Use 7Zip instead of windows built-in decompression utility.
