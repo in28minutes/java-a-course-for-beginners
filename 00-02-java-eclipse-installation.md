@@ -88,6 +88,10 @@
 #### Goal - What we want to do?
 ![Image](/images/30_JShell_In_JDK_Bin_Folder.png)
 ---
+#### More Help
+- https://www.java.com/en/download/help/path.xml
+- https://www.computerhope.com/issues/ch000549.htm
+---
 
 #### Browsing to Java Folder
 ![Image](/images/31_Browsing_To_Java_Folder.png)

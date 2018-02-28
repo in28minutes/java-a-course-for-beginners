@@ -2756,7 +2756,7 @@ abstract class Animal
 
 ## Code Examples
 
-### /11-ObjectOrientedProgrammingAgain/commands.txt
+### /commands.txt
 
 ```java
 class Pet extends Animal {
@@ -2835,7 +2835,7 @@ interface Interface2 {
 ```
 
 
-### /11-ObjectOrientedProgrammingAgain/src/com/in28minutes/oops/level2/AbstractRecipe.java
+### /src/com/in28minutes/oops/level2/AbstractRecipe.java
 
 ```java
 package com.in28minutes.oops.level2;
@@ -2855,7 +2855,7 @@ public abstract class AbstractRecipe {
 ```
 
 
-### /11-ObjectOrientedProgrammingAgain/src/com/in28minutes/oops/level2/Address.java
+### /src/com/in28minutes/oops/level2/Address.java
 
 ```java
 package com.in28minutes.oops.level2;
@@ -2882,7 +2882,7 @@ public class Address {
 ```
 
 
-### /11-ObjectOrientedProgrammingAgain/src/com/in28minutes/oops/level2/Book.java
+### /src/com/in28minutes/oops/level2/Book.java
 
 ```java
 package com.in28minutes.oops.level2;
@@ -2915,7 +2915,7 @@ public class Book {
 ```
 
 
-### /11-ObjectOrientedProgrammingAgain/src/com/in28minutes/oops/level2/BookRunner.java
+### /src/com/in28minutes/oops/level2/BookRunner.java
 
 ```java
 package com.in28minutes.oops.level2;
@@ -2936,7 +2936,7 @@ public class BookRunner {
 ```
 
 
-### /11-ObjectOrientedProgrammingAgain/src/com/in28minutes/oops/level2/Customer.java
+### /src/com/in28minutes/oops/level2/Customer.java
 
 ```java
 package com.in28minutes.oops.level2;
@@ -2980,7 +2980,7 @@ public class Customer {
 ```
 
 
-### /11-ObjectOrientedProgrammingAgain/src/com/in28minutes/oops/level2/CustomerRunner.java
+### /src/com/in28minutes/oops/level2/CustomerRunner.java
 
 ```java
 package com.in28minutes.oops.level2;
@@ -3001,7 +3001,7 @@ public class CustomerRunner {
 ```
 
 
-### /11-ObjectOrientedProgrammingAgain/src/com/in28minutes/oops/level2/Fan.java
+### /src/com/in28minutes/oops/level2/Fan.java
 
 ```java
 package com.in28minutes.oops.level2;
@@ -3047,7 +3047,7 @@ public class Fan {
 ```
 
 
-### /11-ObjectOrientedProgrammingAgain/src/com/in28minutes/oops/level2/FanRunner.java
+### /src/com/in28minutes/oops/level2/FanRunner.java
 
 ```java
 package com.in28minutes.oops.level2;
@@ -3066,7 +3066,7 @@ public class FanRunner {
 ```
 
 
-### /11-ObjectOrientedProgrammingAgain/src/com/in28minutes/oops/level2/inheritance/AnimalRunner.java
+### /src/com/in28minutes/oops/level2/inheritance/AnimalRunner.java
 
 ```java
 package com.in28minutes.oops.level2.inheritance;
@@ -3100,7 +3100,7 @@ public class AnimalRunner {
 ```
 
 
-### /11-ObjectOrientedProgrammingAgain/src/com/in28minutes/oops/level2/inheritance/Employee.java
+### /src/com/in28minutes/oops/level2/inheritance/Employee.java
 
 ```java
 package com.in28minutes.oops.level2.inheritance;
@@ -3159,7 +3159,7 @@ public class Employee extends Person {
 ```
 
 
-### /11-ObjectOrientedProgrammingAgain/src/com/in28minutes/oops/level2/inheritance/Person.java
+### /src/com/in28minutes/oops/level2/inheritance/Person.java
 
 ```java
 package com.in28minutes.oops.level2.inheritance;
@@ -3201,7 +3201,7 @@ public class Person extends Object{
 ```
 
 
-### /11-ObjectOrientedProgrammingAgain/src/com/in28minutes/oops/level2/inheritance/Student.java
+### /src/com/in28minutes/oops/level2/inheritance/Student.java
 
 ```java
 package com.in28minutes.oops.level2.inheritance;
@@ -3235,7 +3235,7 @@ public class Student extends Person {
 ```
 
 
-### /11-ObjectOrientedProgrammingAgain/src/com/in28minutes/oops/level2/inheritance/StudentRunner.java
+### /src/com/in28minutes/oops/level2/inheritance/StudentRunner.java
 
 ```java
 package com.in28minutes.oops.level2.inheritance;
@@ -3272,7 +3272,7 @@ public class StudentRunner {
 ```
 
 
-### /11-ObjectOrientedProgrammingAgain/src/com/in28minutes/oops/level2/inheritance/StudentWithoutInheritance.java
+### /src/com/in28minutes/oops/level2/inheritance/StudentWithoutInheritance.java
 
 ```java
 package com.in28minutes.oops.level2.inheritance;
@@ -3331,7 +3331,7 @@ public class StudentWithoutInheritance {
 ```
 
 
-### /11-ObjectOrientedProgrammingAgain/src/com/in28minutes/oops/level2/interfaces/ChessGame.java
+### /src/com/in28minutes/oops/level2/interfaces/ChessGame.java
 
 ```java
 package com.in28minutes.oops.level2.interfaces;
@@ -3362,7 +3362,7 @@ public class ChessGame implements GamingConsole{
 ```
 
 
-### /11-ObjectOrientedProgrammingAgain/src/com/in28minutes/oops/level2/interfaces/ComplexAlgorithm.java
+### /src/com/in28minutes/oops/level2/interfaces/ComplexAlgorithm.java
 
 ```java
 package com.in28minutes.oops.level2.interfaces;
@@ -3373,7 +3373,7 @@ public interface ComplexAlgorithm {
 ```
 
 
-### /11-ObjectOrientedProgrammingAgain/src/com/in28minutes/oops/level2/interfaces/DummyAlgorithm.java
+### /src/com/in28minutes/oops/level2/interfaces/DummyAlgorithm.java
 
 ```java
 package com.in28minutes.oops.level2.interfaces;
@@ -3389,7 +3389,7 @@ public class DummyAlgorithm implements ComplexAlgorithm{
 ```
 
 
-### /11-ObjectOrientedProgrammingAgain/src/com/in28minutes/oops/level2/interfaces/FlyableRunner.java
+### /src/com/in28minutes/oops/level2/interfaces/FlyableRunner.java
 
 ```java
 package com.in28minutes.oops.level2.interfaces;
@@ -3429,7 +3429,7 @@ public class FlyableRunner {
 ```
 
 
-### /11-ObjectOrientedProgrammingAgain/src/com/in28minutes/oops/level2/interfaces/GameRunner.java
+### /src/com/in28minutes/oops/level2/interfaces/GameRunner.java
 
 ```java
 package com.in28minutes.oops.level2.interfaces;
@@ -3452,7 +3452,7 @@ public class GameRunner {
 ```
 
 
-### /11-ObjectOrientedProgrammingAgain/src/com/in28minutes/oops/level2/interfaces/GamingConsole.java
+### /src/com/in28minutes/oops/level2/interfaces/GamingConsole.java
 
 ```java
 package com.in28minutes.oops.level2.interfaces;
@@ -3466,7 +3466,7 @@ public interface GamingConsole {
 ```
 
 
-### /11-ObjectOrientedProgrammingAgain/src/com/in28minutes/oops/level2/interfaces/MarioGame.java
+### /src/com/in28minutes/oops/level2/interfaces/MarioGame.java
 
 ```java
 package com.in28minutes.oops.level2.interfaces;
@@ -3496,7 +3496,7 @@ public class MarioGame implements GamingConsole{
 ```
 
 
-### /11-ObjectOrientedProgrammingAgain/src/com/in28minutes/oops/level2/interfaces/Project.java
+### /src/com/in28minutes/oops/level2/interfaces/Project.java
 
 ```java
 package com.in28minutes.oops.level2.interfaces;
@@ -3541,7 +3541,7 @@ public class Project {
 ```
 
 
-### /11-ObjectOrientedProgrammingAgain/src/com/in28minutes/oops/level2/interfaces/RealAlgorithm.java
+### /src/com/in28minutes/oops/level2/interfaces/RealAlgorithm.java
 
 ```java
 package com.in28minutes.oops.level2.interfaces;
@@ -3557,7 +3557,7 @@ public class RealAlgorithm implements ComplexAlgorithm{
 ```
 
 
-### /11-ObjectOrientedProgrammingAgain/src/com/in28minutes/oops/level2/Recipe1.java
+### /src/com/in28minutes/oops/level2/Recipe1.java
 
 ```java
 package com.in28minutes.oops.level2;
@@ -3584,7 +3584,7 @@ public class Recipe1 extends AbstractRecipe{
 ```
 
 
-### /11-ObjectOrientedProgrammingAgain/src/com/in28minutes/oops/level2/RecipeRunner.java
+### /src/com/in28minutes/oops/level2/RecipeRunner.java
 
 ```java
 package com.in28minutes.oops.level2;
@@ -3604,7 +3604,7 @@ public class RecipeRunner {
 ```
 
 
-### /11-ObjectOrientedProgrammingAgain/src/com/in28minutes/oops/level2/RecipeWithMicrowave.java
+### /src/com/in28minutes/oops/level2/RecipeWithMicrowave.java
 
 ```java
 package com.in28minutes.oops.level2;
@@ -3633,7 +3633,7 @@ public class RecipeWithMicrowave extends AbstractRecipe{
 ```
 
 
-### /11-ObjectOrientedProgrammingAgain/src/com/in28minutes/oops/level2/Rectangle.java
+### /src/com/in28minutes/oops/level2/Rectangle.java
 
 ```java
 package com.in28minutes.oops.level2;
@@ -3684,7 +3684,7 @@ public class Rectangle {
 ```
 
 
-### /11-ObjectOrientedProgrammingAgain/src/com/in28minutes/oops/level2/RectangleRunner.java
+### /src/com/in28minutes/oops/level2/RectangleRunner.java
 
 ```java
 package com.in28minutes.oops.level2;
@@ -3702,7 +3702,7 @@ public class RectangleRunner {
 ```
 
 
-### /11-ObjectOrientedProgrammingAgain/src/com/in28minutes/oops/level2/Review.java
+### /src/com/in28minutes/oops/level2/Review.java
 
 ```java
 package com.in28minutes.oops.level2;
