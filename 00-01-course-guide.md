@@ -5277,3 +5277,756 @@ Elephant
 
 ```
 
+# 18-ConcurrencyLocksAtomicityAndCollections
+
+## Steps
+- Step 01 - Getting started with Synchronized
+- Step 02 - Problem with Synchronized - Less Concurrency
+- Step 03 - Enter Locks with ReEntrantLock
+- Step 04 - Introduction to Atomic Classes - AtomicInteger
+- Step 05 - Need for ConcurrentMap
+- Step 06 - Implementing an example with ConcurrentHashMap
+- Step 07 - ConcurrentHashMap uses different locks for diferrent regions
+- Step 08 - CopyOnWrite Concurrent Collections - When reads are more than writes
+- Step 09 - Conclusion
+
+## Code Examples
+
+### /src/com/in28minutes/concurrency/BiCounter.java
+
+```java
+package com.in28minutes.concurrency;
+
+public class BiCounter {
+  private int i = 0;
+  private int j = 0;
+  
+  synchronized public void incrementI() {
+    i++; 
+    //get i
+    //increment  
+    //set i
+  }
+
+  public int getI() {
+    return i;
+  }
+  
+  synchronized public void incrementJ() {
+    j++; 
+    //get j
+    //increment  
+    //set j
+  }
+
+  public int getJ() {
+    return j;
+  }
+
+}
+```
+### /src/com/in28minutes/concurrency/BiCounterWithAtomicInteger.java
+
+```java
+package com.in28minutes.concurrency;
+
+import java.util.concurrent.atomic.AtomicInteger;
+import java.util.concurrent.locks.Lock;
+import java.util.concurrent.locks.ReentrantLock;
+
+public class BiCounterWithAtomicInteger {
+  private AtomicInteger i = new AtomicInteger();
+  private AtomicInteger j = new AtomicInteger();
+    
+  public void incrementI() {    
+    i.incrementAndGet();
+  }
+
+  public int getI() {
+    return i.get();
+  }
+  
+  public void incrementJ() {
+    j.incrementAndGet(); 
+  }
+
+  public int getJ() {
+    return j.get();
+  }
+
+}
+```
+### /src/com/in28minutes/concurrency/BiCounterWithLock.java
+
+```java
+package com.in28minutes.concurrency;
+
+import java.util.concurrent.locks.Lock;
+import java.util.concurrent.locks.ReentrantLock;
+
+public class BiCounterWithLock {
+  private int i = 0;
+  private int j = 0;
+  
+  Lock lockForI = new ReentrantLock();
+  Lock lockForJ = new ReentrantLock();
+  
+  public void incrementI() {    
+    lockForI.lock();//Get Lock For I 
+    i++;
+    lockForI.unlock();
+    //Release Lock For I
+  }
+
+  public int getI() {
+    return i;
+  }
+  
+  public void incrementJ() {
+    lockForJ.lock();//Get Lock For J
+    j++; 
+    lockForJ.unlock();//Release Lock For J
+  }
+
+  public int getJ() {
+    return j;
+  }
+
+}
+```
+### /src/com/in28minutes/concurrency/ConcurrencyRunner.java
+
+```java
+package com.in28minutes.concurrency;
+
+public class ConcurrencyRunner {
+
+  public static void main(String[] args) {
+    Counter counter = new Counter();
+    counter.increment();
+    counter.increment();
+    counter.increment();
+    System.out.println(counter.getI());
+
+  }
+
+}
+```
+### /src/com/in28minutes/concurrency/ConcurrentMapRunner.java
+
+```java
+package com.in28minutes.concurrency;
+
+import java.util.Hashtable;
+import java.util.Map;
+import java.util.concurrent.ConcurrentHashMap;
+import java.util.concurrent.ConcurrentMap;
+import java.util.concurrent.atomic.LongAdder;
+
+public class ConcurrentMapRunner {
+
+  public static void main(String[] args) {
+    ConcurrentMap<Character, LongAdder> occurances = new ConcurrentHashMap<>();
+    
+    String str = "ABCD ABCD ABCD";
+
+    for(char character:str.toCharArray()) {
+      occurances.computeIfAbsent(character, ch -> new LongAdder()).increment();
+    }
+    
+    System.out.println(occurances);
+        
+
+  }
+
+  /*
+      Map<Character, LongAdder> occurances = new Hashtable<>();
+    
+    String str = "ABCD ABCD ABCD";
+    for(char character:str.toCharArray()) {
+      LongAdder longAdder = occurances.get(character);
+      if(longAdder == null) {
+        longAdder = new LongAdder();
+      }
+      longAdder.increment();
+      occurances.put(character, longAdder);
+    }
+    
+    System.out.println(occurances);
+
+   */
+}
+```
+### /src/com/in28minutes/concurrency/CopyOnWriteArrayListRunner.java
+
+```java
+package com.in28minutes.concurrency;
+
+import java.util.List;
+import java.util.concurrent.CopyOnWriteArrayList;
+
+public class CopyOnWriteArrayListRunner {
+  
+  //add - copy
+  //get
+
+  public static void main(String[] args) {
+    List<String> list = new CopyOnWriteArrayList<>();
+    
+    //Threads - 3
+    list.add("Ant");
+    list.add("Bat");
+    list.add("Cat");
+    
+    //Threads - 10000
+    for(String element:list) {
+      System.out.println(element);
+    }
+    
+    // TODO Auto-generated method stub
+
+  }
+
+}
+```
+### /src/com/in28minutes/concurrency/Counter.java
+
+```java
+package com.in28minutes.concurrency;
+
+public class Counter {
+  private int i = 0;
+  
+  synchronized public void increment() {
+    i++; 
+    //get i
+    //increment  
+    //set i
+  }
+
+  public int getI() {
+    return i;
+  }
+}
+```
+
+# 99-TipsAndTricks
+
+## Steps
+- Java Tip 01 - Imports and Static Imports
+- Java Tip 02 - Blocks
+- Java Tip 03 - equals method
+- Java Tip 04 - hashcode method
+- Java Tip 05 - Class Access Modifiers - public and default
+- Java Tip 06 - Method Access Modifiers - public, protected, private and default
+- Java Tip 07 - Final classes and Final methods
+- Java Tip 08 - Final Variables and Final Arguments
+- Java Tip 09 - Why do we need static variables?
+- Java Tip 09 - Why do we need static methods?
+- Java Tip 10 - Static methods cannot use instance methods or variables
+- Java Tip 11 - public static final - Constants
+- Java Tip 12 - Nested Classes - Inner Class vs Static Nested Class
+- Java Tip 13 - Anonymous Classes
+- Java Tip 14 - Why Enum and Enum Basics - ordinal and values
+- Java Tip 15 - Enum - Constructor, variables and methods
+- Java Tip 16 - Quick look at inbuild Enums - Month, DayOfWeek
+
+## Code Examples
+
+### /src/com/in28minutes/tips/access/package1/ClassAccessModifiers.java
+
+```java
+package com.in28minutes.tips.access.package1;
+
+
+//public, protected, (default), private
+public class ClassAccessModifiers {
+
+  public static void main(String[] args) {
+    // TODO Auto-generated method stub
+    ClassAccessModifiers c = new ClassAccessModifiers();
+
+  }
+
+}
+```
+### /src/com/in28minutes/tips/access/package1/ExampleClass.java
+
+```java
+package com.in28minutes.tips.access.package1;
+
+public class ExampleClass {
+  public void publicMethod() {}
+  protected void protectedMethod() {}
+  private void privateMethod() {}
+  void defaultMethod() {}
+  
+  public static void main(String[] args) {
+    ExampleClass exampleClass = new ExampleClass();
+    exampleClass.privateMethod();
+    exampleClass.protectedMethod();
+    exampleClass.publicMethod();
+    exampleClass.defaultMethod();
+  }
+}
+```
+### /src/com/in28minutes/tips/access/package1/MethodAccessRunnerInsideSamePackage.java
+
+```java
+package com.in28minutes.tips.access.package1;
+
+public class MethodAccessRunnerInsideSamePackage {
+
+  public static void main(String[] args) {
+    // TODO Auto-generated method stub
+    ExampleClass exampleClass = new ExampleClass();
+    //exampleClass.privateMethod();
+    exampleClass.protectedMethod();
+    exampleClass.publicMethod();
+    exampleClass.defaultMethod();
+
+  }
+
+}
+```
+### /src/com/in28minutes/tips/access/package2/ClassAccessModifiersRunnerInOtherPackage.java
+
+```java
+package com.in28minutes.tips.access.package2;
+
+import com.in28minutes.tips.access.package1.ClassAccessModifiers;
+
+//public, protected, (default), private
+public class ClassAccessModifiersRunnerInOtherPackage {
+
+  public static void main(String[] args) {
+    ClassAccessModifiers c = new ClassAccessModifiers();
+  }
+
+}
+```
+### /src/com/in28minutes/tips/access/package2/MethodAccessRunnerInDifferentPackage.java
+
+```java
+package com.in28minutes.tips.access.package2;
+
+import com.in28minutes.tips.access.package1.ExampleClass;
+
+public class MethodAccessRunnerInDifferentPackage {
+
+  public static void main(String[] args) {
+    // TODO Auto-generated method stub
+    ExampleClass exampleClass = new ExampleClass();
+
+    //exampleClass.privateMethod();
+    //exampleClass.protectedMethod();
+    exampleClass.publicMethod();
+    //exampleClass.defaultMethod();
+
+  }
+
+}
+```
+### /src/com/in28minutes/tips/anonymous/AnonymousClassRunner.java
+
+```java
+package com.in28minutes.tips.anonymous;
+
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
+import java.util.List;
+
+public class AnonymousClassRunner {
+  
+  public static void main(String[] args) {
+    List<String> animals = new ArrayList<String>(
+        List.of("Ant", "Cat", "Ball", "Elephant"));
+    
+    Comparator<String> lengthComparator = new Comparator<String>() {
+      @Override
+      public int compare(String str1, String str2) {
+        return Integer.compare(str1.length(), str2.length());
+      }
+    };
+    
+    Collections.sort(animals, 
+        lengthComparator
+    );
+    System.out.println(animals);
+
+  }
+
+}
+```
+### /src/com/in28minutes/tips/blocks/BlocksRunner.java
+
+```java
+package com.in28minutes.tips.blocks;
+
+public class BlocksRunner {
+  public static final int SECONDS_IN_MINUTE = 60;
+  public static final int MINUTES_IN_HOUR = 60;
+  public static final int HOURS_IN_DAY = 24;
+  public static final int SECONDS_IN_DAY 
+    = SECONDS_IN_MINUTE * MINUTES_IN_HOUR * HOURS_IN_DAY;
+  
+  public static void main(String[] args) {
+    //System.out.print(Integer.MIN_VALUE);
+    System.out.print(SECONDS_IN_DAY);
+    
+    //System.out.print("main");
+    
+    {
+      int i;
+      //System.out.print("3>2");
+        //System.out.print("3>2");
+    }
+    
+    //System.out.print(i); 
+
+  }
+
+}
+```
+### /src/com/in28minutes/tips/eclipse/DummyForTest.java
+
+```java
+package com.in28minutes.tips.eclipse;
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class DummyForTest {
+
+  public void doSomething() {
+    List list = new ArrayList();
+  }
+
+}
+```
+### /src/com/in28minutes/tips/eclipse/EclipseTipsAndTricks.java
+
+```java
+package com.in28minutes.tips.eclipse;
+
+import java.math.BigDecimal;
+
+//PAIR PROGRAMMING
+
+class TestBean {
+  private int i; //i is awesome
+  private String str;
+  
+  
+  
+  public TestBean() {
+    /*
+     fsadjflkas
+     fskljdfalsk
+     */
+    super();  
+  }
+  
+  public TestBean(int i, String str) {
+    super();
+    this.i = i;
+    this.str = str;
+  }
+  /* (non-Javadoc)
+   * @see java.lang.Object#hashCode()
+   */
+  @Override
+  public int hashCode() {
+    final int prime = 31;
+    int result = 1;
+    result = prime * result + i;
+    return result;
+  }
+  /* (non-Javadoc)
+   * @see java.lang.Object#equals(java.lang.Object)
+   */
+  @Override
+  public boolean equals(Object obj) {
+    if (this == obj) {
+      return true;
+    }
+    if (obj == null) {
+      return false;
+    }
+    if (getClass() != obj.getClass()) {
+      return false;
+    }
+    TestBean other = (TestBean) obj;
+    if (i != other.i) {
+      return false;
+    }
+    return true;
+  }
+  /**
+   * @return the i
+   */
+  public int getI() {
+    return i;
+  }
+  /**
+   * @param i the i to set
+   */
+  public void setI(int i) {
+    this.i = i;
+  }
+  /**
+   * @return the str
+   */
+  public String getStr() {
+    return str;
+  }
+  /**
+   * @param str the str to set
+   */
+  public void setStr(String str) {
+    this.str = str;
+  }
+  
+  
+  
+}
+
+class Test implements Comparable<String> {
+
+  @Override
+  public int compareTo(String arg0) {
+    return 0;
+  }
+  
+}
+
+public class EclipseTipsAndTricks {
+  
+  public static void main(String[] args) throws InterruptedException {
+    
+    DummyForTest dt = new DummyForTest();
+    dt.doSomething();
+    BigDecimal bd = new BigDecimal(25);
+    Thread.sleep(returnSomething());
+  }
+
+  private static int returnSomething() {
+    return 1000 * 45 * 456;
+  }
+
+}
+```
+### /src/com/in28minutes/tips/enums/EnumRunner.java
+
+```java
+package com.in28minutes.tips.enums;
+
+import java.util.Arrays;
+
+public class EnumRunner {
+
+  public static void main(String[] args) {
+    Season season = Season.FALL;
+
+    Season season1 = Season.valueOf("WINTER");
+    System.out.println(season1);
+    System.out.println(Season.SPRING.ordinal());
+    System.out.println(Season.SPRING.getValue());
+
+    System.out
+        .println(Arrays.toString(Season.values()));
+
+  }
+
+}
+```
+### /src/com/in28minutes/tips/enums/Season.java
+
+```java
+package com.in28minutes.tips.enums;
+public enum Season {
+  SPRING(4), SUMMER(1), WINTER(2), FALL(3) ;
+  
+  private int value;
+  
+  private Season(int value) {
+    this.value = value;
+  }
+
+  public int getValue() {
+    return value;
+  }
+  
+  
+  //0,1,2,3
+}
+```
+### /src/com/in28minutes/tips/equals/EqualsRunner.java
+
+```java
+package com.in28minutes.tips.equals;
+
+class Client {
+  private int id;
+
+  public Client(int id) {
+    super();
+    this.id = id;
+  }
+
+  @Override
+  public int hashCode() {
+    final int prime = 31;
+    int result = 1;
+    result = prime * result + id;
+    return result;
+  }
+
+  @Override
+  public boolean equals(Object that) {
+    if (this == that)
+      return true;
+    
+    if (that == null)
+      return false;
+    if (getClass() != that.getClass())
+      return false;
+    Client other = (Client) that;
+    if (id != other.id)
+      return false;
+    return true;
+  }
+  
+  //equals
+  //hashcode
+  
+  
+  
+}
+
+public class EqualsRunner {
+
+  public static void main(String[] args) {
+    Client c1 = new Client(1);
+    Client c2 = new Client(1);
+    Client c3 = new Client(2);
+    System.out.println(c1.equals(c2));
+    System.out.println(c1.equals(c3));
+    
+    
+  }
+
+}
+```
+### /src/com/in28minutes/tips/imports/ImportsRunner.java
+
+```java
+package com.in28minutes.tips.imports;
+
+//import java.lang.*; //DEFAULT
+import java.math.BigDecimal;
+import java.util.ArrayList;
+//import java.util.Collections;
+
+import static java.lang.System.out;
+import static java.util.Collections.*;
+
+public class ImportsRunner {
+
+  public static void main(String[] args) {
+    
+    out.println("IMports");
+    out.println("Static Imports");
+    
+    sort(new ArrayList<String>());
+    
+    BigDecimal db = null;
+
+  }
+
+}
+```
+### /src/com/in28minutes/tips/nonaccess/package1/FinalNonAccessModifierRunner.java
+
+```java
+package com.in28minutes.tips.nonaccess.package1;
+
+final class FinalClass {
+  
+}
+
+//class SomeClass extends FinalClass{
+//}
+
+class SomeClass {
+  final public void doSomething() {}
+  public void doSomethingElse(final int arg) {
+    //arg = 6;
+    
+  }
+}
+
+class ExtendingClass extends SomeClass {
+  //public void doSomething() {}
+}
+
+public class FinalNonAccessModifierRunner {
+  
+  public static void main(String[] args) {
+    final int i;
+    i=5;
+    
+    //i = 7;
+
+  }
+
+}
+```
+### /src/com/in28minutes/tips/nonaccess/package1/StaticModifierRunner.java
+
+```java
+package com.in28minutes.tips.nonaccess.package1;
+
+class Player{
+  private String name;
+  
+  private static int count = 0;
+  
+  public Player(String name) {
+    super();
+    this.name = name;
+    count++;
+  }
+
+  static public int getCount() {
+    return count;
+  }
+
+  public String getName() {
+    System.out.println(count);
+    return name;
+  }
+
+  public void setName(String name) {
+    this.name = name;
+  }
+  
+  
+}
+
+public class StaticModifierRunner {
+  
+  public static void main(String[] args) {
+    Player player1 = new Player("Ronaldo");
+    
+    System.out.println(Player.getCount());
+    
+    Player player2 = new Player("Federer");
+    
+    System.out.println(Player.getCount());
+  }
+
+}
+```
+---

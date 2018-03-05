@@ -3,63 +3,15 @@
 
 ## Course Checklist
 
-- Video 2 36:35 -> Include a list of formatting options for System.out.printf
-- Video 16 Array average of Numbers -> Rounding mode needs editing
-  - Big Decimal Rounding Modes introduction seperate video!
-- Miscellaneous Topics
-  - equals, hashcode, cloning
-  - Inner Class, Static Inner Class
-  - Anonymous Class
-  - Modifiers - Access and Non Access - scope and initialization
-  - Volatile
-  - Enum & Switch
-  - Garbage Collection
-  - Initialization Blocks
-  - Static & Instance Initializer Blocks
-  - Serialization
-  - Synchronization and Concurrent Collections - CopyOnWrite, CompareAndSwap, Lock, Atomic Operations, BlockedQueue, Wait and Notify
-  - Java Keywords
-  - Installing Java, Eclipse
-  - Creating PDFs and refer to them in Videos. For YouTube, ask to pick up PDFs from Teachable Course!
-    - 50 page intro PDF at the start of the course!
-- Todos
-  - YouTube Videos -> PDF -> Teachable
-- Awe The Student!
-  - Reading Java API
-  - Coding Standards
-  - Tips
-    - Java Doc
-    - CodingBat
-    - Refactoring 
-    - Effective Java Book - Recommendations on a note on the Writing Pad
-    - imports and static imports
-    - Block Scope
-    - 2D Arrays
-    - JShell vs Java Program
-      - redeclaring variables, expressions, method calls, quick api checks
-      - semicolon, breaking out of jshell
-    - Eclipse
-    - Try Pair Programming!
-    - Code Reviews
-    - Readable Code
-    - JShell Tips - Auto Completion, imports
-    - JShell - Typing Multiple lines of Code
-    - Space is not important except for a few places :)
-    - String and Concatenation
-    - Comments
-    - Quick Intro to Static Methods
-    - Quick Debug Session before Loops
-  - Some Good Practices from Java API Code
-  - Pitfalls
-  - What else should a great developer do?
-    - 4 Principles of Simple Design
-    - Unit Testing
-    - TDD
-  - Points
-    - java.lang is automatically imported
-- Next Steps
-  - 97 Things a programmer should do
-  - Teach yourselves programming in Ten Years
+Teachable
+- Publish course and put the link in PDF and Github
+
+YouTube
+- Decide Topics & Publishing Strategy
+- Automation
+- Starting video for individual sections
+- End video for small videos - talking about teachable course and pdf
+
 
 ## Getting Started
 - Eclipse - https://courses.in28minutes.com/p/eclipse-tutorial-for-beginners
@@ -163,7 +115,7 @@ In more than 250 Steps, we explore the most important Java Programming Language 
 - Step 31 - Programming Tips : JShell - Shortcuts, Multiple Lines and Variables TODO Move up
 - Step 32 - Getting Started with Programming - Revise all Terminology
 
-####02-IntroductionToMethods-MultiplicationTable
+#### 02-IntroductionToMethods-MultiplicationTable
 - Step 00 - Section 02 - Methods - An Introduction
 - Step 01 - Your First Java Method - Hello World Twice and Exercise Statements
 - Step 02 - Introduction to Java Methods - Exercises and Puzzles
@@ -379,8 +331,7 @@ TODO Step 00 - Intro to Section and Installing Eclipse
 - Step 17 - Functions are First Class Citizens
 - Step 18 - Introduction to Functional Programming - Conclusion
 
-#### 15-
-ThreadsAndConcurrency
+#### 15-ThreadsAndConcurrency
 - Step 01 - Introduction to Threads and MultiThreading - Need for Threads
 - Step 02 - Creating a Thread for Task1 - Extending Thread Class
 - Step 03 - Creating a Thread for Task2 - Implement Runnable Interface
@@ -418,6 +369,36 @@ ThreadsAndConcurrency
 - Step 03 - Read content from a File - Files readAllLines and lines methods
 - Step 04 - Writing Content to a File - Files write method
 - Step 05 - Files - Conclusion
+
+#### More Concurrency with Atomic Operations and Concurrent Collections
+- Step 01 - Getting started with Synchronized
+- Step 02 - Problem with Synchronized - Less Concurrency
+- Step 03 - Enter Locks with ReEntrantLock
+- Step 04 - Introduction to Atomic Classes - AtomicInteger
+- Step 05 - Need for ConcurrentMap
+- Step 06 - Implementing an example with ConcurrentHashMap
+- Step 07 - ConcurrentHashMap uses different locks for diferrent regions
+- Step 08 - CopyOnWrite Concurrent Collections - When reads are more than writes
+- Step 09 - Conclusion
+
+#### Java Tips
+- Java Tip 01 - Imports and Static Imports
+- Java Tip 02 - Blocks
+- Java Tip 03 - equals method
+- Java Tip 04 - hashcode method
+- Java Tip 05 - Class Access Modifiers - public and default
+- Java Tip 06 - Method Access Modifiers - public, protected, private and default
+- Java Tip 07 - Final classes and Final methods
+- Java Tip 08 - Final Variables and Final Arguments
+- Java Tip 09 - Why do we need static variables?
+- Java Tip 09 - Why do we need static methods?
+- Java Tip 10 - Static methods cannot use instance methods or variables
+- Java Tip 11 - public static final - Constants
+- Java Tip 12 - Nested Classes - Inner Class vs Static Nested Class
+- Java Tip 13 - Anonymous Classes
+- Java Tip 14 - Why Enum and Enum Basics - ordinal and values
+- Java Tip 15 - Enum - Constructor, variables and methods
+- Java Tip 16 - Quick look at inbuild Enums - Month, DayOfWeek
 
 ### Course Recording Notes
 
@@ -541,10 +522,79 @@ http://eepurl.com/bOJulL
 ```
 
 ## Future Things To Do
-- TODO
-  
+- Volatile 
+- Java Keywords
+- Video 2 36:35 -> Include a list of formatting options for System.out.printf
+- Video 16 Array average of Numbers -> Rounding mode needs editing
+  - Big Decimal Rounding Modes introduction seperate video!
+- What else should a great developer do?
+    - 4 Principles of Simple Design
+    - Unit Testing
+    - TDD
+- Initialization Blocks
+  - Static & Instance Initializer Blocks
+- BigDecimal Rounding Modes
+- Tip : Do not create a lot of objects and leaks - Understand Garbage Collection
+- Serialization
+- Coding Standards
+  - A Quick overview of Google Style Guide
+    - https://google.github.io/styleguide/javaguide.html
+- Writing JavaDoc
+- 10 Effective Java Tips
+  - Don't use Raw Types
+  - Use Enum instead of int or String Constants
+  - Minimize scope of variables
+  - Check Parameters for validity
+  - Beware of String Concatenation
+  - Do not return nulls - return empty collection
+  - Use Enhanced For Loop
+  - Avoid Double for Financial Calculations
+  - Refer to objects by Interfaces
+  - Follow Naming Conventions
+- Try Pair Programming!
+- Comments
+
 ### Useful Links
 - [Our Website](http://www.in28minutes.com)
 - [Facebook](http://facebook.com/in28minutes)
 - [Twitter](http://twitter.com/in28minutes)
 - [Google Plus](https://plus.google.com/u/3/110861829188024231119)
+
+### Done
+Tips
+- Installing Java, Eclipse
+- imports and static imports
+- Block Scope
+- equals, hashcode, cloning
+- Modifiers - Access and Non Access - scope and initialization
+- Inner Class, Static Inner Class
+- Anonymous Class
+- Enum
+- Synchronization and Concurrent Collections - Atomic Operations, Lock,  CopyOnWrite, CompareAndSwap, BlockedQueue, Wait and Notify
+
+- For YouTube, ask to pick up PDFs from Teachable Course!
+  - 50 page intro PDF at the start of the course!
+  - YouTube Videos -> PDF -> Teachable
+- Introduction to the Course Guide
+  - How to use the Course Guide with Examples?
+    - Do not copy -> Use it when you are not able resolve an error on your own
+    - Three times
+- Ctrl + 1 - Import, implement method in an interface, throws declaration, create a class, to create local variable for an expression
+- 5 Eclipse Tips
+  - Ctrl + 1
+  - Templates - main, fore, sysout, syserr
+  - Refactoring
+    - Alt+Shift + R, M, I, T, L
+  - Code Generation
+  - Save Actions
+- Creating PDFs and refer to them in Videos
+- Exploring Java API and Reading JavaDoc in Eclipse
+- CodingBat
+  - See Solutions and practice
+- JShell - Typing Multiple lines of Code
+- Space is not important except for a few places :)
+- String Concatenation
+- 97 Things a programmer should do
+  - http://programmer.97things.oreilly.com/wiki/index.php/97_Things_Every_Programmer_Should_Know
+- Teach yourselves programming in Ten Years
+  - http://norvig.com/21-days.html
