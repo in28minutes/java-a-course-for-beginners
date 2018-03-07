@@ -1,17 +1,9 @@
 # Learn Java Programming in 250 Steps
 ## Hands on Step by Step Introduction to the most popular programming language
 
-## Course Checklist
+## Course Links
 
-Teachable
-- Publish course and put the link in PDF and Github
-
-YouTube
-- Decide Topics & Publishing Strategy
-- Automation
-- Starting video for individual sections
-- End video for small videos - talking about teachable course and pdf
-
+https://courses.in28minutes.com/p/java-tutorial-for-beginner-in-250-steps
 
 ## Getting Started
 - Eclipse - https://courses.in28minutes.com/p/eclipse-tutorial-for-beginners
@@ -81,6 +73,15 @@ In more than 250 Steps, we explore the most important Java Programming Language 
 
 ### Step Wise Details
 
+#### Introduction
+- Course-Beginning
+- Course-Ending
+- Step 00 - How To Make Best use of the Course Guide?
+- Step 01 - Installing JDK 9 - with installation guide PDF
+- Step 02 - Verifying Java and Jshell
+- Step 03 - Troubleshooting Java installation
+- Step 04 - Setting Path environment variable in Windows
+
 #### 01-IntroductionToJavaProgrammingWithJShell-MultiplicationTable
 - Step 00 - Getting Started with Programming
 - Step 01 - Introduction to Multiplication Table challenge
@@ -141,7 +142,7 @@ In more than 250 Steps, we explore the most important Java Programming Language 
 - Step 07 - JDK vs JRE vs JVM
 
 #### 04-IntroductionToEclipse-FirstJavaProject
-TODO Step 00 - Intro to Section and Installing Eclipse
+- Step 00 - Installing Eclipse
 - Step 01 - Creating a New Java Project with Eclipse
 - Step 02 - Your first Java class with Eclipse
 - Step 03 - Writing Multiplication Table Java Program with Eclipse
@@ -598,3 +599,14 @@ Tips
   - http://programmer.97things.oreilly.com/wiki/index.php/97_Things_Every_Programmer_Should_Know
 - Teach yourselves programming in Ten Years
   - http://norvig.com/21-days.html
+
+## Course Checklist
+
+Teachable
+- Publish course and put the link in PDF and Github
+
+YouTube
+- Decide Topics & Publishing Strategy
+- Automation
+- Starting video for individual sections
+- End video for small videos - talking about teachable course and pdf
