@@ -1,9 +1,12 @@
 # Learn Java Programming in 250 Steps
+
+[![Image](https://www.springboottutorial.com/images/Course-Java-Programming-for-Complete-Beginners-in-250-Steps.png "Java 9 Programming for Complete Beginners in 250 Steps
+")](https://www.udemy.com/course/java-programming-tutorial-for-beginners)
+
+
 ## Hands on Step by Step Introduction to the most popular programming language
 
-## Course Links
 
-https://courses.in28minutes.com/p/java-tutorial-for-beginner-in-250-steps
 
 ## Getting Started
 - Eclipse - https://courses.in28minutes.com/p/eclipse-tutorial-for-beginners
@@ -401,127 +404,6 @@ In more than 250 Steps, we explore the most important Java Programming Language 
 - Java Tip 15 - Enum - Constructor, variables and methods
 - Java Tip 16 - Quick look at inbuild Enums - Month, DayOfWeek
 
-### Course Recording Notes
-
- #### Preview Video
-- Welcome to course on *** in ** simple steps.
-- I'm Ranga Karanam. I've so and so much experience with ... I've been using this framework for ...
-- At in28minutes, we ask one question everyday - How to create more effective courses? All our success - *** students on Udemy and *** subscribers on Youtube - is a result of this pursuit of excellence.
-- You will develop *** and *** using ***
-- You will  learn the basics like *** and move on to the advanced concepts like ***.
-- You will use 
-  - ... todo ...
-  - Maven for dependency management, building and running the application in tomcat.
-  - Eclipse IDE
-- All the code for this course and the step by step details are in our Github repository. 
-- We have an awesome installation guide to help you install Maven and Eclipse. You are NOT expected to have any experience with Eclipse, Maven, or Tomcat.
-- What are we waiting for? Lets have some fun with *** in *** steps. We had a lot of fun creating this course for you and We are confident that you will have a lot of fun. I hope you are as excited as we are to learn more. Go ahead and enroll for the course. Or take a test drive with a free preview. See you in the course.
-
-#### Course Intro Video
-- Welcome to this course on ***. We are excited to teach you how to build awesome ***. 
-- In this video, we introduce you to the different sections of the course. By the end of the video you should have a clear idea of how to make the best use of the course.
-- We have organized this course into 6 different sections. We have designed each section to be independent of each other. That means, you have the flexibility of customizing the course based on your skills and your needs. 
-- If you have experience with Spring and Spring Boot, you can skip these sections.
-- Lets get a quick overview of each of the sections now:
-  - Section I is an one hour introduction to Spring 
-  - Section II is an one hour introduction to Spring Boot..
-- In summary this is your course. Feel free to create your own path and tailor it to your needs.
-- I will see you in the next video where we introduce you to our github repository
-
-#### Overview of the Github Repository
-- Welcome Back. In this video, we give you an overview of how our github repository for this course is organized. 
-- Github repository for this course is at ****.
-- Home page of the github repository has an overview of the course and installation guide
-- For each hands-on section of the course, we have a seperate folder in the repository. You can see these five folders for *** different sections
-  - Folder 1 contains ...
-  - Folder 2 contains ...
-  - Folder 3 contains ...
-- Each of these folders contain
-  - Step by Step details of the sections
-  - Complete code example at the end of the section
-  - Intermediate backups at different stages of the section
-  - Useful Links
-- For example, let's look at the folder for ***. Home page of the folder contains
-  - Step by step details : What are we going to do in each step
-  - Useful Links : Different links that would be useful during the course
-  - Complete Code, Snippets and Examples : Example code that your can use during the section. For example, If you are using a class and you do not know the package of the class, you can search here and quickly find what you would need.
-  - Intermediate Backups : You can download any of these zips and import them into Eclipse as maven projects. File > Import > Existing Maven Projects.
-  - Understanding our github repository is key part of making best use of this course. I recommend to spend some time with our github repository and I will see you in the next video.
-
-#### Installation of Tools Video
-- In this video, we will help you install all the basic tools to get you started with the course
-- We use 
-  - Maven for Dependency Management
-  - Eclipse as IDE
-  - ..
-- Step by step details to install Java, Eclipse and Maven are in the installation guide present here. Also included are links to 5 videos that will help you to install and trouble shoot installations.
-- If you have any problems during the course, we recommend you to look at the troubleshooting section of the installation playlist.
-- Get your tools ready and I will see you in the course
-
-#### Each Section Introduction
-- Why is this section important to the course?
--  What is discussed in this section?
-- What is the github folder for this section?
-- Can a student skip this sections?
-- Is there a trouble shooting guide?
-- What are the backups available?
-- Are examples in this section dependent on any other section?
-
-#### Conclusion Video
-- Congratulations! You have successfully completed the course on ... We covered a wide range of topics starting from Spring, Spring Boot to ..... I'm sure you had a lot of fun doing this course. If you loved this course, we would love to hear from you. Do not forget to leave us a review. Until we see you in another in28minutes course, here's bye from the team here at in28minutes.
-- To find out more about *** use these References  
-
-## Templates
-
-### Welcome Message
-```
-
-## ADD A FEW SAMPLE REVIEWS AFter a couple of months
-## ADD A FEW SAMPLE REVIEWS - in the description of the course 
-
-Congratulations on joining this course from in28Minutes. 
-
-We have 6800+ 5 Star reviews on our courses.  
-
-I hope that by the time you are prompted to leave a review, that you think this course is an amazing course and can write a few sentences about what you like about the course for future students to see. If you do not think this course is a 5-star course, we want to make it a better course for you! Please message me with ways that I can make it the best course for you.
-
-There are three things you need to understand before you start this course!
-
-1...... Listen + See + Do Hands-on + Repeat = 90% Retention
-For the first 2 hours, we repeat a few concepts to help you retain them. .
-
-2...... Set Yourself a Goal
-Set 1 hour aside every day for the next week for this course! No exceptions allowed :) 
-
-3...... Udemy asks you for a review very early in the course! If you are not ready for giving a review, you can skip giving a review.
-
-Thank you and enjoy the course,
-Ranga
-```
-
-### Thank You for completing the course message
-
-```
-Congratulations on completing the course from in28Minutes.
-
-We have 6800+ 5 Star reviews on our courses. We hope you think this course is an amazing course and can write a few sentences about what you like about the course for future students to see.
-
-We are on a constant journey to improve our courses further. Do message me if you have any suggestions.
-
-Good Luck for your future.
-
-Ranga from in28Minutes
-```
-
-### Bonus Lectures
-
-```
-Our Best Selling Courses
-Get unbelievable offers on all our best-selling courses!
-http://eepurl.com/bOJulL
-
-```
-
 ## Future Things To Do
 - Volatile 
 - Java Keywords
@@ -555,58 +437,13 @@ http://eepurl.com/bOJulL
 - Try Pair Programming!
 - Comments
 
-### Useful Links
-- [Our Website](http://www.in28minutes.com)
-- [Facebook](http://facebook.com/in28minutes)
-- [Twitter](http://twitter.com/in28minutes)
-- [Google Plus](https://plus.google.com/u/3/110861829188024231119)
+### Troubleshooting
+- Refer our TroubleShooting Guide - https://github.com/in28minutes/in28minutes-initiatives/tree/master/The-in28Minutes-TroubleshootingGuide-And-FAQ
 
-### Done
-Tips
-- Installing Java, Eclipse
-- imports and static imports
-- Block Scope
-- equals, hashcode, cloning
-- Modifiers - Access and Non Access - scope and initialization
-- Inner Class, Static Inner Class
-- Anonymous Class
-- Enum
-- Synchronization and Concurrent Collections - Atomic Operations, Lock,  CopyOnWrite, CompareAndSwap, BlockedQueue, Wait and Notify
+## Youtube Playlists - 500+ Videos
 
-- For YouTube, ask to pick up PDFs from Teachable Course!
-  - 50 page intro PDF at the start of the course!
-  - YouTube Videos -> PDF -> Teachable
-- Introduction to the Course Guide
-  - How to use the Course Guide with Examples?
-    - Do not copy -> Use it when you are not able resolve an error on your own
-    - Three times
-- Ctrl + 1 - Import, implement method in an interface, throws declaration, create a class, to create local variable for an expression
-- 5 Eclipse Tips
-  - Ctrl + 1
-  - Templates - main, fore, sysout, syserr
-  - Refactoring
-    - Alt+Shift + R, M, I, T, L
-  - Code Generation
-  - Save Actions
-- Creating PDFs and refer to them in Videos
-- Exploring Java API and Reading JavaDoc in Eclipse
-- CodingBat
-  - See Solutions and practice
-- JShell - Typing Multiple lines of Code
-- Space is not important except for a few places :)
-- String Concatenation
-- 97 Things a programmer should do
-  - http://programmer.97things.oreilly.com/wiki/index.php/97_Things_Every_Programmer_Should_Know
-- Teach yourselves programming in Ten Years
-  - http://norvig.com/21-days.html
+[Click here - 30+ Playlists with 500+ Videos on Spring, Spring Boot, REST, Microservices and the Cloud](https://www.youtube.com/user/rithustutorials/playlists?view=1&sort=lad&flow=list)
 
-## Course Checklist
+## Keep Learning in28Minutes
 
-Teachable
-- Publish course and put the link in PDF and Github
-
-YouTube
-- Decide Topics & Publishing Strategy
-- Automation
-- Starting video for individual sections
-- End video for small videos - talking about teachable course and pdf
+in28Minutes is creating amazing solutions for you to learn Spring Boot, Full Stack and the Cloud - Docker, Kubernetes, AWS, React, Angular etc. - [Check out all our courses here](https://github.com/in28minutes/learn)
