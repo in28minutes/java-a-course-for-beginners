@@ -29,5 +29,7 @@ Choose ```Edit System Environment Variables```.
 Type in 
 ```
 jshell --version
+
 ```
 
+#### Launch up Java and Jshell again
