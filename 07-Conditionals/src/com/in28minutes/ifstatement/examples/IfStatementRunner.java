@@ -3,6 +3,10 @@ package com.in28minutes.ifstatement.examples;
 public class IfStatementRunner {
 
 	public static void main(String[] args) {
+		puzzle1();
+	    	puzzle2();
+	    	puzzle3();
+	    	puzzle4();
 		puzzle5();
 	}
 
