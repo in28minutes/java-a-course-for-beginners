@@ -1,6 +1,6 @@
 ## Installing Java
 
-#### Google for "java 9 jdk download"
+#### Google for "java jdk download"
 ![Image](/images/01_Java9JDKDownload.png)
 ---
 #### Land on the Oracle JDK Download Site
