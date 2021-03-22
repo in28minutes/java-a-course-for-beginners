@@ -1,6 +1,6 @@
 # Learn Java Programming in 250 Steps
 
-[![Image](https://www.springboottutorial.com/images/Course-Java-Programming-for-Complete-Beginners-in-250-Steps.png "Java 9 Programming for Complete Beginners in 250 Steps
+[![Image](https://www.springboottutorial.com/images/Course-Java-Programming-for-Complete-Beginners-in-250-Steps.png "Java Programming for Complete Beginners in 250 Steps
 ")](https://www.udemy.com/course/java-programming-tutorial-for-beginners)
 
 
@@ -403,39 +403,6 @@ In more than 250 Steps, we explore the most important Java Programming Language 
 - Java Tip 14 - Why Enum and Enum Basics - ordinal and values
 - Java Tip 15 - Enum - Constructor, variables and methods
 - Java Tip 16 - Quick look at inbuild Enums - Month, DayOfWeek
-
-## Future Things To Do
-- Volatile 
-- Java Keywords
-- Video 2 36:35 -> Include a list of formatting options for System.out.printf
-- Video 16 Array average of Numbers -> Rounding mode needs editing
-  - Big Decimal Rounding Modes introduction seperate video!
-- What else should a great developer do?
-    - 4 Principles of Simple Design
-    - Unit Testing
-    - TDD
-- Initialization Blocks
-  - Static & Instance Initializer Blocks
-- BigDecimal Rounding Modes
-- Tip : Do not create a lot of objects and leaks - Understand Garbage Collection
-- Serialization
-- Coding Standards
-  - A Quick overview of Google Style Guide
-    - https://google.github.io/styleguide/javaguide.html
-- Writing JavaDoc
-- 10 Effective Java Tips
-  - Don't use Raw Types
-  - Use Enum instead of int or String Constants
-  - Minimize scope of variables
-  - Check Parameters for validity
-  - Beware of String Concatenation
-  - Do not return nulls - return empty collection
-  - Use Enhanced For Loop
-  - Avoid Double for Financial Calculations
-  - Refer to objects by Interfaces
-  - Follow Naming Conventions
-- Try Pair Programming!
-- Comments
 
 ### Troubleshooting
 - Refer our TroubleShooting Guide - https://github.com/in28minutes/in28minutes-initiatives/tree/master/The-in28Minutes-TroubleshootingGuide-And-FAQ
