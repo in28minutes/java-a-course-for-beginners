@@ -189,18 +189,146 @@
 ## Java Versioning
  
 | Version | Release Data  | Notes |
-|--|--|--|
+|:--|:--|:--|
 | JDK 1.0  |  January 1996     |         |
 | J2SE 5.0 | September 2004 | 5 Releases in 8 years |
 | Java SE 8 (LTS)| March 2014| Most important Java Release|
 | Java SE 9| September 2017| 4 Releases in 13 years|
-| Java SE 10| March 2018| Start of 6 month release cycles|
+| Java SE 10| March 2018| Time-Based Release Versioning|
 | Java SE 11 (LTS)|September 2018| Long Term Support Version (Every 3 years) |
 | Java SE 12| March 2019| |
 | ... |||
 |Java SE 16| March 2021||
 |Java SE 17 (LTS)|September 2021|&nbsp;|
 
+---
+## Java New Features
+
+| Version | Release Data  | Important New Features |
+|:--|:--|:--|
+| J2SE 5.0 | Sep 2004 | Enhanced For Loop, Generics, Enums, Autoboxing |
+| Java SE 8 (LTS)| Mar 2014| Functional Programming - Lambdas & Streams, Static methods in interface|
+| Java SE 9| Sep 2017| Modularization (Java Platform Module System)|
+| Java SE 10| Mar 2018| Local Variable Type Inference|
+| Java SE 14| Mar 2020| Switch Expressions (Preview in 12 and 13) |
+| Java SE 15| Sep 2020|Text Blocks (Preview in 13)|
+|Java SE 16| Mar 2021|Record Classes (Preview in 14 and 15)|
+|All Java Versions|-|API Improvements, Performance and Garbage Collection Improvements|
+
+---
+## Java Modularization - Overview
+<!-- .slide: class="image-right image-fifty" -->
+![](./images/modularization.png)
+
+- Introduced in Java 9
+- Goals:
+	- Modularize JDK (IMPORTANT)
+		- **rt.jar** grew to 60+ MB by **Java 8**
+	- Modularize applications
+- Modularizing JDK:
+	- java --list-modules
+		- java.base
+		- java.logging
+		- java.sql
+		- java.xml
+		- jdk.compiler
+		- jdk.jartool
+		- jdk.jshell
+	- java -d java.sql
+
+---
+## Java Modularization - Remember 
+- Module Descriptor - **module-info.java**: Defines metadata about the module:
+	- **requires module.a;** - I need module.a to do my work!
+	- **requires transitive module.a;** - I need module.a to do my work 
+		- AND my users also need access to module.a
+	- **exports** - Export package for use by other modules
+	- **opens package.b to module.a** - Before Java 9, reflection can be used to find details about types (private, public and protected). From Java 9, you can decide which packages to expose:
+		- Above statement allows module.a access to perform reflection on public types in package.b
+- **Advantages**
+	- **Compile Time** Checks
+		- For availability of modules
+	- Better **Encapsulation**
+		- Make only a subset of classes from a module available to other modules
+	- **Smaller** Java Runtime
+		- Use only the modules of Java that you need!
+---
+## Local Variable Type Inference
+```
+// List<String> numbers = new ArrayList<>(list);
+var numbers = new ArrayList<>(list);
+```
+- Java compiler infers the type of the variable at compile time
+- Introduced in Java 10
+- You can add final if you want
+- `var` can also be used in loops
+- Remember:
+	- You cannot assign `null`
+	- `var` is NOT a keyword
+- Best Practices:
+	- Good variable names
+	- Minimize Scope
+	- Improve readability for chained expressions
+
+---
+## Switch Expression
+```
+String monthName = switch (monthNumber) {
+case 1 -> {
+	System.out.println("January");
+	// yield statement is used in a Switch Expression
+	// break,continue statements are used in a Switch Statement
+	yield "January"; // yield mandatory!
+}
+case 2 -> "February";
+case 3 -> "March";
+case 4 -> "April";
+default -> "Invalid Month";
+};
+```
+- Create expressions using switch statement
+- Released in JDK 14
+	- Preview - JDK 12 and 13
+- Remember:
+	- No fallthrough
+	- Use `yield` or `->` to return value
+
+
+---
+## Text Blocks
+```
+System.out.println("\"First Line\"\nSecond Line\nThird Line");
+System.out.println("""
+	"First Line"   
+		Second Line   
+		Third Line"""
+		);
+```
+
+- Simplify Complex Text Strings
+- Released in JDK 15
+	- Preview - JDK 13 and 14
+- Remember:
+	- First Line : """ Followed by line terminator
+		- """abc or """abc""" in First Line are NOT valid
+	- Automatic Alignment is done
+	- Trailing white space is stripped
+	- You can use text blocks where ever you can use a String
+---
+## Records
+```
+record Person(String name, String email, String phoneNumber) { }
+```
+- Eliminate verbosity in creating Java Beans 
+	- Public accessor methods, constructor, equals, hashcode and toString are automatically created
+	- You can create custom implementations if you would want
+- Released in JDK 16
+	- Preview - JDK 14 and 15
+- Remember:
+	- Compact Constructors are only allowed in Records
+	- You can add static fields, static initializers, and static methods
+		- BUT you CANNOT add instance variables or instance initializers
+		- HOWEVER you CAN add instance methods
 ---
 ## What's Next
 
@@ -249,7 +377,7 @@
 			history: true,
 			center: false,
 			slideNumber: true,
-			//fragments: false,
+			fragments: false,
 			transition: 'none', // none/fade/slide/convex/concave/zoom
 
 			// More info https://github.com/hakimel/reveal.js#dependencies
