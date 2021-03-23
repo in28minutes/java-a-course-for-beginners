@@ -110,12 +110,6 @@ myNumbers.stream().filter(Predicate.not(Java10::isEven)).forEach(System.out::pri
 
 // JDK 11 - Directly run Java file without compiling - java HelloWorld.java
 
-// JDK 12
-// Compact Number Formatting
-// NumberFormat fmt = NumberFormat.getCompactNumberInstance(Locale.US,
-// NumberFormat.Style.SHORT);
-// String result = fmt.format(1000);
-
 // JDK 11
 
 // String methods - isBlank, lines, strip, stripLeading, stripTrailing, and
