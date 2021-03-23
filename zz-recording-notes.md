@@ -86,3 +86,335 @@ Path is an environment variable.
 - back up of the content of your path. 
 
 Restart command prompt
+
+
+## Minor Things
+```
+// Java 10
+// List.copyOf, Set.copyOf, and Map.copyOf methods
+var list = new ArrayList<>(List.of("One", "Two", "Three"));
+var immutableList = List.copyOf(list);
+System.out.println(immutableList);
+
+// JDK 11 - Files class - readString and writeString
+Path pathFileToRead = Paths.get("./resources/data.txt");
+String readString = Files.readString(pathFileToRead);
+System.out.println(readString);
+
+// JDK 11 - Predicate.not
+Predicate<Integer> isEven = x -> (x % 2 == 0);
+List<Integer> myNumbers = List.of(1, 5, 8, 9);
+myNumbers.stream().filter(isEven.negate()).forEach(System.out::println);
+myNumbers.stream().filter(Java10::isEven).forEach(System.out::println);
+myNumbers.stream().filter(Predicate.not(Java10::isEven)).forEach(System.out::println);
+
+// JDK 11 - Directly run Java file without compiling - java HelloWorld.java
+
+// JDK 12
+// Compact Number Formatting
+// NumberFormat fmt = NumberFormat.getCompactNumberInstance(Locale.US,
+// NumberFormat.Style.SHORT);
+// String result = fmt.format(1000);
+
+// JDK 11
+
+// String methods - isBlank, lines, strip, stripLeading, stripTrailing, and
+// repeat
+// "".isBlank(),"abc".isBlank()
+// "1\n2\n3\n".lines().forEach(System.out::println);//Split to streams
+// System.out.println(" 1 2 3 ".strip());
+// System.out.println(" 1 2 3 ".stripLeading());
+// System.out.println(" 1 2 3 ".stripTrailing());
+// System.out.println("abc".repeat(10));
+
+// JDK 12
+// String methods - indent and transform
+System.out.println("sdfalkjfl".transform(s -> s.substring(2)));
+
+// JDK 13
+// java.lang.String - formatted
+System.out.println("My name is %s".formatted("Ranga"));
+
+// JDK 14
+// Helpful NullPointerExceptions (JEP 358)
+```
+
+## Modularization
+
+```
+Package com.in28minutes.sorting.util
+
+public class MySortingUtil {
+	public List<String> sort(List<String> values){
+		BubbleSort sort = new BubbleSort();
+		return sort.sort(values);
+	}
+
+}
+
+
+Package com.in28minutes.sorting.algorithm
+public class BubbleSort {
+
+	public List<String> sort(List<String> values) {
+		return values;
+	}
+
+}
+
+
+Package com.in28minutes.consumer
+public class SortingUtilConsumer {
+	
+	private static Logger logger = Logger.getLogger(SortingUtilConsumer.class.getName());
+	
+	public static void main(String[] args) {
+		MySortingUtil util = new MySortingUtil();
+		List<String> sorted = util.sort(Arrays.asList("Apple", "Bat", "Cat"));
+		System.out.println(sorted);
+		logger.info(sorted.toString());
+	}
+
+}
+
+package com.in28minutes.consumer
+
+public class DirectConsumer {
+	
+	public static void main(String[] args) {
+		BubbleSort util = new BubbleSort();
+		List<String> sorted = util.sort(Arrays.asList("Apple", "Bat", "Cat"));
+		System.out.println(sorted);
+	}
+
+}
+
+
+JAR Approach
+sorting-jar
+consumer-jar
+
+vs 
+
+Modularization Approach
+sorting-module
+consumer-module
+
+module consumer.module {
+	requires sorting.module;
+	requires java.logging;
+}
+
+module sorting.module {
+	exports first.module.util;
+}
+```
+
+
+## Type Inference
+
+```
+// Type Inference - Java 10
+
+// List<String> numbers = new ArrayList<String>(list);
+// List<String> numbers = new ArrayList<>(list);
+var numbers = new ArrayList<>(list);
+numbers.forEach(s -> System.out.println(s));
+
+for (var i = 0; i <= 10; i++) {
+	System.out.println(i);
+}
+
+for (var value : list) {
+	System.out.println(value);
+}
+
+// Good variable names
+// Minimize Scope
+// Improve readability for chained expressions
+```
+
+## Switch Expression
+
+```
+public String determinenameofMonthWithSwitch(int monthNumber) {
+	switch (monthNumber) {
+	case 1:
+		return "January";
+	case 2:
+		return "February";
+	case 3:
+		return "March";
+	case 4:
+		return "April";
+	case 5:
+		return "May";
+	case 6:
+		return "June";
+	case 7:
+		return "July";
+	case 8:
+		return "August";
+	case 9:
+		return "September";
+	case 10:
+		return "October";
+	case 11:
+		return "November";
+	case 12:
+		return "December";
+	default:
+		return "Invalid Month";
+	}
+}
+
+public String determinenameofMonthWithSwitchLabeledRule(int monthNumber) {
+	// No fallthrough
+	String monthName = switch (monthNumber) {
+	case 1 -> {
+		System.out.println("January");
+		// yield statement is used in a Switch Expression
+		// break,continue statements are used in a Switch Statement
+		yield "January"; // yield mandatory!
+	}
+	case 2 -> "February";
+	case 3 -> "March";
+	case 4 -> "April";
+	case 5 -> "May";
+	case 6 -> "June";
+	case 7 -> "July";
+	case 8 -> "August";
+	case 9 -> "September";
+	case 10 -> "October";
+	case 11 -> "November";
+	case 12 -> "December";
+	default -> "Invalid Month";
+	};
+
+	return monthName;
+}
+
+public String determinenameofMonthWithSwitchYield(int monthNumber) {
+	// No fallthrough
+	String monthName = switch (monthNumber) {
+	case 1:
+		System.out.println("January");
+		yield "January";
+	case 2:
+		yield "February";
+	case 3:
+		yield "March";
+	case 4:
+		yield "April";
+	case 5:
+		yield "May";
+	case 6:
+		yield "June";
+	case 7:
+		yield "July";
+	case 8:
+		yield "August";
+	case 9:
+		yield "September";
+	case 10:
+		yield "October";
+	case 11:
+		yield "November";
+	case 12:
+		yield "December";
+	default:
+		yield "Invalid Month";
+	};
+
+	return monthName;
+}
+```
+## Text Blocks
+```
+// JEP 355 Text Blocks -
+
+System.out.println("First Line\nSecond Line\nThird Line");
+System.out.println("""
+		First Line
+		Second Line
+		Third Line""");
+
+System.out.println("\"First Line\"\nSecond Line\nThird Line");
+System.out.println("""
+		"First Line"
+			Second Line
+			Third Line""");
+
+// Recommended Approach
+System.out.println("""
+		First Line
+		Second Line
+		Third Line
+		""");
+
+String formattedString = """
+		Name: %s
+		Email: %s
+		Phone: %s
+		""".formatted("Ranga", "ranga@in28minutes.com", "123-456-7890");
+
+System.out.print(formattedString);
+```
+
+## Records
+
+```
+package records.after;
+
+//component fields
+//public accessor methods
+//canonical constructor 
+//equals and hashCode
+//toString method
+
+//record Person(String name, String email, String phoneNumber) { }
+
+//record Person(String name, String email, String phoneNumber) { 
+//	public Person(String name, String email, String phoneNumber) {
+//		if(name==null) {
+//			throw new IllegalArgumentException("Name cannot be null");
+//		}
+//		
+//		this.name = name;
+//		this.email = email;
+//		this.phoneNumber = phoneNumber;
+//	}
+//}
+
+
+record Person(String name, String email, String phoneNumber) { 
+	
+	//compact constructor only allowed inside records
+	public Person {
+		if(name==null) {
+			throw new IllegalArgumentException("Name cannot be null");
+		}
+	}
+	
+	// Explicitly Declaration of Methods
+    public String email() {
+        System.out.println("email is " + email);
+        return email;
+    }
+    
+    //You can add static fields, static initializers, and static methods
+    //But you CANNOT add instance variables or instance initializers
+    //However, you CAN add instance methods
+}
+
+
+public class RecordsEmployeeRunner {
+	public static void main(String[] args) {
+		Person person = new Person("Ranga","ranga@in28minutes.com","123-456-7890");
+		
+		System.out.println(person);
+		System.out.println(person.email());
+
+	}
+}
+```
