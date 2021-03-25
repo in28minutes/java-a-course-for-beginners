@@ -1,3 +1,578 @@
+## Spring Framework 
+
+<!---
+Current Directory : /Ranga/001.Notes/00.CoursePreparations/2020-03-Java-New-Features/learn-spring-v2
+-->
+
+## Complete Code Example
+
+
+### /pom.xml
+
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>org.springframework.boot</groupId>
+		<artifactId>spring-boot-starter-parent</artifactId>
+		<version>2.4.4</version>
+		<relativePath/> <!-- lookup parent from repository -->
+	</parent>
+	<groupId>com.in28minutes</groupId>
+	<artifactId>learn-spring-v2</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+	<name>learn-spring</name>
+	<description>Demo project for Spring Boot</description>
+	<properties>
+		<java.version>16</java.version>
+	</properties>
+	<dependencies>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-web</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-test</artifactId>
+			<scope>test</scope>
+		</dependency>
+	</dependencies>
+
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-maven-plugin</artifactId>
+			</plugin>
+		</plugins>
+	</build>
+
+</project>
+```
+---
+
+### /src/main/java/com/in28minutes/learnspring/LearnSpringApplication.java
+
+```java
+package com.in28minutes.learnspring;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.context.ConfigurableApplicationContext;
+
+import com.in28minutes.learnspring.game.GameRunner;
+
+@SpringBootApplication
+public class LearnSpringApplication {
+
+	public static void main(String[] args) {
+		//SpringApplication.run(LearnSpringApplication.class, args);
+
+		//MarioGame game = new MarioGame();
+//		ContraGame game = new ContraGame();
+//		GameRunner runner = new GameRunner(game);
+//		runner.runGame();
+		
+		ConfigurableApplicationContext applicationContext = SpringApplication.run(LearnSpringApplication.class, args);
+		
+		GameRunner runner = applicationContext.getBean(GameRunner.class);
+		
+		runner.runGame();
+
+
+	}
+
+}
+```
+---
+
+### /src/main/java/com/in28minutes/learnspring/app/RestApiController.java
+
+```java
+package com.in28minutes.learnspring.app;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RestController;
+import com.in28minutes.learnspring.app.business.BusinessService;
+
+@RestController
+public class RestApiController {
+	
+	@Autowired
+	private BusinessService businessService;
+	
+	@GetMapping("/sum")
+	public long calculateSum() {
+		return businessService.calculateSum();		
+	}
+
+}
+```
+---
+
+### /src/main/java/com/in28minutes/learnspring/app/business/BusinessService.java
+
+```java
+package com.in28minutes.learnspring.app.business;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+
+import com.in28minutes.learnspring.app.data.DataService;
+
+@Component
+public class BusinessService {
+
+	@Autowired
+	private DataService dataService;
+
+	public long calculateSum() {
+		List<Integer> data = dataService.retrieveData();
+		return data.stream().reduce(Integer::sum).get();
+	}
+
+}
+```
+---
+
+### /src/main/java/com/in28minutes/learnspring/app/data/DataService.java
+
+```java
+package com.in28minutes.learnspring.app.data;
+
+import java.util.Arrays;
+import java.util.List;
+
+import org.springframework.stereotype.Component;
+
+@Component
+public class DataService {
+
+	public List<Integer> retrieveData() {
+		return Arrays.asList(12,34,56,78);
+	}
+
+}
+```
+---
+
+### /src/main/java/com/in28minutes/learnspring/game/ContraGame.java
+
+```java
+package com.in28minutes.learnspring.game;
+
+import org.springframework.stereotype.Component;
+
+@Component
+public class ContraGame implements GamingConsole{
+		public void up() {
+			System.out.println("Contra - up");
+		}
+
+		public void down() {
+			System.out.println("Contra - down");
+		}
+
+		public void left() {
+			System.out.println("Contra - left");
+		}
+
+		public void right() {
+			System.out.println("Contra - right");
+		}
+	}
+```
+---
+
+### /src/main/java/com/in28minutes/learnspring/game/GameRunner.java
+
+```java
+package com.in28minutes.learnspring.game;
+
+import org.springframework.stereotype.Component;
+
+@Component
+public class GameRunner {
+	
+	GamingConsole game;
+	
+	public GameRunner(GamingConsole game) {
+		this.game = game;
+	}
+	
+	public void runGame() {
+		game.up();
+		game.down();
+		game.left();
+		game.right();
+	}
+}
+```
+---
+
+### /src/main/java/com/in28minutes/learnspring/game/GamingConsole.java
+
+```java
+package com.in28minutes.learnspring.game;
+
+public interface GamingConsole {
+	public void up();
+
+	public void down();
+
+	public void left();
+
+	public void right();
+
+}
+```
+---
+
+### /src/main/java/com/in28minutes/learnspring/game/MarioGame.java
+
+```java
+package com.in28minutes.learnspring.game;
+
+import org.springframework.context.annotation.Primary;
+import org.springframework.stereotype.Component;
+
+@Primary
+@Component
+public class MarioGame implements GamingConsole{
+		public void up() {
+			System.out.println("Mario - up");
+		}
+
+		public void down() {
+			System.out.println("Go into a hole");
+		}
+
+		public void left() {
+		}
+
+		public void right() {
+			System.out.println("Go Forward");
+		}
+	}
+```
+---
+
+### /src/main/resources/application.properties
+
+```properties
+
+```
+---
+
+### /src/test/java/com/in28minutes/learnspring/LearnSpringApplicationTests.java
+
+```java
+package com.in28minutes.learnspring;
+
+import org.junit.jupiter.api.Test;
+import org.springframework.boot.test.context.SpringBootTest;
+
+@SpringBootTest
+class LearnSpringApplicationTests {
+
+	@Test
+	void contextLoads() {
+	}
+
+}
+```
+---
+
+## Spring Boot
+
+<!---
+Current Directory : /Ranga/001.Notes/00.CoursePreparations/2020-03-Java-New-Features/spring-boot-in-10-steps
+-->
+
+## Complete Code Example
+
+
+### /pom.xml
+
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>org.springframework.boot</groupId>
+		<artifactId>spring-boot-starter-parent</artifactId>
+		<version>2.4.4</version>
+		<relativePath /> <!-- lookup parent from repository -->
+	</parent>
+	<groupId>com.in28minutes</groupId>
+	<artifactId>spring-boot-in-10-steps</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+	<name>spring-boot-in-10-steps</name>
+	<description>Demo project for Spring Boot</description>
+	<properties>
+		<java.version>11</java.version>
+	</properties>
+	<dependencies>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-web</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-devtools</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-actuator</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-data-jpa</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>com.h2database</groupId>
+			<artifactId>h2</artifactId>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>mysql</groupId>
+			<artifactId>mysql-connector-java</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-test</artifactId>
+			<scope>test</scope>
+		</dependency>
+	</dependencies>
+
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-maven-plugin</artifactId>
+			</plugin>
+		</plugins>
+	</build>
+
+</project>
+```
+---
+
+### /src/main/java/com/in28minutes/springbootin10steps/Course.java
+
+```java
+package com.in28minutes.springbootin10steps;
+
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+
+@Entity
+public class Course {
+	
+	@Id
+	@GeneratedValue
+	private long id;
+	private String name;
+	private String author;
+	
+	public Course() {
+		
+	}
+
+	public Course(long id, String name, String author) {
+		super();
+		this.id = id;
+		this.name = name;
+		this.author = author;
+	}
+
+	public long getId() {
+		return id;
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public String getAuthor() {
+		return author;
+	}
+
+	@Override
+	public String toString() {
+		return String.format("Book [id=%s, name=%s, author=%s]", id, name, author);
+	}
+
+}
+```
+---
+
+### /src/main/java/com/in28minutes/springbootin10steps/CourseRepository.java
+
+```java
+package com.in28minutes.springbootin10steps;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
+
+@Repository
+public interface CourseRepository extends JpaRepository<Course, Long>{
+
+}
+```
+---
+
+### /src/main/java/com/in28minutes/springbootin10steps/CoursesController.java
+
+```java
+package com.in28minutes.springbootin10steps;
+
+import java.util.List;
+import java.util.Optional;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.DeleteMapping;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RestController;
+
+@RestController
+public class CoursesController {
+
+	@Autowired
+	CourseRepository repository;
+
+	@GetMapping("/courses")
+	public List<Course> getAllCourses() {
+		return repository.findAll();
+	}
+
+	@GetMapping("/courses/{id}")
+	public Course getCourse(@PathVariable long id) {
+		Optional<Course> course = repository.findById(id);
+
+		if (course.isEmpty())
+			throw new RuntimeException(id + " Not Found");
+		
+		return course.get();
+	}
+	
+	@PostMapping("/courses")
+	public void createCourse(@RequestBody Course course) {
+		repository.save(course);
+	}	
+
+	@PutMapping("/courses/{id}")
+	public void updateCourse(@PathVariable long id, @RequestBody Course course) {
+		repository.save(course);
+	}	
+
+	@DeleteMapping("/courses/{id}")
+	public void deleteCourse(@PathVariable long id) {
+		Optional<Course> course = repository.findById(id);
+
+		if (course.isEmpty())
+			throw new RuntimeException(id + " Not Found");
+		
+		repository.deleteById(id);
+	}
+
+}
+```
+---
+
+### /src/main/java/com/in28minutes/springbootin10steps/SpringBootIn10StepsApplication.java
+
+```java
+package com.in28minutes.springbootin10steps;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+
+@SpringBootApplication
+public class SpringBootIn10StepsApplication {
+
+	public static void main(String[] args) {
+		SpringApplication.run(SpringBootIn10StepsApplication.class, args);
+	}
+
+}
+```
+---
+
+### /src/main/resources/application.properties
+
+```properties
+#docker run --detach --env MYSQL_ROOT_PASSWORD=dummypassword --env MYSQL_USER=courses-user --env MYSQL_PASSWORD=dummycourses --env MYSQL_DATABASE=courses --name mysql --publish 3306:3306 mysql:5.7
+#logging.level.org.springframework= DEBUG
+#management.endpoints.web.exposure.include=*
+spring.datasource.url=jdbc:h2:mem:testdb
+
+#spring.jpa.hibernate.ddl-auto=update
+#spring.datasource.url=jdbc:mysql://localhost:3306/courses
+#spring.datasource.username=courses-user
+#spring.datasource.password=dummycourses
+#spring.jpa.properties.hibernate.dialect=org.hibernate.dialect.MySQL57Dialect
+```
+---
+
+### /src/main/resources/data.sql
+
+```
+insert into course(ID,AUTHOR,NAME)
+values(100001,'in28minutes','Learn AWS');
+
+insert into course(ID,AUTHOR,NAME)
+values(100002,'in28minutes','Learn Microservices');
+
+insert into course(ID,AUTHOR,NAME)
+values(100003,'in28minutes','Learn Full Stack');
+```
+---
+
+### /src/test/java/com/in28minutes/springbootin10steps/SpringBootIn10StepsApplicationTests.java
+
+```java
+package com.in28minutes.springbootin10steps;
+
+import org.junit.jupiter.api.Test;
+import org.springframework.boot.test.context.SpringBootTest;
+
+@SpringBootTest
+class SpringBootIn10StepsApplicationTests {
+
+	@Test
+	void contextLoads() {
+	}
+
+}
+```
+---
+
+
+
+
 ## Best Use of Course Guide
 In this video, we would help you understand how to make the best use of the Course Guide.
 The course guide contains:
@@ -412,3 +987,106 @@ public class RecordsEmployeeRunner {
 	}
 }
 ```
+
+## Spring Beans
+
+
+
+
+Spring Boot
+Enable building production ready applications quickly
+production-ready features such as metrics, health checks, and externalized configuration
+Provide non-functional features
+embedded servers (easy deployment with containers)
+metrics (monitoring)
+health checks (monitoring)
+externalized configuration
+What Spring Boot is NOT!
+ZERO code generation
+Neither an application server nor a web server
+
+Features
+Quick Starter Projects with Auto Configuration
+ - Web
+ - JPA
+Embedded Servers - Tomcat, Jetty or Undertow
+Production-ready features
+ - metrics and health checks 
+ - externalized configuration
+
+## Diagrams
+
+graph architecture {
+
+node[style=filled,color="#59C8DE"]
+//node [style=filled,color="#D14D28", fontcolor=white];
+rankdir = TB
+node[shape=record,width=1]
+
+GameRunner -- GamingConsole
+
+GamingConsole -- Mario
+GamingConsole -- SuperContra
+GamingConsole -- PacMan
+
+GameRunner[label=<Game Runner>]
+SuperContra[label=<Super Contra>]
+GamingConsole[label=<Gaming Console>]
+
+
+}
+
+graph architecture {
+
+node[style=filled,color="#59C8DE"]
+Approach1 [style=filled, fontcolor=white];
+rankdir = TB
+node[shape=record, width=3, style=filled,color="#D14D28", fontcolor=white]
+edge [width=0]
+graph [pad=".75", ranksep="0.05", nodesep="0.25"];
+
+Approach1 -- WAR [style=invis]
+WAR -- Server [style=invis]
+Server -- Java [style=invis]
+Java -- OS [style=invis]
+OS -- Hardware [style=invis]
+
+Server[label=<Web Server <BR/> (Tomcat/Weblogic/WebSphere etc)>]
+Approach1[label=<WAR Approach (OLD)>]
+}
+
+graph architecture {
+
+node[style=filled,color="#59C8DE"]
+//node [style=filled,color="#D14D28", fontcolor=white];
+rankdir = TB
+node[shape=record, width=3, style=filled,color="#D14D28", fontcolor=white]
+edge [width=0]
+graph [pad=".75", ranksep="0.05", nodesep="0.25"];
+
+SpringDataJpa  -- JPA [style=invis]
+JPA -- SpringJDBC [style=invis]
+SpringJDBC -- JDBC [style=invis]
+
+JAR[label=<JAR <BR/> (Embedded Server - Tomcat ..)>]
+
+}
+
+graph architecture {
+
+node[style=filled,color="#59C8DE"]
+//node [style=filled,color="#D14D28", fontcolor=white];
+rankdir = TB
+node[shape=record, width=1.5, style=filled,color="#D14D28", fontcolor=white]
+edge [width=0]
+graph [pad=".75", ranksep="0.05", nodesep="0.25"];
+Database[shape=cylinder]
+
+
+Application  -- SpringDataJpa 
+SpringDataJpa -- JPA
+JPA -- Database
+
+SpringDataJpa[label=<Spring Data JPA>]
+
+}

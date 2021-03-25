@@ -344,6 +344,473 @@ record Person(String name, String email, String phoneNumber) { }
 - Learn Unit Testing with JUnit and Mockito
 - Learn to write Clean Code
 
+---
+## Getting Started with Spring Framework - Goals
+<!-- .slide: class="image-right image-twenty one20" -->
+![](./images/spring.png)
+- Build a Loose Coupled Hello World Gaming App with **Modern Spring** Approach
+- Get **Hands-on** with Spring and understand:
+	- Why Spring?
+	- **Terminology**
+		- Tight Coupling and Loose Coupling
+		- IOC Container
+		- Application Context
+		- Component Scan
+		- Dependency Injection
+		- Spring Beans
+		- Auto Wiring
+
+---
+## Loose Coupling with Spring Framework
+<!-- .slide: class="image-right image-forty" -->
+![](./images/gaming-console.png)
+![](./images/gamerunner.png)
+
+- Design Game Runner to run games:
+	- Mario, Super Contra, PacMan etc
+- **Iteration 1**: Tightly Coupled
+	- GameRunner class
+	- Game classes: Mario, Super Contra, PacMan etc
+- **Iteration 2**: Loose Coupling - Interfaces
+	- GameRunner class
+	- GamingConsole interface
+		- Game classes: Mario, Super Contra, PacMan etc
+- **Iteration 3**: Loose Coupling - Spring
+	- Spring framework will manage all our objects!
+		- GameRunner class
+		- GamingConsole interface
+			- Game classes: Mario, Super Contra, PacMan etc
+
+----
+## What are Dependencies?
+<!-- .slide: class="image-right image-twenty" -->
+![](./images/layers.png)
+- Java enterprise applications have **multiple layers**!
+	- Web, Business, Data etc
+- Each layer is **dependent** on the layer below it!
+	- Example: Class A - Business layer talks to Class B - Data layer to get data from Database
+		- Class B is a **dependency** of Class A
+	- There are thousands of such dependencies in every application!
+- Instead of creating instances or objects of classes directly, we want **Spring Framework to manage the lifecycle** of objects:
+	- Mark components using annotations: `@Component` (and others..)
+	- Mark dependencies using `@Autowired`
+- **Remember** : Maven Dependencies are different from Spring Dependencies!
+
+---
+## What value does Spring Framework provide?
+<!-- .slide: class="image-right image-twenty" -->
+![](./images/layers.png)
+- In **Game Runner** Hello World App, we have very few classes
+- BUT Real World applications **are much more complex**:
+	- Multiple Layers
+	- 100s of classes in each layer
+	- Each class might have a number of dependencies
+- With Spring Framework: 
+	- INSTEAD of FOCUSING on objects, their dependencies and wiring
+		- You can focus on the business logic of your application!
+- Playing with Spring:
+	- A few exercises! 
+		- Dummy implementation for PacMan, Controller and make it Primary!
+	- And Debugging Problems
+		- Remove @Component and Play with it!
+		- Create Your Own Beans
+
+---
+## What is Maven?
+<!-- .slide: class="image-right image-ten" -->
+![](./images/maven.png)
+
+- **NOT RECOMMENDED**: Downloading JARs manually to set up a project
+	- What if you need to upgrade to a new version?
+	- What if your JAR needs other JARs?
+		- Will you manually download them?
+- **Maven**: Manage JARs needed by apps (application dependencies)
+	- Once you add a dependency on Spring framework, Maven would download
+		- Spring Framework
+		- And all maven dependencies of Spring Framework
+- All configuration in **pom.xml**
+	- Maven artifacts: Identified by a Group Id, an Artifact Id and a Version!
+- **Important Features**:
+	- Defines a **simple project setup** that follows best practices
+	- Enables **consistent usage** across all projects
+	- Manages **dependency updates** and transitive dependencies
+
+---
+## Spring Framework - Important Terminology
+<!-- .slide: class="image-right image-twenty" -->
+![](./images/layers.png)
+- **@Component**: Indicates that an annotated class is a "component" - managed by Spring framework.
+	- Other similar annotations include @Repository, @Service and @Controller
+- **Component Scan**: How does Spring Framework identity all the beans it has to manage? 
+	- It scans packages! (`@ComponentScan("com.in28minutes")`)
+- **Dependency Injection**: Identify beans, their dependencies and wire them together (provides **IOC** - Inversion of Control)
+	- **Spring Beans**: An object managed by Spring Framework
+	- **IoC container**: Manages the lifecycle of beans and dependencies
+		- **Types**: ApplicationContext (complex), BeanFactory (simpler features - rarely used)
+	- **Autowiring**: Process of wiring in dependencies for a Spring Bean
+
+---
+## Spring - Dependency Injection Types
+<!-- .slide: class="image-right image-forty one10" -->
+![](./images/gamerunner.png)
+- **Constructor-based** : Dependencies are set by creating the Bean using its Constructor
+- **Setter-based** : Dependencies are set by calling setter methods on your beans
+- **Field**: No setter or constructor. Dependency is injected using reflection.
+- Which one should you use?
+	- Spring team recommends Constructor-based injection as dependencies are automatically set when an object is created!
+
+
+---
+## Spring Modules
+![](./images/spring-modules.png) 
+- Spring Framework is divided into **modules**:
+	- **Core**: IoC Container etc
+	- **Testing**: Mock Objects, Spring MVC Test etc
+	- **Data Access**: Transactions, JDBC, JPA etc
+	- **Web Servlet**: Spring MVC etc
+	- **Web Reactive**: Spring WebFlux etc
+	- **Integration**: JMS etc
+- Each application can choose the modules they want to make use of
+	- They do not need to make use of all things everything in Spring framework!
+
+---
+## Spring Projects
+![](./images/spring-projects.png) 
+- Spring Projects: Spring keeps evolving (REST API > Microservices > Cloud) 
+	- **Spring Boot**: Most popular framework to build microservices
+	- **Spring Cloud**: Build cloud native applications
+	- **Spring Data**: Integrate the same way with different types of databases : NoSQL and Relational
+	- **Spring Integration**: Address challenges with integration with other applications
+	- **Spring Security**: Secure your web application or REST API or microservice
+
+---
+## Why is Spring Popular?
+<!-- .slide: class="image-right image-twenty" -->
+![](./images/layers.png)
+
+- **Unit Testing**: Enables you to write testable code
+	- Great integration with JUnit and Mockito frameworks
+	- Provides its own unit testing project - Spring Unit Testing
+- **Reduced Boilerplate Code**: Focus on Business Logic
+	- Example: No need for exception handling in each method! 
+		- All Checked Exceptions are converted to Runtime or Unchecked Exceptions
+- **Architectural Flexibility**: Spring Modules and Projects
+	- You can pick and choose which ones to use (You DON'T need to use all of them!)
+- **Evolution with Time**: Microservices and Cloud
+	- Spring Boot, Spring Cloud etc!
+
+---
+## Spring JDBC - Example
+
+##### JDBC example
+
+```
+public void deleteTodo(int id) {
+	PreparedStatement st = null;
+	try {
+		st = db.conn.prepareStatement(DELETE_TODO_QUERY);
+		st.setInt(1, id);
+		st.execute();
+	} catch (SQLException e) {
+		logger.fatal("Query Failed : " + DELETE_TODO_QUERY, e);
+	} finally {
+		if (st != null) {
+			try {st.close();} 
+			catch (SQLException e) {}
+		}
+	}
+}
+```
+
+##### Spring JDBC example
+
+```
+public void deleteTodo(int id) {
+	jdbcTemplate.update(DELETE_TODO_QUERY, id);
+}
+```
+
+---
+## Spring Framework - Review
+<!-- .slide: class="image-right image-twenty" -->
+![](./images/spring.png)
+- **Spring Beans**: Objects whose lifecycle is managed by Spring
+	- Mark classes with @Component (and others ..) to help Spring Framework identify beans (called Components)
+	- Use @Autowired to autowire dependencies
+- **Features**:
+	- **Component Scan**: Scanning packages for components
+	- **Dependency Injection**: Identify beans, their dependencies and wire them together (provides **IOC** - Inversion of Control)
+		- Types: Constructor-based (RECOMMENDED), Setter-based, Field Injection
+	- **IoC container**: Manages lifecycle of beans
+		- **Types**: ApplicationContext (RECOMMENDED), BeanFactory (simpler features)
+	- **Autowiring**: Process of wiring Dependencies for Spring Beans
+- **Advantages**: Less Code (Focus on Business Logic), Architectural Flexibility and Evolution with time!
+
+---
+## Goals: Spring Boot in 10 Steps
+<!-- .slide: class="image-right image-twenty one40" -->
+![](./images/spring-boot.png)
+- Build a Hello World App in **Modern Spring Boot** Approach
+- Get **Hands-on** with Spring Boot
+	- Why Spring Boot?
+	- **Terminology**
+		- Spring Initializr
+		- Auto Configuration
+		- Starter Projects
+		- Actuator
+		- Developer Tools
+
+---
+## Hands-on: Understand Power of Spring Boot
+
+```
+// http://localhost:8080/books
+[
+  {
+    "id": 1,
+    "name": "Mastering Spring 5.2",
+    "author": "Ranga Karanam"
+  }
+]
+```
+- Let's Build a **Hello World App** using **Spring Initializr**
+- Setup **BooksController**
+
+---
+## World Before Spring Boot!
+
+> https://github.com/in28minutes/SpringMvcStepByStep/blob/master/Step15.md#pomxml
+
+- Setting up Spring Web Projects **before Spring Boot was NOT easy**!
+	- **Define maven dependencies** and manage versions for frameworks
+		- spring-webmvc, jackson-databind, log4j etc
+	- Define **web.xml** (`/src/main/webapp/WEB-INF/web.xml`)
+		- Define Front Controller for Spring Framework (`DispatcherServlet`)
+	- Define a **Spring context XML** file (`/src/main/webapp/WEB-INF/todo-servlet.xml`)
+		- Define a Component Scan (`<context:component-scan base-package="com.in28minutes" />`)
+	- **Install Tomcat** or use tomcat7-maven-plugin plugin (or any other web server)
+	- Deploy and Run the application in Tomcat
+- How does Spring Boot do its **Magic**?
+	- Spring Boot Starter Projects
+	- Spring Boot Auto Configuration
+
+---
+## Spring Boot Starter Projects
+
+<!-- .slide: class="image-right image-ten one10" -->
+![](./images/spring-boot.png)
+- **Goal of Starter Projects**: Help you get a project up and running quickly!
+	- **Web Application** - Spring Boot Starter Web
+	- **REST API** - Spring Boot Starter Web
+	- **Talk to database using JPA** - Spring Boot Starter Data JPA
+	- **Talk to database using JDBC** - Spring Boot Starter JDBC
+	- **Secure your web application or REST API** - Spring Boot Starter Security
+- Manage list of **maven dependencies** and versions for different kinds of apps:
+	- **Spring Boot Starter Web**: Frameworks needed by typical web applications
+		- spring-webmvc, spring-web, spring-boot-starter-tomcat, spring-boot-starter-json
+
+---
+## Spring Boot Auto Configuration
+<!-- .slide: class="image-right image-thirty one20" -->
+![](./images/spring-boot-auto-configure.png) 
+- Spring Boot provides **Auto Configuration** 
+	- **Basic configuration** to run your application using the frameworks defined in your maven dependencies
+	- Auto Configuration is **decided based on**:
+		- Which frameworks are in the Class Path?
+		- What is the existing configuration (Annotations etc)?
+	- **An Example**: (Enable debug logging for more details):
+		- If you use Spring Boot Starter Web, following are auto configured:
+			- Dispatcher Servlet (`DispatcherServletAutoConfiguration`)
+			- Embedded Servlet Container - Tomcat is the default (`EmbeddedWebServerFactoryCustomizerAutoConfiguration`)
+			- Default Error Pages (`ErrorMvcAutoConfiguration`)
+			- Bean to/from JSON conversion (`JacksonHttpMessageConvertersConfiguration`)
+---
+## Let's play with Spring Boot
+
+---
+## Spring Boot Embedded Servers
+<!-- .slide: class="image-right image-thirty" -->
+![](./images/war-approach.png) 
+![](./images/embedded-approach.png) 
+- How do you deploy your application?
+	- Step 1 : Install Java
+	- Step 2 : Install Web/Application Server 
+		- Tomcat/WebSphere/WebLogic etc
+	- Step 3 : Deploy the application WAR (Web ARchive)
+		- This is the OLD **WAR** Approach
+		- Complex to setup!
+- **Embedded Server** - Simpler alternative
+	- Step 1 : Install Java
+	- Step 2 : Run **JAR** file
+	- **Make JAR not WAR** (Credit: Josh Long!)
+	- Embedded Server **Examples**:
+		- spring-boot-starter-tomcat
+		- spring-boot-starter-jetty
+		- spring-boot-starter-undertow
+
+---
+## More Spring Boot Features
+<!-- .slide: class="image-right image-twenty one30" -->
+![](./images/spring-boot.png)
+- **Spring Boot Actuator**: Monitor and manage your application in your production
+	- Provides a number of endpoints:
+		- **beans** - Complete list of Spring beans in your app
+		- **health** - Application health information
+		- **metrics** - Application metrics
+		- **mappings** - Details around Request Mappings
+- **Spring Boot DevTools**: Increase developer productivity
+	- Why do you need to restart the server for every code change?
+
+---
+## Spring Boot vs Spring MVC vs Spring
+- **Spring Framework** Core Feature: Dependency Injection 
+	- @Component, @Autowired, IOC Container, ApplicationContext, Component Scan etc..
+	- **Spring Modules and Spring Projects**: Good Integration with Other Frameworks (Hibernate/JPA, JUnit & Mockito for Unit Testing)
+- **Spring MVC** (Spring Module): Build web applications in a decoupled approach
+	- Dispatcher Servlet, ModelAndView and View Resolver etc
+- **Spring Boot** (Spring Project): Build production ready applications quickly
+	- **Starter Projects** - Make it easy to build variety of applications
+	- **Auto configuration** - Eliminate configuration to setup Spring, Spring MVC and other projects!
+	- Enable production ready non functional features:
+		- Actuator : Enables Advanced Monitoring and Tracing of applications.
+		- Embedded Servers - No need for separate application servers!
+		- Default Error Handling
+
+---
+## Spring Boot Features
+<!-- .slide: class="image-right image-ten" -->
+![](./images/spring-boot.png)
+- Create **stand-alone** Spring applications
+- **Embed** Tomcat, Jetty or Undertow directly (**no need for WAR files**)
+- Provide **opinionated 'starter'** dependencies to simplify your build configuration
+- **Automatically configure** Spring and 3rd party libraries whenever possible
+- Provide **production-ready features** such as metrics, health checks
+- Absolutely **no code generation** and **no requirement for XML** configuration
+- Source: https://spring.io/projects/spring-boot
+
+---
+## REST API
+- **REST API**: Architectural Style for the Web
+	- **Resource**: Any information (Example: Courses)
+	- **URI**: How do you identify a resource? (/courses, /courses/1)
+	- You can perform actions on a resource (Create/Get/Delete/Update). Different HTTP Request Methods are used for different operations:
+		- **GET** - Retrieve information (/courses, /courses/1)
+		- **POST** - Create a new resource (/courses)
+		- **PUT** - Update/Replace a resource (/courses/1)
+		- **PATCH** - Update a part of the resource (/courses/1)
+		- **DELETE** - Delete a resource (/courses/1)
+	- **Representation**: How is the resource represented? (XML/JSON/Text/Video etc..)
+	- **Server**: Provides the service (or API)
+	- **Consumer**: Uses the service (Browser or a Front End Application)
+---
+## Spring and Spring Boot Release Cycles
+- What is the **difference** between these?
+	- 2.5.0 (SNAPSHOT)
+	- 2.4.5 (M3)
+	- 2.4.4 
+- Release Number: MAJOR.MINOR.FIX
+- Spring and Spring Boot **Release Cycle**:
+	- SNAPSHOT (versions under development) > Mile Stones > Released Version
+		- (2.4.4 SNAPSHOT) > (2.4.4 M1 > 2.4.4 M2 > 2.4.4 M3 > ...) > 2.4.4
+		- (2.4.5 SNAPSHOT) > (2.4.5 M1 > 2.4.5 M2 > > 2.4.5 M3) > 
+		- (2.5.0 SNAPSHOT) > 
+- **Recommendation** - Do NOT use SNAPSHOTs or M1 or M2 or M3
+	- Prefer released versions!
+
+---
+## JDBC to Spring JDBC to JPA to Spring Data JPA
+<!-- .slide: class="image-right image-thirty" -->
+![](./images/persistence.png) 
+- **JDBC** 
+	- Write a lot of SQL queries!
+	- And write a lot of Java code
+- **Spring JDBC**
+	- Write a lot of SQL queries
+	- BUT lesser Java code
+- **JPA**
+	- Do NOT worry about queries
+	- Just Map Entities to Tables!
+- **Spring Data JPA**
+	- Let's make JPA even more simple!
+	- I will take care of everything!
+
+---
+## JDBC to Spring JDBC
+##### JDBC example
+
+```
+public void deleteTodo(int id) {
+	PreparedStatement st = null;
+	try {
+		st = db.conn.prepareStatement(DELETE_TODO_QUERY);
+		st.setInt(1, id);
+		st.execute();
+	} catch (SQLException e) {
+		logger.fatal("Query Failed : " + DELETE_TODO_QUERY, e);
+	} finally {
+		if (st != null) {
+			try {st.close();} 
+			catch (SQLException e) {}
+		}
+	}
+}
+```
+
+##### Spring JDBC example
+
+```
+public void deleteTodo(int id) {
+	jdbcTemplate.update(DELETE_TODO_QUERY, id);
+}
+```
+
+---
+
+##### JPA Example
+```
+@Repository
+@Transactional
+public class PersonJpaRepository {
+ 
+  @PersistenceContext
+  EntityManager entityManager;
+ 
+  public Person findById(int id) {
+    return entityManager.find(Person.class, id);
+  }
+ 
+  public Person update(Person person) {
+    return entityManager.merge(person);
+  }
+
+  public Person insert(Person person) {
+    return entityManager.merge(person);
+  }
+ 
+  public void deleteById(int id) {........
+```
+
+##### Spring Data JPA Example
+```
+public interface TodoRepository extends JpaRepository<Todo, Integer>{
+```
+---
+## Spring Boot Auto Configuration Magic - Data JPA
+<!-- .slide: class="image-right image-thirty" -->
+![](./images/spring-data-jpa-configuration.png)
+- We added Data JPA and H2 dependencies:
+	- Spring Boot Auto Configuration does some magic:
+		- Initialize JPA and Spring Data JPA frameworks
+		- Launch an in memory database (H2)
+		- Setup connection from App to in-memory database
+		- Launch a few scripts at startup (example: `data.sql`)
+- **Remember** - H2 is in memory database
+	- Does NOT persist data
+	- Great for learning
+	- BUT NOT so great for production
+	- Let's see how to use MySQL next!
+
+
                     </script>
 			</section>
 
