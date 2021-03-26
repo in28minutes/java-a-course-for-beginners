@@ -1,0 +1,274 @@
+<!---
+Current Directory : /in28Minutes/git/java-a-course-for-beginners/51-learn-spring-framework
+-->
+
+## Complete Code Example
+
+
+### /pom.xml
+
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>org.springframework.boot</groupId>
+		<artifactId>spring-boot-starter-parent</artifactId>
+		<version>2.4.4</version>
+		<relativePath/> <!-- lookup parent from repository -->
+	</parent>
+	<groupId>com.in28minutes</groupId>
+	<artifactId>learn-spring-framework</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+	<name>learn-spring-framework</name>
+	<description>Demo project for Spring Boot</description>
+	<properties>
+		<java.version>11</java.version>
+	</properties>
+	<dependencies>
+
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter</artifactId>
+		</dependency>
+
+<!-- 		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-web</artifactId>
+		</dependency>
+ -->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-test</artifactId>
+			<scope>test</scope>
+		</dependency>
+
+	</dependencies>
+
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-maven-plugin</artifactId>
+			</plugin>
+		</plugins>
+	</build>
+
+</project>
+```
+---
+
+### /src/test/java/com/in28minutes/learnspringframework/LearnSpringFrameworkApplicationTests.java
+
+```java
+package com.in28minutes.learnspringframework;
+
+import org.junit.jupiter.api.Test;
+import org.springframework.boot.test.context.SpringBootTest;
+
+@SpringBootTest
+class LearnSpringFrameworkApplicationTests {
+
+	@Test
+	void contextLoads() {
+	}
+
+}
+```
+---
+
+### /src/main/resources/application.properties
+
+```properties
+logging.level.org.springframework=DEBUG
+```
+---
+
+### /src/main/java/com/in28minutes/learnspringframework/LearnSpringFrameworkApplication.java
+
+```java
+package com.in28minutes.learnspringframework;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.context.ConfigurableApplicationContext;
+import org.springframework.context.annotation.ComponentScan;
+
+import com.in28minutes.learnspringframework.game.GameRunner;
+
+@SpringBootApplication
+//@ComponentScan("com.in28minutes.learnspringframework")
+public class LearnSpringFrameworkApplication {
+
+	public static void main(String[] args) {
+
+		ConfigurableApplicationContext context = 
+				SpringApplication.run(LearnSpringFrameworkApplication.class, args);
+
+		//MarioGame,GameRunner
+		GameRunner runner = context.getBean(GameRunner.class);
+		
+		
+//		MarioGame game = new MarioGame();
+		//SuperContraGame game = new SuperContraGame();
+//		GameRunner runner = new GameRunner(game);
+		
+		runner.runGame();
+		
+	}
+
+}
+```
+---
+
+### /src/main/java/com/in28minutes/learnspringframework/game/GamingConsole.java
+
+```java
+package com.in28minutes.learnspringframework.game;
+
+public interface GamingConsole {
+
+	void up();
+
+	void down();
+
+	void left();
+
+	void right();
+
+}
+```
+---
+
+### /src/main/java/com/in28minutes/learnspringframework/game/SuperContraGame.java
+
+```java
+package com.in28minutes.learnspringframework.game;
+
+import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.stereotype.Component;
+
+@Component
+//@Qualifier("supercontra")
+public class SuperContraGame implements GamingConsole{
+	
+	public void up() {
+		System.out.println("SuperContraGame up");
+	}
+
+	public void down() {
+		System.out.println("SuperContraGame down");
+	}
+	
+	public void left() {
+		System.out.println("SuperContraGame left");
+	}
+	
+	public void right() {
+		System.out.println("SuperContraGame right");
+	}
+	
+}
+```
+---
+
+### /src/main/java/com/in28minutes/learnspringframework/game/MarioGame.java
+
+```java
+package com.in28minutes.learnspringframework.game;
+
+import org.springframework.stereotype.Component;
+
+@Component
+public class MarioGame implements GamingConsole {
+	
+	@Override
+	public void up() {
+		System.out.println("jump");
+	}
+
+	@Override
+	public void down() {
+		System.out.println("go into a hole");
+	}
+	
+	@Override
+	public void left() {
+		System.out.println("stop");
+	}
+	
+	@Override
+	public void right() {
+		System.out.println("go faster");
+	}
+	
+}
+```
+---
+
+### /src/main/java/com/in28minutes/learnspringframework/game/GameRunner.java
+
+```java
+package com.in28minutes.learnspringframework.game;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.stereotype.Component;
+
+@Component
+public class GameRunner {
+	
+	@Autowired
+//	@Qualifier("supercontra")
+	private GamingConsole game;
+	
+	public GameRunner(GamingConsole game) {
+		this.game = game;
+	}
+
+//	public void setGamingConsole(GamingConsole game) {
+//		this.game = game;
+//	}
+	
+	public void runGame() {
+		game.up();
+		game.down();
+		game.left();
+		game.right();
+	}
+}
+```
+---
+
+### /src/main/java/com/in28minutes/learnspringframework/game/PacManGame.java
+
+```java
+package com.in28minutes.learnspringframework.game;
+
+import org.springframework.context.annotation.Primary;
+import org.springframework.stereotype.Component;
+
+@Component
+@Primary
+public class PacManGame implements GamingConsole{
+	
+	public void up() {
+		System.out.println("PacManGame up");
+	}
+
+	public void down() {
+		System.out.println("PacManGame down");
+	}
+	
+	public void left() {
+		System.out.println("PacManGame left");
+	}
+	
+	public void right() {
+		System.out.println("PacManGame right");
+	}
+	
+}
+```
+---

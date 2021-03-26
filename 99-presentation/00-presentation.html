@@ -367,67 +367,42 @@ record Person(String name, String email, String phoneNumber) { }
 		- GamingConsole interface
 			- Game classes: Mario, Super Contra, PacMan etc
 
-----
-## What are Dependencies?
+---
+## Spring Framework - Questions
 <!-- .slide: class="image-right image-twenty" -->
-![](./images/layers.png)
-- Java enterprise applications have **multiple layers**!
-	- Web, Business, Data etc
-- Each layer is **dependent** on the layer below it!
-	- Example: Class A - Business layer talks to Class B - Data layer to get data from Database
-		- Class B is a **dependency** of Class A
-	- There are thousands of such dependencies in every application!
-- Instead of creating instances or objects of classes directly, we want **Spring Framework to manage the lifecycle** of objects:
-	- Mark components using annotations: `@Component` (and others..)
-	- Mark dependencies using `@Autowired`
-- **Remember** : Maven Dependencies are different from Spring Dependencies!
+![](./images/gamerunner.png)
+- **Question 1**: What's happening in the background?
+	- Let's debug!
+- **Question 2**: What about the terminology? How does it relate to what we are doing?
+	- Dependency, Dependency Injection, IOC Container, Application Context, Component Scan,  Spring Beans, Auto Wiring etc!
+- **Question 3**: Does the Spring Framework really add value?
+	- We are replacing 3 simple lines with 3 complex lines!
+- **Question 4**: What if I want to run Super Contra game?
+- **Question 5**: How is Spring JAR downloaded?
+	- Magic of Maven!
 
 ---
-## What value does Spring Framework provide?
-<!-- .slide: class="image-right image-twenty" -->
-![](./images/layers.png)
-- In **Game Runner** Hello World App, we have very few classes
-- BUT Real World applications **are much more complex**:
-	- Multiple Layers
-	- 100s of classes in each layer
-	- Each class might have a number of dependencies
-- With Spring Framework: 
-	- INSTEAD of FOCUSING on objects, their dependencies and wiring
-		- You can focus on the business logic of your application!
-- Playing with Spring:
-	- A few exercises! 
-		- Dummy implementation for PacMan, Controller and make it Primary!
-	- And Debugging Problems
-		- Remove @Component and Play with it!
-		- Create Your Own Beans
+## Question 1: What's happening in the background?
+- Let's Debug:
+	- Identified candidate component class: file [GameRunner.class]
+	- Identified candidate component class: file [MarioGame.class]
+	- Creating shared instance of singleton bean 'gameRunner'
+	- Creating shared instance of singleton bean 'marioGame'
+	- Autowiring by type from bean name 'gameRunner' via constructor to bean named 'marioGame'
+	- org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'gameRunner' defined in file [GameRunner.class]
+		- Unsatisfied dependency expressed through constructor parameter 0; 
+		- nested exception is:org.springframework.beans.factory.NoUniqueBeanDefinitionException
+		- No qualifying bean of type 'com.in28minutes.learnspringframework.game.GamingConsole' available
+		- expected single matching bean but found 3: marioGame,pacManGame,superContraGame
 
 ---
-## What is Maven?
-<!-- .slide: class="image-right image-ten" -->
-![](./images/maven.png)
-
-- **NOT RECOMMENDED**: Downloading JARs manually to set up a project
-	- What if you need to upgrade to a new version?
-	- What if your JAR needs other JARs?
-		- Will you manually download them?
-- **Maven**: Manage JARs needed by apps (application dependencies)
-	- Once you add a dependency on Spring framework, Maven would download
-		- Spring Framework
-		- And all maven dependencies of Spring Framework
-- All configuration in **pom.xml**
-	- Maven artifacts: Identified by a Group Id, an Artifact Id and a Version!
-- **Important Features**:
-	- Defines a **simple project setup** that follows best practices
-	- Enables **consistent usage** across all projects
-	- Manages **dependency updates** and transitive dependencies
-
----
-## Spring Framework - Important Terminology
+## Question 2: Spring Framework - Important Terminology
 <!-- .slide: class="image-right image-twenty" -->
-![](./images/layers.png)
-- **@Component**: Indicates that an annotated class is a "component" - managed by Spring framework.
-	- Other similar annotations include @Repository, @Service and @Controller
-- **Component Scan**: How does Spring Framework identity all the beans it has to manage? 
+![](./images/gamerunnerinterface.png)
+- **@Component** (..): Class managed by Spring framework
+- **Dependency**: GameRunner needs GamingConsole impl!
+	- GamingConsole Impl (Ex: MarioGame) is a dependency of GameRunner
+- **Component Scan**: How does Spring Framework find component classes? 
 	- It scans packages! (`@ComponentScan("com.in28minutes")`)
 - **Dependency Injection**: Identify beans, their dependencies and wire them together (provides **IOC** - Inversion of Control)
 	- **Spring Beans**: An object managed by Spring Framework
@@ -435,8 +410,59 @@ record Person(String name, String email, String phoneNumber) { }
 		- **Types**: ApplicationContext (complex), BeanFactory (simpler features - rarely used)
 	- **Autowiring**: Process of wiring in dependencies for a Spring Bean
 
+----
+## Question 3: Does the Spring Framework really add value?
+<!-- .slide: class="image-right image-twenty" -->
+![](./images/layers.png)
+- In **Game Runner** Hello World App, we have very few classes
+- BUT Real World applications **are much more complex**:
+	- Multiple Layers (Web, Business, Data etc)
+	- Each layer is **dependent** on the layer below it!
+		- Example: Business Layer class talks to a Data Layer class
+			- Data Layer class is a **dependency** of Business Layer class
+		- There are thousands of such dependencies in every application!
+- With Spring Framework: 
+	- INSTEAD of FOCUSING on objects, their dependencies and wiring
+		- You can focus on the business logic of your application!
+	- **Spring Framework manages the lifecycle** of objects:
+		- Mark components using annotations: `@Component` (and others..)
+		- Mark dependencies using `@Autowired`
+		- Allow Spring Framework to do its magic!
+- Ex: Controller > BusinessService (sum)  > DataService (data)!
+
 ---
-## Spring - Dependency Injection Types
+## Question 4: What if I want to run Super Contra game?
+<!-- .slide: class="image-right image-thirty" -->
+![](./images/gamerunnerinterface.png)
+- Try it as an exercise
+	- @Primary
+- Playing with Spring:
+	- Exercise:
+		- Dummy implementation for PacMan and make it Primary!
+	- Debugging Problems:
+		- Remove @Component and Play with it!
+
+---
+## **Question 5**: How is Spring JAR downloaded? (Maven)
+<!-- .slide: class="image-right image-ten" -->
+![](./images/maven.png)
+
+- What happens if you manually download Spring JAR?
+	- Remember: Spring JAR needs other JARs
+	- What if you need to upgrade to a new version?
+- **Maven**: Manage JARs needed by apps (application dependencies)
+	- Once you add a dependency on Spring framework, Maven would download:
+		- Spring Framework and its dependencies
+- All configuration in **pom.xml**
+	- Maven artifacts: Identified by a Group Id, an Artifact Id!
+- **Important Features**:
+	- Defines a **simple project setup** that follows best practices
+	- Enables **consistent usage** across all projects
+	- Manages **dependency updates** and transitive dependencies
+- **Terminology Warning**: Spring Dependency vs Maven Dependency
+
+---
+## Exploring Spring - Dependency Injection Types
 <!-- .slide: class="image-right image-forty one10" -->
 ![](./images/gamerunner.png)
 - **Constructor-based** : Dependencies are set by creating the Bean using its Constructor
@@ -444,7 +470,6 @@ record Person(String name, String email, String phoneNumber) { }
 - **Field**: No setter or constructor. Dependency is injected using reflection.
 - Which one should you use?
 	- Spring team recommends Constructor-based injection as dependencies are automatically set when an object is created!
-
 
 ---
 ## Spring Modules
@@ -474,8 +499,8 @@ record Person(String name, String email, String phoneNumber) { }
 <!-- .slide: class="image-right image-twenty" -->
 ![](./images/layers.png)
 
-- **Unit Testing**: Enables you to write testable code
-	- Great integration with JUnit and Mockito frameworks
+- **Loose Coupling**: Spring manages beans and dependencies
+	- Make writing unit tests easy!
 	- Provides its own unit testing project - Spring Unit Testing
 - **Reduced Boilerplate Code**: Focus on Business Logic
 	- Example: No need for exception handling in each method! 
@@ -520,17 +545,16 @@ public void deleteTodo(int id) {
 ## Spring Framework - Review
 <!-- .slide: class="image-right image-twenty" -->
 ![](./images/spring.png)
-- **Spring Beans**: Objects whose lifecycle is managed by Spring
-	- Mark classes with @Component (and others ..) to help Spring Framework identify beans (called Components)
-	- Use @Autowired to autowire dependencies
-- **Features**:
-	- **Component Scan**: Scanning packages for components
-	- **Dependency Injection**: Identify beans, their dependencies and wire them together (provides **IOC** - Inversion of Control)
-		- Types: Constructor-based (RECOMMENDED), Setter-based, Field Injection
-	- **IoC container**: Manages lifecycle of beans
-		- **Types**: ApplicationContext (RECOMMENDED), BeanFactory (simpler features)
-	- **Autowiring**: Process of wiring Dependencies for Spring Beans
-- **Advantages**: Less Code (Focus on Business Logic), Architectural Flexibility and Evolution with time!
+- **Goal**: 10,000 Feet overview of Spring Framework
+	- Help you understand the terminology!
+		- Dependency
+		- Dependency Injection (and types)
+			- Autowiring
+			- Spring Beans
+			- Component Scan
+		- IOC Container (Application Context)
+	- We will play with other Spring Modules and Projects later in the course
+- **Advantages**: Loosely Coupled Code (Focus on Business Logic), Architectural Flexibility and Evolution with time!
 
 ---
 ## Goals: Spring Boot in 10 Steps
