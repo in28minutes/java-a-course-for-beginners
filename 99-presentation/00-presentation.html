@@ -557,7 +557,7 @@ public void deleteTodo(int id) {
 - **Advantages**: Loosely Coupled Code (Focus on Business Logic), Architectural Flexibility and Evolution with time!
 
 ---
-## Goals: Spring Boot in 10 Steps
+## Getting Started with Spring Boot - Goals
 <!-- .slide: class="image-right image-twenty one40" -->
 ![](./images/spring-boot.png)
 - Build a Hello World App in **Modern Spring Boot** Approach
@@ -574,12 +574,12 @@ public void deleteTodo(int id) {
 ## Hands-on: Understand Power of Spring Boot
 
 ```
-// http://localhost:8080/books
+// http://localhost:8080/courses
 [
   {
     "id": 1,
-    "name": "Mastering Spring 5.2",
-    "author": "Ranga Karanam"
+    "name": "Learn Microservices",
+    "author": "in28minutes"
   }
 ]
 ```
@@ -687,16 +687,16 @@ public void deleteTodo(int id) {
 		- Default Error Handling
 
 ---
-## Spring Boot Features
-<!-- .slide: class="image-right image-ten" -->
-![](./images/spring-boot.png)
-- Create **stand-alone** Spring applications
-- **Embed** Tomcat, Jetty or Undertow directly (**no need for WAR files**)
-- Provide **opinionated 'starter'** dependencies to simplify your build configuration
-- **Automatically configure** Spring and 3rd party libraries whenever possible
-- Provide **production-ready features** such as metrics, health checks
-- Absolutely **no code generation** and **no requirement for XML** configuration
-- Source: https://spring.io/projects/spring-boot
+## Spring Boot - Review
+<!-- .slide: class="image-right image-twenty" -->
+![](./images/spring.png)
+- **Goal**: 10,000 Feet overview of Spring Boot
+	- Help you understand the terminology!
+		- Starter Projects
+		- Auto Configuration
+		- Actuator
+		- DevTools
+- **Advantages**: Get started quickly with production ready features!
 
 ---
 ## REST API
@@ -775,7 +775,6 @@ public void deleteTodo(int id) {
 ```
 
 ---
-
 ##### JPA Example
 ```
 @Repository
@@ -804,9 +803,10 @@ public class PersonJpaRepository {
 ```
 public interface TodoRepository extends JpaRepository<Todo, Integer>{
 ```
+
 ---
 ## Spring Boot Auto Configuration Magic - Data JPA
-<!-- .slide: class="image-right image-thirty" -->
+<!-- .slide: class="image-right image-thirty one20" -->
 ![](./images/spring-data-jpa-configuration.png)
 - We added Data JPA and H2 dependencies:
 	- Spring Boot Auto Configuration does some magic:
@@ -819,6 +819,33 @@ public interface TodoRepository extends JpaRepository<Todo, Integer>{
 	- Great for learning
 	- BUT NOT so great for production
 	- Let's see how to use MySQL next!
+
+---
+## Next Few Sections
+<!-- .slide: class="image-right image-ten one30" -->
+![](./images/java.png)
+![](./images/spring.png)
+- Java keeps improving:
+	- Java 10, Java 11, Java 12, ..., Java 17, Java 18 ...
+- Developing Java Applications is Evolving as well:
+	- Spring
+	- Spring Boot
+	- REST API
+- How about building a Real World Java Project?
+	- REST API with Spring and Spring Boot
+- Let's get started!
+
+---
+## Congratulations
+<!-- .slide: class="image-right image-ten one40" -->
+![](./images/java.png)
+![](./images/spring.png)
+- Java keeps improving:
+	- Java 10, Java 11, Java 12, ...
+- Java Project - REST API in Modern Approach:
+	- Spring
+	- Spring Boot
+- Do NOT forget to leave a Review!
 
 ---
 ## What's Next? - Don't Stop Learning!
@@ -834,7 +861,7 @@ public interface TodoRepository extends JpaRepository<Todo, Integer>{
 	- Spring & Spring Boot
 	- Hibernate and JPA
 - **Step III**: Go Cloud (AWS, Azure and Google Cloud)
-
+- **Step IV**: Learn DevOps
 
                     </script>
 			</section>
