@@ -27,15 +27,15 @@ Java is one of the most popular programming languages. Java offers both object o
 We take an hands-on approach using a combination of JShell(An awesome new feature in Java 9) and Eclipse as an IDE to illustrate more than 200 Java Coding Exercises, Puzzles and Code Examples.  
 
 In more than 250 Steps, we explore the most important Java Programming Language Features
-- Basics of Java Programming - Expressions, Variables and Printing Output
+- Basics of Java Programming - Expressions, Variables, and Printing Output
 - Java Operators - Java Assignment Operator, Relational and Logical Operators, Short Circuit Operators
 - Java Conditionals and If Statement
-- Methods - Parameters, Arguments and Return Values
+- Methods - Parameters, Arguments, and Return Values
 - An Overview Of Java Platform - java, javac, bytecode, JVM and Platform Independence - JDK vs JRE vs JVM
-- Object Oriented Programming - Class, Object, State and Behavior
+- Object Oriented Programming - Class, Object, State, and Behavior
 - Basics of OOPS - Encapsulation, Abstraction, Inheritance and Polymorphism
 - Basics about Java Data Types - Casting, Operators and More
-- Java Built in Classes - BigDecimal, String, Java Wrapper Classes
+- Java Built-in Classes - BigDecimal, String, Java Wrapper Classes
 - Conditionals with Java - If Else Statement,  Nested If Else, Java Switch Statement, Java Ternary Operator
 - Loops - For Loop, While Loop in Java, Do While Loop, Break and Continue
 - Immutablity of Java Wrapper Classes, String and BigDecimal
