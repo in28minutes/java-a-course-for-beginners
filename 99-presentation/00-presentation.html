@@ -51,7 +51,7 @@
 <!-- .slide: class="center" -->
 # Java Programming 
 # For Beginners
-
+> **New Sections**: Java New Features (10,..,15,16,..), Spring, <BR/>Spring Boot and REST API
 ---
 <!-- .slide: class="image-right image-fifty" -->
 ## Learn Java Programming
@@ -83,11 +83,6 @@
 	- "Never thought taking an online course will be so helpful. "
 	- "Builds confidence in people who fear programming"
 - **RECOMMENDATION**: Bit of Patience in the first hour!
-
----
-<!-- .slide: class="image-right image-twenty one50" -->
-## Course Overview
-
 
 ---
 ## Installing Java
@@ -172,6 +167,56 @@
 		- We will start using Eclipse as the Java IDE!
 
 ---
+## Java Primitive Types
+
+| Type of Values | Java Primitive Type | Size (in bits) | Range of Values | Example |
+|:--|:--|:--|:--|:--|
+| Integral |byte|8|```-128``` to ```127```|byte b = 5;|
+| Integral|short|16|```-32,768``` to ```32,767```|```short s = 128;```|
+| Integral|int|32|```-2,147,483,648``` to ```2,147,483,647```|```int i = 40000;```|
+| Integral|long|64|```-9,223,372,036,854,775,808``` to ```9,223,372,036,854,775,807```|long l = 2222222222;|
+|Float| float| 32 |  ±3.40282347E+38F. NOT precise|```float f = 4.0f```|
+|Float|double|64|  ±1.79769313486231570E+308. NOT precise|double d = 67.0|
+|Character|char|16|```'\u0000``` to ```'\uffff```|```char c = 'A';```|
+|Boolean| boolean|1| ```true``` or ```false```|```boolean isTrue = false;```|
+
+---
+## Print Multiplication Table - Solution 1
+
+```java
+
+	jshell> int i
+	i ==> 0
+	jshell> for (i=0; i<=10; i++) {
+	   ...> System.out.printf("%d * %d = %d", 5, i, 5*i).println();
+	   ...> }
+	5 * 1 = 5
+	5 * 2 = 10
+	5 * 3 = 15
+	5 * 4 = 20
+	5 * 5 = 2
+	5 * 6 = 30
+	5 * 7 = 35
+	5 * 8 = 40
+	5 * 9 = 45
+	5 * 10 = 50
+
+```
+---
+## JVM, JRE And JDK
+
+- **JRE** = **JVM** + **Libraries** + **Other Components**
+	- **JVM** runs your program bytecode
+	- *Libraries* are built-in Java utilities that can be used within any program you create. ```System.out.println()``` was a method in ```java.lang```, one such utility.
+	- *Other Components* include tools for debugging and code profiling (for memory management and performance)
+- **JDK** = **JRE** + **Compilers** + **Debuggers**
+	- *JDK* refers to the **Java Development Kit**. It's an acronym for the bundle needed  to compile (with the compiler) and run (with the *JRE* bundle) your Java program.
+- Remember:
+	- **JDK** is needed to **Compile and Run** Java programs
+	- **JRE** is needed to **Run** Java Programs
+	- **JVM** is needed to **Run Bytecode** generated from Java programs
+
+---
 ## Installing Eclipse
 <!-- .slide: class="image-right image-twenty one10" -->
 ![](./images/eclipse.png)
@@ -184,6 +229,107 @@
 	- Use 7Zip if you have problems with unzipping
 	- Unzip to root folder "C:\Eclipse" instead of a long path
 	- Guide: https://wiki.eclipse.org/Eclipse/Installation#Troubleshooting
+---
+
+## Print Multiplication Table - Solution 2
+
+```
+public class MultiplicationTable {
+	public static void print() {
+		for(int i=1; i<=10;i++) {
+			System.out.printf("%d * %d = %d", 5, i, 5*i).println();
+		}
+	}	
+
+	public static void print(int number) {
+		for(int i=1; i<=10;i++) {
+			System.out.printf("%d * %d = %d", number, i, number*i).println();
+		}
+	}
+
+	public static void print(int number, int from, int to) {
+		for(int i=from; i<=to;i++) {
+			System.out.printf("%d * %d = %d", number, i, number*i).println();
+		}
+	}
+}
+```
+---
+## Print Multiplication Table - Refactored (No Duplication)
+
+```
+package com.in28minutes.firstjavaproject;
+
+public class MultiplicationTable {
+	public static void print() {
+		print(5, 1, 10);
+	}
+
+	public static void print(int number) {
+		print(number, 1, 10);
+	}
+
+	public static void print(int number, int from, int to) {
+		for(int i=from; i<=to;i++) {
+			System.out.printf("%d X %d = %d", number, i, number*i).println();
+		}	
+	}
+}
+```
+---
+## Object Oriented Programming (OOP)
+```java
+
+	class Planet
+		name, location, distanceFromSun // data / state / fields
+		rotate(), revolve() // actions / behavior / methods
+
+	earth : new Planet
+	venus : new Planet
+
+```
+- A **class** is a template. 
+	- In above example, `Planet` is a class
+- An **object** is an instance of a class.  
+	- `earth` and `venus` are objects.
+	- ```name```, ```location``` and ```distanceFromSun``` compose object state.
+	- ```rotate()``` and ```revolve()``` define object's behavior.
+- **Fields** are the elements that make up the object state. Object behavior is implemented through **Methods**.
+
+---
+## Object Oriented Programming (OOP) - 2
+```java
+
+	class Planet
+		name, location, distanceFromSun // data / state / fields
+		rotate(), revolve() // actions / behavior / methods
+
+	earth : new Planet
+	venus : new Planet
+
+```
+- Each Planet has its own state:
+	- ```name```: "Earth", "Venus"
+	- ```location``` : Each has its own orbit
+	- ```distanceFromSun``` : They are at unique, different distances from the sun
+- Each Planet has its own unique behavior:
+	- ```rotate()``` : They rotate at different rates (and in fact, different directions!)
+	- ```revolve()``` : They revolve round the sun in different orbits, at different speeds
+
+---
+## Next Few Sections
+<!-- .slide: class="image-right image-ten one30" -->
+![](./images/java.png)
+![](./images/spring.png)
+- Java keeps improving:
+	- Java 10, Java 11, Java 12, ..., Java 17, Java 18 ...
+- Developing Java Applications is Evolving as well:
+	- Spring
+	- Spring Boot
+	- REST API
+- How about building a Real World Java Project?
+	- REST API with Spring and Spring Boot
+- Let's get started!
 
 ---
 ## Java Versioning
@@ -635,9 +781,6 @@ public void deleteTodo(int id) {
 			- Default Error Pages (`ErrorMvcAutoConfiguration`)
 			- Bean to/from JSON conversion (`JacksonHttpMessageConvertersConfiguration`)
 ---
-## Let's play with Spring Boot
-
----
 ## Spring Boot Embedded Servers
 <!-- .slide: class="image-right image-thirty" -->
 ![](./images/war-approach.png) 
@@ -721,9 +864,6 @@ public void deleteTodo(int id) {
 - Release Number: MAJOR.MINOR.FIX
 - Spring and Spring Boot **Release Cycle**:
 	- SNAPSHOT (versions under development) > Mile Stones > Released Version
-		- (2.4.4 SNAPSHOT) > (2.4.4 M1 > 2.4.4 M2 > 2.4.4 M3 > ...) > 2.4.4
-		- (2.4.5 SNAPSHOT) > (2.4.5 M1 > 2.4.5 M2 > > 2.4.5 M3) > 
-		- (2.5.0 SNAPSHOT) > 
 - **Recommendation** - Do NOT use SNAPSHOTs or M1 or M2 or M3
 	- Prefer released versions!
 
@@ -821,21 +961,6 @@ public interface TodoRepository extends JpaRepository<Todo, Integer>{
 	- Let's see how to use MySQL next!
 
 ---
-## Next Few Sections
-<!-- .slide: class="image-right image-ten one30" -->
-![](./images/java.png)
-![](./images/spring.png)
-- Java keeps improving:
-	- Java 10, Java 11, Java 12, ..., Java 17, Java 18 ...
-- Developing Java Applications is Evolving as well:
-	- Spring
-	- Spring Boot
-	- REST API
-- How about building a Real World Java Project?
-	- REST API with Spring and Spring Boot
-- Let's get started!
-
----
 ## Congratulations
 <!-- .slide: class="image-right image-ten one40" -->
 ![](./images/java.png)
@@ -895,7 +1020,7 @@ public interface TodoRepository extends JpaRepository<Todo, Integer>{
 			history: true,
 			center: false,
 			slideNumber: true,
-			//fragments: false,
+			fragments: false,
 			transition: 'none', // none/fade/slide/convex/concave/zoom
 
 			// More info https://github.com/hakimel/reveal.js#dependencies

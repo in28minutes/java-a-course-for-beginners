@@ -7,7 +7,6 @@
 ## Hands on Step by Step Introduction to the most popular programming language
 
 
-
 ## Getting Started
 - Eclipse - https://courses.in28minutes.com/p/eclipse-tutorial-for-beginners
 - Maven - https://courses.in28minutes.com/p/maven-tutorial-for-beginners-in-5-steps
@@ -414,3 +413,128 @@ In more than 250 Steps, we explore the most important Java Programming Language 
 ## Keep Learning in28Minutes
 
 in28Minutes is creating amazing solutions for you to learn Spring Boot, Full Stack and the Cloud - Docker, Kubernetes, AWS, React, Angular etc. - [Check out all our courses here](https://github.com/in28minutes/learn)
+
+
+## COURSE UPDATE - MAR 2021 Notes and Tracking
+
+## Todo
+- Code Backup after real flow example in Spring
+- Docker command to launch MySQL
+	- MySQL application.properties configuration
+
+#### HOME Folder for JDK
+- Windows: C:\Program Files\Java\jdk-{version}
+	- Example for JDK 16 - C:\Program Files\Java\jdk-16
+	- Example for JDK 17 - C:\Program Files\Java\jdk-17
+- Mac: /Library/Java/JavaVirtualMachines/jdk-{version}.jdk/Contents/Home
+	- Example for JDK 16 - /Library/Java/JavaVirtualMachines/jdk-16.jdk/Contents/Home
+	- Example for JDK 17 - /Library/Java/JavaVirtualMachines/jdk-17.jdk/Contents/Home
+
+#### Bin Folder for JDK
+- Windows: C:\Program Files\Java\jdk-{version}\bin
+	- Example for JDK 16 - C:\Program Files\Java\jdk-16\bin
+- Mac: /Library/Java/JavaVirtualMachines/jdk-{version}.jdk/Contents/Home/bin
+	- Example for JDK 16 - /Library/Java/JavaVirtualMachines/jdk-16.jdk/Contents/Home/bin
+
+## New Files
+
+```
+00 Step 01 - Course Overview - Java Programming For Absolute Beginners
+01 Step 00 - Installing Java - Overview
+01 Step 01 - Installing Java - Windows
+01 Step 02 - Installing Java - Mac
+01 Step 03 - Installing Java - Linux
+01 Step 04 - Troubleshooting Java Installation
+02 Step 01 - Step By Step Problem Solving with Programming
+02 Step 02 - Getting Started with JShell
+05 Step 01 - Installing Eclipse - Mac
+05 Step 01 - Installing Eclipse - Windows
+05 Step 03 - Do Not use Modules for now
+05 Step 03 - Troubleshooting Eclipse - Configuring Java JDK
+89 Step 00 - New Course Additions - An Overview
+90 Step 00 - 01 - Using Latest Java Version with Latest Eclipse
+90 Step 00 - 02 - Getting Eclipse 2021 03 working with JDK 16
+90 Step 01 - Understanding Java Versions - 10000 Feet Overview
+90 Step 02 - Understanding Java New Features - An Overview
+90 Step 03 - Getting Started with Java Modularization
+90 Step 04 - Java Modularization - 01 - Building Service and Consumer
+90 Step 05 - Java Modularization - 02 - Splitting Service and Consumer into JARs
+90 Step 06 - Java Modularization - 03 - Splitting Service and Consumer into Modules
+90 Step 07 - Java Modularization - 04 - A Quick Review
+90 Step 08 - Exploring New Java API - List Set and Map - copyOf methods
+90 Step 09 - Exploring New Java API - Files - readString and writeString methods
+90 Step 10 - Exploring New Java API - Predicate - not method
+90 Step 11 - Exploring New Java API - String Utility Methods
+90 Step 12 - Exploring Java New Features - Local Variable Type Inference
+90 Step 13 - Exploring Java New Features - Switch Expression
+90 Step 14 - Exploring Java New Features - Text Blocks
+90 Step 15 - Exploring Java New Features - Records
+91 Step 01 - Getting Started with Spring Framework - Goals
+91 Step 02 - Understanding Iterations for Implementing Game Runner
+91 Step 03 - Setting up New Spring Project with Spring Initializr
+91 Step 04 - Iteration 1 - Building Tightly Coupled GameRunner and MarioGame
+91 Step 05 - Iteration 2 - Loose Coupling Level 1 - Interfaces
+91 Step 06 - Iteration 3 - Loose Coupling Level 2 - Spring Framework
+91 Step 07 - Q1 - Spring Framework - Understanding whats happending in the Background
+91 Step 08 - Q2 - Spring Framework - Understanding Important Terminology
+91 Step 09 - Q3 - 01 - Spring Framework - Does Spring Framework Add Value?
+91 Step 10 - Q3 - 02 - Spring Framework - Implementing a Flow across Layers
+91 Step 11 - Q3 - 03 - Spring Framework - Implementing a Flow across Layers
+91 Step 12 - Q4 - Spring Framework - Running Super Contra
+91 Step 13 - Q5 - Spring Framework - Maven
+91 Step 14 - Exploring Spring Framework Dependency Injection Types
+91 Step 15 - Exploring Spring Modules
+91 Step 16 - Exploring Spring Projects
+91 Step 17 - Getting Started with Spring Framework - Review
+92 Step 01 - Getting Started with Spring Boot - Goals
+92 Step 02 - Setting up New Spring Boot Project with Spring Initializr
+92 Step 03 - Build a Hello World API with Spring Boot
+92 Step 04 - Understanding the World Before Spring Boot - 10000 Feet Overview
+92 Step 05 - Understanding Spring Boot Magic - Spring Boot Starter Projects
+92 Step 06 - Understanding Spring Boot Magic - Auto Configuration
+92 Step 07 - Playing with Spring Boot
+92 Step 08 - Understanding Spring Boot Magic - Embedded Servers
+92 Step 09 - Exploring Spring Boot Actuator
+92 Step 10 - Exploring Spring Boot DevTools
+92 Step 11 - Understanding Spring Boot vs Spring vs Spring MVC
+92 Step 12 - Getting Started with Spring Boot - Review
+93 Step 01 - Getting Started - Simple REST API with Spring Boot and Spring Data JPA
+93 Step 02 - Integrating Spring Boot with  Data JPA and in memory database H2
+93 Step 03 - JDBC to Spring JDBC to JPA to Spring Data JPA - 10000 Feet Overview
+93 Step 04 - Mapping Course Entity and Populating Data with data sql
+93 Step 05 - Creating Repository to manage Entity and integrating with GET REST API
+93 Step 06 - Understanding REST API - 10000 Feet Overview
+93 Step 07 - Building REST API to retrieve details of a course - GET
+93 Step 08 - Building REST API to create a new course - POST
+93 Step 09 - Building REST API to update a course - PUT
+93 Step 10 - Building REST API to delete a course - DELETE
+93 Step 11 - OPTIONAL HANDS ON - Using Docker to Launch MySQL - An Overview
+93 Step 12 - OPTIONAL HANDS ON - Installing Docker
+93 Step 13 - OPTIONAL HANDS ON - Using Docker to Launch MySQL
+99 Step 00 - Congratulations
+99 Step 01 - Bonus Lecture - Dont Stop Learning
+```
+
+```
+docker version
+docker run --detach --env MYSQL_ROOT_PASSWORD=dummypassword --env MYSQL_USER=courses-user --env MYSQL_PASSWORD=dummycourses --env MYSQL_DATABASE=courses --name mysql --publish 3306:3306 mysql:5.7
+docker container ls
+docker container stop ID
+
+#spring.datasource.url=jdbc:h2:mem:testdb
+
+spring.jpa.hibernate.ddl-auto=update
+spring.datasource.url=jdbc:mysql://localhost:3306/courses
+spring.datasource.username=courses-user
+spring.datasource.password=dummycourses
+spring.jpa.properties.hibernate.dialect=org.hibernate.dialect.MySQL57Dialect
+
+#courses-user@localhost:3306
+
+mysqlsh
+\connect courses-user@localhost:3306
+\sql
+use courses
+select * from course;
+\quit
+```
