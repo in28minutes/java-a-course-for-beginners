@@ -416,6 +416,10 @@ in28Minutes is creating amazing solutions for you to learn Spring Boot, Full Sta
 
 ## Text Lectures
 
+## Educational Announcements
+
+- Introduction to New Sections - https://www.udemy.com/course/java-programming-tutorial-for-beginners/learn/lecture/25694200
+
 #### Course Downloads - Course Guide and Presentation
 
 Thank You for Choosing to Learn from in28Minutes.
@@ -431,7 +435,7 @@ Next sections need the latest version of Java and Eclipse Enterprise Edition.
 If you face any problems:
 
 - [Installing Latest Version of Java](https://www.udemy.com/course/java-programming-tutorial-for-beginners/learn/lecture/25694242)
-- [Troubleshooting Java and Eclipse] (https://www.udemy.com/course/java-programming-tutorial-for-beginners/learn/lecture/25693982)
+- [Troubleshooting Java and Eclipse](https://www.udemy.com/course/java-programming-tutorial-for-beginners/learn/lecture/25693982)
 
 #### Notes for Java and Eclipse Troubleshooting
 
@@ -561,3 +565,64 @@ Docker Commands
 docker container ls
 docker container stop ID
 ```
+
+## Educational Announcements About Course Updates
+
+### Course Updates - Java New Features + Spring + Spring Boot + REST API
+
+Thanks for helping this course reach 100,000 learners. There are thousands of learners pursuing this course every day! Thanks for all your love.
+
+Java is evolving continuously. Really excited to announce amazing updates to the course! We are adding a Real World Project with Spring and Spring Boot to the course!
+
+#### Important Updates
+- Updated the course to use JDK 16
+- Added new content on Java New Features upto JDK 16:
+	- Java Modularization
+	- Records
+	- Text Blocks
+	- Switch Expression
+	- Local Variable Type Inference
+	- New Java API in Files, List, Set, Map and String
+- Added a New Section to Build a Real World Java Rest API using:
+	- Spring Framework
+	- Spring Boot
+	- JPA
+	- Data JPA
+	- H2/MySQL
+	- Docker
+
+What are you waiting for?
+
+I'm really excited about these changes. I hope you are too!
+
+Good Luck.
+
+Please feel free to post your questions here!
+
+Ranga
+
+Keep Learning Every Day!
+
+
+##### Later
+
+Last week we announced amazing updates to the course.
+
+We are receiving wonderful feedback from our learners.
+
+All the updates are FREE for the existing learners of the course.
+
+Get started with Java New Features, Spring and Spring Boot right now!
+
+Good Luck
+
+
+Docker and Kubernetes are essential in the microservices world today. Recognising the need, In January 2021, we announced amazing updates to the course:
+
+Section 6 - Microservices with Spring Cloud - V2
+Section 7 - Docker with Microservices using Spring Boot and Spring Cloud - V2
+Section 8: Kubernetes with Microservices using Docker, Spring Boot and Spring Cloud -
+V2
+We are receiving wonderful feedback from our learners.
+
+All the updates are FREE for the existing learners of the course.
