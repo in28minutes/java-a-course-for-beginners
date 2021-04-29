@@ -575,8 +575,8 @@ Thanks for helping this course reach 100,000 learners. There are thousands of le
 Java is evolving continuously. Really excited to announce amazing updates to the course! We are adding a Real World Project with Spring and Spring Boot to the course!
 
 #### Important Updates
-- Updated the course to use JDK 16
-- Added new content on Java New Features upto JDK 16:
+- Updated the course to use JDK 16 (released last week)
+- Added New Content
 	- Java Modularization
 	- Records
 	- Text Blocks
