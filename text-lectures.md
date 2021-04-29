@@ -113,13 +113,13 @@ docker container ls
 docker container stop ID
 ```
 
-7) Lecture 365 - Reference : Code at the end of the section
+## Lecture 365 - Reference : Code at the end of the section
 
 If you face any problems in the subsequent steps, you can compare your code vs the code from the course.
 
 Here's the Github pages with the complete code: https://github.com/in28minutes/java-a-course-for-beginners/blob/master/52-learn-spring-boot/2.md
 
-8) Lecture 368 - Notes for Java and Eclipse Troubleshooting
+## Lecture 368 - Notes for Java and Eclipse Troubleshooting
 
 Default Home Folder for JDK
 - Windows: C:\Program Files\Java\jdk-{version}
