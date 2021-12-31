@@ -13,7 +13,7 @@
 - JUnit - https://courses.in28minutes.com/p/junit-tutorial-for-beginners
 
 ## Installing Tools
-- PDF : https://github.com/in28minutes/java-a-course-for-beginners/blob/master/InstallingJava9AndEclipse.pdf
+- PDF : https://github.com/in28minutes/java-a-course-for-beginners/blob/master/InstallingJavaAndEclipse.pdf
 
 ## Overview
 
