@@ -1,4 +1,4 @@
-package com.in28minutes.learnspringframework.game;
+package com.in28minutes.spring.learnspringframework.game;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
@@ -8,24 +8,16 @@ public class GameRunner {
 	
 	@Autowired
 	private GamingConsole game;
-		
+
 	public GameRunner(GamingConsole game) {
-		System.out.println("Using Constructor");
 		this.game = game;
 	}
-	
-	
-//	public void setGame(GamingConsole game) {
-//		System.out.println("Using Setter");
-//		this.game = game;
-//	}
 
-
-
-	public void runGame() {
+	public void run() {
 		game.up();
 		game.down();
 		game.left();
-		game.right();
+		game.right();	
 	}
+
 }
