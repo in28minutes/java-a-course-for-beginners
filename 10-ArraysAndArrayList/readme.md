@@ -192,5 +192,3 @@ student.removeMarkAtIndex(5);
 Basics of ArrayList
 
 ## Using ArrayList for Previous Example
-
-
