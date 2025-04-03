@@ -390,3 +390,4 @@ switch (number) {
   - Conditional Operator is a Ternary Operator (3 Operands)
   - syntax : ```booleanCondition ? ResultIfTrue: ResultIfFalse;```
   - age >= 18 ? "Can Vote": "Cannot Vote"
+

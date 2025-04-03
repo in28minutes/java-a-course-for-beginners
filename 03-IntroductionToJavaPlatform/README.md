@@ -6,5 +6,3 @@
 - JVM (Java Virtual Machine) runs Java bytecode.
 - JRE = JVM + Libraries + Other Components 
 - JDK = JRE + Compilers + Debuggers
-
-# 

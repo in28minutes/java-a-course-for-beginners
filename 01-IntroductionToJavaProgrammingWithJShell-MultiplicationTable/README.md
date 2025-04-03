@@ -678,3 +678,4 @@ Exercise
 - Print squares of First 10 Numbers
 - Print squares of First 10 Even Numbers
 - Print squares of First 10 Odd Numbers
+

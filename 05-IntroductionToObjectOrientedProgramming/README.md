@@ -86,3 +86,5 @@ Terminology
  - name, address, hobbies, work 
  - walk(), run(), sleep(), eat(), drink() 
         
+
+        

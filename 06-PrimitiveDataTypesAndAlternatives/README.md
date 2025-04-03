@@ -203,3 +203,4 @@ System.out.println(myChar.isAlphabet());
 MyChar.printLowerCaseAlphabets();
 MyChar.printUpperCaseAlphabets();
 ```
+
